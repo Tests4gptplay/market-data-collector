@@ -62,23 +62,12 @@
       }
     },
     {
-      "bond_name": "2026年超长期特别国债（六期）",
-      "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
       "document_class": "ACTUAL_RESULT_CORRECTION",
-      "document_type": "RESULT",
-      "evidence_sha256": "5627cc9069b9777d7244e82c65e07f377088d4697a9a29ce28336992f3968d05",
-      "gap_count": 0,
-      "observation_count": 122,
+      "error": "<HTTPError 502: 'Bad Gateway'>",
       "publication_date": "2026-08-14",
-      "status": "PASS",
-      "url": "https://zwgls.mof.gov.cn/ywgg/202608/t20260814_3995474.htm",
-      "v2_semantic_hardening": {
-        "coupon_schedule_anchored_to_interest_payment_clause": true,
-        "distribution_end_is_not_payment_fact": true,
-        "explicit_redemption_phrase_required_for_maturity": true,
-        "inferred_result_payment_rows_removed": 1,
-        "whitespace_insensitive_mof_parsing": true
-      }
+      "status": "FAIL",
+      "title": "国债业务公告2026年第135号",
+      "url": "https://zwgls.mof.gov.cn/ywgg/202608/t20260814_3995474.htm"
     }
   ],
   "list_evidence": [
@@ -93,8 +82,8 @@
   ],
   "mode": "DAILY_INCREMENTAL",
   "module": "china_financial_central_gov_bond_cash_clock_context",
-  "nonblocking_diagnostic_count": 0,
-  "observation_count": 170,
+  "nonblocking_diagnostic_count": 1,
+  "observation_count": 48,
   "publication_window_end": "2026-08-16",
   "publication_window_start": "2026-08-14",
   "readiness_semantics": {
@@ -125,10 +114,10 @@
     "preissue_schedule_is_core_cash_clock": true
   },
   "source_context_available": true,
-  "status": "PASS_EVENTS_FOUND",
+  "status": "PASS_EVENTS_FOUND_WITH_NONBLOCKING_DIAGNOSTICS",
   "window_proof": {
     "actual_correction_documents_discovered": 2,
-    "actual_correction_documents_successfully_read": 2,
+    "actual_correction_documents_successfully_read": 1,
     "core_preissue_documents_discovered": 2,
     "core_preissue_documents_successfully_read": 2,
     "no_event_claim_requires_complete_list_window": true,
