@@ -27,7 +27,7 @@ on:
       - 'tests/china_financial_measurement_readiness_v1.py'
       - '.github/workflows/china-financial-daily.yml'
       - '.github/workflows/china-financial-local-gov-cash-clock-v3-data-test.yml'
-      - '.github/workflows/china-financial-central-gov-cash-clock-v3-ready-test.yml'
+      - '.github/workflows/china-financial-central-gov-cash-clock-v4-ready-test.yml'
       - 'README.md'
 
 permissions:
@@ -96,6 +96,7 @@ jobs:
             collectors/china_financial/central_gov_bond_cash_clock_v1.py \
             collectors/china_financial/central_gov_bond_cash_clock_v2.py \
             collectors/china_financial/central_gov_bond_cash_clock_v3_incremental.py \
+            collectors/china_financial/central_gov_bond_cash_clock_v4_incremental.py \
             tests/china_financial_measurement_readiness_v1.py
 
       - name: Offline Draft data-layer readiness gate
@@ -199,7 +200,7 @@ jobs:
         run: |
           set -euo pipefail
           rm -rf /tmp/central-cash-clock
-          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/central_gov_bond_cash_clock_v3_incremental.py \
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/central_gov_bond_cash_clock_v4_incremental.py \
             --as-of "${AS_OF}" --lookback-days 7 --out /tmp/central-cash-clock
           cat /tmp/central-cash-clock/context.json
           cat /tmp/central-cash-clock/run.json
@@ -220,6 +221,7 @@ jobs:
             'ready_scope': readiness['ready_scope'],
             'local_gov_cash_clock_status': local['status'],
             'central_gov_cash_clock_status': central['status'],
+            'central_nonblocking_diagnostics': central['nonblocking_diagnostic_count'],
             'government_bond_scope': readiness['important_scope_boundary']['government_bond_cash_clock'],
             'production_runtime_status': readiness['production_runtime_status'],
             'warning': 'READY is limited to China Financial data collection and measurement under the current Draft; it is not a downstream model/runtime production declaration.'
