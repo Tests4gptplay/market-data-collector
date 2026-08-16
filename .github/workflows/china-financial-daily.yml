@@ -1,25 +1,24 @@
 name: China Financial Daily Candidate Integration Gate
 
-# This file satisfies the contract's declared workflow entry point, but the
-# contract remains CANDIDATE. It is an end-to-end measurement/readiness gate,
-# not a declaration of production stability and not yet a scheduled writer.
+# Contract-declared candidate entry point. This is an end-to-end measurement /
+# readiness gate, not a declaration of production stability and not yet a
+# scheduled runtime-Store writer.
 on:
   workflow_dispatch:
     inputs:
       market_date:
-        description: Latest eligible market trading date YYYY-MM-DD
-        required: true
-        default: '2026-08-14'
+        description: Optional exact market date YYYY-MM-DD; blank = auto-resolve latest eligible date
+        required: false
       as_of:
-        description: Policy/fiscal context as-of date YYYY-MM-DD
-        required: true
-        default: '2026-08-16'
+        description: Optional policy/fiscal context as-of date YYYY-MM-DD; blank = current Asia/Shanghai date
+        required: false
       year:
-        description: Calendar year for monthly release families
-        required: true
-        default: '2026'
+        description: Optional calendar year for monthly release families; blank = year(as_of)
+        required: false
   push:
-    branches: [agent/china-financial-data-completeness-v1]
+    branches:
+      - agent/china-financial-data-completeness-v1
+      - v1.9-public-foundation
     paths:
       - 'collectors/china_financial/**'
       - 'contracts/china_financial/**'
@@ -27,7 +26,6 @@ on:
       - 'tests/china_financial_measurement_readiness_v1.py'
       - '.github/workflows/china-financial-daily.yml'
       - '.github/workflows/china-financial-local-gov-cash-clock-v3-data-test.yml'
-      - 'README.md'
 
 permissions:
   contents: read
@@ -35,11 +33,11 @@ permissions:
 jobs:
   measurement-readiness:
     runs-on: ubuntu-24.04
-    timeout-minutes: 40
+    timeout-minutes: 45
     env:
-      MARKET_DATE: ${{ github.event.inputs.market_date || '2026-08-14' }}
-      AS_OF: ${{ github.event.inputs.as_of || '2026-08-16' }}
-      YEAR: ${{ github.event.inputs.year || '2026' }}
+      INPUT_MARKET_DATE: ${{ github.event.inputs.market_date || '' }}
+      INPUT_AS_OF: ${{ github.event.inputs.as_of || '' }}
+      INPUT_YEAR: ${{ github.event.inputs.year || '' }}
     steps:
       - name: Checkout
         env:
@@ -53,6 +51,31 @@ jobs:
 
       - name: Install PDF parser
         run: python3 -m pip install --disable-pip-version-check 'pypdf==5.9.0'
+
+      - name: Resolve dynamic context dates
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -n "${INPUT_AS_OF}" ]; then
+            AS_OF="${INPUT_AS_OF}"
+          else
+            AS_OF="$(TZ=Asia/Shanghai date +%F)"
+          fi
+          if [ -n "${INPUT_YEAR}" ]; then
+            YEAR="${INPUT_YEAR}"
+          else
+            YEAR="${AS_OF%%-*}"
+          fi
+          SINCE_DATE="$(python3 - "${AS_OF}" <<'PY'
+          import sys
+          from datetime import date,timedelta
+          print((date.fromisoformat(sys.argv[1])-timedelta(days=10)).isoformat())
+          PY
+          )"
+          echo "AS_OF=${AS_OF}" >> "$GITHUB_ENV"
+          echo "YEAR=${YEAR}" >> "$GITHUB_ENV"
+          echo "SINCE_DATE=${SINCE_DATE}" >> "$GITHUB_ENV"
+          printf 'AS_OF=%s YEAR=%s SINCE_DATE=%s\n' "$AS_OF" "$YEAR" "$SINCE_DATE"
 
       - name: Compile active candidate collectors
         run: |
@@ -75,12 +98,44 @@ jobs:
           python3 tests/china_financial_measurement_readiness_v1.py --out /tmp/china-financial-readiness.json
           cat /tmp/china-financial-readiness.json
 
-      - name: Live fast market family
+      - name: Resolve and run live fast market family
+        shell: bash
         run: |
           set -euo pipefail
-          rm -rf /tmp/market-v4
-          python3 collectors/china_financial/market_family_v4.py --date "${MARKET_DATE}" --out /tmp/market-v4
+          if [ -n "${INPUT_MARKET_DATE}" ]; then
+            CANDIDATES="${INPUT_MARKET_DATE}"
+          else
+            CANDIDATES="$(python3 - "${AS_OF}" <<'PY'
+          import sys
+          from datetime import date,timedelta
+          d=date.fromisoformat(sys.argv[1])
+          print(' '.join((d-timedelta(days=i)).isoformat() for i in range(8)))
+          PY
+          )"
+          fi
+
+          MARKET_DATE=""
+          for D in ${CANDIDATES}; do
+            rm -rf /tmp/market-v4
+            set +e
+            python3 collectors/china_financial/market_family_v4.py --date "${D}" --out /tmp/market-v4
+            RC=$?
+            set -e
+            if [ "${RC}" -eq 0 ]; then
+              MARKET_DATE="${D}"
+              break
+            fi
+            if [ -n "${INPUT_MARKET_DATE}" ]; then
+              exit "${RC}"
+            fi
+          done
+          if [ -z "${MARKET_DATE}" ]; then
+            echo 'No eligible market date passed within the 8-day auto-resolution window.' >&2
+            exit 2
+          fi
+          echo "MARKET_DATE=${MARKET_DATE}" >> "$GITHUB_ENV"
           cat "/tmp/market-v4/${MARKET_DATE}/run.json"
+          printf 'Resolved MARKET_DATE=%s\n' "$MARKET_DATE"
 
       - name: Live monthly credit family
         run: |
@@ -115,9 +170,12 @@ jobs:
           set -euo pipefail
           rm -rf /tmp/rrr-inc /tmp/omo-inc
           PYTHONPATH=. python3 collectors/china_financial/rrr_event_family_v5_incremental.py \
-            --date "${AS_OF}" --since-date 2026-08-07 --out /tmp/rrr-inc
+            --date "${AS_OF}" --since-date "${SINCE_DATE}" --out /tmp/rrr-inc
+          # No hard-coded previous policy rate is supplied here. The incremental
+          # checker reports current recent-state metadata without inventing a
+          # Store state. A runtime Store writer may supply previous state later.
           PYTHONPATH=. python3 collectors/china_financial/policy_event_family_v6_incremental.py \
-            --date "${MARKET_DATE}" --since-date 2026-08-07 --previous-rate 1.40 --out /tmp/omo-inc
+            --date "${MARKET_DATE}" --since-date "${SINCE_DATE}" --out /tmp/omo-inc
           cat /tmp/rrr-inc/run.json
           cat /tmp/omo-inc/run.json
 
@@ -133,18 +191,20 @@ jobs:
       - name: Final semantics summary
         run: |
           python3 - <<'PY'
-          import json
-          from pathlib import Path
+          import json,os
           r=json.load(open('/tmp/china-financial-readiness.json'))
           cash=json.load(open('/tmp/cash-clock-v3/context.json'))
-          print(json.dumps({
+          summary={
+            'as_of': os.environ['AS_OF'],
+            'resolved_market_date': os.environ['MARKET_DATE'],
             'measurement_readiness': r['status'],
             'production_status': r['production_status'],
             'cash_clock_status': cash['status'],
             'cash_clock_scope': cash['scope'],
             'central_government_cash_clock_included': cash['central_government_bonds_included'],
             'warning': 'A green measurement gate is not a PRODUCTION release declaration.'
-          },ensure_ascii=False,indent=2))
+          }
+          print(json.dumps(summary,ensure_ascii=False,indent=2))
           assert r['status']=='MODEL_CONTEXT_MEASURABLE',r
           assert cash['window_proof']['all_publication_days_checked'] is True,cash
           PY
