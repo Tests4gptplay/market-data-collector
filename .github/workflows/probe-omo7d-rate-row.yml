@@ -1,0 +1,27 @@
+name: Probe OMO 7D Rate Row
+
+on:
+  push:
+    branches: [v1.9-public-foundation]
+    paths:
+      - 'tests/probes/probe_omo7d_rate_row.py'
+      - '.github/workflows/probe-omo7d-rate-row.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Probe exact 7D row
+        run: PYTHONPATH=. python3 tests/probes/probe_omo7d_rate_row.py
