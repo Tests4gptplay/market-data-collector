@@ -16,8 +16,25 @@ def main()->int:
     assert latest.get('fast_market_coverage')=='27/27',latest.get('fast_market_coverage')
     assert latest.get('latest_valid_market_session')
     c=latest.get('consumer_contract') or {}
-    for k in ('standard_runtime_must_not_invoke_collectors','standard_runtime_must_not_scrape_sources','consumer_should_not_glob_all_historical_store_files','consumer_reads_only_manifest_selected_active_paths','collector_schedule_is_independent_of_model_invocation'):
+    for k in (
+        'standard_runtime_must_not_invoke_collectors',
+        'store_first_not_store_only',
+        'consumer_prefers_manifest_selected_active_paths',
+        'consumer_should_not_glob_all_historical_store_files',
+        'targeted_git_history_lookup_allowed_when_required',
+        'runtime_direct_source_fallback_allowed_when_store_insufficient',
+        'fallback_success_may_continue_without_store_repair',
+        'fail_closed_only_after_store_and_fallback_insufficient',
+        'run_local_fallback_must_not_silently_mutate_store',
+        'collector_schedule_is_independent_of_model_invocation',
+    ):
         assert c.get(k) is True,(k,c)
+    for deprecated in (
+        'standard_runtime_must_not_scrape_sources',
+        'consumer_reads_only_manifest_selected_active_paths',
+        'store_insufficient_or_stale_must_fail_closed_or_downweight_per_draft',
+    ):
+        assert deprecated not in c,(deprecated,c)
     assert c.get('entrypoint')=='data/china_financial/manifests/latest.json',c
     p=latest.get('producer_contract') or {}
     assert p.get('workflow')=='.github/workflows/china-financial-daily-persist-v3.yml',p
