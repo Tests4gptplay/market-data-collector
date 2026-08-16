@@ -1,0 +1,55 @@
+name: China Financial Policy Event V2 Data Test
+
+on:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'collectors/china_financial/policy_event_family_v2.py'
+      - '.github/workflows/china-financial-policy-event-v2-data-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-current-and-history:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Parse known official OMO articles
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from collectors.china_financial.policy_event_family_v2 import parse_7d_rate_from_article
+          tests={
+            '2025-02-26':'https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/5601302/index.html',
+            '2025-12-26':'https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2025122608571540479/index.html',
+            '2026-08-14':'https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026081409033914683/index.html',
+          }
+          expected={'2025-02-26':1.50,'2025-12-26':1.40,'2026-08-14':1.40}
+          for d,u in tests.items():
+              r=parse_7d_rate_from_article(u)
+              assert r and abs(r['rate']-expected[d])<1e-9,(d,r)
+              print(d,r['rate'],r['selection'])
+          PY
+      - name: Run current unchanged-state collection
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/policy-v2
+          PYTHONPATH=. python3 collectors/china_financial/policy_event_family_v2.py --date 2026-08-14 --out /tmp/policy-v2
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/policy-v2/run.json'))
+          print(json.dumps(r['omo7d_rate_state'],ensure_ascii=False,indent=2))
+          assert r['omo7d_rate_state']['status']=='UNCHANGED_CONFIRMED',r
+          assert not [x for x in json.load(open('/tmp/policy-v2/observations.json')) if x['series_id']=='POL_OMO7D_RATE']
+          PY
