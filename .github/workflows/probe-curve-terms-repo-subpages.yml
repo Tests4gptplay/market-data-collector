@@ -1,0 +1,30 @@
+name: Probe Curve Terms and Repo Subpages
+
+on:
+  push:
+    branches: [v1.9-public-foundation]
+    paths:
+      - 'tests/probes/probe_curve_terms_and_repo_subpages.py'
+      - '.github/workflows/probe-curve-terms-repo-subpages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout without third-party action
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Probe exact paths
+        run: python3 tests/probes/probe_curve_terms_and_repo_subpages.py
