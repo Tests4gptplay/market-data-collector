@@ -1,0 +1,14 @@
+{
+  "contract_schema": "MARKET_DATA_CONTRACT_V1",
+  "status": "CANDIDATE",
+  "updated_at": "2026-08-16",
+  "modules": {
+    "china_financial": {
+      "status": "CANDIDATE",
+      "collector_version": "V1.9-CANDIDATE",
+      "interface_version": "CF_INTERFACE_V1",
+      "current_contract": "contracts/china_financial/current.json",
+      "output_root": "data/china_financial"
+    }
+  }
+}
