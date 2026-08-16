@@ -15,8 +15,25 @@ def main()->int:
     if a.expect_as_of:assert latest.get('as_of')==a.expect_as_of
     assert latest.get('fast_market_coverage')=='27/27'
     c=latest.get('consumer_contract') or {}
-    assert c.get('standard_runtime_must_not_invoke_collectors') is True
-    assert c.get('consumer_reads_only_manifest_selected_active_paths') is True
+    for k in (
+        'standard_runtime_must_not_invoke_collectors',
+        'store_first_not_store_only',
+        'consumer_prefers_manifest_selected_active_paths',
+        'consumer_should_not_glob_all_historical_store_files',
+        'targeted_git_history_lookup_allowed_when_required',
+        'runtime_direct_source_fallback_allowed_when_store_insufficient',
+        'fallback_success_may_continue_without_store_repair',
+        'fail_closed_only_after_store_and_fallback_insufficient',
+        'run_local_fallback_must_not_silently_mutate_store',
+        'collector_schedule_is_independent_of_model_invocation',
+    ):
+        assert c.get(k) is True,(k,c)
+    for deprecated in (
+        'standard_runtime_must_not_scrape_sources',
+        'consumer_reads_only_manifest_selected_active_paths',
+        'store_insufficient_or_stale_must_fail_closed_or_downweight_per_draft',
+    ):
+        assert deprecated not in c,(deprecated,c)
     p=latest.get('producer_contract') or {}
     assert p.get('low_frequency_default')=='CHECK_NEW_RELEASE_AND_CARRY_STORE'
     assert p.get('historical_backfill_default') is False
