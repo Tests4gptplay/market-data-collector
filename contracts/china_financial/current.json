@@ -5,6 +5,8 @@
   "normative_baseline": "CURRENT_CHINA_FINANCIAL_DRAFT",
   "historical_reference_not_normative": "UNMODIFIED_V0.9.1.1_MANUSCRIPT",
   "collector_version": "V1.9-READY",
+  "readiness_snapshot": "contracts/china_financial/data_layer_ready_v1.json",
+  "readiness_audit": "tests/china_financial_data_layer_readiness_v2.py",
   "interface_version": "CF_INTERFACE_V1",
   "interface_contract": "contracts/china_financial/interface_v1.json",
   "series_registry": "registry/china_financial/series.json",
@@ -21,19 +23,21 @@
   "government_bond_cash_clock": {
     "scope": "SIMPLIFIED_CENTRAL_PLUS_LOCAL_CONTEXT",
     "security_master_required": false,
+    "central_active_adapter": "collectors/china_financial/central_gov_bond_cash_clock_v5_context.py",
     "central_core": "PREISSUE_AUCTION_PAYMENT_MATURITY_SCHEDULE",
     "central_actual_results": "INCREMENTAL_CORRECTION_WHEN_AVAILABLE",
-    "local_core": "ROLLING_PUBLICATION_WINDOW_CONTEXT",
+    "central_source_outage": "UNKNOWN_PLUS_DATA_CONFIDENCE_DOWNWEIGHT_AND_RETRY",
+    "local_active_collector": "collectors/china_financial/local_gov_bond_cash_clock_v3.py",
     "rule": "Cash-clock context supports fiscal drain/release and duration-supply interpretation; it is not a complete sovereign security ledger."
   },
   "runtime": {
     "backend": "GITHUB_ACTIONS",
-    "workflow": ".github/workflows/china-financial-daily.yml",
+    "workflow": ".github/workflows/china-financial-daily-ready-v2.yml",
     "scheduled_store_writer": false,
     "runtime_store_policy": "DEPLOYMENT_SPECIFIC_EXTERNAL_TO_THIS_READY_DECLARATION"
   },
-  "release_gate": "DATA_LAYER_READY_GATE",
+  "release_gate": "DATA_LAYER_READY_V2_GATE",
   "production_runtime_release": "NOT_DECLARED",
-  "failure_policy": "FAIL_CLOSED_NO_SILENT_FALLBACK",
-  "ready_definition": "Draft production-core data collection and measurement inputs are callable and measurable under the current incremental operating policy. READY does not declare the downstream Permission engine, trading model, scheduler/Store SLA, or repository-wide runtime production release."
+  "failure_policy": "CORE_FAIL_CLOSED_SUPPORTING_CONTEXT_UNKNOWN_WITH_CONFIDENCE_DOWNWEIGHT",
+  "ready_definition": "Draft production-core data collection and measurement inputs are callable and measurable under the current incremental operating policy. Supporting fiscal cash-clock source outages remain explicit UNKNOWN diagnostics. READY does not declare the downstream Permission engine, trading model, scheduler/Store SLA, or repository-wide runtime production release."
 }
