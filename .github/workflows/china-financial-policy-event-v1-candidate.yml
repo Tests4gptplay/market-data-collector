@@ -1,0 +1,39 @@
+name: China Financial Policy Event V1 Candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: Operation/reference date YYYY-MM-DD
+        required: true
+        default: '2026-08-14'
+
+permissions:
+  contents: read
+
+jobs:
+  policy-event-v1:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout without third-party action
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Run policy event V1
+        env:
+          TARGET_DATE: ${{ inputs.target_date }}
+        run: |
+          set -euo pipefail
+          python3 collectors/china_financial/policy_event_family_v1.py \
+            --date "${TARGET_DATE}" \
+            --out out/china_financial_policy_event_v1
+      - name: Show normalized output
+        run: |
+          cat out/china_financial_policy_event_v1/run.json
+          cat out/china_financial_policy_event_v1/observations.json
+          cat out/china_financial_policy_event_v1/gaps.json
