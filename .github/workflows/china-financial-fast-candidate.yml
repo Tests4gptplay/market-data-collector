@@ -12,6 +12,7 @@ on:
       - v1.9-public-foundation
     paths:
       - "collectors/china_financial/fast_market.py"
+      - "collectors/china_financial/fast_market_r2.py"
       - "contracts/**"
       - ".github/workflows/china-financial-fast-candidate.yml"
 
@@ -36,11 +37,11 @@ jobs:
           git fetch --depth=1 origin "${GITHUB_SHA}"
           git checkout --detach FETCH_HEAD
 
-      - name: Run unified Fast collector
+      - name: Run unified Fast collector revision 2
         shell: bash
         run: |
           set -euo pipefail
-          python3 collectors/china_financial/fast_market.py \
+          python3 collectors/china_financial/fast_market_r2.py \
             --date "${TARGET_DATE}" \
             --out out/china_financial_fast
 
