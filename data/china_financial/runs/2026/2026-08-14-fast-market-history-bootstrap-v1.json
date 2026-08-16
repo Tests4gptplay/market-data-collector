@@ -1,0 +1,1863 @@
+{
+  "bootstrap_version": "FAST_MARKET_HISTORY_BOOTSTRAP_V1",
+  "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+  "completed": false,
+  "end_date": "2026-08-14",
+  "existing_valid_session_count": 1,
+  "existing_valid_sessions": [
+    "2026-08-14"
+  ],
+  "generated_at": "2026-08-16T15:18:43.258880+00:00",
+  "hard_failures": [],
+  "history_is_immutable_by_default": true,
+  "manifest_latest_mutation_prohibited": true,
+  "max_calendar_days": 140,
+  "newly_persisted_session_count": 9,
+  "newly_persisted_sessions": [
+    {
+      "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+      "coverage_count": 27,
+      "date": "2026-08-13",
+      "expected_count": 27,
+      "paths": {
+        "derived.json": "data/china_financial/derived/2026/2026-08-13-market-family-v4.json",
+        "gaps.json": "data/china_financial/gaps/2026/2026-08-13-market-family-v4.json",
+        "observations.json": "data/china_financial/observations/2026/2026-08-13-market-family-v4.json",
+        "run.json": "data/china_financial/runs/2026/2026-08-13-market-family-v4.json"
+      }
+    },
+    {
+      "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+      "coverage_count": 27,
+      "date": "2026-08-12",
+      "expected_count": 27,
+      "paths": {
+        "derived.json": "data/china_financial/derived/2026/2026-08-12-market-family-v4.json",
+        "gaps.json": "data/china_financial/gaps/2026/2026-08-12-market-family-v4.json",
+        "observations.json": "data/china_financial/observations/2026/2026-08-12-market-family-v4.json",
+        "run.json": "data/china_financial/runs/2026/2026-08-12-market-family-v4.json"
+      }
+    },
+    {
+      "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+      "coverage_count": 27,
+      "date": "2026-08-11",
+      "expected_count": 27,
+      "paths": {
+        "derived.json": "data/china_financial/derived/2026/2026-08-11-market-family-v4.json",
+        "gaps.json": "data/china_financial/gaps/2026/2026-08-11-market-family-v4.json",
+        "observations.json": "data/china_financial/observations/2026/2026-08-11-market-family-v4.json",
+        "run.json": "data/china_financial/runs/2026/2026-08-11-market-family-v4.json"
+      }
+    },
+    {
+      "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+      "coverage_count": 27,
+      "date": "2026-08-10",
+      "expected_count": 27,
+      "paths": {
+        "derived.json": "data/china_financial/derived/2026/2026-08-10-market-family-v4.json",
+        "gaps.json": "data/china_financial/gaps/2026/2026-08-10-market-family-v4.json",
+        "observations.json": "data/china_financial/observations/2026/2026-08-10-market-family-v4.json",
+        "run.json": "data/china_financial/runs/2026/2026-08-10-market-family-v4.json"
+      }
+    },
+    {
+      "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+      "coverage_count": 27,
+      "date": "2026-08-07",
+      "expected_count": 27,
+      "paths": {
+        "derived.json": "data/china_financial/derived/2026/2026-08-07-market-family-v4.json",
+        "gaps.json": "data/china_financial/gaps/2026/2026-08-07-market-family-v4.json",
+        "observations.json": "data/china_financial/observations/2026/2026-08-07-market-family-v4.json",
+        "run.json": "data/china_financial/runs/2026/2026-08-07-market-family-v4.json"
+      }
+    },
+    {
+      "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+      "coverage_count": 27,
+      "date": "2026-08-06",
+      "expected_count": 27,
+      "paths": {
+        "derived.json": "data/china_financial/derived/2026/2026-08-06-market-family-v4.json",
+        "gaps.json": "data/china_financial/gaps/2026/2026-08-06-market-family-v4.json",
+        "observations.json": "data/china_financial/observations/2026/2026-08-06-market-family-v4.json",
+        "run.json": "data/china_financial/runs/2026/2026-08-06-market-family-v4.json"
+      }
+    },
+    {
+      "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+      "coverage_count": 27,
+      "date": "2026-08-05",
+      "expected_count": 27,
+      "paths": {
+        "derived.json": "data/china_financial/derived/2026/2026-08-05-market-family-v4.json",
+        "gaps.json": "data/china_financial/gaps/2026/2026-08-05-market-family-v4.json",
+        "observations.json": "data/china_financial/observations/2026/2026-08-05-market-family-v4.json",
+        "run.json": "data/china_financial/runs/2026/2026-08-05-market-family-v4.json"
+      }
+    },
+    {
+      "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+      "coverage_count": 27,
+      "date": "2026-08-04",
+      "expected_count": 27,
+      "paths": {
+        "derived.json": "data/china_financial/derived/2026/2026-08-04-market-family-v4.json",
+        "gaps.json": "data/china_financial/gaps/2026/2026-08-04-market-family-v4.json",
+        "observations.json": "data/china_financial/observations/2026/2026-08-04-market-family-v4.json",
+        "run.json": "data/china_financial/runs/2026/2026-08-04-market-family-v4.json"
+      }
+    },
+    {
+      "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+      "coverage_count": 27,
+      "date": "2026-08-03",
+      "expected_count": 27,
+      "paths": {
+        "derived.json": "data/china_financial/derived/2026/2026-08-03-market-family-v4.json",
+        "gaps.json": "data/china_financial/gaps/2026/2026-08-03-market-family-v4.json",
+        "observations.json": "data/china_financial/observations/2026/2026-08-03-market-family-v4.json",
+        "run.json": "data/china_financial/runs/2026/2026-08-03-market-family-v4.json"
+      }
+    }
+  ],
+  "non_session_candidates": [
+    {
+      "coverage_count": 24,
+      "date": "2026-07-31",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-31\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-30",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-30\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-29",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-29\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-28",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-28\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-27",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-27\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-24",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-24\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-23",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-23\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-22",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-22\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-21",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-21\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-20",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-20\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-17",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-17\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-16",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-16\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-15",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-15\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-14",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-14\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-13",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-13\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-10",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-10\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-09",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-09\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-08",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-08\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-07",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-07\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-06",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-06\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-03",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-03\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-02",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-02\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-07-01",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-07-01\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-30",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-30\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-29",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-29\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-26",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-26\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-25",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-25\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-24",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-24\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-23",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-23\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-22",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-22\"\n}\n"
+    },
+    {
+      "coverage_count": 0,
+      "date": "2026-06-19",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAA_1Y",
+        "CRD_MTN_AAA_3Y",
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAA_1Y",
+        "CRD_SPREAD_AAA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_FDR007",
+        "FUND_FR007",
+        "FUND_GC001",
+        "FUND_GC007",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_1Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_3Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "N_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-19\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-18",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-18\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-17",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-17\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-16",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-16\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-15",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-15\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-12",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-12\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-11",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-11\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-10",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-10\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-09",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-09\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-08",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-08\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-05",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-05\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-04",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-04\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-03",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-03\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-02",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-02\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-06-01",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-06-01\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-29",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-29\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-28",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-28\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-27",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-27\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-26",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-26\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-25",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-25\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-22",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-22\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-21",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-21\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-20",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-20\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-19",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-19\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-18",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-18\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-15",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-15\"\n}\n"
+    },
+    {
+      "coverage_count": 24,
+      "date": "2026-05-14",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-14\"\n}\n"
+    },
+    {
+      "coverage_count": 21,
+      "date": "2026-05-13",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-13\"\n}\n"
+    },
+    {
+      "coverage_count": 21,
+      "date": "2026-05-12",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-12\"\n}\n"
+    },
+    {
+      "coverage_count": 21,
+      "date": "2026-05-11",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-11\"\n}\n"
+    },
+    {
+      "coverage_count": 21,
+      "date": "2026-05-08",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-08\"\n}\n"
+    },
+    {
+      "coverage_count": 21,
+      "date": "2026-05-07",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-07\"\n}\n"
+    },
+    {
+      "coverage_count": 21,
+      "date": "2026-05-06",
+      "expected_count": 27,
+      "missing_series": [
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-06\"\n}\n"
+    },
+    {
+      "coverage_count": 0,
+      "date": "2026-05-05",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAA_1Y",
+        "CRD_MTN_AAA_3Y",
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAA_1Y",
+        "CRD_SPREAD_AAA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_FDR007",
+        "FUND_FR007",
+        "FUND_GC001",
+        "FUND_GC007",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_1Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_3Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "N_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-05\"\n}\n"
+    },
+    {
+      "coverage_count": 0,
+      "date": "2026-05-04",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAA_1Y",
+        "CRD_MTN_AAA_3Y",
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAA_1Y",
+        "CRD_SPREAD_AAA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_FDR007",
+        "FUND_FR007",
+        "FUND_GC001",
+        "FUND_GC007",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_1Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_3Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "N_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-04\"\n}\n"
+    },
+    {
+      "coverage_count": 0,
+      "date": "2026-05-01",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAA_1Y",
+        "CRD_MTN_AAA_3Y",
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAA_1Y",
+        "CRD_SPREAD_AAA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_FDR007",
+        "FUND_FR007",
+        "FUND_GC001",
+        "FUND_GC007",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_1Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_3Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "N_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-05-01\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-30",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-30\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-29",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-29\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-28",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-28\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-27",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-27\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-24",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-24\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-23",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-23\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-22",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-22\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-21",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-21\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-20",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-20\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-17",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-17\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-16",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-16\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-15",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-15\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-14",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-14\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-13",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-13\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-10",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-10\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-09",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-09\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-08",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-08\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-07",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-07\"\n}\n"
+    },
+    {
+      "coverage_count": 0,
+      "date": "2026-04-06",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAA_1Y",
+        "CRD_MTN_AAA_3Y",
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAA_1Y",
+        "CRD_SPREAD_AAA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_FDR007",
+        "FUND_FR007",
+        "FUND_GC001",
+        "FUND_GC007",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_1Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_3Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "N_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-06\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-03",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-03\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-02",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-02\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-04-01",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-04-01\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-03-31",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-03-31\"\n}\n"
+    },
+    {
+      "coverage_count": 10,
+      "date": "2026-03-30",
+      "expected_count": 27,
+      "missing_series": [
+        "CRD_MTN_AAP_3Y",
+        "CRD_MTN_AA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y",
+        "FUND_DR001",
+        "FUND_DR007",
+        "FUND_DR014",
+        "FUND_NCD_AAA_1Y",
+        "FUND_NCD_AAA_3M",
+        "FUND_R001",
+        "FUND_R007",
+        "FUND_R014",
+        "SOV_CDB_10Y",
+        "SOV_CGB_10Y",
+        "SOV_CGB_2Y",
+        "SOV_CGB_30Y",
+        "SOV_CGB_5Y"
+      ],
+      "returncode": 2,
+      "run_status": "INCOMPLETE",
+      "stderr_tail": "",
+      "stdout_tail": "AA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_3Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"interface_version\": \"CF_INTERFACE_V1\",\n  \"missing_series\": [\n    \"CRD_MTN_AAP_3Y\",\n    \"CRD_MTN_AA_3Y\",\n    \"CRD_SPREAD_AAP_3Y\",\n    \"CRD_SPREAD_AA_3Y\",\n    \"FUND_DR001\",\n    \"FUND_DR007\",\n    \"FUND_DR014\",\n    \"FUND_NCD_AAA_1Y\",\n    \"FUND_NCD_AAA_3M\",\n    \"FUND_R001\",\n    \"FUND_R007\",\n    \"FUND_R014\",\n    \"SOV_CDB_10Y\",\n    \"SOV_CGB_10Y\",\n    \"SOV_CGB_2Y\",\n    \"SOV_CGB_30Y\",\n    \"SOV_CGB_5Y\"\n  ],\n  \"module\": \"china_financial_market_family\",\n  \"present_series\": [\n    \"CRD_MTN_AAA_1Y\",\n    \"CRD_MTN_AAA_3Y\",\n    \"CRD_SPREAD_AAA_1Y\",\n    \"CRD_SPREAD_AAA_3Y\",\n    \"FUND_FDR007\",\n    \"FUND_FR007\",\n    \"FUND_GC001\",\n    \"FUND_GC007\",\n    \"SOV_CGB_1Y\",\n    \"SOV_CGB_3Y\"\n  ],\n  \"status\": \"INCOMPLETE\",\n  \"target_date\": \"2026-03-30\"\n}\n"
+    }
+  ],
+  "requested_valid_sessions": 60,
+  "scanned_calendar_days": 140,
+  "validated_session_count": 10,
+  "validated_sessions": [
+    "2026-08-14",
+    "2026-08-13",
+    "2026-08-12",
+    "2026-08-11",
+    "2026-08-10",
+    "2026-08-07",
+    "2026-08-06",
+    "2026-08-05",
+    "2026-08-04",
+    "2026-08-03"
+  ]
+}

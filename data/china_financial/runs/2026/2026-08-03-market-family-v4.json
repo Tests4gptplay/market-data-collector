@@ -1,0 +1,112 @@
+{
+  "attempts": [
+    {
+      "family": "DR_FAMILY",
+      "status": "SUCCESS"
+    },
+    {
+      "family": "FIXING_FAMILY",
+      "status": "SUCCESS"
+    },
+    {
+      "family": "GC_FAMILY",
+      "status": "SUCCESS"
+    },
+    {
+      "family": "CURVE_CGB",
+      "status": "SUCCESS"
+    },
+    {
+      "family": "CURVE_CDB",
+      "status": "SUCCESS"
+    },
+    {
+      "family": "CURVE_MTN_AAA",
+      "status": "SUCCESS"
+    },
+    {
+      "family": "CURVE_MTN_AAP",
+      "status": "SUCCESS"
+    },
+    {
+      "family": "CURVE_MTN_AA",
+      "status": "SUCCESS"
+    },
+    {
+      "family": "CURVE_NCD_AAA",
+      "status": "SUCCESS"
+    },
+    {
+      "family": "R_ACTUAL_FAMILY",
+      "source": "ChinaMoney PrDlyBltn markVOList",
+      "status": "SUCCESS"
+    }
+  ],
+  "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+  "completed_at": "2026-08-16T15:20:03.729336Z",
+  "coverage_count": 27,
+  "expected_count": 27,
+  "expected_series": [
+    "CRD_MTN_AAA_1Y",
+    "CRD_MTN_AAA_3Y",
+    "CRD_MTN_AAP_3Y",
+    "CRD_MTN_AA_3Y",
+    "CRD_SPREAD_AAA_1Y",
+    "CRD_SPREAD_AAA_3Y",
+    "CRD_SPREAD_AAP_3Y",
+    "CRD_SPREAD_AA_3Y",
+    "FUND_DR001",
+    "FUND_DR007",
+    "FUND_DR014",
+    "FUND_FDR007",
+    "FUND_FR007",
+    "FUND_GC001",
+    "FUND_GC007",
+    "FUND_NCD_AAA_1Y",
+    "FUND_NCD_AAA_3M",
+    "FUND_R001",
+    "FUND_R007",
+    "FUND_R014",
+    "SOV_CDB_10Y",
+    "SOV_CGB_10Y",
+    "SOV_CGB_1Y",
+    "SOV_CGB_2Y",
+    "SOV_CGB_30Y",
+    "SOV_CGB_3Y",
+    "SOV_CGB_5Y"
+  ],
+  "interface_version": "CF_INTERFACE_V1",
+  "missing_series": [],
+  "module": "china_financial_market_family",
+  "present_series": [
+    "CRD_MTN_AAA_1Y",
+    "CRD_MTN_AAA_3Y",
+    "CRD_MTN_AAP_3Y",
+    "CRD_MTN_AA_3Y",
+    "CRD_SPREAD_AAA_1Y",
+    "CRD_SPREAD_AAA_3Y",
+    "CRD_SPREAD_AAP_3Y",
+    "CRD_SPREAD_AA_3Y",
+    "FUND_DR001",
+    "FUND_DR007",
+    "FUND_DR014",
+    "FUND_FDR007",
+    "FUND_FR007",
+    "FUND_GC001",
+    "FUND_GC007",
+    "FUND_NCD_AAA_1Y",
+    "FUND_NCD_AAA_3M",
+    "FUND_R001",
+    "FUND_R007",
+    "FUND_R014",
+    "SOV_CDB_10Y",
+    "SOV_CGB_10Y",
+    "SOV_CGB_1Y",
+    "SOV_CGB_2Y",
+    "SOV_CGB_30Y",
+    "SOV_CGB_3Y",
+    "SOV_CGB_5Y"
+  ],
+  "status": "PASS",
+  "target_date": "2026-08-03"
+}
