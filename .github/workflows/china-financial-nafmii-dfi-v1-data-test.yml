@@ -1,0 +1,42 @@
+name: China Financial NAFMII DFI V1 Data Test
+on:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'collectors/china_financial/nafmii_dfi_issuance_family_v1.py'
+      - '.github/workflows/china-financial-nafmii-dfi-v1-data-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Install PDF parser
+        run: python3 -m pip install --disable-pip-version-check 'pypdf==6.16.1'
+      - name: Collect all 2026 releases
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/dfi
+          PYTHONPATH=. python3 collectors/china_financial/nafmii_dfi_issuance_family_v1.py --year 2026 --out /tmp/dfi
+          python3 - <<'PY'
+          import json
+          obs=json.load(open('/tmp/dfi/observations.json'))
+          run=json.load(open('/tmp/dfi/run.json'))
+          got={x['reference_period']:x['value'] for x in obs}
+          expected={'2026-04':10462.0,'2026-05':4395.0,'2026-06':8086.0}
+          for p,v in expected.items(): assert got.get(p)==v,(p,got.get(p),v)
+          assert run['gap_count']==0,run
+          assert run['release_count']>=6,run
+          print(json.dumps({'run':run,'checked':expected},ensure_ascii=False,indent=2))
+          PY
