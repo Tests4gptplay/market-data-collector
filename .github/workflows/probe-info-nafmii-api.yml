@@ -1,0 +1,27 @@
+name: Probe NAFMII Information Service API
+
+on:
+  push:
+    branches: [v1.9-public-foundation]
+    paths:
+      - 'tests/probes/probe_info_nafmii_api.py'
+      - '.github/workflows/probe-info-nafmii-api.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Discover public API references
+        run: python3 tests/probes/probe_info_nafmii_api.py
