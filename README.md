@@ -6,9 +6,13 @@ A versioned market-data collection and validation project for public-source fina
 
 > **Important status note / 重要状态说明**
 >
-> This repository contains a mixture of working collectors, regression-tested candidate collectors, probes, historical normalized snapshots, and still-incomplete release metadata. A successful component test does **not** mean the whole repository or a module is production-stable.
+> The China Financial module's **data collection and measurement layer is READY against the current internal China Financial Draft measurement scope**. READY is deliberately narrower than a repository-wide PRODUCTION declaration.
 >
-> 本仓库同时包含已能工作的采集器、通过数据回归的候选采集器、数据源探针、历史标准化快照，以及仍在补齐的发布元数据。**单个组件测试通过，不等于整个项目或模块已经达到 Production 稳定状态。**
+> China Financial 的**数据采集与测量层已经按当前内部 China Financial Draft 的测量范围进入 READY**。这里的 READY 有严格边界：它不等于下游 Permission Engine、交易模型、调度/运行时 Store SLA 或整个仓库已经进入 Production。
+>
+> The repository still contains historical collector versions, probes, regression tests and metadata-migration work. Those artifacts are retained intentionally for audit and rollback and must not be confused with the active READY data path.
+>
+> 仓库仍会保留旧 Collector、Probe、回归测试及尚未完全清理的元数据迁移工作。这些内容是为审计、诊断和版本回滚而保留，不能与当前 READY 数据路径混为一谈。
 
 ## Project goals
 
@@ -25,7 +29,7 @@ A versioned market-data collection and validation project for public-source fina
 
 Git is the canonical version history for the collector code, workflows, contracts, registries, tests, and other Git-managed tooling in this project.
 
-The `data/` tree may contain normalized snapshots, regression fixtures, and auditable historical outputs used to test collector behavior. Its presence in Git does **not** by itself mean this repository is the authoritative runtime Store for every downstream deployment. Runtime Store/data-retention policy is deployment-specific and should remain separate from tool-code version governance.
+The `data/` tree may contain normalized snapshots, regression fixtures, and auditable historical outputs used to test collector behavior. Its presence in Git does **not** by itself mean this repository is the authoritative runtime Store for every downstream deployment. Runtime Store/data-retention policy is deployment-specific and remains separate from tool-code version governance.
 
 中文：Git 是本项目中采集代码、工作流、Contract、Registry、测试及其他 Git 化工具的权威版本历史。`data/` 目录可以保存用于审计与回归的标准化快照/历史输出，但**不能因为数据出现在 Git 中，就自动把本仓库描述为所有部署场景的唯一权威运行时 Store**。
 
@@ -51,73 +55,132 @@ contracts/current.json
 downstream consumers
 ```
 
-`contracts/current.json` is the repository-level interface anchor. Individual modules may have their own contracts so implementation changes can evolve without unnecessarily forcing downstream consumers to change.
+`contracts/current.json` is the repository-level interface/readiness anchor for the module. Individual collector implementations can evolve without forcing unnecessary consumer-visible interface changes.
 
 ## Status terminology
 
-The repository uses several different maturity labels. They are intentionally not interchangeable:
+The repository uses several maturity labels. They are intentionally not interchangeable:
 
-- **PROBE** — source discovery, endpoint research, or semantic investigation. A probe is not a production collector.
+- **PROBE** — source discovery, endpoint research, or semantic investigation. A probe is not an active collector.
 - **DATA TEST / REGRESSION TEST** — a collector has been tested against known official-source examples or a bounded live window. This validates a specific behavior, not the entire module.
-- **CANDIDATE** — an implementation path exists and may already collect usable data, but release metadata and/or end-to-end gates are not yet frozen as production.
-- **PRODUCTION** — should be claimed only when the current contract explicitly declares it and the required end-to-end collection/QC release gate has passed.
+- **CANDIDATE** — an implementation path exists but is not the currently declared READY path.
+- **READY** — the explicitly named scope in the current contract has passed its readiness definition. For China Financial today that scope is **DATA_COLLECTION_AND_MEASUREMENT_LAYER**.
+- **PRODUCTION** — reserved for a broader runtime/release declaration with the required scheduler, Store, downstream contract and operational SLA closure. China Financial READY must not be silently rewritten as repository-wide PRODUCTION.
 
-A green family-level workflow therefore means only that the tested family passed its own gate.
+A green historical family workflow therefore remains only evidence for that family/version. The current contract and current READY gate define the active readiness claim.
 
-## Initial module: China Financial
+## China Financial module
 
-The first production-oriented module is `china_financial`, but its current contract is still **CANDIDATE**, not PRODUCTION.
+### Normative baseline
 
-Current candidate capabilities include public-source collection or validation paths for, among other things:
+The normative measurement specification for the active data layer is the **current internal China Financial Draft**. The untouched V0.9.1.1 manuscript is historical/reference material and is not used as the current Git readiness specification.
 
-- People's Bank of China (PBOC) policy operations and monthly monetary/credit releases;
-- China Foreign Exchange Trade System / ChinaMoney funding and credit-market series;
-- ChinaBond sovereign-yield fallback/validation where explicitly allowed;
-- Shanghai Stock Exchange repo data;
-- Ministry of Finance fiscal releases;
-- NAFMII monthly debt-financing-instrument gross issuance;
-- local-government bond issue/payment/maturity/coupon cash-clock facts from the official local-government disclosure platform.
+### Current READY scope
 
-These capabilities do **not** imply that every public-source family has identical maturity or coverage.
+`contracts/china_financial/current.json` declares:
 
-The module intentionally distinguishes several frequently confused products. Examples:
+`READY / DATA_COLLECTION_AND_MEASUREMENT_LAYER`
+
+The active data layer provides collection/measurement paths for the Draft's current production-core inputs, including:
+
+- PBOC policy operations and low-frequency policy-state checks;
+- PBOC monthly monetary-policy-tool releases;
+- PBOC monthly RMB credit / TSF balance-sheet data;
+- CFETS / ChinaMoney funding, sovereign and credit-market data;
+- SSE exchange-repo funding data;
+- pure AAA NCD wholesale-funding curves;
+- matched-tenor credit-spread proxies with provider-consistency rules;
+- Ministry of Finance fiscal-flow releases;
+- NAFMII monthly debt-financing-instrument gross issuance as a **PrimaryMarketActivityProxy**, not proof of financing access;
+- simplified central- and local-government bond cash-clock context for fiscal drain/release and duration-supply interpretation.
+
+These capabilities do **not** mean that every public-source series, every deferred research idea, or every historical date has been backfilled.
+
+### Daily incremental operating policy
+
+The default operating mode is **DAILY_INCREMENTAL**.
+
+- High-frequency market series use the latest eligible trading session / recent rolling window.
+- Low-frequency policy and macro series are checked for new official releases; if no new release exists, the previously known state carries forward outside the event collector.
+- Previously collected historical data is preserved.
+- Uncollected 2025/2024-or-older history is **not** backfilled merely to make the repository look historically complete.
+- Historical backfill is an explicit maintenance/research operation, not the default daily task.
+- A no-event result is valid only when the relevant recent publication window was successfully checked.
+- Unknown is never converted to zero or neutral.
+
+### Semantic protections
+
+The module intentionally distinguishes several frequently confused products and definitions:
 
 - actual DR repo transaction rates **must not** be replaced by FR/FDR fixing rates;
 - SSE GC actual weighted-average repo rates **must not** be replaced by fixing curves;
 - pure NCD AAA curves **must not** be replaced by ordinary commercial-bank bond curves;
-- credit spreads must preserve matched-tenor and provider-consistent parent semantics unless an explicitly versioned method says otherwise;
-- policy-liquidity operations are policy-driver inputs and must not be silently presented as realized financial conditions;
-- a no-event result is valid only when the relevant source window was actually checked; otherwise the state remains unknown.
-
-### China Financial integration gate
-
-`.github/workflows/china-financial-daily.yml` is currently a **candidate integration/readiness gate**. It exists to exercise the main collector families together and distinguish measurement readiness from release readiness.
-
-At the current candidate stage, a successful run can support a statement such as **“the tested model inputs are measurable in the tested window”**. It must not be rewritten as **“China Financial is production-stable”** unless the contract release state is separately promoted after its end-to-end release requirements are met.
+- credit spreads preserve matched-tenor and provider-consistent parent semantics unless an explicitly versioned method says otherwise;
+- policy-liquidity operations are policy-driver inputs and are not silently presented as realized financial conditions;
+- RRR and policy-rate series are low-frequency state changes, not daily fabricated observations;
+- historical policy-review articles are QC/context only and cannot create a new policy Root event;
+- no-event, no-new-release and source-failure states remain distinct.
 
 ### Government-bond cash-clock scope
 
-The simplified rolling cash-clock candidate currently covers **local-government bonds** through the official local-government disclosure platform. It explicitly reports:
+The active Draft does **not** require a complete security-level sovereign-bond ledger. The READY implementation therefore uses a deliberately simplified cash-clock context.
 
-`LOCAL_GOVERNMENT_BONDS_ONLY`
+**Central government:**
 
-It must **not** be described as a complete central-government + local-government sovereign event ledger. Aggregate government-bond financing and fiscal data may be available elsewhere in the module, but central-government security-level auction/payment/maturity/coupon event coverage is a separate scope that should be claimed only after it has its own validated production path.
+- MOF pre-issue notices provide the core auction/issuance schedule, explicit issue-payment deadline where stated, and maturity schedule.
+- Post-auction result notices provide actual issuance amount/coupon corrections when available.
+- A transient failure of an individual old/result detail page is recorded and retried later; it does not erase an otherwise proven recent core schedule window.
+- Distribution end is never silently substituted for an issue-payment date.
+
+**Local government:**
+
+- the official local-government bond disclosure platform is checked over a recent rolling publication window;
+- auction/payment/maturity/coupon facts are consumed only to the level needed for fiscal-liquidity context;
+- no security master or full lifecycle reconciliation is required for READY.
+
+The combined scope is therefore:
+
+`SIMPLIFIED_CENTRAL_PLUS_LOCAL_CONTEXT`
+
+It supports fiscal **Drain / Release / Duration Supply Context**. It must not be marketed as a complete central+local sovereign security master or exhaustive bond-event ledger.
+
+## China Financial READY gate
+
+`.github/workflows/china-financial-daily.yml` is the active **China Financial Daily Data-Layer READY Gate**.
+
+The gate exercises the principal Draft measurement paths together:
+
+1. core fast-market funding / sovereign / credit series;
+2. PBC monthly credit and TSF structure;
+3. MOF fiscal flows;
+4. monthly policy tools;
+5. NAFMII primary-market-activity proxy;
+6. incremental OMO / RRR policy checks;
+7. simplified local-government cash-clock context;
+8. simplified central-government cash-clock context;
+9. final Draft data-layer readiness semantics.
+
+A successful run supports the statement:
+
+> **China Financial data collection and measurement layer is READY for the current internal Draft measurement scope.**
+
+It does **not** support the broader statement that the downstream trading/Permission system or every deployment runtime is production-stable.
 
 ## Repository layout
 
 ```text
-contracts/                    Machine-readable interfaces and release state
+contracts/                    Machine-readable interfaces and readiness/release state
 collectors/                   Collection and parsing code
 registry/                     Series/source/method metadata
 methods/                      Deterministic derivation logic where applicable
 schemas/                      JSON schemas and validation definitions where applicable
 data/                         Normalized snapshots / regression history where retained
 evidence/                     Redistributable evidence metadata / checksums where retained
-tests/                        Semantic, parser and regression tests
-.github/workflows/            Candidate, regression, probe and release-gate workflows
+tests/                        Semantic, parser, readiness and regression tests
+.github/workflows/            READY gates, candidate tests, regressions and probes
 ```
 
-Not every directory is required to have the same maturity level at every point in development.
+Historical versions remain in place for rollback and diagnostics; presence of an older V1/V2/V3 file does not mean it is the active READY implementation.
 
 ## Data layers
 
@@ -133,7 +196,7 @@ Where a module uses the full normalized data model, the intended layers are:
 
 Collector-code versions and data-interface versions are deliberately separated.
 
-Implementation-only fixes such as endpoint changes, parser repairs, retry handling, or equivalent fallback routing may update collector code without changing the public data interface when output semantics remain compatible.
+Implementation-only fixes such as endpoint changes, parser repairs, retry handling, incremental-state handling, or equivalent fallback routing may update collector code without changing the public data interface when output semantics remain compatible.
 
 A new interface version is required when series identifiers, field meanings, units, timing semantics, derivation rules, or other consumer-visible behavior changes.
 
@@ -143,8 +206,10 @@ Historical versions are preserved. New versions do not silently overwrite old co
 
 This project is designed around public-source factual market data. Availability of a public webpage or endpoint does not automatically grant unrestricted redistribution rights for full raw payloads. The project therefore prioritizes normalized factual observations plus provenance, request metadata, and hashes; raw-payload retention is source-specific.
 
-## Current release status
+## Current release/readiness status
 
-As of the current candidate branch, China Financial has multiple working and regression-tested collector families and a unified candidate integration gate. However, the module remains **CANDIDATE** under its current contract and should be described as **production-oriented / under production-readiness validation**, not as production-stable.
+**China Financial: READY — DATA_COLLECTION_AND_MEASUREMENT_LAYER.**
 
-Remaining release work can include registry/method/source metadata closure, full end-to-end QC, dynamic scheduling/runtime-store integration, and any explicitly required coverage that is still outside a validated production collector. The contract and machine-readable readiness outputs, rather than README wording or a single green Action, are the source of truth for release status.
+This READY claim is bounded by the current internal China Financial Draft and the DAILY_INCREMENTAL operating policy. Metadata cleanup, historical probes, legacy regressions, runtime Store implementation, scheduling/SLA, downstream aggregation and Permission-engine work are separate concerns and do not change the meaning of the data-layer READY declaration.
+
+The current contract and machine-readable readiness output, rather than a README marketing sentence or a single family-level green Action, remain the source of truth for the exact scope of READY.
