@@ -1,0 +1,48 @@
+[
+  {
+    "available_at": "2026-08-13 17:01:07",
+    "collector_version": "V1.9-CANDIDATE-POLICY-EVENT-FAMILY-V1",
+    "dimensions": {
+      "source_semantic": "PBOC_BUYOUT_REVERSE_REPO_AMOUNT",
+      "tenor_days": 185,
+      "tenor_text": "6个月（185天）"
+    },
+    "evidence_sha256": "882e74c0e6e75047c4bbc462f006673d4b9bd25e975332e4ad6830e72d888cd9",
+    "provider": "People's Bank of China",
+    "reference_date": "2026-08-14",
+    "series_id": "POL_BUYOUT_REPO_AMOUNT",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026081316435645255/index.html",
+    "unit": "CNY_100M",
+    "value": 10000.0
+  },
+  {
+    "available_at": "2026-08-14 09:20:39",
+    "collector_version": "V1.9-CANDIDATE-POLICY-EVENT-FAMILY-V1",
+    "dimensions": {
+      "source_semantic": "PBOC_REVERSE_REPO_AWARDED_AMOUNT",
+      "tenor": "7天"
+    },
+    "evidence_sha256": "1366cecb1866585ca167908a27d375c74b6835cb53ff3ac5ab01979f3de68baa",
+    "provider": "People's Bank of China",
+    "reference_date": "2026-08-14",
+    "series_id": "POL_OMO_7D_AMOUNT",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026081409033914683/index.html",
+    "unit": "CNY_100M",
+    "value": 0.0
+  },
+  {
+    "available_at": "2026-08-14 09:20:39",
+    "collector_version": "V1.9-CANDIDATE-POLICY-EVENT-FAMILY-V1",
+    "dimensions": {
+      "source_semantic": "PBOC_REVERSE_REPO_OPERATION_AMOUNT_PROSE",
+      "tenor": "隔夜"
+    },
+    "evidence_sha256": "1366cecb1866585ca167908a27d375c74b6835cb53ff3ac5ab01979f3de68baa",
+    "provider": "People's Bank of China",
+    "reference_date": "2026-08-14",
+    "series_id": "POL_OMO_OTHER_AMOUNT",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026081409033914683/index.html",
+    "unit": "CNY_100M",
+    "value": 3490.0
+  }
+]
