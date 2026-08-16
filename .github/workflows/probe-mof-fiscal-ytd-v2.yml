@@ -1,0 +1,28 @@
+name: Probe MOF Fiscal YTD V2
+
+on:
+  push:
+    branches: [v1.9-public-foundation]
+    paths:
+      - 'tests/probes/probe_mof_fiscal_ytd_v2.py'
+      - '.github/workflows/probe-mof-fiscal-ytd-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout without third-party action
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Probe official MOF fiscal releases with bounded retry
+        run: python3 tests/probes/probe_mof_fiscal_ytd_v2.py
