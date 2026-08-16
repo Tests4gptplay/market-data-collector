@@ -1,0 +1,95 @@
+{
+  "registry": "CHINA_FINANCIAL_SOURCE_REGISTRY_V1_MIGRATION",
+  "status": "MIGRATION_IN_PROGRESS",
+  "migration_complete": false,
+  "legacy_source_registry_version": "SOURCE_REGISTRY_V1.2",
+  "sources": [
+    {
+      "source_spec_id": "SRC_CFETS_REPO_DR_R",
+      "series_scope": "FUND_DR*|FUND_R*",
+      "provider": "CFETS / ChinaMoney",
+      "source_family": "PLEDGED_REPO_DAILY_MARKET",
+      "exact_definition": "银行间质押式回购实际市场利率/成交统计；DR/R为Funding Root",
+      "primary_locator": "https://www.chinamoney.com.cn/chinese/mtdexdaily/",
+      "runtime_path": "https://www.chinamoney.com.cn/r/cms/www/chinamoney/data/currency/prr-chrt.csv",
+      "availability_rule": "OFFICIAL_DAILY_AVAILABLE_AT",
+      "fallback_policy": "APPROVED_CFETS_ONLY",
+      "status": "ACTIVE",
+      "notes": "DR/R为实际市场Root；FR/FDR不得替代。"
+    },
+    {
+      "source_spec_id": "SRC_CFETS_REPO_FIXING",
+      "series_scope": "FUND_FDR007|FUND_FR007",
+      "provider": "CFETS / ChinaMoney",
+      "source_family": "REPO_FIXING_QC",
+      "exact_definition": "FR007/FDR007官方回购定盘利率；仅QC/benchmark",
+      "primary_locator": "https://www.chinamoney.com.cn/chinese/bkfrr/",
+      "runtime_path": "https://www.chinamoney.com.cn/ags/ms/cm-u-bk-currency/FrrHis",
+      "availability_rule": "OFFICIAL_FIXING_AVAILABLE_AT",
+      "fallback_policy": "CFETS_OFFICIAL_ONLY",
+      "status": "ACTIVE",
+      "notes": "FDR/FR仅QC，禁止替代DR/R实际市场Root。"
+    },
+    {
+      "source_spec_id": "SRC_CFETS_CLOSING_CURVE_NCD",
+      "series_scope": "FUND_NCD_AAA_*",
+      "provider": "CFETS / ChinaMoney",
+      "source_family": "NCD_CLOSING_YTM_CURVE",
+      "exact_definition": "同业存单NCD AAA收盘到期收益率曲线；YTM；3M/1Y",
+      "primary_locator": "https://www.chinamoney.com.cn/chinese/bkcurvclosedy/",
+      "runtime_path": "https://www.chinamoney.com.cn/ags/ms/cm-u-bk-currency/ClsYldCurvHis",
+      "runtime_parameters": {
+        "bondType": "CYCC41B",
+        "3M_yearTermStr": 0.25,
+        "method": "POST"
+      },
+      "availability_rule": "OFFICIAL_CURVE_AVAILABLE_AT",
+      "fallback_policy": "NO_COMMERCIAL_BANK_BOND_SUBSTITUTION",
+      "status": "ACTIVE",
+      "notes": "纯NCD曲线；商业银行普通债AAA或混合样本不得替代。"
+    },
+    {
+      "source_spec_id": "SRC_SSE_GC_REPO",
+      "series_scope": "FUND_GC001|FUND_GC007",
+      "provider": "Shanghai Stock Exchange",
+      "source_family": "EXCHANGE_REPO_WEIGHTED_AVG",
+      "exact_definition": "上交所通用质押式回购204001/204007实际成交加权平均利率",
+      "primary_locator": "https://bond.sse.com.cn/data/statistics/overview/Pledgerepo/",
+      "runtime_path": "https://query.sse.com.cn/commonQuery.do",
+      "runtime_parameters": {
+        "sqlId": "COMMON_SSEBOND_SCSJ_SCTJ_SCGL_ZQZYSHGSCGL_CX_L",
+        "GC001_code": "204001",
+        "value_field": "WEIGHT_RATE"
+      },
+      "availability_rule": "EXCHANGE_AVAILABLE_AT",
+      "fallback_policy": "NO_FIXING_SUBSTITUTION",
+      "status": "ACTIVE"
+    },
+    {
+      "source_spec_id": "SRC_CHINABOND_CGB_QC",
+      "series_scope": "SOV_CGB_*",
+      "provider": "ChinaBond / CCDC",
+      "source_family": "CGB_YTM_QC_AND_FALLBACK_STATIC",
+      "exact_definition": "中债国债收益率曲线；YTM；3M/6M/1Y/3Y/5Y/7Y/10Y/30Y",
+      "primary_locator": "https://yield.chinabond.com.cn/cbweb-pbc-web/pbc/more?locale=cn_ZH",
+      "runtime_path": "https://yield.chinabond.com.cn/cbweb-cbrc-web/cbrc/historyQuery",
+      "availability_rule": "OFFICIAL_CURVE_AVAILABLE_AT",
+      "fallback_policy": "QC_SOV_OR_CHINABOND_SAME_PROVIDER_SPREAD_PARENT",
+      "status": "ACTIVE_QC_FALLBACK"
+    },
+    {
+      "source_spec_id": "SRC_CHINABOND_CP_NOTE_AAA_FALLBACK",
+      "series_scope": "CRD_MTN_AAA_1Y|CRD_MTN_AAA_3Y",
+      "provider": "ChinaBond / CCDC",
+      "source_family": "CP_NOTE_AAA_YTM_FALLBACK",
+      "exact_definition": "中债中短期票据收益率曲线(AAA)；YTM；1Y/3Y；CFETS AAA曲线不可执行/不可得时的同Provider生产fallback",
+      "primary_locator": "https://yield.chinabond.com.cn/cbweb-pbc-web/pbc/more?locale=cn_ZH",
+      "runtime_path": "https://yield.chinabond.com.cn/cbweb-cbrc-web/cbrc/historyQuery",
+      "availability_rule": "OFFICIAL_CURVE_AVAILABLE_AT",
+      "fallback_policy": "SAME_PROVIDER_CHINABOND_CGB_REQUIRED_NO_CROSS_PROVIDER_BLEND",
+      "status": "ACTIVE_FALLBACK",
+      "notes": "只授权AAA 1Y/3Y；AA+/AA无此fallback。"
+    }
+  ],
+  "remaining_scope": "PBOC policy lists, MOF fiscal, PBOC credit/TSF, NAFMII, remaining CFETS curves and all other legacy SourceSpecs must be migrated before production release."
+}
