@@ -44,12 +44,16 @@
   "as_of": "2026-08-16",
   "consumer_contract": {
     "collector_schedule_is_independent_of_model_invocation": true,
-    "consumer_reads_only_manifest_selected_active_paths": true,
+    "consumer_prefers_manifest_selected_active_paths": true,
     "consumer_should_not_glob_all_historical_store_files": true,
     "entrypoint": "data/china_financial/manifests/latest.json",
+    "fail_closed_only_after_store_and_fallback_insufficient": true,
+    "fallback_success_may_continue_without_store_repair": true,
+    "run_local_fallback_must_not_silently_mutate_store": true,
+    "runtime_direct_source_fallback_allowed_when_store_insufficient": true,
     "standard_runtime_must_not_invoke_collectors": true,
-    "standard_runtime_must_not_scrape_sources": true,
-    "store_insufficient_or_stale_must_fail_closed_or_downweight_per_draft": true
+    "store_first_not_store_only": true,
+    "targeted_git_history_lookup_allowed_when_required": true
   },
   "family_status": {
     "central_gov_cash_clock": {
