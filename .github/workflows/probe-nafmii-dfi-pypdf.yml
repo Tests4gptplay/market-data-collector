@@ -1,0 +1,31 @@
+name: Probe NAFMII DFI Pure Python PDF
+
+on:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'tests/probes/probe_nafmii_dfi_pypdf.py'
+      - '.github/workflows/probe-nafmii-dfi-pypdf.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Install pure Python PDF parser
+        run: python3 -m pip install --disable-pip-version-check 'pypdf>=5,<7'
+      - name: Extract NAFMII monthly PDFs
+        run: python3 tests/probes/probe_nafmii_dfi_pypdf.py
