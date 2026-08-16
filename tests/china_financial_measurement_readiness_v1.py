@@ -54,8 +54,6 @@ def persisted_series_ids() -> set[str]:
             try:
                 collect_series_ids(load_json(path), result)
             except Exception:
-                # Historical malformed fixtures are handled by their own tests.
-                # This audit never fabricates IDs from unreadable files.
                 continue
     return result
 
@@ -84,7 +82,6 @@ def main() -> int:
 
     present = persisted_series_ids()
 
-    # Draft Minimum Coverage: Funding
     funding = {
         "dr007_present": "FUND_DR007" in present,
         "independent_breadth_present": any_of(
@@ -94,7 +91,6 @@ def main() -> int:
     }
     funding["status"] = "PASS" if funding["dr007_present"] and funding["independent_breadth_present"] else "FAIL"
 
-    # Draft Minimum Coverage: Risk Bearing
     risk_pairs = {
         "AAA_1Y": all_of(present, {"CRD_MTN_AAA_1Y", "SOV_CGB_1Y", "CRD_SPREAD_AAA_1Y"}),
         "AAA_3Y": all_of(present, {"CRD_MTN_AAA_3Y", "SOV_CGB_3Y", "CRD_SPREAD_AAA_3Y"}),
@@ -109,7 +105,6 @@ def main() -> int:
         "status": "PASS" if any(risk_pairs.values()) else "FAIL",
     }
 
-    # Draft Minimum Coverage: Slow Balance Sheet
     slow_required = {"CC_RMB_LOAN_STOCK", "CC_CORP_LT_LOAN_STOCK"}
     slow_support = {
         "CC_CORP_ST_LOAN_STOCK",
@@ -128,8 +123,6 @@ def main() -> int:
     }
     slow["status"] = "PASS" if slow["required_roots_present"] and slow["aggregate_crosscheck_present"] else "FAIL"
 
-    # Draft Fiscal core: realized anchor + budget/fund roots + financing context.
-    # Detailed security-level lifecycle accounting is not required for READY.
     fiscal_required = {
         "FISC_GENERAL_REVENUE",
         "FISC_GENERAL_EXPENDITURE",
@@ -189,8 +182,8 @@ def main() -> int:
             ".github/workflows/china-financial-local-gov-cash-clock-v3-data-test.yml",
         ]),
         "central_government_cash_clock_context": file_gate([
-            "collectors/china_financial/central_gov_bond_cash_clock_v3_incremental.py",
-            ".github/workflows/china-financial-central-gov-cash-clock-v3-ready-test.yml",
+            "collectors/china_financial/central_gov_bond_cash_clock_v4_incremental.py",
+            ".github/workflows/china-financial-central-gov-cash-clock-v4-ready-test.yml",
         ]),
         "unified_ready_gate": file_gate([
             ".github/workflows/china-financial-daily.yml",
@@ -222,6 +215,7 @@ def main() -> int:
         "contract_status": contract.get("status"),
         "contract_readiness_scope": contract.get("readiness_scope"),
         "runtime_store_writer_declared": bool(contract.get("runtime", {}).get("scheduled_store_writer", False)),
+        "metadata_migration_is_not_a_data_layer_ready_blocker": True,
     }
 
     report = {
@@ -235,6 +229,7 @@ def main() -> int:
             "government_bond_cash_clock": "SIMPLIFIED_CENTRAL_PLUS_LOCAL_CONTEXT",
             "security_master": "NOT_REQUIRED",
             "central_actual_result_updates": "INCREMENTAL_CONFIRMATION_NOT_CORE_SCHEDULE_BLOCKER",
+            "central_detail_partial_availability": "EXPLICIT_DIAGNOSTIC_IF_LIST_WINDOW_AND_OTHER_CORE_EVIDENCE_ARE_USABLE",
             "interpretation": "Government-bond data is a fiscal-liquidity context clock, not a complete security-level sovereign ledger.",
         },
         "core_measurement_gates": {
