@@ -1,0 +1,19 @@
+name: Probe PBC Policy History Pagination V1
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'tests/probes/probe_pbc_policy_history_pagination_v1.py'
+      - '.github/workflows/probe-pbc-policy-history-pagination-v1.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Probe
+        run: python3 tests/probes/probe_pbc_policy_history_pagination_v1.py
