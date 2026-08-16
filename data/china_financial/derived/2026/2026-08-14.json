@@ -1,0 +1,30 @@
+{
+  "module": "china_financial",
+  "interface_version": "CF_INTERFACE_V1",
+  "collector_version": "V1.9-CANDIDATE",
+  "reference_date": "2026-08-14",
+  "source_run": {
+    "github_actions_run_id": 31926971402,
+    "collector_commit": "07bf4dfbccc94138c00a1e93e2d1fc32cb654a84"
+  },
+  "derived": [
+    {
+      "series_id": "CRD_SPREAD_AAA_3Y",
+      "reference_date": "2026-08-14",
+      "value": 40.07,
+      "unit": "bp",
+      "method_id": "CREDIT_SPREAD_PROXY_V1.1",
+      "provider_consistency": "ChinaBond+ChinaBond",
+      "parent_series": [
+        "CRD_MTN_AAA_3Y",
+        "SOV_CGB_3Y"
+      ],
+      "parent_evidence": [
+        "96c951505a155bc7ee4a9a43ffae6ddaf766ade2d9a92f94c7b1d6adfac73c3d"
+      ],
+      "formula": "(CRD_MTN_AAA_3Y - SOV_CGB_3Y) * 100",
+      "collector_version": "V1.9-CANDIDATE",
+      "interface_version": "CF_INTERFACE_V1"
+    }
+  ]
+}
