@@ -1,0 +1,97 @@
+name: China Financial Fast Market History Bootstrap V1
+
+on:
+  push:
+    branches:
+      - agent/china-financial-fast-history-bootstrap-v1
+    paths:
+      - '.github/workflows/china-financial-fast-market-history-bootstrap-v1.yml'
+      - 'tools/china_financial_fast_market_history_bootstrap_v1.py'
+  workflow_dispatch:
+    inputs:
+      end_date:
+        description: Latest candidate market date YYYY-MM-DD
+        required: true
+        default: '2026-08-14'
+      sessions:
+        description: Number of validated market sessions to retain
+        required: true
+        default: '60'
+
+permissions:
+  contents: write
+
+jobs:
+  bounded-fast-market-history-bootstrap:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    env:
+      END_DATE: ${{ github.event.inputs.end_date || '2026-08-14' }}
+      SESSIONS: ${{ github.event.inputs.sessions || '60' }}
+    steps:
+      - name: Checkout producer branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 20
+
+      - name: Compile bootstrap and active collector
+        run: |
+          set -euo pipefail
+          python3 -m py_compile \
+            tools/china_financial_fast_market_history_bootstrap_v1.py \
+            collectors/china_financial/market_family_v4.py
+
+      - name: Run bounded history bootstrap
+        id: bootstrap
+        shell: bash
+        run: |
+          set +e
+          python3 tools/china_financial_fast_market_history_bootstrap_v1.py \
+            --end-date "${END_DATE}" \
+            --sessions "${SESSIONS}" \
+            --max-calendar-days 140 \
+            --sleep-seconds 0.35
+          rc=$?
+          echo "exit_code=${rc}" >> "${GITHUB_OUTPUT}"
+          exit 0
+
+      - name: Assert current manifest was not changed by bootstrap
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! git diff --quiet -- data/china_financial/manifests/latest.json; then
+            echo "ERROR: bootstrap must never mutate manifests/latest.json" >&2
+            git diff -- data/china_financial/manifests/latest.json >&2
+            exit 1
+          fi
+
+      - name: Commit immutable historical Store additions
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "market-data-collector[bot]"
+          git config user.email "market-data-collector[bot]@users.noreply.github.com"
+          git add \
+            data/china_financial/observations \
+            data/china_financial/derived \
+            data/china_financial/gaps \
+            data/china_financial/runs
+          if git diff --cached --quiet; then
+            echo "No historical Store additions to commit."
+          else
+            git commit -m "data(china-financial): bootstrap fast market history through ${END_DATE}"
+            git fetch --depth=20 origin "${GITHUB_REF_NAME}"
+            git rebase "origin/${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Fail closed if requested history was not completed
+        shell: bash
+        run: |
+          set -euo pipefail
+          rc="${{ steps.bootstrap.outputs.exit_code }}"
+          if [[ "${rc}" != "0" ]]; then
+            echo "Fast-market history bootstrap was incomplete; inspect persisted bootstrap run summary." >&2
+            exit "${rc}"
+          fi
