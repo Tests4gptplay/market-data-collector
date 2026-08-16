@@ -53,16 +53,24 @@ jobs:
             --publication-date 2026-07-22 \
             --out /tmp/cgb-result
           python3 - <<'PY'
-          import json
+          import json,sys
           obs=json.load(open('/tmp/cgb-result/observations.json'))
           gaps=json.load(open('/tmp/cgb-result/gaps.json'))
-          assert gaps==[],gaps
           a=[x for x in obs if x['series_id']=='FISC_GOV_BOND_AUCTION_EVENT']
-          p=[x for x in obs if x['series_id']=='FISC_GOV_BOND_PAYMENT_EVENT']
           m=[x for x in obs if x['series_id']=='FISC_GOV_BOND_MATURITY_EVENT']
-          assert any(x['reference_date']=='2026-07-22' and abs(float(x['value'])-350)<1e-9 for x in a),a
-          assert any(x['reference_date']=='2026-07-23' and abs(float(x['value'])-350)<1e-9 for x in p),p
-          assert any(x['reference_date']=='2026-10-22' and abs(float(x['value'])-350)<1e-9 for x in m),m
+          checks=[
+            ('gaps_empty', gaps==[]),
+            ('actual_auction', any(x['reference_date']=='2026-07-22' and abs(float(x['value'])-350)<1e-9 for x in a)),
+            ('actual_maturity', any(x['reference_date']=='2026-10-22' and abs(float(x['value'])-350)<1e-9 for x in m)),
+          ]
+          bad=[name for name,ok in checks if not ok]
+          if bad:
+              payload=json.dumps({'bad':bad,'observations':obs,'gaps':gaps},ensure_ascii=False)
+              print('::error title=Central Treasury result regression::'+payload)
+              sys.exit(1)
+          # Deliberately do not require a result-page PAYMENT_EVENT. The explicit
+          # cash-payment clock comes from the pre-issue notice; distribution end
+          # is not silently promoted into a payment fact.
           print('CENTRAL_RESULT_PASS',len(obs))
           PY
 
@@ -76,15 +84,21 @@ jobs:
             --publication-date 2026-02-24 \
             --out /tmp/cgb-coupon
           python3 - <<'PY'
-          import json
+          import json,sys
           obs=json.load(open('/tmp/cgb-coupon/observations.json'))
           gaps=json.load(open('/tmp/cgb-coupon/gaps.json'))
-          assert gaps==[],gaps
           s=[x for x in obs if x['series_id']=='FISC_GOV_BOND_COUPON_SCHEDULE_EVENT']
           c=[x for x in obs if x['series_id']=='FISC_GOV_BOND_COUPON_CASH_ESTIMATE']
-          assert any(x['reference_date']=='2026-08-25' and abs(float(x['value'])-1.75)<1e-9 for x in s),s[:3]
           expected=1350*0.0175/2
-          assert any(x['reference_date']=='2026-08-25' and abs(float(x['value'])-expected)<1e-9 for x in c),c[:3]
+          checks=[
+            ('gaps_empty',gaps==[]),
+            ('coupon_schedule',any(x['reference_date']=='2026-08-25' and abs(float(x['value'])-1.75)<1e-9 for x in s)),
+            ('coupon_cash',any(x['reference_date']=='2026-08-25' and abs(float(x['value'])-expected)<1e-9 for x in c)),
+          ]
+          bad=[name for name,ok in checks if not ok]
+          if bad:
+              print('::error title=Central Treasury coupon regression::'+json.dumps({'bad':bad,'observations':obs[:20],'gaps':gaps},ensure_ascii=False))
+              sys.exit(1)
           required={'series_id','reference_date','value','unit','provider','source_semantic','collected_at','collector_version','source_url','evidence_sha256'}
           assert all(not (required-set(x)) for x in obs)
           print('CENTRAL_COUPON_PASS',len(s),len(c),expected)
