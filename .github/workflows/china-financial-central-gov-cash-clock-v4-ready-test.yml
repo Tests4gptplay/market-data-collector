@@ -1,0 +1,50 @@
+name: China Financial Central Gov Cash Clock V4 Ready Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      as_of:
+        description: Optional Asia/Shanghai as-of date YYYY-MM-DD
+        required: false
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'collectors/china_financial/central_gov_bond_cash_clock_v4_incremental.py'
+      - '.github/workflows/china-financial-central-gov-cash-clock-v4-ready-test.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  rolling-ready:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile V1-V4
+        run: |
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v1.py
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v2.py
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v3_incremental.py
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v4_incremental.py
+      - name: Run Draft-aligned rolling readiness check
+        shell: bash
+        run: |
+          set -euo pipefail
+          AS_OF='${{ github.event.inputs.as_of }}'
+          if [ -z "${AS_OF}" ]; then AS_OF="$(TZ=Asia/Shanghai date +%F)"; fi
+          rm -rf /tmp/cgb-v4
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/central_gov_bond_cash_clock_v4_incremental.py \
+            --as-of "${AS_OF}" --lookback-days 7 --out /tmp/cgb-v4
+          python3 - <<'PY'
+          import json
+          run=json.load(open('/tmp/cgb-v4/run.json'))
+          ctx=json.load(open('/tmp/cgb-v4/context.json'))
+          assert run['status']=='PASS',run
+          assert ctx['window_proof']['publication_list_window_checked'] is True,ctx
+          assert ctx['blocking_gap_count']==0,ctx
+          assert ctx['readiness_semantics']['fiscal_deposit_change_is_realized_net_anchor'] is True
+          assert ctx['readiness_semantics']['government_bond_cash_clock_is_supporting_context'] is True
+          assert ctx['readiness_semantics']['all_core_details_unreadable_is_blocking'] is True
+          print(json.dumps({'run':run,'context_status':ctx['status'],'window_proof':ctx['window_proof'],'diagnostics':ctx['nonblocking_diagnostic_count']},ensure_ascii=False,indent=2))
+          PY
