@@ -1,0 +1,42 @@
+name: China Financial MOF Fiscal YTD V2 Candidate
+
+on:
+  push:
+    branches: [v1.9-public-foundation]
+    paths:
+      - 'collectors/china_financial/mof_fiscal_ytd_family_v2.py'
+      - '.github/workflows/china-financial-mof-fiscal-ytd-v2-candidate.yml'
+  workflow_dispatch:
+    inputs:
+      year:
+        description: Calendar year
+        required: true
+        default: '2026'
+
+permissions:
+  contents: read
+
+jobs:
+  mof-fiscal-ytd-v2:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout without third-party action
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Run MOF fiscal YTD V2 family
+        env:
+          INPUT_YEAR: ${{ inputs.year }}
+        run: |
+          YEAR="${INPUT_YEAR:-2026}"
+          python3 collectors/china_financial/mof_fiscal_ytd_family_v2.py \
+            --year "${YEAR}" --out out/mof_fiscal_ytd_v2
+          rc=$?
+          cat out/mof_fiscal_ytd_v2/run.json || true
+          cat out/mof_fiscal_ytd_v2/gaps.json || true
+          exit $rc
