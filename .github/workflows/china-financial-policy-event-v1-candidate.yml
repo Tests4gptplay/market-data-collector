@@ -1,6 +1,11 @@
 name: China Financial Policy Event V1 Candidate
 
 on:
+  push:
+    branches: [v1.9-public-foundation]
+    paths:
+      - 'collectors/china_financial/policy_event_family_v1.py'
+      - '.github/workflows/china-financial-policy-event-v1-candidate.yml'
   workflow_dispatch:
     inputs:
       target_date:
@@ -26,9 +31,10 @@ jobs:
           git checkout --detach FETCH_HEAD
       - name: Run policy event V1
         env:
-          TARGET_DATE: ${{ inputs.target_date }}
+          INPUT_TARGET_DATE: ${{ inputs.target_date }}
         run: |
           set -euo pipefail
+          TARGET_DATE="${INPUT_TARGET_DATE:-2026-08-14}"
           python3 collectors/china_financial/policy_event_family_v1.py \
             --date "${TARGET_DATE}" \
             --out out/china_financial_policy_event_v1
