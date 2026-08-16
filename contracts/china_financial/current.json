@@ -26,7 +26,7 @@
     "central_active_adapter": "collectors/china_financial/central_gov_bond_cash_clock_v5_context.py",
     "central_core": "PREISSUE_AUCTION_PAYMENT_MATURITY_SCHEDULE",
     "central_actual_results": "INCREMENTAL_CORRECTION_WHEN_AVAILABLE",
-    "central_source_outage": "UNKNOWN_PLUS_DATA_CONFIDENCE_DOWNWEIGHT_AND_RETRY",
+    "central_source_outage": "SOURCE_HEALTH_WARNING_UNLESS_REQUIRED_OBSERVATION_BECOMES_UNAVAILABLE_WHEN_DUE",
     "local_active_collector": "collectors/china_financial/local_gov_bond_cash_clock_v3.py",
     "rule": "Cash-clock context supports fiscal drain/release and duration-supply interpretation; it is not a complete sovereign security ledger."
   },
@@ -34,10 +34,20 @@
     "backend": "GITHUB_ACTIONS",
     "workflow": ".github/workflows/china-financial-daily-ready-v2.yml",
     "scheduled_store_writer": false,
-    "runtime_store_policy": "DEPLOYMENT_SPECIFIC_EXTERNAL_TO_THIS_READY_DECLARATION"
+    "runtime_store_policy": "STORE_FIRST_NOT_STORE_ONLY_WITH_TARGETED_GIT_AND_DIRECT_SOURCE_RECOVERY"
+  },
+  "runtime_consumer_semantics": {
+    "store_first_not_store_only": true,
+    "prefer_manifest_selected_active_paths": true,
+    "targeted_git_history_lookup_allowed_when_required": true,
+    "direct_source_fallback_allowed_when_store_insufficient": true,
+    "fallback_success_may_continue_without_store_repair": true,
+    "fail_closed_only_after_store_and_fallback_insufficient": true,
+    "consumer_must_not_invoke_scheduled_collectors": true,
+    "no_fabricated_observations": true
   },
   "release_gate": "DATA_LAYER_READY_V2_GATE",
   "production_runtime_release": "NOT_DECLARED",
-  "failure_policy": "CORE_FAIL_CLOSED_SUPPORTING_CONTEXT_UNKNOWN_WITH_CONFIDENCE_DOWNWEIGHT",
-  "ready_definition": "Draft production-core data collection and measurement inputs are callable and measurable under the current incremental operating policy. Supporting fiscal cash-clock source outages remain explicit UNKNOWN diagnostics. READY does not declare the downstream Permission engine, trading model, scheduler/Store SLA, or repository-wide runtime production release."
+  "failure_policy": "CORE_REQUIRED_OBSERVATION_FAILS_CLOSED_ONLY_AFTER_STORE_AND_AUTHORIZED_RECOVERY_FAIL; SUPPORTING_SOURCE_OUTAGE_IS_DIAGNOSTIC_UNLESS_IT_CAUSES_AN_ELIGIBILITY_GAP",
+  "ready_definition": "Draft production-core data collection and measurement inputs are callable and measurable under the current incremental operating policy. Store is the preferred runtime entrypoint, not an exclusive boundary: when required real observations or lookback windows are absent, targeted Git history lookup and authorized direct-source recovery may be used with provenance and QC. READY does not declare the downstream Permission engine, trading model, scheduler/Store SLA, or repository-wide runtime production release."
 }
