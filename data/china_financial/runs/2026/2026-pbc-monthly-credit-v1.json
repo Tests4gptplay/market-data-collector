@@ -1,0 +1,79 @@
+{
+  "module": "china_financial_pbc_monthly_credit_family",
+  "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-CREDIT-FAMILY-V1",
+  "year": 2026,
+  "completed_at": "2026-08-16T05:22:02.782383Z",
+  "status": "PASS",
+  "root_observation_count": 98,
+  "derived_observation_count": 56,
+  "gap_count": 0,
+  "present_root_series": [
+    "CC_BILL_FINANCING_STOCK",
+    "CC_CORP_LT_LOAN_STOCK",
+    "CC_CORP_ST_LOAN_STOCK",
+    "CC_HH_LT_LOAN_STOCK",
+    "CC_HH_ST_LOAN_STOCK",
+    "CC_RMB_LOAN_STOCK",
+    "CC_TSF_CORP_BOND_NET",
+    "CC_TSF_ENTRUSTED_LOAN",
+    "CC_TSF_INCREMENT",
+    "CC_TSF_RMB_LOANS",
+    "CC_TSF_TRUST_LOAN",
+    "CC_TSF_UNDISCOUNTED_BA",
+    "FISC_DEPOSIT_STOCK",
+    "FISC_GOV_BOND_NET_FINANCING_TSF"
+  ],
+  "evidence": {
+    "stats_index": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/index.html",
+    "current_sections": {
+      "tsf": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2026ntjsj/shrzgm/index.html",
+      "credit": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2026ntjsj/jrjgxdsztj/index.html"
+    },
+    "previous_sections": {
+      "tsf": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/5570903/5570885/index.html",
+      "credit": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/5570903/5570888/index.html"
+    },
+    "credit_section": {
+      "section_url": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2026ntjsj/jrjgxdsztj/index.html",
+      "section_sha256": "b88b78a9303be5a0ad037cf0006b5e4fae4980c1329edef3f82b7259b7e0cbf6",
+      "label": "金融机构人民币信贷收支表"
+    },
+    "previous_credit_section": {
+      "section_url": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/5570903/5570888/index.html",
+      "section_sha256": "b6bfcfebe539486ca3fc7f48f49414f9c39448ff258bc9d0d9e5faeaa5d8091b",
+      "label": "金融机构人民币信贷收支表"
+    },
+    "tsf_section": {
+      "section_url": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2026ntjsj/shrzgm/index.html",
+      "section_sha256": "bdc37fd7a3308ce86e06cf2caa92e8f0dd8cd511a59c469a39523a87dd66bf4a",
+      "label": "社会融资规模增量统计表"
+    },
+    "credit_table": {
+      "table_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/08/2026081417033645396.htm",
+      "table_sha256": "a3c39fbbb1c9b207447ac5414add566387fb88e75a173f8442c49ce57b87ba8b",
+      "row_count": 53
+    },
+    "previous_credit_table": {
+      "table_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/01/2026011516053141218.htm",
+      "table_sha256": "183d31d45d8fd3c0d1a8438a181128332b53d1dcd8f4f5f7d08e775dc38aee3b",
+      "row_count": 53
+    },
+    "tsf_table": {
+      "table_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/08/2026081417010772070.htm",
+      "table_sha256": "d17359c92ce0f040c1b9c5355432a127d6cda34fab18285cb5f53d978d5c12a5",
+      "row_count": 21
+    }
+  },
+  "semantic_rules": {
+    "one_release_one_observation": true,
+    "stock_to_flow_parent_lineage_required": true,
+    "tsf_headline_is_reconciliation": true,
+    "backfill_available_at_is_conservative_retrieval_time": true,
+    "unknown_is_never_zero": true
+  },
+  "github_repository": "Tests4gptplay/market-data-collector",
+  "github_run_id": "31928831160",
+  "github_source_commit": "a2e87bedb157f6eeed6032f87d90313cac916bba",
+  "persistence": "NORMALIZED_PUBLIC_DATA_ONLY_RAW_EVIDENCE_NOT_COMMITTED",
+  "persistence_workflow_version": "V2_REBASE_BEFORE_PUSH"
+}
