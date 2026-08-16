@@ -1,0 +1,150 @@
+name: China Financial Daily Candidate Integration Gate
+
+# This file satisfies the contract's declared workflow entry point, but the
+# contract remains CANDIDATE. It is an end-to-end measurement/readiness gate,
+# not a declaration of production stability and not yet a scheduled writer.
+on:
+  workflow_dispatch:
+    inputs:
+      market_date:
+        description: Latest eligible market trading date YYYY-MM-DD
+        required: true
+        default: '2026-08-14'
+      as_of:
+        description: Policy/fiscal context as-of date YYYY-MM-DD
+        required: true
+        default: '2026-08-16'
+      year:
+        description: Calendar year for monthly release families
+        required: true
+        default: '2026'
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'collectors/china_financial/**'
+      - 'contracts/china_financial/**'
+      - 'registry/china_financial/**'
+      - 'tests/china_financial_measurement_readiness_v1.py'
+      - '.github/workflows/china-financial-daily.yml'
+      - '.github/workflows/china-financial-local-gov-cash-clock-v3-data-test.yml'
+      - 'README.md'
+
+permissions:
+  contents: read
+
+jobs:
+  measurement-readiness:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      MARKET_DATE: ${{ github.event.inputs.market_date || '2026-08-14' }}
+      AS_OF: ${{ github.event.inputs.as_of || '2026-08-16' }}
+      YEAR: ${{ github.event.inputs.year || '2026' }}
+    steps:
+      - name: Checkout
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+
+      - name: Install PDF parser
+        run: python3 -m pip install --disable-pip-version-check 'pypdf==5.9.0'
+
+      - name: Compile active candidate collectors
+        run: |
+          set -euo pipefail
+          python3 -m py_compile \
+            collectors/china_financial/market_family_v4.py \
+            collectors/china_financial/pbc_monthly_credit_family_v1.py \
+            collectors/china_financial/mof_fiscal_ytd_family_v2.py \
+            collectors/china_financial/pbc_monthly_policy_tools_v2.py \
+            collectors/china_financial/policy_event_family_v6_incremental.py \
+            collectors/china_financial/rrr_event_family_v5_incremental.py \
+            collectors/china_financial/nafmii_dfi_issuance_family_v1.py \
+            collectors/china_financial/local_gov_bond_cash_clock_v1.py \
+            collectors/china_financial/local_gov_bond_cash_clock_v3.py \
+            tests/china_financial_measurement_readiness_v1.py
+
+      - name: Offline persisted-data and capability gate
+        run: |
+          set -euo pipefail
+          python3 tests/china_financial_measurement_readiness_v1.py --out /tmp/china-financial-readiness.json
+          cat /tmp/china-financial-readiness.json
+
+      - name: Live fast market family
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/market-v4
+          python3 collectors/china_financial/market_family_v4.py --date "${MARKET_DATE}" --out /tmp/market-v4
+          cat "/tmp/market-v4/${MARKET_DATE}/run.json"
+
+      - name: Live monthly credit family
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/monthly-credit
+          python3 collectors/china_financial/pbc_monthly_credit_family_v1.py --year "${YEAR}" --out /tmp/monthly-credit
+          cat /tmp/monthly-credit/run.json
+
+      - name: Live MOF fiscal family
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/mof-fiscal
+          python3 collectors/china_financial/mof_fiscal_ytd_family_v2.py --year "${YEAR}" --out /tmp/mof-fiscal
+          cat /tmp/mof-fiscal/run.json
+
+      - name: Live monthly policy tools
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/policy-tools
+          python3 collectors/china_financial/pbc_monthly_policy_tools_v2.py --year "${YEAR}" --out /tmp/policy-tools
+          cat /tmp/policy-tools/run.json
+
+      - name: Live NAFMII primary issuance
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/nafmii
+          python3 collectors/china_financial/nafmii_dfi_issuance_family_v1.py --year "${YEAR}" --out /tmp/nafmii
+          cat /tmp/nafmii/run.json
+
+      - name: Live policy incremental state checks
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/rrr-inc /tmp/omo-inc
+          PYTHONPATH=. python3 collectors/china_financial/rrr_event_family_v5_incremental.py \
+            --date "${AS_OF}" --since-date 2026-08-07 --out /tmp/rrr-inc
+          PYTHONPATH=. python3 collectors/china_financial/policy_event_family_v6_incremental.py \
+            --date "${MARKET_DATE}" --since-date 2026-08-07 --previous-rate 1.40 --out /tmp/omo-inc
+          cat /tmp/rrr-inc/run.json
+          cat /tmp/omo-inc/run.json
+
+      - name: Live simplified local-government cash clock
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cash-clock-v3
+          PYTHONPATH=. python3 collectors/china_financial/local_gov_bond_cash_clock_v3.py \
+            --as-of "${AS_OF}" --lookback-days 2 --out /tmp/cash-clock-v3
+          cat /tmp/cash-clock-v3/context.json
+          cat /tmp/cash-clock-v3/run.json
+
+      - name: Final semantics summary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.load(open('/tmp/china-financial-readiness.json'))
+          cash=json.load(open('/tmp/cash-clock-v3/context.json'))
+          print(json.dumps({
+            'measurement_readiness': r['status'],
+            'production_status': r['production_status'],
+            'cash_clock_status': cash['status'],
+            'cash_clock_scope': cash['scope'],
+            'central_government_cash_clock_included': cash['central_government_bonds_included'],
+            'warning': 'A green measurement gate is not a PRODUCTION release declaration.'
+          },ensure_ascii=False,indent=2))
+          assert r['status']=='MODEL_CONTEXT_MEASURABLE',r
+          assert cash['window_proof']['all_publication_days_checked'] is True,cash
+          PY
