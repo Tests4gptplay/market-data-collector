@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
-"""China Financial Draft-oriented measurement readiness audit.
+"""China Financial Draft data-layer readiness audit.
 
-Normative baseline for this audit is the current China Financial Draft used by
-the project. The unmodified V0.9.1.1 manuscript is historical/reference input
-and must not be treated as the current readiness specification.
+Normative baseline is the current internal China Financial Draft. The untouched
+V0.9.1.1 manuscript is historical/reference material only and is not used as
+the current readiness specification.
 
-This is intentionally a measurement-capability gate, not a declaration that the
-repository is production-stable. It answers three separate questions:
+READY in this audit has a deliberately narrow meaning:
 
-1. Can the core Funding / RiskBearing / SlowBalanceSheet inputs be measured from
-   currently persisted normalized data?
-2. Do the collectors needed for policy, fiscal, primary-credit issuance and
-   government-bond cash-clock context exist as executable/tested code paths?
-3. Is the repository contract itself production-closed?
+    DATA_COLLECTION_AND_MEASUREMENT_LAYER_READY
 
-Those questions must not be collapsed into a single PASS label.
+It means the Draft's current production-core measurement inputs have executable
+collection paths and the required normalized roots/context can be measured. It
+does NOT declare a downstream trading model, scheduled runtime Store, consumer
+Permission engine, or repository-wide production SLA to be production-ready.
+
+The audit therefore keeps data readiness separate from broader metadata/runtime
+release closure.
 """
 from __future__ import annotations
 
@@ -53,9 +54,8 @@ def persisted_series_ids() -> set[str]:
             try:
                 collect_series_ids(load_json(path), result)
             except Exception:
-                # Individual malformed historical files should be caught by
-                # their own regression jobs. This audit reports coverage from
-                # readable normalized data and does not silently fabricate IDs.
+                # Historical malformed fixtures are handled by their own tests.
+                # This audit never fabricates IDs from unreadable files.
                 continue
     return result
 
@@ -70,7 +70,11 @@ def all_of(present: set[str], required: set[str]) -> bool:
 
 def file_gate(paths: list[str]) -> dict[str, Any]:
     missing = [p for p in paths if not (ROOT / p).exists()]
-    return {"status": "PASS" if not missing else "FAIL", "required_paths": paths, "missing_paths": missing}
+    return {
+        "status": "PASS" if not missing else "FAIL",
+        "required_paths": paths,
+        "missing_paths": missing,
+    }
 
 
 def main() -> int:
@@ -80,26 +84,52 @@ def main() -> int:
 
     present = persisted_series_ids()
 
+    # Draft Minimum Coverage: Funding
     funding = {
         "dr007_present": "FUND_DR007" in present,
-        "independent_breadth_present": any_of(present, {"FUND_R007", "FUND_GC007", "FUND_NCD_AAA_3M", "FUND_NCD_AAA_1Y"}),
+        "independent_breadth_present": any_of(
+            present,
+            {"FUND_R007", "FUND_GC007", "FUND_NCD_AAA_3M", "FUND_NCD_AAA_1Y"},
+        ),
     }
     funding["status"] = "PASS" if funding["dr007_present"] and funding["independent_breadth_present"] else "FAIL"
 
+    # Draft Minimum Coverage: Risk Bearing
     risk_pairs = {
         "AAA_1Y": all_of(present, {"CRD_MTN_AAA_1Y", "SOV_CGB_1Y", "CRD_SPREAD_AAA_1Y"}),
         "AAA_3Y": all_of(present, {"CRD_MTN_AAA_3Y", "SOV_CGB_3Y", "CRD_SPREAD_AAA_3Y"}),
     }
-    risk = {"matched_tenor_pairs": risk_pairs, "status": "PASS" if any(risk_pairs.values()) else "FAIL"}
+    risk_breadth = {
+        "AA+_3Y": all_of(present, {"CRD_MTN_AAP_3Y", "SOV_CGB_3Y", "CRD_SPREAD_AAP_3Y"}),
+        "AA_3Y": all_of(present, {"CRD_MTN_AA_3Y", "SOV_CGB_3Y", "CRD_SPREAD_AA_3Y"}),
+    }
+    risk = {
+        "matched_tenor_high_grade_pairs": risk_pairs,
+        "rating_breadth": risk_breadth,
+        "status": "PASS" if any(risk_pairs.values()) else "FAIL",
+    }
 
+    # Draft Minimum Coverage: Slow Balance Sheet
     slow_required = {"CC_RMB_LOAN_STOCK", "CC_CORP_LT_LOAN_STOCK"}
+    slow_support = {
+        "CC_CORP_ST_LOAN_STOCK",
+        "CC_HH_LT_LOAN_STOCK",
+        "CC_HH_ST_LOAN_STOCK",
+        "CC_BILL_FINANCING_STOCK",
+        "CC_TSF_ENTRUSTED_LOAN",
+        "CC_TSF_TRUST_LOAN",
+        "CC_TSF_UNDISCOUNTED_BA",
+    }
     slow = {
         "required_roots": sorted(slow_required),
         "required_roots_present": all_of(present, slow_required),
-        "aggregate_context_present": any_of(present, {"CC_TSF_INCREMENT", "CC_TSF_RMB_LOANS"}),
+        "aggregate_crosscheck_present": any_of(present, {"CC_TSF_INCREMENT", "CC_TSF_RMB_LOANS"}),
+        "supporting_structure_present": sorted(slow_support.intersection(present)),
     }
-    slow["status"] = "PASS" if slow["required_roots_present"] and slow["aggregate_context_present"] else "FAIL"
+    slow["status"] = "PASS" if slow["required_roots_present"] and slow["aggregate_crosscheck_present"] else "FAIL"
 
+    # Draft Fiscal core: realized anchor + budget/fund roots + financing context.
+    # Detailed security-level lifecycle accounting is not required for READY.
     fiscal_required = {
         "FISC_GENERAL_REVENUE",
         "FISC_GENERAL_EXPENDITURE",
@@ -129,7 +159,7 @@ def main() -> int:
     }
 
     execution_capabilities = {
-        "market_family_v4": file_gate([
+        "fast_market": file_gate([
             "collectors/china_financial/market_family_v4.py",
             ".github/workflows/china-financial-market-family-v4-candidate.yml",
         ]),
@@ -145,20 +175,24 @@ def main() -> int:
             "collectors/china_financial/pbc_monthly_policy_tools_v2.py",
             ".github/workflows/china-financial-pbc-monthly-policy-tools-v2-candidate.yml",
         ]),
-        "policy_event_incremental": file_gate([
+        "policy_incremental": file_gate([
             "collectors/china_financial/policy_event_family_v6_incremental.py",
             "collectors/china_financial/rrr_event_family_v5_incremental.py",
             ".github/workflows/china-financial-policy-incremental-smoke-v1.yml",
         ]),
-        "nafmii_dfi_primary_issuance": file_gate([
+        "nafmii_primary_market_activity": file_gate([
             "collectors/china_financial/nafmii_dfi_issuance_family_v1.py",
             ".github/workflows/china-financial-nafmii-dfi-v1-data-test.yml",
         ]),
-        "local_gov_bond_cash_clock": file_gate([
+        "local_government_cash_clock_context": file_gate([
             "collectors/china_financial/local_gov_bond_cash_clock_v3.py",
             ".github/workflows/china-financial-local-gov-cash-clock-v3-data-test.yml",
         ]),
-        "unified_candidate_gate": file_gate([
+        "central_government_cash_clock_context": file_gate([
+            "collectors/china_financial/central_gov_bond_cash_clock_v3_incremental.py",
+            ".github/workflows/china-financial-central-gov-cash-clock-v3-ready-test.yml",
+        ]),
+        "unified_ready_gate": file_gate([
             ".github/workflows/china-financial-daily.yml",
         ]),
     }
@@ -169,35 +203,39 @@ def main() -> int:
     methods_registry = load_json(ROOT / "registry/china_financial/methods.json")
     contract = load_json(ROOT / "contracts/china_financial/current.json")
 
-    core_measurement_pass = all(x["status"] == "PASS" for x in (funding, risk, slow, fiscal, policy_monthly))
-    model_context_measurable = core_measurement_pass and capabilities_pass
+    core_measurement_pass = all(
+        x["status"] == "PASS"
+        for x in (funding, risk, slow, fiscal, policy_monthly)
+    )
+
+    contract_ready_scope = (
+        contract.get("status") == "READY"
+        and contract.get("readiness_scope") == "DATA_COLLECTION_AND_MEASUREMENT_LAYER"
+    )
+    data_layer_ready = core_measurement_pass and capabilities_pass and contract_ready_scope
 
     metadata_closure = {
         "series_registry_migration_complete": bool(series_registry.get("migration_complete")),
         "series_registry_implementation_complete": bool(series_registry.get("implementation_complete", False)),
         "sources_registry_migration_complete": bool(sources_registry.get("migration_complete", False)),
         "methods_registry_migration_complete": bool(methods_registry.get("migration_complete", False)),
-        "contract_release_state": contract.get("release", {}).get("state") or contract.get("release_state"),
-        "contract_release_gate": contract.get("release", {}).get("gate") or contract.get("release_gate"),
+        "contract_status": contract.get("status"),
+        "contract_readiness_scope": contract.get("readiness_scope"),
+        "runtime_store_writer_declared": bool(contract.get("runtime", {}).get("scheduled_store_writer", False)),
     }
-    production_contract_ready = (
-        metadata_closure["series_registry_migration_complete"]
-        and metadata_closure["series_registry_implementation_complete"]
-        and metadata_closure["sources_registry_migration_complete"]
-        and metadata_closure["methods_registry_migration_complete"]
-        and metadata_closure["contract_release_state"] == "PRODUCTION"
-    )
 
     report = {
-        "audit": "CHINA_FINANCIAL_DRAFT_MEASUREMENT_READINESS_V1",
+        "audit": "CHINA_FINANCIAL_DRAFT_DATA_LAYER_READINESS_V1",
         "normative_baseline": "CURRENT_CHINA_FINANCIAL_DRAFT",
         "historical_reference_not_normative": "UNMODIFIED_V0.9.1.1_MANUSCRIPT",
-        "status": "MODEL_CONTEXT_MEASURABLE" if model_context_measurable else "MEASUREMENT_GAPS_REMAIN",
-        "production_status": "PRODUCTION_CONTRACT_READY" if production_contract_ready else "PRODUCTION_CONTRACT_NOT_READY",
+        "status": "DATA_LAYER_READY" if data_layer_ready else "DATA_LAYER_NOT_READY",
+        "ready_scope": "DATA_COLLECTION_AND_MEASUREMENT_LAYER",
+        "production_runtime_status": "NOT_DECLARED",
         "important_scope_boundary": {
-            "government_bond_cash_clock": "LOCAL_GOVERNMENT_BONDS_ONLY",
-            "central_government_bond_cash_clock": "NOT_YET_INCLUDED_IN_V3",
-            "interpretation": "Model fiscal-liquidity context can consume the local-government event clock plus aggregate government-bond financing, but the repository must not describe this as a complete central+local sovereign event ledger.",
+            "government_bond_cash_clock": "SIMPLIFIED_CENTRAL_PLUS_LOCAL_CONTEXT",
+            "security_master": "NOT_REQUIRED",
+            "central_actual_result_updates": "INCREMENTAL_CONFIRMATION_NOT_CORE_SCHEDULE_BLOCKER",
+            "interpretation": "Government-bond data is a fiscal-liquidity context clock, not a complete security-level sovereign ledger.",
         },
         "core_measurement_gates": {
             "BroadFundingCondition": funding,
@@ -207,13 +245,16 @@ def main() -> int:
             "PolicyLiquidityMonthlyDriver": policy_monthly,
         },
         "execution_capabilities": execution_capabilities,
-        "metadata_and_release_closure": metadata_closure,
+        "metadata_and_runtime_closure": metadata_closure,
         "persisted_series_count": len(present),
         "rules": {
+            "daily_incremental_default": True,
+            "no_2025_2024_backfill_by_default": True,
+            "low_frequency_no_new_release_is_not_gap": True,
             "unknown_is_not_zero": True,
-            "component_pass_is_not_production_release": True,
-            "collector_presence_is_not_same_as_live_source_success": True,
-            "production_requires_contract_and_end_to_end_qc": True,
+            "component_pass_is_not_repository_wide_production": True,
+            "ready_is_data_layer_scope_only": True,
+            "runtime_store_and_downstream_permission_engine_are_separate": True,
         },
     }
 
@@ -223,7 +264,7 @@ def main() -> int:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
     print(text, end="")
-    return 0 if model_context_measurable else 2
+    return 0 if data_layer_ready else 2
 
 
 if __name__ == "__main__":
