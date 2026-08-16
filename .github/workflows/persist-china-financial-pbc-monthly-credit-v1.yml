@@ -1,0 +1,80 @@
+name: Persist China Financial PBC Monthly Credit V1
+
+on:
+  push:
+    branches: [v1.9-public-foundation]
+    paths:
+      - '.github/workflows/persist-china-financial-pbc-monthly-credit-v1.yml'
+  workflow_dispatch:
+    inputs:
+      year:
+        description: Calendar year
+        required: true
+        default: '2026'
+
+permissions:
+  contents: write
+
+jobs:
+  persist-pbc-monthly-credit-v1:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout branch without third-party action
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_REF_NAME}"
+          git checkout -B "${GITHUB_REF_NAME}" FETCH_HEAD
+      - name: Run PBC monthly credit family
+        env:
+          INPUT_YEAR: ${{ inputs.year }}
+        run: |
+          set -euo pipefail
+          YEAR="${INPUT_YEAR:-2026}"
+          echo "TARGET_YEAR=${YEAR}" >> "$GITHUB_ENV"
+          python3 collectors/china_financial/pbc_monthly_credit_family_v1.py \
+            --year "${YEAR}" \
+            --out out/pbc_monthly_credit_v1
+      - name: Prepare normalized public dataset
+        run: |
+          set -euo pipefail
+          mkdir -p "data/china_financial/observations/${TARGET_YEAR}" \
+                   "data/china_financial/derived/${TARGET_YEAR}" \
+                   "data/china_financial/gaps/${TARGET_YEAR}" \
+                   "data/china_financial/runs/${TARGET_YEAR}"
+          cp out/pbc_monthly_credit_v1/observations.json \
+            "data/china_financial/observations/${TARGET_YEAR}/${TARGET_YEAR}-pbc-monthly-credit-v1.json"
+          cp out/pbc_monthly_credit_v1/derived.json \
+            "data/china_financial/derived/${TARGET_YEAR}/${TARGET_YEAR}-pbc-monthly-credit-v1.json"
+          cp out/pbc_monthly_credit_v1/gaps.json \
+            "data/china_financial/gaps/${TARGET_YEAR}/${TARGET_YEAR}-pbc-monthly-credit-v1.json"
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          year=os.environ['TARGET_YEAR']
+          p=Path('out/pbc_monthly_credit_v1/run.json')
+          run=json.loads(p.read_text(encoding='utf-8'))
+          run['github_repository']=os.environ['GITHUB_REPOSITORY']
+          run['github_run_id']=os.environ['GITHUB_RUN_ID']
+          run['github_source_commit']=os.environ['GITHUB_SHA']
+          run['persistence']='NORMALIZED_PUBLIC_DATA_ONLY_RAW_EVIDENCE_NOT_COMMITTED'
+          Path(f'data/china_financial/runs/{year}/{year}-pbc-monthly-credit-v1.json').write_text(
+              json.dumps(run,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+      - name: Commit normalized dataset back to branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "market-data-collector[bot]"
+          git config user.email "market-data-collector[bot]@users.noreply.github.com"
+          git add data/china_financial
+          if git diff --cached --quiet; then
+            echo "No data changes to commit"
+            exit 0
+          fi
+          git commit -m "data(china-financial): persist PBC monthly credit ${TARGET_YEAR}"
+          git push origin HEAD:"${GITHUB_REF_NAME}"

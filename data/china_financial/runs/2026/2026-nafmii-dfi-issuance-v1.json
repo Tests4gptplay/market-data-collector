@@ -1,0 +1,76 @@
+{
+  "collector_version": "V1.9-CANDIDATE-NAFMII-DFI-ISSUANCE-V1",
+  "completed_at": "2026-08-16T09:55:23.992230Z",
+  "gap_count": 0,
+  "github_run_id": "31940238289",
+  "github_source_commit": "b1b1477360ea2a6d9715f52a3522410f806ee55e",
+  "list_evidence": {
+    "attempts": 1,
+    "list_sha256": "479fe7b0043032dbd0700175f069d12702ab0f27ce284f09a78f1be02635a277",
+    "list_url": "https://www.nafmii.org.cn/sjtj/fx/"
+  },
+  "module": "china_financial_nafmii_dfi_issuance",
+  "observation_count": 6,
+  "persistence_mode": "MERGE_DEDUP_NO_SILENT_REVISION",
+  "persistence_pipeline_version": "CF_STORE_PERSISTENCE_V2",
+  "release_count": 6,
+  "release_evidence": [
+    {
+      "amount": 8676.0,
+      "attempts": 1,
+      "pages": 2,
+      "reference_period": "2026-01",
+      "sha256": "519e9b73cf9a88205d471058538639ef4580e76c5ef95302db3dc71ea72bd2c7",
+      "url": "https://www.nafmii.org.cn/sjtj/fx/202603/P020260303633796945196.pdf"
+    },
+    {
+      "amount": 4093.0,
+      "attempts": 1,
+      "pages": 2,
+      "reference_period": "2026-02",
+      "sha256": "4d1f573698a0d21c31f73e5aac5ff82b16265e74d1954100c09cad55fbf36cf1",
+      "url": "https://www.nafmii.org.cn/sjtj/fx/202603/P020260331577881313060.pdf"
+    },
+    {
+      "amount": 9987.0,
+      "attempts": 1,
+      "pages": 2,
+      "reference_period": "2026-03",
+      "sha256": "f62b7e1c2ff3047f7c7bff2ea2852dacd60ba9ed1f4be0204ceb096dd404f77e",
+      "url": "https://www.nafmii.org.cn/sjtj/fx/202604/P020260420599940026815.pdf"
+    },
+    {
+      "amount": 10462.0,
+      "attempts": 1,
+      "pages": 2,
+      "reference_period": "2026-04",
+      "sha256": "53d44d472b6fade4b0fff50802702b8f995150278aa4b8b5ebe6f055736312a8",
+      "url": "https://www.nafmii.org.cn/sjtj/fx/202606/P020260604637550872655.pdf"
+    },
+    {
+      "amount": 4395.0,
+      "attempts": 1,
+      "pages": 2,
+      "reference_period": "2026-05",
+      "sha256": "a669668394554a5acfda376e640a33a5883ecd9c2062c9acab648bb71351e72f",
+      "url": "https://www.nafmii.org.cn/sjtj/fx/202606/P020260623666241012952.pdf"
+    },
+    {
+      "amount": 8086.0,
+      "attempts": 1,
+      "pages": 2,
+      "reference_period": "2026-06",
+      "sha256": "815c9d040f105a3a27a8793ff8ddcdff0b788ad3767d791447054b09153729e4",
+      "url": "https://www.nafmii.org.cn/sjtj/fx/202607/P020260730398665984862.pdf"
+    }
+  ],
+  "semantic_rules": {
+    "later_pdf_revisions_do_not_silently_overwrite_prior_vintage": true,
+    "own_release_month_only": true,
+    "pdf_cutoff_month_must_match": true,
+    "pdf_internal_title_must_match": true,
+    "unknown_is_never_zero": true
+  },
+  "status": "PASS",
+  "year": 2026
+}

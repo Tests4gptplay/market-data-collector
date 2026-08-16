@@ -1,0 +1,39 @@
+name: China Financial OMO7D As-Of V5 Data Test
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'collectors/china_financial/policy_event_family_v5.py'
+      - '.github/workflows/china-financial-omo7d-asof-v5-data-test.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Current weekend and historical point-in-time tests
+        run: |
+          set -e
+          for d in 2026-08-16 2026-08-14 2025-05-07 2025-05-08 2025-05-10; do
+            echo "===== $d ====="
+            rm -rf "/tmp/omo-$d"
+            PYTHONPATH=. python3 collectors/china_financial/policy_event_family_v5.py --date "$d" --out "/tmp/omo-$d"
+            python3 - "$d" "/tmp/omo-$d" <<'PY'
+          import json,sys
+          d,p=sys.argv[1:]
+          obs=json.load(open(p+'/observations.json'))
+          run=json.load(open(p+'/run.json'))
+          rows=[x for x in obs if x.get('series_id')=='POL_OMO7D_RATE']
+          assert len(rows)==1,(d,rows,run)
+          r=rows[0]
+          assert r['reference_date']<=d,(d,r)
+          assert r['dimensions']['as_of_target_date']==d,(d,r)
+          if d=='2026-08-16': assert r['dimensions']['state_carried_forward'] is True,(d,r)
+          if d=='2025-05-07': assert abs(float(r['value'])-1.5)<1e-9,(d,r)
+          if d in ('2025-05-08','2025-05-10'): assert abs(float(r['value'])-1.4)<1e-9,(d,r)
+          print(json.dumps({'date':d,'rate':r['value'],'reference_date':r['reference_date'],'carried':r['dimensions']['state_carried_forward'],'pages':run['omo7d_rate_state'].get('pages_inspected'),'articles':run['omo7d_rate_state'].get('articles_inspected')},ensure_ascii=False))
+          PY
+          done

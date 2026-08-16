@@ -1,0 +1,37 @@
+{
+  "module": "china_financial",
+  "collector_version": "V1.9-CANDIDATE",
+  "interface_version": "CF_INTERFACE_V1",
+  "target_date": "2026-08-14",
+  "github_actions_run_id": 31926971402,
+  "collector_commit": "07bf4dfbccc94138c00a1e93e2d1fc32cb654a84",
+  "runtime": {
+    "backend": "GitHub Actions",
+    "runner_os": "Ubuntu 24.04.4 LTS",
+    "runner_image": "ubuntu-24.04",
+    "runner_image_version": "20260810.271.1",
+    "external_actions_dependencies": []
+  },
+  "required_fast_series": [
+    "CRD_MTN_AAA_3Y",
+    "CRD_SPREAD_AAA_3Y",
+    "FUND_DR007",
+    "FUND_FDR007",
+    "FUND_GC001",
+    "FUND_NCD_AAA_3M",
+    "SOV_CGB_10Y"
+  ],
+  "present_fast_series": [
+    "CRD_MTN_AAA_3Y",
+    "CRD_SPREAD_AAA_3Y",
+    "FUND_DR007",
+    "FUND_FDR007",
+    "FUND_GC001",
+    "FUND_NCD_AAA_3M",
+    "SOV_CGB_10Y"
+  ],
+  "missing_fast_series": [],
+  "hard_fast_gate": true,
+  "status": "PASS",
+  "notes": "First unified public-repository Fast collector pass. This PASS applies only to the Fast candidate scope for the target date; it is not yet a full China Financial production-release declaration."
+}

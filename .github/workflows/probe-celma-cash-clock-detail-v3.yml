@@ -1,0 +1,19 @@
+name: Probe CELMA Cash Clock Detail V3
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'tests/probes/probe_celma_cash_clock_detail_v3.py'
+      - '.github/workflows/probe-celma-cash-clock-detail-v3.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Probe CELMA issuance and debt-service details
+        run: python3 tests/probes/probe_celma_cash_clock_detail_v3.py

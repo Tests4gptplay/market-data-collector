@@ -1,0 +1,61 @@
+name: China Financial Fast Candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: "Reference date (YYYY-MM-DD)"
+        required: true
+        default: "2026-08-14"
+  push:
+    branches:
+      - v1.9-public-foundation
+    paths:
+      - "collectors/china_financial/fast_market.py"
+      - "collectors/china_financial/fast_market_r2.py"
+      - "contracts/**"
+      - ".github/workflows/china-financial-fast-candidate.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  fast-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TARGET_DATE: ${{ github.event.inputs.target_date || '2026-08-14' }}
+    steps:
+      - name: Checkout repository without external Actions dependency
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+
+      - name: Run unified Fast collector revision 2
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 collectors/china_financial/fast_market_r2.py \
+            --date "${TARGET_DATE}" \
+            --out out/china_financial_fast
+
+      - name: Print normalized outputs
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="out/china_financial_fast/${TARGET_DATE}"
+          for f in run.json observations.json derived.json gaps.json; do
+            echo "===== ${f} ====="
+            if [ -f "${ROOT}/${f}" ]; then
+              cat "${ROOT}/${f}"
+            else
+              echo "MISSING ${ROOT}/${f}"
+            fi
+          done

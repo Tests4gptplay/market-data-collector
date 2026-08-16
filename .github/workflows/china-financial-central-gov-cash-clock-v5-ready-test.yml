@@ -1,0 +1,50 @@
+name: China Financial Central Gov Cash Clock V5 READY Context Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      as_of:
+        description: Optional Asia/Shanghai as-of date YYYY-MM-DD
+        required: false
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'collectors/china_financial/central_gov_bond_cash_clock_v5_context.py'
+      - '.github/workflows/china-financial-central-gov-cash-clock-v5-ready-test.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  ready-context:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile V1-V5
+        run: |
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v1.py
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v2.py
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v3_incremental.py
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v4_incremental.py
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v5_context.py
+      - name: Validate READY context degradation semantics
+        shell: bash
+        run: |
+          set -euo pipefail
+          AS_OF='${{ github.event.inputs.as_of }}'
+          if [ -z "${AS_OF}" ]; then AS_OF="$(TZ=Asia/Shanghai date +%F)"; fi
+          rm -rf /tmp/cgb-v5
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/central_gov_bond_cash_clock_v5_context.py \
+            --as-of "${AS_OF}" --lookback-days 7 --out /tmp/cgb-v5
+          python3 - <<'PY'
+          import json
+          run=json.load(open('/tmp/cgb-v5/run.json'))
+          ctx=json.load(open('/tmp/cgb-v5/context.json'))
+          assert run['status']=='PASS',run
+          assert ctx['blocking_gap_count']==0,ctx
+          assert ctx['ready_adapter_semantics']['source_outage_becomes_unknown_not_zero'] is True
+          assert ctx['ready_adapter_semantics']['source_outage_does_not_relax_other_core_measurement_gates'] is True
+          assert ctx['data_confidence_effect'] in {'NONE','DOWNWEIGHT_FISCAL_CASH_CLOCK_CONTEXT'}
+          print(json.dumps({'run':run,'context_status':ctx['status'],'data_confidence_effect':ctx['data_confidence_effect'],'diagnostics':ctx['nonblocking_diagnostic_count']},ensure_ascii=False,indent=2))
+          PY

@@ -1,0 +1,116 @@
+[
+  {
+    "collector_version": "V1.9-CANDIDATE-NAFMII-DFI-ISSUANCE-V1",
+    "dimensions": {
+      "headline_row": "2026.1          587              965             8,676",
+      "issue_count": 965,
+      "issuer_count": 587,
+      "pdf_pages": 2,
+      "source_semantic": "NAFMII_MONTHLY_DFI_GROSS_ISSUANCE",
+      "title": "2026年1月债务融资工具发行统计"
+    },
+    "evidence_sha256": "519e9b73cf9a88205d471058538639ef4580e76c5ef95302db3dc71ea72bd2c7",
+    "provider": "NAFMII",
+    "reference_period": "2026-01",
+    "retrieved_at": "2026-08-16T09:55:23.992230Z",
+    "series_id": "CRD_DFI_GROSS_ISSUANCE_MONTHLY",
+    "source_url": "https://www.nafmii.org.cn/sjtj/fx/202603/P020260303633796945196.pdf",
+    "unit": "CNY_100M",
+    "value": 8676.0
+  },
+  {
+    "collector_version": "V1.9-CANDIDATE-NAFMII-DFI-ISSUANCE-V1",
+    "dimensions": {
+      "headline_row": "2     374      514      4,093",
+      "issue_count": 514,
+      "issuer_count": 374,
+      "pdf_pages": 2,
+      "source_semantic": "NAFMII_MONTHLY_DFI_GROSS_ISSUANCE",
+      "title": "2026年2月债务融资工具发行统计"
+    },
+    "evidence_sha256": "4d1f573698a0d21c31f73e5aac5ff82b16265e74d1954100c09cad55fbf36cf1",
+    "provider": "NAFMII",
+    "reference_period": "2026-02",
+    "retrieved_at": "2026-08-16T09:55:23.992230Z",
+    "series_id": "CRD_DFI_GROSS_ISSUANCE_MONTHLY",
+    "source_url": "https://www.nafmii.org.cn/sjtj/fx/202603/P020260331577881313060.pdf",
+    "unit": "CNY_100M",
+    "value": 4093.0
+  },
+  {
+    "collector_version": "V1.9-CANDIDATE-NAFMII-DFI-ISSUANCE-V1",
+    "dimensions": {
+      "headline_row": "3    738      1,175      9,987",
+      "issue_count": 1175,
+      "issuer_count": 738,
+      "pdf_pages": 2,
+      "source_semantic": "NAFMII_MONTHLY_DFI_GROSS_ISSUANCE",
+      "title": "2026年3月债务融资工具发行统计"
+    },
+    "evidence_sha256": "f62b7e1c2ff3047f7c7bff2ea2852dacd60ba9ed1f4be0204ceb096dd404f77e",
+    "provider": "NAFMII",
+    "reference_period": "2026-03",
+    "retrieved_at": "2026-08-16T09:55:23.992230Z",
+    "series_id": "CRD_DFI_GROSS_ISSUANCE_MONTHLY",
+    "source_url": "https://www.nafmii.org.cn/sjtj/fx/202604/P020260420599940026815.pdf",
+    "unit": "CNY_100M",
+    "value": 9987.0
+  },
+  {
+    "collector_version": "V1.9-CANDIDATE-NAFMII-DFI-ISSUANCE-V1",
+    "dimensions": {
+      "headline_row": "4     724      1,172      10,462",
+      "issue_count": 1172,
+      "issuer_count": 724,
+      "pdf_pages": 2,
+      "source_semantic": "NAFMII_MONTHLY_DFI_GROSS_ISSUANCE",
+      "title": "2026年4月债务融资工具发行统计"
+    },
+    "evidence_sha256": "53d44d472b6fade4b0fff50802702b8f995150278aa4b8b5ebe6f055736312a8",
+    "provider": "NAFMII",
+    "reference_period": "2026-04",
+    "retrieved_at": "2026-08-16T09:55:23.992230Z",
+    "series_id": "CRD_DFI_GROSS_ISSUANCE_MONTHLY",
+    "source_url": "https://www.nafmii.org.cn/sjtj/fx/202606/P020260604637550872655.pdf",
+    "unit": "CNY_100M",
+    "value": 10462.0
+  },
+  {
+    "collector_version": "V1.9-CANDIDATE-NAFMII-DFI-ISSUANCE-V1",
+    "dimensions": {
+      "headline_row": "5    311        515       4,395",
+      "issue_count": 515,
+      "issuer_count": 311,
+      "pdf_pages": 2,
+      "source_semantic": "NAFMII_MONTHLY_DFI_GROSS_ISSUANCE",
+      "title": "2026年5月债务融资工具发行统计"
+    },
+    "evidence_sha256": "a669668394554a5acfda376e640a33a5883ecd9c2062c9acab648bb71351e72f",
+    "provider": "NAFMII",
+    "reference_period": "2026-05",
+    "retrieved_at": "2026-08-16T09:55:23.992230Z",
+    "series_id": "CRD_DFI_GROSS_ISSUANCE_MONTHLY",
+    "source_url": "https://www.nafmii.org.cn/sjtj/fx/202606/P020260623666241012952.pdf",
+    "unit": "CNY_100M",
+    "value": 4395.0
+  },
+  {
+    "collector_version": "V1.9-CANDIDATE-NAFMII-DFI-ISSUANCE-V1",
+    "dimensions": {
+      "headline_row": "6     588       1,007      8,086",
+      "issue_count": 1007,
+      "issuer_count": 588,
+      "pdf_pages": 2,
+      "source_semantic": "NAFMII_MONTHLY_DFI_GROSS_ISSUANCE",
+      "title": "2026年6月债务融资工具发行统计"
+    },
+    "evidence_sha256": "815c9d040f105a3a27a8793ff8ddcdff0b788ad3767d791447054b09153729e4",
+    "provider": "NAFMII",
+    "reference_period": "2026-06",
+    "retrieved_at": "2026-08-16T09:55:23.992230Z",
+    "series_id": "CRD_DFI_GROSS_ISSUANCE_MONTHLY",
+    "source_url": "https://www.nafmii.org.cn/sjtj/fx/202607/P020260730398665984862.pdf",
+    "unit": "CNY_100M",
+    "value": 8086.0
+  }
+]

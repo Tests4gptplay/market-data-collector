@@ -1,0 +1,40 @@
+name: China Financial RRR As-Of V3 Data Test
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'collectors/china_financial/rrr_event_family_v3.py'
+      - '.github/workflows/china-financial-rrr-asof-v3-data-test.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test RRR point-in-time state/event carry-forward
+        run: |
+          set -e
+          for d in 2025-05-07 2025-05-08 2026-08-16; do
+            echo "===== $d ====="
+            rm -rf "/tmp/rrr-$d"
+            PYTHONPATH=. python3 collectors/china_financial/rrr_event_family_v3.py --date "$d" --out "/tmp/rrr-$d"
+            python3 - "$d" "/tmp/rrr-$d" <<'PY'
+          import json,sys
+          d,p=sys.argv[1:]
+          obs=json.load(open(p+'/observations.json'))
+          run=json.load(open(p+'/run.json'))
+          rows=[x for x in obs if x.get('series_id')=='POL_RRR_CHANGE_BPS']
+          assert len(rows)==1,(d,rows,run)
+          r=rows[0]
+          assert r['reference_date']<=d,(d,r)
+          assert r['dimensions']['as_of_target_date']==d,(d,r)
+          if d in ('2025-05-07','2025-05-08','2026-08-16'):
+              assert r['reference_date']=='2025-05-07',(d,r)
+              assert abs(float(r['value'])+50.0)<1e-9,(d,r)
+          if d=='2026-08-16': assert r['dimensions']['state_carried_forward'] is True,(d,r)
+          print(json.dumps({'date':d,'reference_date':r['reference_date'],'bps':r['value'],'effective_date':r['dimensions'].get('effective_date'),'pages_after_locate':run['pages_scanned_after_localization']},ensure_ascii=False))
+          PY
+          done

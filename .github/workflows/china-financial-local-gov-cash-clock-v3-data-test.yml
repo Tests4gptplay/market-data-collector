@@ -1,0 +1,81 @@
+name: China Financial Local Gov Cash Clock V3 Data Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      as_of:
+        description: Rolling-window as-of date YYYY-MM-DD
+        required: true
+        default: '2026-08-12'
+      lookback_days:
+        description: Publication lookback days
+        required: true
+        default: '1'
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'collectors/china_financial/local_gov_bond_cash_clock_v3.py'
+      - 'collectors/china_financial/local_gov_bond_cash_clock_v1.py'
+      - '.github/workflows/china-financial-local-gov-cash-clock-v3-data-test.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      AS_OF: ${{ github.event.inputs.as_of || '2026-08-12' }}
+      LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '1' }}
+    steps:
+      - name: Checkout
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+
+      - name: Install PDF parser
+        run: python3 -m pip install --disable-pip-version-check 'pypdf==5.9.0'
+
+      - name: Compile V1 and V3
+        run: |
+          python3 -m py_compile collectors/china_financial/local_gov_bond_cash_clock_v1.py
+          python3 -m py_compile collectors/china_financial/local_gov_bond_cash_clock_v3.py
+
+      - name: Run simplified rolling cash clock
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cash_clock_v3
+          PYTHONPATH=. python3 collectors/china_financial/local_gov_bond_cash_clock_v3.py \
+            --as-of "${AS_OF}" \
+            --lookback-days "${LOOKBACK_DAYS}" \
+            --out /tmp/cash_clock_v3
+
+      - name: Enforce semantic gates
+        run: |
+          python3 - <<'PY'
+          import json
+          obs=json.load(open('/tmp/cash_clock_v3/observations.json'))
+          ctx=json.load(open('/tmp/cash_clock_v3/context.json'))
+          run=json.load(open('/tmp/cash_clock_v3/run.json'))
+          assert run['status']=='PASS',run
+          assert ctx['scope']=='LOCAL_GOVERNMENT_BONDS_ONLY',ctx
+          assert ctx['central_government_bonds_included'] is False,ctx
+          assert ctx['window_proof']['all_publication_days_checked'] is True,ctx
+          assert ctx['window_proof']['unknown_is_never_zero'] is True,ctx
+          required={'series_id','reference_date','value','unit','provider','source_semantic','collected_at','collector_version','source_url','evidence_sha256'}
+          for row in obs:
+              missing=required-set(row)
+              assert not missing,(row,missing)
+          # A fully checked quiet window is a valid no-event result. Event-level
+          # parser regressions are already covered by the preserved V1/V2 tests;
+          # V3 tests rolling-window proof and interface normalization.
+          if not obs:
+              assert ctx['status']=='PASS_NO_EVENT_IN_PROVEN_WINDOW',ctx
+          print(json.dumps({'run':run,'context':ctx,'sample_count':len(obs)},ensure_ascii=False,indent=2))
+          PY

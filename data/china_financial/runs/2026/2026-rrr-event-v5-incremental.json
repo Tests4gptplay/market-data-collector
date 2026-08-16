@@ -1,0 +1,78 @@
+{
+  "collector_version": "V1.9-CANDIDATE-RRR-EVENT-FAMILY-V5-INCREMENTAL",
+  "completed_at": "2026-08-16T09:56:20.152096Z",
+  "diagnostics": [],
+  "gap_count": 0,
+  "github_run_id": "31940238289",
+  "github_source_commit": "b1b1477360ea2a6d9715f52a3522410f806ee55e",
+  "mode": "DAILY_INCREMENTAL",
+  "module": "china_financial_rrr_event_family",
+  "new_event_count": 0,
+  "observation_count": 0,
+  "oldest_seen_date": "2026-05-11",
+  "page_evidence": [
+    {
+      "max_date": "2026-08-14",
+      "min_date": "2026-07-29",
+      "page": 1,
+      "sha256": "0b50a9751b8b0fe1d96c276ec2df65d7ecbd8afc604248020d3f2056e5ccee4d",
+      "total_pages": 409,
+      "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/index.html"
+    },
+    {
+      "max_date": "2026-07-28",
+      "min_date": "2026-07-07",
+      "page": 2,
+      "sha256": "4685810fe9f8fa873ab7bd49d6abf7867d7da17402a2ff065ef19961e55cbac1",
+      "total_pages": 409,
+      "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/11040-2.html"
+    },
+    {
+      "max_date": "2026-07-07",
+      "min_date": "2026-06-18",
+      "page": 3,
+      "sha256": "9723a7ba9280977068823a2759cc1fbfc010a05731e9b4a3ead94d93ca8c81e8",
+      "total_pages": 409,
+      "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/11040-3.html"
+    },
+    {
+      "max_date": "2026-06-18",
+      "min_date": "2026-06-08",
+      "page": 4,
+      "sha256": "0a591775407cc37a8d72ed0eafbb99fe8deb03ffb6ed629e24febae13c414de8",
+      "total_pages": 409,
+      "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/11040-4.html"
+    },
+    {
+      "max_date": "2026-06-08",
+      "min_date": "2026-05-22",
+      "page": 5,
+      "sha256": "207002a737428a0bf23eff58a4f780797e45f9f9ef4489a63bdd3e4d290e9bec",
+      "total_pages": 409,
+      "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/11040-5.html"
+    },
+    {
+      "max_date": "2026-05-19",
+      "min_date": "2026-04-24",
+      "page": 6,
+      "sha256": "691112bd83d4836dd9edd1d6852692cf8907afa669ea57950d042320046680ed",
+      "total_pages": 409,
+      "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/11040-6.html"
+    }
+  ],
+  "pages_scanned": 6,
+  "persistence_pipeline_version": "CF_STORE_PERSISTENCE_V2",
+  "semantic_rules": {
+    "daily_incremental_only": true,
+    "default_recent_lookback_days": 10,
+    "direct_policy_announcement_only_for_root": true,
+    "existing_state_carries_forward_outside_collector": true,
+    "future_information_forbidden": true,
+    "historical_review_is_qc_only": true,
+    "no_2025_2024_backfill_in_daily_mode": true,
+    "no_new_release_is_not_gap": true
+  },
+  "since_date": "2026-08-06",
+  "status": "PASS",
+  "target_date": "2026-08-16"
+}

@@ -1,0 +1,204 @@
+name: China Financial Daily Data-Layer READY V2
+
+# Normative baseline: current internal China Financial Draft.
+# READY scope: DATA_COLLECTION_AND_MEASUREMENT_LAYER only.
+on:
+  workflow_dispatch:
+    inputs:
+      market_date:
+        description: Optional exact market date YYYY-MM-DD; blank = latest persisted eligible market session <= as_of
+        required: false
+      as_of:
+        description: Optional policy/fiscal context as-of date YYYY-MM-DD; blank = current Asia/Shanghai date
+        required: false
+      year:
+        description: Optional calendar year for monthly release families; blank = year(as_of)
+        required: false
+  push:
+    branches:
+      - agent/china-financial-data-completeness-v1
+    paths:
+      - 'collectors/china_financial/**'
+      - 'contracts/china_financial/**'
+      - 'registry/china_financial/**'
+      - 'tests/china_financial_data_layer_readiness_v2.py'
+      - '.github/workflows/china-financial-daily-ready-v2.yml'
+      - '.github/workflows/china-financial-local-gov-cash-clock-v3-data-test.yml'
+      - '.github/workflows/china-financial-central-gov-cash-clock-v5-ready-test.yml'
+      - 'README.md'
+
+permissions:
+  contents: read
+
+jobs:
+  data-layer-ready:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    env:
+      INPUT_MARKET_DATE: ${{ github.event.inputs.market_date || '' }}
+      INPUT_AS_OF: ${{ github.event.inputs.as_of || '' }}
+      INPUT_YEAR: ${{ github.event.inputs.year || '' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install PDF parser
+        run: python3 -m pip install --disable-pip-version-check 'pypdf==5.9.0'
+
+      - name: Resolve incremental context dates
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -n "${INPUT_AS_OF}" ]; then AS_OF="${INPUT_AS_OF}"; else AS_OF="$(TZ=Asia/Shanghai date +%F)"; fi
+          if [ -n "${INPUT_YEAR}" ]; then YEAR="${INPUT_YEAR}"; else YEAR="${AS_OF%%-*}"; fi
+          SINCE_DATE="$(python3 - "${AS_OF}" <<'PY'
+          import sys
+          from datetime import date,timedelta
+          print((date.fromisoformat(sys.argv[1])-timedelta(days=10)).isoformat())
+          PY
+          )"
+          echo "AS_OF=${AS_OF}" >> "$GITHUB_ENV"
+          echo "YEAR=${YEAR}" >> "$GITHUB_ENV"
+          echo "SINCE_DATE=${SINCE_DATE}" >> "$GITHUB_ENV"
+
+      - name: Compile active READY path
+        run: |
+          set -euo pipefail
+          python3 -m py_compile \
+            collectors/china_financial/market_family_v4.py \
+            collectors/china_financial/pbc_monthly_credit_family_v1.py \
+            collectors/china_financial/mof_fiscal_ytd_family_v2.py \
+            collectors/china_financial/pbc_monthly_policy_tools_v2.py \
+            collectors/china_financial/policy_event_family_v6_incremental.py \
+            collectors/china_financial/rrr_event_family_v5_incremental.py \
+            collectors/china_financial/nafmii_dfi_issuance_family_v1.py \
+            collectors/china_financial/local_gov_bond_cash_clock_v3.py \
+            collectors/china_financial/central_gov_bond_cash_clock_v1.py \
+            collectors/china_financial/central_gov_bond_cash_clock_v2.py \
+            collectors/china_financial/central_gov_bond_cash_clock_v3_incremental.py \
+            collectors/china_financial/central_gov_bond_cash_clock_v4_incremental.py \
+            collectors/china_financial/central_gov_bond_cash_clock_v5_context.py \
+            tests/china_financial_data_layer_readiness_v2.py
+
+      - name: Offline Draft Data-Layer Readiness V2
+        run: |
+          set -euo pipefail
+          python3 tests/china_financial_data_layer_readiness_v2.py --out /tmp/china-financial-readiness.json
+          cat /tmp/china-financial-readiness.json
+
+      - name: Resolve latest eligible market session
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -n "${INPUT_MARKET_DATE}" ]; then
+            MARKET_DATE="${INPUT_MARKET_DATE}"
+            SOURCE="EXPLICIT_INPUT"
+          else
+            MARKET_DATE="$(python3 - "${AS_OF}" <<'PY'
+          import re,sys
+          from datetime import date,timedelta
+          from pathlib import Path
+          as_of=date.fromisoformat(sys.argv[1])
+          dates=[]
+          base=Path('data/china_financial/observations')
+          if base.exists():
+              for p in base.rglob('*market-family-v4*.json'):
+                  m=re.search(r'(20\d{2}-\d{2}-\d{2})',p.name)
+                  if not m: continue
+                  d=date.fromisoformat(m.group(1))
+                  if d<=as_of: dates.append(d)
+          if dates:
+              print(max(dates).isoformat())
+          else:
+              d=as_of
+              while d.weekday()>=5: d-=timedelta(days=1)
+              print(d.isoformat())
+          PY
+          )"
+            SOURCE="PERSISTED_LATEST_OR_WEEKDAY_FALLBACK"
+          fi
+          echo "MARKET_DATE=${MARKET_DATE}" >> "$GITHUB_ENV"
+          echo "MARKET_DATE_RESOLUTION=${SOURCE}" >> "$GITHUB_ENV"
+
+      - name: Live fast market family
+        run: |
+          rm -rf /tmp/market-v4
+          python3 collectors/china_financial/market_family_v4.py --date "${MARKET_DATE}" --out /tmp/market-v4
+          cat "/tmp/market-v4/${MARKET_DATE}/run.json"
+
+      - name: Live monthly credit family
+        run: |
+          rm -rf /tmp/monthly-credit
+          python3 collectors/china_financial/pbc_monthly_credit_family_v1.py --year "${YEAR}" --out /tmp/monthly-credit
+          cat /tmp/monthly-credit/run.json
+
+      - name: Live MOF fiscal family
+        run: |
+          rm -rf /tmp/mof-fiscal
+          python3 collectors/china_financial/mof_fiscal_ytd_family_v2.py --year "${YEAR}" --out /tmp/mof-fiscal
+          cat /tmp/mof-fiscal/run.json
+
+      - name: Live monthly policy tools
+        run: |
+          rm -rf /tmp/policy-tools
+          python3 collectors/china_financial/pbc_monthly_policy_tools_v2.py --year "${YEAR}" --out /tmp/policy-tools
+          cat /tmp/policy-tools/run.json
+
+      - name: Live NAFMII primary-market activity proxy
+        run: |
+          rm -rf /tmp/nafmii
+          python3 collectors/china_financial/nafmii_dfi_issuance_family_v1.py --year "${YEAR}" --out /tmp/nafmii
+          cat /tmp/nafmii/run.json
+
+      - name: Live low-frequency policy incremental checks
+        run: |
+          rm -rf /tmp/rrr-inc /tmp/omo-inc
+          PYTHONPATH=. python3 collectors/china_financial/rrr_event_family_v5_incremental.py \
+            --date "${AS_OF}" --since-date "${SINCE_DATE}" --out /tmp/rrr-inc
+          PYTHONPATH=. python3 collectors/china_financial/policy_event_family_v6_incremental.py \
+            --date "${MARKET_DATE}" --since-date "${SINCE_DATE}" --out /tmp/omo-inc
+          cat /tmp/rrr-inc/run.json
+          cat /tmp/omo-inc/run.json
+
+      - name: Live local-government cash-clock context
+        run: |
+          rm -rf /tmp/local-cash-clock
+          PYTHONPATH=. python3 collectors/china_financial/local_gov_bond_cash_clock_v3.py \
+            --as-of "${AS_OF}" --lookback-days 2 --out /tmp/local-cash-clock
+          cat /tmp/local-cash-clock/context.json
+
+      - name: Live central-government cash-clock READY context
+        run: |
+          rm -rf /tmp/central-cash-clock
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/central_gov_bond_cash_clock_v5_context.py \
+            --as-of "${AS_OF}" --lookback-days 7 --out /tmp/central-cash-clock
+          cat /tmp/central-cash-clock/context.json
+          cat /tmp/central-cash-clock/run.json
+
+      - name: Final DATA_LAYER_READY V2 summary
+        run: |
+          python3 - <<'PY'
+          import json,os
+          r=json.load(open('/tmp/china-financial-readiness.json'))
+          local=json.load(open('/tmp/local-cash-clock/context.json'))
+          central=json.load(open('/tmp/central-cash-clock/context.json'))
+          summary={
+            'as_of':os.environ['AS_OF'],
+            'market_date':os.environ['MARKET_DATE'],
+            'market_date_resolution':os.environ['MARKET_DATE_RESOLUTION'],
+            'normative_baseline':r['normative_baseline'],
+            'status':r['status'],
+            'ready_scope':r['ready_scope'],
+            'government_bond_scope':r['government_bond_context']['scope'],
+            'local_cash_clock_status':local['status'],
+            'central_cash_clock_status':central['status'],
+            'central_source_context_available':central['source_context_available'],
+            'central_data_confidence_effect':central['data_confidence_effect'],
+            'production_runtime_status':r['production_runtime_status'],
+          }
+          print(json.dumps(summary,ensure_ascii=False,indent=2))
+          assert r['status']=='DATA_LAYER_READY',r
+          assert local['window_proof']['all_publication_days_checked'] is True,local
+          assert central['ready_adapter_semantics']['source_outage_becomes_unknown_not_zero'] is True,central
+          assert central['ready_adapter_semantics']['source_outage_does_not_relax_other_core_measurement_gates'] is True,central
+          PY

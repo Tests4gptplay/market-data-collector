@@ -1,0 +1,56 @@
+{
+  "interface": "CF_INTERFACE_V1",
+  "module": "china_financial",
+  "status": "CANDIDATE",
+  "timezone": "Asia/Shanghai",
+  "principles": {
+    "unknown_is_not_zero": true,
+    "unknown_is_not_neutral": true,
+    "fail_closed": true,
+    "append_only_observation_history": true,
+    "derived_requires_parent_lineage": true,
+    "scheduled_check_is_not_observation_creation": true,
+    "no_event_requires_window_proof": true,
+    "no_cross_provider_credit_spread_parents": true,
+    "pure_ncd_only": true,
+    "actual_market_rates_not_fixing_substitutes": true
+  },
+  "layers": {
+    "raw": "source evidence metadata and redistributable payload references",
+    "observations": "normalized root observations",
+    "derived": "deterministic features with explicit parent lineage",
+    "gaps": "failed, missing, stale, or semantically unsafe collection attempts",
+    "runs": "execution manifest and completeness/QC state"
+  },
+  "required_observation_fields": [
+    "series_id",
+    "reference_date",
+    "value",
+    "unit",
+    "provider",
+    "source_semantic",
+    "collected_at",
+    "collector_version",
+    "source_url",
+    "evidence_sha256"
+  ],
+  "required_derived_fields": [
+    "series_id",
+    "reference_date",
+    "value",
+    "unit",
+    "method_id",
+    "parent_series",
+    "parent_evidence",
+    "collector_version"
+  ],
+  "required_gap_fields": [
+    "series_id",
+    "reference_date",
+    "gap_class",
+    "stage",
+    "message",
+    "collector_version"
+  ],
+  "compatibility_rule": "Implementation changes may retain CF_INTERFACE_V1 only when consumer-visible series semantics, units, timing semantics, lineage requirements and output fields remain compatible."
+}

@@ -1,0 +1,87 @@
+name: Persist China Financial Market V3 Seed
+
+on:
+  push:
+    branches: [v1.9-public-foundation]
+    paths:
+      - '.github/workflows/persist-china-financial-market-v3-seed.yml'
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: Reference date YYYY-MM-DD
+        required: true
+        default: '2026-08-14'
+
+permissions:
+  contents: write
+
+jobs:
+  persist-market-v3:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      TARGET_DATE: ${{ github.event.inputs.target_date || '2026-08-14' }}
+    steps:
+      - name: Checkout branch without third-party action
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_REF_NAME}"
+          git checkout -B "${GITHUB_REF_NAME}" FETCH_HEAD
+
+      - name: Run complete market-family V3 collector
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 collectors/china_financial/market_family_v3.py \
+            --date "${TARGET_DATE}" \
+            --out out/china_financial_market_v3
+
+      - name: Prepare normalized public dataset
+        shell: bash
+        run: |
+          set -euo pipefail
+          YEAR="${TARGET_DATE%%-*}"
+          SRC="out/china_financial_market_v3/${TARGET_DATE}"
+          mkdir -p \
+            "data/china_financial/observations/${YEAR}" \
+            "data/china_financial/derived/${YEAR}" \
+            "data/china_financial/gaps/${YEAR}" \
+            "data/china_financial/runs/${YEAR}"
+          cp "${SRC}/observations.json" "data/china_financial/observations/${YEAR}/${TARGET_DATE}-market-family-v3.json"
+          cp "${SRC}/derived.json" "data/china_financial/derived/${YEAR}/${TARGET_DATE}-market-family-v3.json"
+          cp "${SRC}/gaps.json" "data/china_financial/gaps/${YEAR}/${TARGET_DATE}-market-family-v3.json"
+          cp "${SRC}/run.json" "data/china_financial/runs/${YEAR}/${TARGET_DATE}-market-family-v3.json"
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          date=os.environ['TARGET_DATE']; year=date[:4]
+          p=Path(f'data/china_financial/runs/{year}/{date}-market-family-v3.json')
+          obj=json.loads(p.read_text(encoding='utf-8'))
+          obj['github_run_id']=os.environ.get('GITHUB_RUN_ID')
+          obj['github_repository']=os.environ.get('GITHUB_REPOSITORY')
+          obj['github_source_commit']=os.environ.get('GITHUB_SHA')
+          obj['persistence']='NORMALIZED_PUBLIC_DATA_ONLY_RAW_EVIDENCE_NOT_COMMITTED'
+          p.write_text(json.dumps(obj,ensure_ascii=False,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+          PY
+
+      - name: Commit normalized dataset back to branch
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/china_financial
+          if git diff --cached --quiet; then
+            echo "No normalized data changes to persist"
+            exit 0
+          fi
+          git commit -m "Persist China Financial market V3 data for ${TARGET_DATE}"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

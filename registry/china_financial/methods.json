@@ -1,0 +1,80 @@
+{
+  "registry": "CHINA_FINANCIAL_METHOD_REGISTRY_V1_MIGRATION",
+  "status": "MIGRATION_IN_PROGRESS",
+  "migration_complete": false,
+  "legacy_method_registry_source": "China Financial Series Store V1.8 / METHOD_REGISTRY",
+  "methods": [
+    {
+      "method_version": "CREDIT_SPREAD_PROXY_V1.1",
+      "scope": "CREDIT_MARKET",
+      "change_type": "DETERMINISTIC_DERIVATION_SOURCE_HIERARCHY",
+      "series_affected": [
+        "CRD_SPREAD_AAA_1Y",
+        "CRD_SPREAD_AAA_3Y",
+        "CRD_SPREAD_AAP_3Y",
+        "CRD_SPREAD_AA_3Y"
+      ],
+      "feature_logic_version": "MATCHED_YTM_SPREAD_PROVIDER_CONSISTENT_V1.1",
+      "status": "ACTIVE_METHOD",
+      "formula": "CreditSpreadProxy_bp=(CreditYTM-MatchedCGBYTM)*100",
+      "source_hierarchy": {
+        "primary": "CFETS credit + CFETS CGB",
+        "authorized_aaa_fallback": "ChinaBond CP&Note AAA + ChinaBond CGB, same date, same tenor, same provider",
+        "cross_provider_mixing": "FORBIDDEN",
+        "aa_plus_aa_chinabond_fallback": "NOT_AUTHORIZED"
+      },
+      "notes": "Fallback preserves provider lineage and adds no extra evidence mass."
+    },
+    {
+      "method_version": "FISC_YTD_PERIOD_FLOW_V1",
+      "scope": "FISCAL",
+      "change_type": "DETERMINISTIC_DERIVATION",
+      "status": "MIGRATION_PENDING",
+      "formula": "Regular period = current eligible YTD - previous eligible YTD; Jan-Feb remains combined.",
+      "freeze_time_aware": true
+    },
+    {
+      "method_version": "FISC_DEPOSIT_STOCK_CHANGE_V1",
+      "scope": "FISCAL",
+      "change_type": "DETERMINISTIC_DERIVATION",
+      "status": "MIGRATION_PENDING",
+      "formula": "FiscalDepositChange = Stock_t - Stock_t-1",
+      "freeze_time_aware": true
+    },
+    {
+      "method_version": "CREDIT_STOCK_TO_MONTHLY_CHANGE_V1",
+      "scope": "CREDIT_CREATION",
+      "change_type": "DETERMINISTIC_DERIVATION",
+      "status": "MIGRATION_PENDING",
+      "formula": "MonthlyChange = Stock_t - Stock_t-1",
+      "freeze_time_aware": true
+    },
+    {
+      "method_version": "CREDIT_STOCK_YOY_V1",
+      "scope": "CREDIT_CREATION",
+      "change_type": "DETERMINISTIC_DERIVATION",
+      "status": "MIGRATION_PENDING",
+      "formula": "Same-calendar-month YoY from eligible stock vintages",
+      "freeze_time_aware": true
+    },
+    {
+      "method_version": "POLICY_STATE_LIFECYCLE_V1",
+      "scope": "POLICY",
+      "change_type": "STATE_RECONSTRUCTION",
+      "status": "MIGRATION_PENDING",
+      "notes": "Policy rate persists to next change; RRR from effective date to next change; OMO/MLF/buyout repo use actual tenor/outstanding/maturity."
+    },
+    {
+      "method_version": "FISC_GOV_BOND_COUPON_CASH_V1",
+      "scope": "FISCAL",
+      "change_type": "DETERMINISTIC_EVENT_DERIVATION",
+      "status": "MIGRATION_PENDING",
+      "formula": "CouponCash = EligibleOutstandingFace * AnnualCouponRate / PaymentsPerYear when all inputs are verified; otherwise UNKNOWN."
+    }
+  ],
+  "guardrails": {
+    "derived_requires_parent_lineage": true,
+    "no_implicit_state_to_numeric_score": true,
+    "shared_root_does_not_gain_evidence_mass_from_multiple_representations": true
+  }
+}

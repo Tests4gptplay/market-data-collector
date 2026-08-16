@@ -1,0 +1,17 @@
+name: Probe CELMA Pre-Issue Channels V1
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'tests/probes/probe_celma_preissue_channels_v1.py'
+      - '.github/workflows/probe-celma-preissue-channels-v1.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tests/probes/probe_celma_preissue_channels_v1.py

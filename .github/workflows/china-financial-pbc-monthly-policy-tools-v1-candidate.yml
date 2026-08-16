@@ -1,0 +1,41 @@
+name: China Financial PBC Monthly Policy Tools V1 Candidate
+
+on:
+  push:
+    branches: [v1.9-public-foundation]
+    paths:
+      - 'collectors/china_financial/pbc_monthly_policy_tools_v1.py'
+      - '.github/workflows/china-financial-pbc-monthly-policy-tools-v1-candidate.yml'
+  workflow_dispatch:
+    inputs:
+      year:
+        description: Calendar year
+        required: true
+        default: '2026'
+
+permissions:
+  contents: read
+
+jobs:
+  pbc-monthly-policy-tools-v1:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout without third-party action
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Run PBC monthly policy tools
+        env:
+          INPUT_YEAR: ${{ inputs.year }}
+        run: |
+          YEAR="${INPUT_YEAR:-2026}"
+          python3 collectors/china_financial/pbc_monthly_policy_tools_v1.py --year "${YEAR}" --out out/pbc_monthly_policy_tools_v1
+      - name: Show gate summary
+        run: |
+          cat out/pbc_monthly_policy_tools_v1/run.json
+          cat out/pbc_monthly_policy_tools_v1/gaps.json

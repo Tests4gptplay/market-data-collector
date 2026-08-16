@@ -1,0 +1,57 @@
+name: China Financial Policy Incremental Smoke V1
+
+on:
+  push:
+    branches:
+      - agent/china-financial-data-completeness-v1
+    paths:
+      - collectors/china_financial/policy_event_family_v6_incremental.py
+      - collectors/china_financial/rrr_event_family_v5_incremental.py
+      - .github/workflows/china-financial-policy-incremental-smoke-v1.yml
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: RRR recent-window no-event must pass without historical crawl
+        run: |
+          set -e
+          PYTHONPATH=. python3 collectors/china_financial/rrr_event_family_v5_incremental.py \
+            --date 2026-08-16 --since-date 2026-08-07 --out /tmp/rrr-inc
+          python3 - <<'PY'
+          import json
+          run=json.load(open('/tmp/rrr-inc/run.json'))
+          gaps=json.load(open('/tmp/rrr-inc/gaps.json'))
+          obs=json.load(open('/tmp/rrr-inc/observations.json'))
+          assert run['status']=='PASS', run
+          assert gaps==[], gaps
+          assert obs==[], obs
+          assert run['semantic_rules']['no_2025_2024_backfill_in_daily_mode'] is True
+          assert run['pages_scanned'] <= 8, run
+          print('RRR_INCREMENTAL_PASS', run['pages_scanned'], run['oldest_seen_date'])
+          PY
+
+      - name: OMO7D recent-window unchanged state must emit no new rate root
+        run: |
+          set -e
+          PYTHONPATH=. python3 collectors/china_financial/policy_event_family_v6_incremental.py \
+            --date 2026-08-14 --since-date 2026-08-07 --previous-rate 1.40 --out /tmp/omo-inc
+          python3 - <<'PY'
+          import json
+          run=json.load(open('/tmp/omo-inc/run.json'))
+          gaps=json.load(open('/tmp/omo-inc/gaps.json'))
+          obs=json.load(open('/tmp/omo-inc/observations.json'))
+          rate=[x for x in obs if x.get('series_id')=='POL_OMO7D_RATE']
+          state=run['omo7d_incremental_state_check']
+          assert run['status']=='PASS', (run,gaps)
+          assert gaps==[], gaps
+          assert state['latest_recent_rate']==1.4, state
+          assert state['state_change_detected'] is False, state
+          assert rate==[], rate
+          assert run['semantic_rules']['no_2025_2024_backfill_in_daily_mode'] is True
+          assert state['pages_inspected'] <= 4, state
+          print('OMO7D_INCREMENTAL_PASS', state['latest_recent_quote_date'], state['latest_recent_rate'], state['pages_inspected'])
+          PY

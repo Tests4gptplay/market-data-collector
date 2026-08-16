@@ -1,0 +1,72 @@
+name: China Financial Local Gov Cash Clock V1 Data Test
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'collectors/china_financial/local_gov_bond_cash_clock_v1.py'
+      - '.github/workflows/china-financial-local-gov-cash-clock-v1-data-test.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check pypdf==5.9.0
+      - name: PREISSUE explicit payment-date regression
+        run: |
+          set +e
+          PYTHONPATH=. python3 collectors/china_financial/local_gov_bond_cash_clock_v1.py --date 2026-02-26 --out /tmp/pre --detail-type PREISSUE --detail-url https://www.celma.org.cn/fxqgg/68068.jhtml
+          rc=$?
+          set -e
+          python3 - <<'PY'
+          import json
+          obs=json.load(open('/tmp/pre/observations.json')); gaps=json.load(open('/tmp/pre/gaps.json'))
+          p=[x for x in obs if x['series_id']=='FISC_GOV_BOND_PAYMENT_EVENT']
+          assert p,(obs,gaps)
+          assert any(x['reference_date']=='2026-03-04' and abs(float(x['value'])-138.15)<1e-6 for x in p),(p,gaps)
+          assert all(x['dimensions'].get('explicit_payment_date') is True for x in p)
+          print('PREISSUE_PASS',[(x['reference_date'],x['value']) for x in p])
+          PY
+      - name: RESULT actual issuance regression
+        run: |
+          set +e
+          PYTHONPATH=. python3 collectors/china_financial/local_gov_bond_cash_clock_v1.py --date 2026-08-12 --out /tmp/result --detail-type RESULT --detail-url https://www.celma.org.cn/fxjg/70041.jhtml
+          rc=$?
+          set -e
+          python3 - <<'PY'
+          import json
+          obs=json.load(open('/tmp/result/observations.json')); gaps=json.load(open('/tmp/result/gaps.json'))
+          rows=[x for x in obs if x['series_id']=='FISC_GOV_BOND_AUCTION_EVENT' and x['dimensions'].get('bond_code')=='2605907']
+          assert len(rows)==1,(obs,gaps)
+          r=rows[0]
+          assert r['reference_date']=='2026-07-28',r
+          assert abs(float(r['value'])-3.02)<1e-9,r
+          assert abs(float(r['dimensions']['coupon_pct'])-2.31)<1e-9,r
+          print('RESULT_PASS',r['reference_date'],r['value'],r['dimensions']['coupon_pct'])
+          PY
+      - name: DEBT SERVICE coupon/maturity split regression
+        run: |
+          set +e
+          PYTHONPATH=. python3 collectors/china_financial/local_gov_bond_cash_clock_v1.py --date 2026-08-11 --out /tmp/debt --detail-type DEBT_SERVICE --detail-url https://www.celma.org.cn/fxdf/70048.jhtml
+          rc=$?
+          set -e
+          python3 - <<'PY'
+          import json
+          obs=json.load(open('/tmp/debt/observations.json')); gaps=json.load(open('/tmp/debt/gaps.json'))
+          def rows(series,code): return [x for x in obs if x['series_id']==series and x['dimensions'].get('bond_code')==code]
+          mat=rows('FISC_GOV_BOND_MATURITY_EVENT','1606308')
+          cup=rows('FISC_GOV_BOND_COUPON_CASH_ESTIMATE','1606308')
+          assert len(mat)==1 and abs(float(mat[0]['value'])-93.52)<1e-9,(mat,gaps)
+          assert len(cup)==1 and abs(float(cup[0]['value'])-1.458912)<1e-8,(cup,gaps)
+          cup2=rows('FISC_GOV_BOND_COUPON_CASH_ESTIMATE','2305197')
+          mat2=rows('FISC_GOV_BOND_MATURITY_EVENT','2305197')
+          assert len(cup2)==1 and abs(float(cup2[0]['value'])-0.31263)<1e-8,(cup2,gaps)
+          assert not mat2,(mat2,gaps)
+          print('DEBT_PASS',mat[0]['value'],cup[0]['value'],cup2[0]['value'],'gaps',len(gaps))
+          PY

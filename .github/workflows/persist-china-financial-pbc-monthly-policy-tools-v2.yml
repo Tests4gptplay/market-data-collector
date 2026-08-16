@@ -1,0 +1,54 @@
+name: Persist China Financial PBC Monthly Policy Tools V2
+
+on:
+  push:
+    branches: [v1.9-public-foundation]
+    paths:
+      - '.github/workflows/persist-china-financial-pbc-monthly-policy-tools-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  persist:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=20 origin "${GITHUB_REF_NAME}"
+          git checkout -B "${GITHUB_REF_NAME}" FETCH_HEAD
+      - name: Run V2 collector
+        run: |
+          set -euo pipefail
+          python3 collectors/china_financial/pbc_monthly_policy_tools_v2.py --year 2026 --out out/pbc_monthly_policy_tools_v2
+      - name: Prepare normalized dataset
+        run: |
+          set -euo pipefail
+          YEAR=2026
+          mkdir -p "data/china_financial/observations/${YEAR}" "data/china_financial/gaps/${YEAR}" "data/china_financial/runs/${YEAR}"
+          cp out/pbc_monthly_policy_tools_v2/observations.json "data/china_financial/observations/${YEAR}/${YEAR}-pbc-monthly-policy-tools-v2.json"
+          cp out/pbc_monthly_policy_tools_v2/gaps.json "data/china_financial/gaps/${YEAR}/${YEAR}-pbc-monthly-policy-tools-v2.json"
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          run=json.loads(Path('out/pbc_monthly_policy_tools_v2/run.json').read_text(encoding='utf-8'))
+          run.update(github_repository=os.environ['GITHUB_REPOSITORY'],github_run_id=os.environ['GITHUB_RUN_ID'],github_source_commit=os.environ['GITHUB_SHA'],persistence='NORMALIZED_PUBLIC_DATA_ONLY_RAW_EVIDENCE_NOT_COMMITTED',persistence_workflow_version='V1_REBASE_BEFORE_PUSH')
+          Path('data/china_financial/runs/2026/2026-pbc-monthly-policy-tools-v2.json').write_text(json.dumps(run,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+      - name: Commit rebase and push
+        run: |
+          set -euo pipefail
+          git config user.name "market-data-collector[bot]"
+          git config user.email "market-data-collector[bot]@users.noreply.github.com"
+          git add data/china_financial
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data(china-financial): persist PBC monthly policy tools 2026"
+          git fetch --depth=20 origin "${GITHUB_REF_NAME}"
+          git rebase FETCH_HEAD
+          git push origin HEAD:"${GITHUB_REF_NAME}"

@@ -1,0 +1,211 @@
+name: China Financial Daily Persist V3
+
+# Active latest-first producer -> Store pipeline.
+# 11:30 UTC = 19:30 Asia/Shanghai.
+# GitHub cron becomes active only when this workflow exists on the default branch.
+on:
+  schedule:
+    - cron: '30 11 * * *'
+  workflow_dispatch:
+    inputs:
+      as_of:
+        description: Optional runtime date YYYY-MM-DD; blank = current Asia/Shanghai date
+        required: false
+      year:
+        description: Optional year; blank = year(as_of)
+        required: false
+      market_date:
+        description: Optional exact Fast market date; blank = latest eligible session
+        required: false
+      force_fast_live:
+        description: Force Fast live re-fetch
+        required: false
+        default: 'false'
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - '.github/workflows/china-financial-daily-persist-v3.yml'
+      - 'collectors/china_financial/pbc_monthly_credit_family_v4_incremental.py'
+      - 'collectors/china_financial/mof_fiscal_ytd_family_v3_incremental.py'
+      - 'collectors/china_financial/pbc_monthly_policy_tools_v3_incremental.py'
+      - 'collectors/china_financial/nafmii_dfi_issuance_family_v2_incremental.py'
+      - 'collectors/china_financial/store_persistence_v3.py'
+      - 'tests/china_financial_store_persistence_v4.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: china-financial-store-persistence
+  cancel-in-progress: false
+
+jobs:
+  collect-validate-persist:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      INPUT_AS_OF: ${{ github.event.inputs.as_of || '' }}
+      INPUT_YEAR: ${{ github.event.inputs.year || '' }}
+      INPUT_MARKET_DATE: ${{ github.event.inputs.market_date || '' }}
+      FORCE_FAST_LIVE: ${{ github.event.inputs.force_fast_live || 'false' }}
+    steps:
+      - name: Checkout producer branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 20
+
+      - name: Install PDF parser
+        run: python3 -m pip install --disable-pip-version-check 'pypdf==5.9.0'
+
+      - name: Resolve runtime dates
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -n "${INPUT_AS_OF}" ]; then AS_OF="${INPUT_AS_OF}"; else AS_OF="$(TZ=Asia/Shanghai date +%F)"; fi
+          if [ -n "${INPUT_YEAR}" ]; then YEAR="${INPUT_YEAR}"; else YEAR="${AS_OF%%-*}"; fi
+          SINCE_DATE="$(python3 - "${AS_OF}" <<'PY'
+          import sys
+          from datetime import date,timedelta
+          print((date.fromisoformat(sys.argv[1])-timedelta(days=10)).isoformat())
+          PY
+          )"
+          echo "AS_OF=${AS_OF}" >> "$GITHUB_ENV"
+          echo "YEAR=${YEAR}" >> "$GITHUB_ENV"
+          echo "SINCE_DATE=${SINCE_DATE}" >> "$GITHUB_ENV"
+
+      - name: Compile active path
+        run: |
+          set -euo pipefail
+          python3 -m py_compile \
+            collectors/china_financial/fast_market_ready_incremental_v2.py \
+            collectors/china_financial/market_family_v4.py \
+            collectors/china_financial/pbc_monthly_credit_family_v1.py \
+            collectors/china_financial/pbc_monthly_credit_family_v4_incremental.py \
+            collectors/china_financial/mof_fiscal_ytd_family_v2.py \
+            collectors/china_financial/mof_fiscal_ytd_family_v3_incremental.py \
+            collectors/china_financial/pbc_monthly_policy_tools_v1.py \
+            collectors/china_financial/pbc_monthly_policy_tools_v2.py \
+            collectors/china_financial/pbc_monthly_policy_tools_v3_incremental.py \
+            collectors/china_financial/nafmii_dfi_issuance_family_v1.py \
+            collectors/china_financial/nafmii_dfi_issuance_family_v2_incremental.py \
+            collectors/china_financial/rrr_event_family_v5_incremental.py \
+            collectors/china_financial/policy_event_family_v6_incremental.py \
+            collectors/china_financial/local_gov_bond_cash_clock_v3.py \
+            collectors/china_financial/central_gov_bond_cash_clock_v5_context.py \
+            collectors/china_financial/store_persistence_v1.py \
+            collectors/china_financial/store_persistence_v2.py \
+            collectors/china_financial/store_persistence_v3.py \
+            tests/china_financial_store_persistence_v4.py
+
+      - name: Read previous OMO7D Store state
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREVIOUS_OMO7D_RATE="$(python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/china_financial/manifests/latest.json')
+          if not p.exists(): print(''); raise SystemExit
+          try:
+              x=json.loads(p.read_text(encoding='utf-8'))
+              v=((x.get('policy_state') or {}).get('omo7d_rate') or {}).get('value')
+              print('' if v is None else v)
+          except Exception: print('')
+          PY
+          )"
+          echo "PREVIOUS_OMO7D_RATE=${PREVIOUS_OMO7D_RATE}" >> "$GITHUB_ENV"
+
+      - name: Fast Market latest eligible session
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cf-fast
+          EXTRA=()
+          if [ -n "${INPUT_MARKET_DATE}" ]; then EXTRA+=(--market-date "${INPUT_MARKET_DATE}"); fi
+          if [ "${FORCE_FAST_LIVE}" = "true" ]; then EXTRA+=(--force-live); fi
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/fast_market_ready_incremental_v2.py --as-of "${AS_OF}" --out /tmp/cf-fast "${EXTRA[@]}"
+          MARKET_DATE="$(python3 - <<'PY'
+          import json
+          print(json.load(open('/tmp/cf-fast/run.json'))['market_date'])
+          PY
+          )"
+          echo "MARKET_DATE=${MARKET_DATE}" >> "$GITHUB_ENV"
+
+      - name: PBC monthly credit latest-first check
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cf-credit
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/pbc_monthly_credit_family_v4_incremental.py --year "${YEAR}" --store-root data/china_financial --out /tmp/cf-credit
+
+      - name: MOF fiscal new-release check
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cf-fiscal
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/mof_fiscal_ytd_family_v3_incremental.py --year "${YEAR}" --store-root data/china_financial --out /tmp/cf-fiscal
+
+      - name: PBC monthly policy-tools new-release check
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cf-policy-tools
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/pbc_monthly_policy_tools_v3_incremental.py --year "${YEAR}" --store-root data/china_financial --out /tmp/cf-policy-tools
+
+      - name: NAFMII DFI new-release check
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cf-nafmii
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/nafmii_dfi_issuance_family_v2_incremental.py --year "${YEAR}" --store-root data/china_financial --out /tmp/cf-nafmii
+
+      - name: RRR recent official check
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cf-rrr
+          PYTHONPATH=. python3 collectors/china_financial/rrr_event_family_v5_incremental.py --date "${AS_OF}" --since-date "${SINCE_DATE}" --out /tmp/cf-rrr
+
+      - name: OMO latest event and rate check
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cf-omo
+          EXTRA=()
+          if [ -n "${PREVIOUS_OMO7D_RATE}" ]; then EXTRA+=(--previous-rate "${PREVIOUS_OMO7D_RATE}"); fi
+          PYTHONPATH=. python3 collectors/china_financial/policy_event_family_v6_incremental.py --date "${MARKET_DATE}" --since-date "${SINCE_DATE}" --out /tmp/cf-omo "${EXTRA[@]}"
+
+      - name: Local-government simplified context
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cf-local
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/local_gov_bond_cash_clock_v3.py --as-of "${AS_OF}" --lookback-days 2 --out /tmp/cf-local
+
+      - name: Central-government simplified context
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cf-central
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/central_gov_bond_cash_clock_v5_context.py --as-of "${AS_OF}" --lookback-days 2 --out /tmp/cf-central
+
+      - name: Persist Store V3
+        run: |
+          set -euo pipefail
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/store_persistence_v3.py \
+            --as-of "${AS_OF}" --year "${YEAR}" --store-root data/china_financial \
+            --fast-dir /tmp/cf-fast --credit-dir /tmp/cf-credit --fiscal-dir /tmp/cf-fiscal \
+            --policy-tools-dir /tmp/cf-policy-tools --nafmii-dir /tmp/cf-nafmii \
+            --rrr-dir /tmp/cf-rrr --omo-dir /tmp/cf-omo --local-dir /tmp/cf-local --central-dir /tmp/cf-central \
+            --summary-out /tmp/cf-persist-summary.json
+          cat /tmp/cf-persist-summary.json
+
+      - name: Validate model-facing Store
+        run: python3 tests/china_financial_store_persistence_v4.py --store-root data/china_financial --expect-as-of "${AS_OF}"
+
+      - name: Commit Store changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "market-data-collector[bot]"
+          git config user.email "market-data-collector[bot]@users.noreply.github.com"
+          git add data/china_financial
+          if git diff --cached --quiet; then echo "No Store changes to commit"; exit 0; fi
+          git commit -m "data(china-financial): daily latest-first Store ${AS_OF}"
+          git fetch --depth=20 origin "${GITHUB_REF_NAME}"
+          git rebase "origin/${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

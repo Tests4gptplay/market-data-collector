@@ -1,0 +1,17 @@
+name: Probe CELMA Pagination V4
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'tests/probes/probe_celma_pagination_v4.py'
+      - '.github/workflows/probe-celma-pagination-v4.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tests/probes/probe_celma_pagination_v4.py

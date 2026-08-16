@@ -1,0 +1,57 @@
+name: China Financial Market Family V3 Candidate
+
+on:
+  push:
+    branches: [v1.9-public-foundation]
+    paths:
+      - 'collectors/china_financial/market_family_v1.py'
+      - 'collectors/china_financial/market_family_v2.py'
+      - 'collectors/china_financial/market_family_v3.py'
+      - '.github/workflows/china-financial-market-family-v3-candidate.yml'
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: Reference date YYYY-MM-DD
+        required: true
+        default: '2026-08-14'
+
+permissions:
+  contents: read
+
+jobs:
+  market-family-v3:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      TARGET_DATE: ${{ github.event.inputs.target_date || '2026-08-14' }}
+    steps:
+      - name: Checkout without third-party action
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Run complete V1.7 market-family V3 collector
+        id: collect
+        shell: bash
+        run: |
+          set +e
+          python3 collectors/china_financial/market_family_v3.py --date "${TARGET_DATE}" --out out/china_financial_market_v3
+          echo "rc=$?" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Print normalized outputs
+        if: always()
+        shell: bash
+        run: |
+          ROOT="out/china_financial_market_v3/${TARGET_DATE}"
+          for f in run.json observations.json derived.json gaps.json; do
+            echo "===== ${f} ====="
+            test -f "${ROOT}/${f}" && cat "${ROOT}/${f}" || true
+          done
+      - name: Enforce market-family coverage
+        shell: bash
+        run: exit "${{ steps.collect.outputs.rc }}"
