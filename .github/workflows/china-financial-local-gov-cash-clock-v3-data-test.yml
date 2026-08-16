@@ -72,9 +72,10 @@ jobs:
           for row in obs:
               missing=required-set(row)
               assert not missing,(row,missing)
-          # The historical window used by the default test has official CELMA
-          # activity. Do not require every event family on every date; that would
-          # turn legitimate no-event states into false failures.
-          assert len(obs)>0,(ctx,run)
+          # A fully checked quiet window is a valid no-event result. Event-level
+          # parser regressions are already covered by the preserved V1/V2 tests;
+          # V3 tests rolling-window proof and interface normalization.
+          if not obs:
+              assert ctx['status']=='PASS_NO_EVENT_IN_PROVEN_WINDOW',ctx
           print(json.dumps({'run':run,'context':ctx,'sample_count':len(obs)},ensure_ascii=False,indent=2))
           PY
