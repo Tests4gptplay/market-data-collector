@@ -100,7 +100,9 @@ These capabilities do **not** mean that every public-source series, every deferr
 
 The default operating mode is **DAILY_INCREMENTAL**.
 
-- High-frequency market series use the latest eligible trading session / recent rolling window.
+- High-frequency market series are session-dated. The active Fast READY adapter first resolves the latest validated eligible market session.
+- If that session already has a complete Market Family V4 PASS, it is reused on weekends/non-new-session runs instead of re-fetching the identical date. A validated session carry-forward is not stale merely because the calendar date advanced.
+- When a genuinely new eligible session must be collected, the underlying Fast Market collector remains fail-closed; Critical Coverage is not weakened by READY status.
 - Low-frequency policy and macro series are checked for new official releases; if no new release exists, the previously known state carries forward outside the event collector.
 - Previously collected historical data is preserved.
 - Uncollected 2025/2024-or-older history is **not** backfilled merely to make the repository look historically complete.
@@ -129,7 +131,8 @@ The active Draft does **not** require a complete security-level sovereign-bond l
 
 - MOF pre-issue notices provide the core auction/issuance schedule, explicit issue-payment deadline where stated, and maturity schedule.
 - Post-auction result notices provide actual issuance amount/coupon corrections when available.
-- A transient failure of an individual old/result detail page is recorded and retried later; it does not erase an otherwise proven recent core schedule window.
+- The central-government READY adapter treats this block as supporting Fiscal Context rather than the realized fiscal anchor. If the MOF list/detail source is temporarily unavailable, the context becomes an explicit `UNKNOWN_SOURCE_HEALTH_WARNING`, Data Confidence is downweighted, and the next incremental run retries it.
+- A source-health warning never becomes zero and does not relax hard Funding / RiskBearing / Slow Balance Sheet or realized-fiscal-anchor gates.
 - Distribution end is never silently substituted for an issue-payment date.
 
 **Local government:**
@@ -142,23 +145,23 @@ The combined scope is therefore:
 
 `SIMPLIFIED_CENTRAL_PLUS_LOCAL_CONTEXT`
 
-It supports fiscal **Drain / Release / Duration Supply Context**. It must not be marketed as a complete central+local sovereign security master or exhaustive bond-event ledger.
+It supports fiscal **Drain / Release / Duration Supply Context**. It must not be marketed as a complete central+local sovereign security master or exhaustive bond-event ledger. `FISC_DEPOSIT_CHANGE` remains the realized net fiscal-liquidity anchor.
 
 ## China Financial READY gate
 
-`.github/workflows/china-financial-daily.yml` is the active **China Financial Daily Data-Layer READY Gate**.
+`.github/workflows/china-financial-daily-ready-v4.yml` is the active **China Financial Daily Data-Layer READY Gate**.
 
 The gate exercises the principal Draft measurement paths together:
 
-1. core fast-market funding / sovereign / credit series;
+1. session-aware Fast Market state via `fast_market_ready_incremental_v2.py`, with Market Family V4 retained as the fail-closed live collector for new sessions;
 2. PBC monthly credit and TSF structure;
 3. MOF fiscal flows;
 4. monthly policy tools;
 5. NAFMII primary-market-activity proxy;
 6. incremental OMO / RRR policy checks;
 7. simplified local-government cash-clock context;
-8. simplified central-government cash-clock context;
-9. final Draft data-layer readiness semantics.
+8. source-health-aware simplified central-government cash-clock context;
+9. final Draft Data-Layer Readiness V4 semantics.
 
 A successful run supports the statement:
 
