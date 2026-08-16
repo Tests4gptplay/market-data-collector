@@ -1,0 +1,71 @@
+name: China Financial Policy Data Regression V2
+on:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'collectors/china_financial/policy_event_family_v2.py'
+      - 'collectors/china_financial/rrr_event_family_v2.py'
+      - '.github/workflows/china-financial-policy-data-regression-v2.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: OMO rate format regression
+        run: |
+          python3 - <<'PY'
+          from collectors.china_financial.policy_event_family_v2 import parse_7d_rate_from_article
+          quoted={
+            'old':'https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/5601302/index.html',
+            'new':'https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2025122608571540479/index.html',
+          }
+          exp={'old':1.50,'new':1.40}
+          for k,u in quoted.items():
+              r=parse_7d_rate_from_article(u); assert r and r['rate']==exp[k],(k,r); print(k,r['rate'],r['selection'])
+          zero=parse_7d_rate_from_article('https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026081409033914683/index.html')
+          assert zero is None,zero
+          print('zero-operation notice correctly has no rate quote')
+          PY
+      - name: Current zero-operation policy collection
+        run: |
+          rm -rf /tmp/policy
+          PYTHONPATH=. python3 collectors/china_financial/policy_event_family_v2.py --date 2026-08-14 --out /tmp/policy
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/policy/run.json'));o=json.load(open('/tmp/policy/observations.json'))
+          assert r['status']=='PASS',r
+          assert r['omo7d_rate_state']['status']=='NO_7D_RATE_EVENT_CONFIRMED',r['omo7d_rate_state']
+          assert not [x for x in o if x['series_id']=='POL_OMO7D_RATE'],o
+          print(json.dumps(r['omo7d_rate_state'],ensure_ascii=False,indent=2))
+          PY
+      - name: RRR direct historical parser and current no-event
+        run: |
+          python3 - <<'PY'
+          from datetime import date
+          from collectors.china_financial.rrr_event_family_v2 import parse_rrr_article
+          u='https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125434/125798/2858069/index.html'
+          row,ev=parse_rrr_article(u,date(2012,2,18))
+          assert row and row['value']==-50.0,(row,ev)
+          assert row['dimensions']['effective_date']=='2012-02-24',row
+          row2,ev2=parse_rrr_article(u,date(2012,2,19));assert row2 is None,(row2,ev2)
+          print(row);print(ev2)
+          PY
+          rm -rf /tmp/rrr
+          PYTHONPATH=. python3 collectors/china_financial/rrr_event_family_v2.py --date 2026-08-14 --out /tmp/rrr
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/rrr/run.json'));assert r['status']=='PASS',r;assert r['event_state']=='NO_EVENT_CONFIRMED',r
+          print(json.dumps(r,ensure_ascii=False,indent=2))
+          PY
