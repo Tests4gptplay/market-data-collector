@@ -56,6 +56,7 @@ jobs:
           import json,sys
           obs=json.load(open('/tmp/cgb-result/observations.json'))
           gaps=json.load(open('/tmp/cgb-result/gaps.json'))
+          ctx=json.load(open('/tmp/cgb-result/context.json'))
           a=[x for x in obs if x['series_id']=='FISC_GOV_BOND_AUCTION_EVENT']
           m=[x for x in obs if x['series_id']=='FISC_GOV_BOND_MATURITY_EVENT']
           checks=[
@@ -65,12 +66,9 @@ jobs:
           ]
           bad=[name for name,ok in checks if not ok]
           if bad:
-              payload=json.dumps({'bad':bad,'observations':obs,'gaps':gaps},ensure_ascii=False)
+              payload=json.dumps({'bad':bad,'observations':obs,'gaps':gaps,'context':ctx},ensure_ascii=False)
               print('::error title=Central Treasury result regression::'+payload)
               sys.exit(1)
-          # Deliberately do not require a result-page PAYMENT_EVENT. The explicit
-          # cash-payment clock comes from the pre-issue notice; distribution end
-          # is not silently promoted into a payment fact.
           print('CENTRAL_RESULT_PASS',len(obs))
           PY
 
@@ -87,6 +85,7 @@ jobs:
           import json,sys
           obs=json.load(open('/tmp/cgb-coupon/observations.json'))
           gaps=json.load(open('/tmp/cgb-coupon/gaps.json'))
+          ctx=json.load(open('/tmp/cgb-coupon/context.json'))
           s=[x for x in obs if x['series_id']=='FISC_GOV_BOND_COUPON_SCHEDULE_EVENT']
           c=[x for x in obs if x['series_id']=='FISC_GOV_BOND_COUPON_CASH_ESTIMATE']
           expected=1350*0.0175/2
@@ -97,7 +96,7 @@ jobs:
           ]
           bad=[name for name,ok in checks if not ok]
           if bad:
-              print('::error title=Central Treasury coupon regression::'+json.dumps({'bad':bad,'observations':obs[:20],'gaps':gaps},ensure_ascii=False))
+              print('::error title=Central Treasury coupon regression::'+json.dumps({'bad':bad,'observations':obs[:20],'gaps':gaps,'context':ctx},ensure_ascii=False))
               sys.exit(1)
           required={'series_id','reference_date','value','unit','provider','source_semantic','collected_at','collector_version','source_url','evidence_sha256'}
           assert all(not (required-set(x)) for x in obs)
