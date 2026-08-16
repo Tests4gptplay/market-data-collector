@@ -1,0 +1,42 @@
+name: China Financial Fast Market Incremental V2 READY Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'collectors/china_financial/fast_market_ready_incremental_v2.py'
+      - '.github/workflows/china-financial-fast-market-incremental-v2-ready-test.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  session-reuse:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile V1/V2
+        run: |
+          python3 -m py_compile collectors/china_financial/fast_market_ready_incremental_v1.py
+          python3 -m py_compile collectors/china_financial/fast_market_ready_incremental_v2.py
+      - name: Weekend reuses validated 2026-08-14 PASS
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/fast-ready
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/fast_market_ready_incremental_v2.py \
+            --as-of 2026-08-16 --out /tmp/fast-ready
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/fast-ready/run.json'))
+          assert r['status']=='PASS',r
+          assert r['collector_version']=='V1.9-READY-FAST-MARKET-INCREMENTAL-V2',r
+          assert r['mode']=='PERSISTED_VALIDATED_SESSION_REUSE',r
+          assert r['market_date']=='2026-08-14',r
+          assert r['coverage_count']==27 and r['expected_count']==27,r
+          assert r['missing_series']==[],r
+          assert r['rules']['weekend_carry_forward_is_not_stale'] is True,r
+          assert 'observations' in r['copied_payloads'],r
+          print(json.dumps(r,ensure_ascii=False,indent=2))
+          PY
