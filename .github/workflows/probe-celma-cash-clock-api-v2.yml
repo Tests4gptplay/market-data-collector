@@ -1,0 +1,19 @@
+name: Probe CELMA Cash Clock API V2
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'tests/probes/probe_celma_cash_clock_api_v2.py'
+      - '.github/workflows/probe-celma-cash-clock-api-v2.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Probe CELMA cash-clock APIs
+        run: python3 tests/probes/probe_celma_cash_clock_api_v2.py
