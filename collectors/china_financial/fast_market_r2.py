@@ -9,9 +9,14 @@ history while the public collector is still in candidate testing.
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlencode
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 from collectors.china_financial import fast_market as base
 
@@ -66,9 +71,6 @@ def collect_fdr007(date: str, raw_dir: Path) -> dict[str, Any]:
     candidates: list[tuple[str, float, dict[str, Any]]] = []
 
     for record in _walk_dicts(payload):
-        # The current API has changed field naming across implementations.
-        # Require the requested date to be present in the same record and only
-        # accept a field whose normalized key explicitly identifies FDR007.
         record_text = json.dumps(record, ensure_ascii=False, sort_keys=True)
         if date not in record_text:
             continue
@@ -116,5 +118,5 @@ if __name__ == "__main__":
     try:
         raise SystemExit(main())
     except Exception as exc:
-        print(f"FATAL: {type(exc).__name__}: {exc}", file=base.sys.stderr)
+        print(f"FATAL: {type(exc).__name__}: {exc}", file=sys.stderr)
         raise
