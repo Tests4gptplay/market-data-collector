@@ -1,17 +1,39 @@
 {
   "module": "china_financial",
-  "status": "CANDIDATE",
-  "collector_version": "V1.9-CANDIDATE",
+  "status": "READY",
+  "readiness_scope": "DATA_COLLECTION_AND_MEASUREMENT_LAYER",
+  "normative_baseline": "CURRENT_CHINA_FINANCIAL_DRAFT",
+  "historical_reference_not_normative": "UNMODIFIED_V0.9.1.1_MANUSCRIPT",
+  "collector_version": "V1.9-READY",
   "interface_version": "CF_INTERFACE_V1",
   "interface_contract": "contracts/china_financial/interface_v1.json",
   "series_registry": "registry/china_financial/series.json",
   "source_registry": "registry/china_financial/sources.json",
   "method_registry": "registry/china_financial/methods.json",
   "data_root": "data/china_financial",
+  "collection_mode": {
+    "default": "DAILY_INCREMENTAL",
+    "high_frequency": "RECENT_ROLLING_WINDOW",
+    "low_frequency": "CHECK_FOR_NEW_RELEASE_AND_CARRY_FORWARD_EXISTING_STATE",
+    "historical_backfill_default": false,
+    "rule": "Previously collected history is preserved; uncollected 2025/2024-or-older history is not a READY requirement."
+  },
+  "government_bond_cash_clock": {
+    "scope": "SIMPLIFIED_CENTRAL_PLUS_LOCAL_CONTEXT",
+    "security_master_required": false,
+    "central_core": "PREISSUE_AUCTION_PAYMENT_MATURITY_SCHEDULE",
+    "central_actual_results": "INCREMENTAL_CORRECTION_WHEN_AVAILABLE",
+    "local_core": "ROLLING_PUBLICATION_WINDOW_CONTEXT",
+    "rule": "Cash-clock context supports fiscal drain/release and duration-supply interpretation; it is not a complete sovereign security ledger."
+  },
   "runtime": {
     "backend": "GITHUB_ACTIONS",
-    "workflow": ".github/workflows/china-financial-daily.yml"
+    "workflow": ".github/workflows/china-financial-daily.yml",
+    "scheduled_store_writer": false,
+    "runtime_store_policy": "DEPLOYMENT_SPECIFIC_EXTERNAL_TO_THIS_READY_DECLARATION"
   },
-  "release_gate": "END_TO_END_COLLECTION_AND_QC_REQUIRED",
-  "failure_policy": "FAIL_CLOSED_NO_SILENT_FALLBACK"
+  "release_gate": "DATA_LAYER_READY_GATE",
+  "production_runtime_release": "NOT_DECLARED",
+  "failure_policy": "FAIL_CLOSED_NO_SILENT_FALLBACK",
+  "ready_definition": "Draft production-core data collection and measurement inputs are callable and measurable under the current incremental operating policy. READY does not declare the downstream Permission engine, trading model, scheduler/Store SLA, or repository-wide runtime production release."
 }
