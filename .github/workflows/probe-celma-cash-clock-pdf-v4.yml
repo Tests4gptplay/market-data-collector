@@ -1,0 +1,21 @@
+name: Probe CELMA Cash Clock PDF V4
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/china-financial-data-completeness-v1]
+    paths:
+      - 'tests/probes/probe_celma_cash_clock_pdf_v4.py'
+      - '.github/workflows/probe-celma-cash-clock-pdf-v4.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check pypdf==5.9.0
+      - run: python tests/probes/probe_celma_cash_clock_pdf_v4.py
