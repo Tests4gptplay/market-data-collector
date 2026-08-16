@@ -1,0 +1,800 @@
+[
+  {
+    "series_id": "POL_SLF_NET_MONTHLY",
+    "reference_period": "2026-01",
+    "value": -79.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026020318084859404/index.html",
+    "source_sha256": "76d3acb5860e59ad73afef6113fad6c894d350616fbeb8a00909b5e18b8066d9",
+    "published_at": "2026-02-03T18:30:00+08:00",
+    "available_at": "2026-02-03T18:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "常备借贷便利（SLF）",
+      "injection": 0.0,
+      "withdrawal": 79.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_MLF_NET_MONTHLY",
+    "reference_period": "2026-01",
+    "value": 7000.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026020318084859404/index.html",
+    "source_sha256": "76d3acb5860e59ad73afef6113fad6c894d350616fbeb8a00909b5e18b8066d9",
+    "published_at": "2026-02-03T18:30:00+08:00",
+    "available_at": "2026-02-03T18:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中期借贷便利（MLF）",
+      "injection": 9000.0,
+      "withdrawal": 2000.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PSL_NET_MONTHLY",
+    "reference_period": "2026-01",
+    "value": 1744.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026020318084859404/index.html",
+    "source_sha256": "76d3acb5860e59ad73afef6113fad6c894d350616fbeb8a00909b5e18b8066d9",
+    "published_at": "2026-02-03T18:30:00+08:00",
+    "available_at": "2026-02-03T18:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "抵押补充贷款（PSL）",
+      "injection": 1744.0,
+      "withdrawal": 0.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_STRUCTURAL_TOOLS_NET_MONTHLY",
+    "reference_period": "2026-01",
+    "value": 641.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026020318084859404/index.html",
+    "source_sha256": "76d3acb5860e59ad73afef6113fad6c894d350616fbeb8a00909b5e18b8066d9",
+    "published_at": "2026-02-03T18:30:00+08:00",
+    "available_at": "2026-02-03T18:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "其他结构性货币政策工具",
+      "injection": 3910.0,
+      "withdrawal": 3269.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PBOC_CGB_NET_MONTHLY",
+    "reference_period": "2026-01",
+    "value": 1000.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026020318084859404/index.html",
+    "source_sha256": "76d3acb5860e59ad73afef6113fad6c894d350616fbeb8a00909b5e18b8066d9",
+    "published_at": "2026-02-03T18:30:00+08:00",
+    "available_at": "2026-02-03T18:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "公开市场国债买卖",
+      "injection": 1000.0,
+      "withdrawal": 0.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_TREASURY_CASH_MGMT_NET",
+    "reference_period": "2026-01",
+    "value": -600.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026020318084859404/index.html",
+    "source_sha256": "76d3acb5860e59ad73afef6113fad6c894d350616fbeb8a00909b5e18b8066d9",
+    "published_at": "2026-02-03T18:30:00+08:00",
+    "available_at": "2026-02-03T18:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中央国库现金管理",
+      "injection": 1500.0,
+      "withdrawal": 2100.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_SLF_NET_MONTHLY",
+    "reference_period": "2026-02",
+    "value": 0.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026030316592793608/index.html",
+    "source_sha256": "579e6e4fcca2bf2b596fed965e652b9f1b6c2551f3da80ac6c720faac7370570",
+    "published_at": "2026-03-03T17:00:00+08:00",
+    "available_at": "2026-03-03T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "常备借贷便利（SLF）",
+      "injection": 0.0,
+      "withdrawal": 0.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_MLF_NET_MONTHLY",
+    "reference_period": "2026-02",
+    "value": 3000.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026030316592793608/index.html",
+    "source_sha256": "579e6e4fcca2bf2b596fed965e652b9f1b6c2551f3da80ac6c720faac7370570",
+    "published_at": "2026-03-03T17:00:00+08:00",
+    "available_at": "2026-03-03T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中期借贷便利（MLF）",
+      "injection": 6000.0,
+      "withdrawal": 3000.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PSL_NET_MONTHLY",
+    "reference_period": "2026-02",
+    "value": 0.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026030316592793608/index.html",
+    "source_sha256": "579e6e4fcca2bf2b596fed965e652b9f1b6c2551f3da80ac6c720faac7370570",
+    "published_at": "2026-03-03T17:00:00+08:00",
+    "available_at": "2026-03-03T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "抵押补充贷款（PSL）",
+      "injection": 0.0,
+      "withdrawal": 0.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_STRUCTURAL_TOOLS_NET_MONTHLY",
+    "reference_period": "2026-02",
+    "value": -76.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026030316592793608/index.html",
+    "source_sha256": "579e6e4fcca2bf2b596fed965e652b9f1b6c2551f3da80ac6c720faac7370570",
+    "published_at": "2026-03-03T17:00:00+08:00",
+    "available_at": "2026-03-03T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "其他结构性货币政策工具",
+      "injection": 3447.0,
+      "withdrawal": 3523.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PBOC_CGB_NET_MONTHLY",
+    "reference_period": "2026-02",
+    "value": 500.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026030316592793608/index.html",
+    "source_sha256": "579e6e4fcca2bf2b596fed965e652b9f1b6c2551f3da80ac6c720faac7370570",
+    "published_at": "2026-03-03T17:00:00+08:00",
+    "available_at": "2026-03-03T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "公开市场国债买卖",
+      "injection": 500.0,
+      "withdrawal": 0.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_TREASURY_CASH_MGMT_NET",
+    "reference_period": "2026-02",
+    "value": 0.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026030316592793608/index.html",
+    "source_sha256": "579e6e4fcca2bf2b596fed965e652b9f1b6c2551f3da80ac6c720faac7370570",
+    "published_at": "2026-03-03T17:00:00+08:00",
+    "available_at": "2026-03-03T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中央国库现金管理",
+      "injection": 1500.0,
+      "withdrawal": 1500.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_SLF_NET_MONTHLY",
+    "reference_period": "2026-03",
+    "value": 8.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026040217142755538/index.html",
+    "source_sha256": "7957370a5eeba6655647dfddde1955a44b3f21ef51f5c15fad29a31927a27b43",
+    "published_at": "2026-04-02T17:30:00+08:00",
+    "available_at": "2026-04-02T17:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "常备借贷便利（SLF）",
+      "injection": 28.0,
+      "withdrawal": 20.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_MLF_NET_MONTHLY",
+    "reference_period": "2026-03",
+    "value": 500.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026040217142755538/index.html",
+    "source_sha256": "7957370a5eeba6655647dfddde1955a44b3f21ef51f5c15fad29a31927a27b43",
+    "published_at": "2026-04-02T17:30:00+08:00",
+    "available_at": "2026-04-02T17:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中期借贷便利（MLF）",
+      "injection": 5000.0,
+      "withdrawal": 4500.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PSL_NET_MONTHLY",
+    "reference_period": "2026-03",
+    "value": 0.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026040217142755538/index.html",
+    "source_sha256": "7957370a5eeba6655647dfddde1955a44b3f21ef51f5c15fad29a31927a27b43",
+    "published_at": "2026-04-02T17:30:00+08:00",
+    "available_at": "2026-04-02T17:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "抵押补充贷款（PSL）",
+      "injection": 0.0,
+      "withdrawal": 0.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_STRUCTURAL_TOOLS_NET_MONTHLY",
+    "reference_period": "2026-03",
+    "value": 1728.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026040217142755538/index.html",
+    "source_sha256": "7957370a5eeba6655647dfddde1955a44b3f21ef51f5c15fad29a31927a27b43",
+    "published_at": "2026-04-02T17:30:00+08:00",
+    "available_at": "2026-04-02T17:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "其他结构性货币政策工具",
+      "injection": 7714.0,
+      "withdrawal": 5986.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PBOC_CGB_NET_MONTHLY",
+    "reference_period": "2026-03",
+    "value": 500.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026040217142755538/index.html",
+    "source_sha256": "7957370a5eeba6655647dfddde1955a44b3f21ef51f5c15fad29a31927a27b43",
+    "published_at": "2026-04-02T17:30:00+08:00",
+    "available_at": "2026-04-02T17:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "公开市场国债买卖",
+      "injection": 500.0,
+      "withdrawal": 0.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_TREASURY_CASH_MGMT_NET",
+    "reference_period": "2026-03",
+    "value": 1000.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026040217142755538/index.html",
+    "source_sha256": "7957370a5eeba6655647dfddde1955a44b3f21ef51f5c15fad29a31927a27b43",
+    "published_at": "2026-04-02T17:30:00+08:00",
+    "available_at": "2026-04-02T17:30:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中央国库现金管理",
+      "injection": 2500.0,
+      "withdrawal": 1500.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_SLF_NET_MONTHLY",
+    "reference_period": "2026-04",
+    "value": -7.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026050716471136206/index.html",
+    "source_sha256": "500fc11ff59f46b9c9c62c27999acf18a2dbc4ced814b3b496cbb3754a337986",
+    "published_at": "2026-05-07T17:00:00+08:00",
+    "available_at": "2026-05-07T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "常备借贷便利（SLF）",
+      "injection": 1.0,
+      "withdrawal": 8.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_MLF_NET_MONTHLY",
+    "reference_period": "2026-04",
+    "value": -2000.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026050716471136206/index.html",
+    "source_sha256": "500fc11ff59f46b9c9c62c27999acf18a2dbc4ced814b3b496cbb3754a337986",
+    "published_at": "2026-05-07T17:00:00+08:00",
+    "available_at": "2026-05-07T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中期借贷便利（MLF）",
+      "injection": 4000.0,
+      "withdrawal": 6000.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PSL_NET_MONTHLY",
+    "reference_period": "2026-04",
+    "value": -2000.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026050716471136206/index.html",
+    "source_sha256": "500fc11ff59f46b9c9c62c27999acf18a2dbc4ced814b3b496cbb3754a337986",
+    "published_at": "2026-05-07T17:00:00+08:00",
+    "available_at": "2026-05-07T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "抵押补充贷款（PSL）",
+      "injection": 0.0,
+      "withdrawal": 2000.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_STRUCTURAL_TOOLS_NET_MONTHLY",
+    "reference_period": "2026-04",
+    "value": 3667.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026050716471136206/index.html",
+    "source_sha256": "500fc11ff59f46b9c9c62c27999acf18a2dbc4ced814b3b496cbb3754a337986",
+    "published_at": "2026-05-07T17:00:00+08:00",
+    "available_at": "2026-05-07T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "其他结构性货币政策工具",
+      "injection": 6873.0,
+      "withdrawal": 3206.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PBOC_CGB_NET_MONTHLY",
+    "reference_period": "2026-04",
+    "value": 400.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026050716471136206/index.html",
+    "source_sha256": "500fc11ff59f46b9c9c62c27999acf18a2dbc4ced814b3b496cbb3754a337986",
+    "published_at": "2026-05-07T17:00:00+08:00",
+    "available_at": "2026-05-07T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "公开市场国债买卖",
+      "injection": 400.0,
+      "withdrawal": 0.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_TREASURY_CASH_MGMT_NET",
+    "reference_period": "2026-04",
+    "value": 1300.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026050716471136206/index.html",
+    "source_sha256": "500fc11ff59f46b9c9c62c27999acf18a2dbc4ced814b3b496cbb3754a337986",
+    "published_at": "2026-05-07T17:00:00+08:00",
+    "available_at": "2026-05-07T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中央国库现金管理",
+      "injection": 2000.0,
+      "withdrawal": 700.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_SLF_NET_MONTHLY",
+    "reference_period": "2026-05",
+    "value": 9.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026060216561236851/index.html",
+    "source_sha256": "3a773a0da916ab5406c1065861aea02ae2f505f16a23639be020ec2048b3a7a8",
+    "published_at": "2026-06-02T17:00:00+08:00",
+    "available_at": "2026-06-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "常备借贷便利（SLF）",
+      "injection": 10.0,
+      "withdrawal": 1.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_MLF_NET_MONTHLY",
+    "reference_period": "2026-05",
+    "value": 1000.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026060216561236851/index.html",
+    "source_sha256": "3a773a0da916ab5406c1065861aea02ae2f505f16a23639be020ec2048b3a7a8",
+    "published_at": "2026-06-02T17:00:00+08:00",
+    "available_at": "2026-06-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中期借贷便利（MLF）",
+      "injection": 6000.0,
+      "withdrawal": 5000.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PSL_NET_MONTHLY",
+    "reference_period": "2026-05",
+    "value": -1545.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026060216561236851/index.html",
+    "source_sha256": "3a773a0da916ab5406c1065861aea02ae2f505f16a23639be020ec2048b3a7a8",
+    "published_at": "2026-06-02T17:00:00+08:00",
+    "available_at": "2026-06-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "抵押补充贷款（PSL）",
+      "injection": 0.0,
+      "withdrawal": 1545.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_STRUCTURAL_TOOLS_NET_MONTHLY",
+    "reference_period": "2026-05",
+    "value": 1129.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026060216561236851/index.html",
+    "source_sha256": "3a773a0da916ab5406c1065861aea02ae2f505f16a23639be020ec2048b3a7a8",
+    "published_at": "2026-06-02T17:00:00+08:00",
+    "available_at": "2026-06-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "其他结构性货币政策工具",
+      "injection": 5999.0,
+      "withdrawal": 4870.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PBOC_CGB_NET_MONTHLY",
+    "reference_period": "2026-05",
+    "value": 500.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026060216561236851/index.html",
+    "source_sha256": "3a773a0da916ab5406c1065861aea02ae2f505f16a23639be020ec2048b3a7a8",
+    "published_at": "2026-06-02T17:00:00+08:00",
+    "available_at": "2026-06-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "公开市场国债买卖",
+      "injection": 500.0,
+      "withdrawal": 0.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_TREASURY_CASH_MGMT_NET",
+    "reference_period": "2026-05",
+    "value": 200.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026060216561236851/index.html",
+    "source_sha256": "3a773a0da916ab5406c1065861aea02ae2f505f16a23639be020ec2048b3a7a8",
+    "published_at": "2026-06-02T17:00:00+08:00",
+    "available_at": "2026-06-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中央国库现金管理",
+      "injection": 1000.0,
+      "withdrawal": 800.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_SLF_NET_MONTHLY",
+    "reference_period": "2026-06",
+    "value": 0.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026070216555861498/index.html",
+    "source_sha256": "a7d4e3048aed1c652a8dcaddeaf9cf1c1e2d95d1e58638d1bdd616bb5e7c71e2",
+    "published_at": "2026-07-02T17:00:00+08:00",
+    "available_at": "2026-07-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "常备借贷便利（SLF）",
+      "injection": 10.0,
+      "withdrawal": 10.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_MLF_NET_MONTHLY",
+    "reference_period": "2026-06",
+    "value": 2000.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026070216555861498/index.html",
+    "source_sha256": "a7d4e3048aed1c652a8dcaddeaf9cf1c1e2d95d1e58638d1bdd616bb5e7c71e2",
+    "published_at": "2026-07-02T17:00:00+08:00",
+    "available_at": "2026-07-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中期借贷便利（MLF）",
+      "injection": 5000.0,
+      "withdrawal": 3000.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PSL_NET_MONTHLY",
+    "reference_period": "2026-06",
+    "value": -500.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026070216555861498/index.html",
+    "source_sha256": "a7d4e3048aed1c652a8dcaddeaf9cf1c1e2d95d1e58638d1bdd616bb5e7c71e2",
+    "published_at": "2026-07-02T17:00:00+08:00",
+    "available_at": "2026-07-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "抵押补充贷款（PSL）",
+      "injection": 0.0,
+      "withdrawal": 500.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_STRUCTURAL_TOOLS_NET_MONTHLY",
+    "reference_period": "2026-06",
+    "value": -1372.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026070216555861498/index.html",
+    "source_sha256": "a7d4e3048aed1c652a8dcaddeaf9cf1c1e2d95d1e58638d1bdd616bb5e7c71e2",
+    "published_at": "2026-07-02T17:00:00+08:00",
+    "available_at": "2026-07-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "其他结构性货币政策工具",
+      "injection": 6757.0,
+      "withdrawal": 8129.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PBOC_CGB_NET_MONTHLY",
+    "reference_period": "2026-06",
+    "value": 100.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026070216555861498/index.html",
+    "source_sha256": "a7d4e3048aed1c652a8dcaddeaf9cf1c1e2d95d1e58638d1bdd616bb5e7c71e2",
+    "published_at": "2026-07-02T17:00:00+08:00",
+    "available_at": "2026-07-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "公开市场国债买卖",
+      "injection": 100.0,
+      "withdrawal": 0.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_TREASURY_CASH_MGMT_NET",
+    "reference_period": "2026-06",
+    "value": 0.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026070216555861498/index.html",
+    "source_sha256": "a7d4e3048aed1c652a8dcaddeaf9cf1c1e2d95d1e58638d1bdd616bb5e7c71e2",
+    "published_at": "2026-07-02T17:00:00+08:00",
+    "available_at": "2026-07-02T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中央国库现金管理",
+      "injection": 2800.0,
+      "withdrawal": 2800.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_SLF_NET_MONTHLY",
+    "reference_period": "2026-07",
+    "value": -10.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026080416515912098/index.html",
+    "source_sha256": "10ed3fb5822bcc74dd429325d8196b7bbda9ed2e732eaa957914cbe95d2452f0",
+    "published_at": "2026-08-04T17:00:00+08:00",
+    "available_at": "2026-08-04T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "常备借贷便利（SLF）",
+      "injection": 0.0,
+      "withdrawal": 10.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_MLF_NET_MONTHLY",
+    "reference_period": "2026-07",
+    "value": 1000.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026080416515912098/index.html",
+    "source_sha256": "10ed3fb5822bcc74dd429325d8196b7bbda9ed2e732eaa957914cbe95d2452f0",
+    "published_at": "2026-08-04T17:00:00+08:00",
+    "available_at": "2026-08-04T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中期借贷便利（MLF）",
+      "injection": 5000.0,
+      "withdrawal": 4000.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PSL_NET_MONTHLY",
+    "reference_period": "2026-07",
+    "value": -1161.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026080416515912098/index.html",
+    "source_sha256": "10ed3fb5822bcc74dd429325d8196b7bbda9ed2e732eaa957914cbe95d2452f0",
+    "published_at": "2026-08-04T17:00:00+08:00",
+    "available_at": "2026-08-04T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "抵押补充贷款（PSL）",
+      "injection": 0.0,
+      "withdrawal": 1161.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_STRUCTURAL_TOOLS_NET_MONTHLY",
+    "reference_period": "2026-07",
+    "value": 1744.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026080416515912098/index.html",
+    "source_sha256": "10ed3fb5822bcc74dd429325d8196b7bbda9ed2e732eaa957914cbe95d2452f0",
+    "published_at": "2026-08-04T17:00:00+08:00",
+    "available_at": "2026-08-04T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "其他结构性货币政策工具",
+      "injection": 6171.0,
+      "withdrawal": 4427.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_PBOC_CGB_NET_MONTHLY",
+    "reference_period": "2026-07",
+    "value": 500.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026080416515912098/index.html",
+    "source_sha256": "10ed3fb5822bcc74dd429325d8196b7bbda9ed2e732eaa957914cbe95d2452f0",
+    "published_at": "2026-08-04T17:00:00+08:00",
+    "available_at": "2026-08-04T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "公开市场国债买卖",
+      "injection": 500.0,
+      "withdrawal": 0.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  },
+  {
+    "series_id": "POL_TREASURY_CASH_MGMT_NET",
+    "reference_period": "2026-07",
+    "value": 300.0,
+    "unit": "CNY_100M",
+    "provider": "People's Bank of China",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026080416515912098/index.html",
+    "source_sha256": "10ed3fb5822bcc74dd429325d8196b7bbda9ed2e732eaa957914cbe95d2452f0",
+    "published_at": "2026-08-04T17:00:00+08:00",
+    "available_at": "2026-08-04T17:00:00+08:00",
+    "retrieved_at": "2026-08-16T05:34:23.335712Z",
+    "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+    "dimensions": {
+      "tool_name": "中央国库现金管理",
+      "injection": 2500.0,
+      "withdrawal": 2200.0,
+      "source_semantic": "OFFICIAL_MONTHLY_NET_INJECTION"
+    }
+  }
+]

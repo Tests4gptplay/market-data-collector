@@ -1,0 +1,126 @@
+{
+  "module": "china_financial_pbc_monthly_policy_tools",
+  "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-POLICY-TOOLS-V2",
+  "year": 2026,
+  "completed_at": "2026-08-16T05:34:23.335712Z",
+  "status": "PASS",
+  "release_count": 7,
+  "observation_count": 42,
+  "gap_count": 0,
+  "series_ids": [
+    "POL_MLF_NET_MONTHLY",
+    "POL_PBOC_CGB_NET_MONTHLY",
+    "POL_PSL_NET_MONTHLY",
+    "POL_SLF_NET_MONTHLY",
+    "POL_STRUCTURAL_TOOLS_NET_MONTHLY",
+    "POL_TREASURY_CASH_MGMT_NET"
+  ],
+  "list_evidence": {
+    "list_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/index.html",
+    "list_sha256": "5ff49c6cade232de01c85eedaa6c7ced53438325bf27f90d61784a20d7901a8e",
+    "list_fetch": {
+      "attempts_used": 1,
+      "prior_errors": [],
+      "http_status": 200
+    }
+  },
+  "release_evidence": [
+    {
+      "reference_period": "2026-01",
+      "title": "2026年1月中央银行各项工具流动性投放情况",
+      "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026020318084859404/index.html",
+      "sha256": "76d3acb5860e59ad73afef6113fad6c894d350616fbeb8a00909b5e18b8066d9",
+      "published_at": "2026-02-03T18:30:00+08:00",
+      "fetch": {
+        "attempts_used": 1,
+        "prior_errors": [],
+        "http_status": 200
+      }
+    },
+    {
+      "reference_period": "2026-02",
+      "title": "2026年2月中央银行各项工具流动性投放情况",
+      "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026030316592793608/index.html",
+      "sha256": "579e6e4fcca2bf2b596fed965e652b9f1b6c2551f3da80ac6c720faac7370570",
+      "published_at": "2026-03-03T17:00:00+08:00",
+      "fetch": {
+        "attempts_used": 1,
+        "prior_errors": [],
+        "http_status": 200
+      }
+    },
+    {
+      "reference_period": "2026-03",
+      "title": "2026年3月中央银行各项工具流动性投放情况",
+      "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026040217142755538/index.html",
+      "sha256": "7957370a5eeba6655647dfddde1955a44b3f21ef51f5c15fad29a31927a27b43",
+      "published_at": "2026-04-02T17:30:00+08:00",
+      "fetch": {
+        "attempts_used": 1,
+        "prior_errors": [],
+        "http_status": 200
+      }
+    },
+    {
+      "reference_period": "2026-04",
+      "title": "2026年4月中央银行各项工具流动性投放情况",
+      "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026050716471136206/index.html",
+      "sha256": "500fc11ff59f46b9c9c62c27999acf18a2dbc4ced814b3b496cbb3754a337986",
+      "published_at": "2026-05-07T17:00:00+08:00",
+      "fetch": {
+        "attempts_used": 1,
+        "prior_errors": [],
+        "http_status": 200
+      }
+    },
+    {
+      "reference_period": "2026-05",
+      "title": "2026年5月中央银行各项工具流动性投放情况",
+      "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026060216561236851/index.html",
+      "sha256": "3a773a0da916ab5406c1065861aea02ae2f505f16a23639be020ec2048b3a7a8",
+      "published_at": "2026-06-02T17:00:00+08:00",
+      "fetch": {
+        "attempts_used": 1,
+        "prior_errors": [],
+        "http_status": 200
+      }
+    },
+    {
+      "reference_period": "2026-06",
+      "title": "2026年6月中央银行各项工具流动性投放情况",
+      "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026070216555861498/index.html",
+      "sha256": "a7d4e3048aed1c652a8dcaddeaf9cf1c1e2d95d1e58638d1bdd616bb5e7c71e2",
+      "published_at": "2026-07-02T17:00:00+08:00",
+      "fetch": {
+        "attempts_used": 1,
+        "prior_errors": [],
+        "http_status": 200
+      }
+    },
+    {
+      "reference_period": "2026-07",
+      "title": "2026年7月中央银行各项工具流动性投放情况",
+      "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026080416515912098/index.html",
+      "sha256": "10ed3fb5822bcc74dd429325d8196b7bbda9ed2e732eaa957914cbe95d2452f0",
+      "published_at": "2026-08-04T17:00:00+08:00",
+      "fetch": {
+        "attempts_used": 1,
+        "prior_errors": [],
+        "http_status": 200
+      }
+    }
+  ],
+  "semantic_rules": {
+    "use_official_net_column": true,
+    "net_arithmetic_crosscheck": true,
+    "published_at_must_be_visible_文章来源_timestamp": true,
+    "policy_flow_not_realized_financial_condition": true,
+    "one_release_one_observation": true,
+    "unknown_is_never_zero": true
+  },
+  "github_repository": "Tests4gptplay/market-data-collector",
+  "github_run_id": "31929320624",
+  "github_source_commit": "54f515a3e41794d1598c717cd343cee1725f4a38",
+  "persistence": "NORMALIZED_PUBLIC_DATA_ONLY_RAW_EVIDENCE_NOT_COMMITTED",
+  "persistence_workflow_version": "V1_REBASE_BEFORE_PUSH"
+}
