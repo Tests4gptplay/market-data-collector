@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""China Financial V0.9.1.1-oriented measurement readiness audit.
+"""China Financial Draft-oriented measurement readiness audit.
+
+Normative baseline for this audit is the current China Financial Draft used by
+the project. The unmodified V0.9.1.1 manuscript is historical/reference input
+and must not be treated as the current readiness specification.
 
 This is intentionally a measurement-capability gate, not a declaration that the
 repository is production-stable. It answers three separate questions:
@@ -185,7 +189,9 @@ def main() -> int:
     )
 
     report = {
-        "audit": "CHINA_FINANCIAL_MEASUREMENT_READINESS_V1",
+        "audit": "CHINA_FINANCIAL_DRAFT_MEASUREMENT_READINESS_V1",
+        "normative_baseline": "CURRENT_CHINA_FINANCIAL_DRAFT",
+        "historical_reference_not_normative": "UNMODIFIED_V0.9.1.1_MANUSCRIPT",
         "status": "MODEL_CONTEXT_MEASURABLE" if model_context_measurable else "MEASUREMENT_GAPS_REMAIN",
         "production_status": "PRODUCTION_CONTRACT_READY" if production_contract_ready else "PRODUCTION_CONTRACT_NOT_READY",
         "important_scope_boundary": {
