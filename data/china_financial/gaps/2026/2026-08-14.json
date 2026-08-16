@@ -1,0 +1,11 @@
+{
+  "module": "china_financial",
+  "interface_version": "CF_INTERFACE_V1",
+  "collector_version": "V1.9-CANDIDATE",
+  "reference_date": "2026-08-14",
+  "source_run": {
+    "github_actions_run_id": 31926971402,
+    "collector_commit": "07bf4dfbccc94138c00a1e93e2d1fc32cb654a84"
+  },
+  "gaps": []
+}
