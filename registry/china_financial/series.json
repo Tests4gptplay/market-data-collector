@@ -1,0 +1,110 @@
+{
+  "registry": "CHINA_FINANCIAL_SERIES_REGISTRY_V1_MIGRATION",
+  "status": "MIGRATION_IN_PROGRESS",
+  "migration_complete": false,
+  "legacy_source": {
+    "name": "China Financial Series Store V1.8 INGESTION CANDIDATE",
+    "drive_file_id": "1Ss74bVPICMyOPa9cw2kdcmo2g1lYtETrHGr7wfS--vw",
+    "legacy_registry_version": "REGISTRY_V1.3",
+    "rule": "The legacy registry remains authoritative for series not yet migrated. No legacy SeriesID or semantic contract may be silently dropped during V1.9 migration."
+  },
+  "series": [
+    {
+      "series_id": "FUND_DR007",
+      "domain": "FUNDING",
+      "series_name": "DR007",
+      "role": "ROOT_OBSERVATION",
+      "frequency": "TRADING_DAY",
+      "unit": "percent",
+      "evidence_root_id": "FUND_BANK_REPO_CURVE",
+      "consumer_scope": "CHINA_FINANCIAL",
+      "status": "CORE",
+      "semantic_guard": "Actual interbank pledged-repo transaction rate; FR/FDR fixing is not a substitute."
+    },
+    {
+      "series_id": "FUND_FDR007",
+      "domain": "FUNDING",
+      "series_name": "FDR007",
+      "role": "QC_BENCHMARK",
+      "frequency": "TRADING_DAY",
+      "unit": "percent",
+      "evidence_root_id": "FUND_BANK_REPO_CURVE",
+      "parent_series_ids": ["FUND_DR007"],
+      "consumer_scope": "QC_ONLY",
+      "status": "QC_DIAGNOSTIC",
+      "semantic_guard": "Fixing/QC benchmark only; cannot replace FUND_DR007."
+    },
+    {
+      "series_id": "FUND_NCD_AAA_3M",
+      "domain": "FUNDING",
+      "series_name": "AAA NCD 3M收益率",
+      "role": "ROOT_OBSERVATION",
+      "frequency": "TRADING_DAY",
+      "unit": "percent",
+      "evidence_root_id": "FUND_WHOLESALE_NCD",
+      "consumer_scope": "CHINA_FINANCIAL",
+      "status": "CORE",
+      "semantic_guard": "Pure NCD AAA curve only; commercial-bank ordinary bond AAA is not a substitute."
+    },
+    {
+      "series_id": "FUND_GC001",
+      "domain": "FUNDING",
+      "series_name": "GC001",
+      "role": "ROOT_OBSERVATION",
+      "frequency": "TRADING_DAY",
+      "unit": "percent",
+      "evidence_root_id": "FUND_EXCHANGE_REPO",
+      "consumer_scope": "CHINA_FINANCIAL",
+      "status": "CORE",
+      "semantic_guard": "SSE 204001 actual weighted-average repo rate; fixing/curve substitutes are forbidden."
+    },
+    {
+      "series_id": "SOV_CGB_3Y",
+      "domain": "SOVEREIGN_DURATION",
+      "series_name": "CGB 3Y",
+      "role": "ROOT_OBSERVATION",
+      "frequency": "TRADING_DAY",
+      "unit": "percent",
+      "evidence_root_id": "SOV_CGB_CURVE",
+      "consumer_scope": "CHINA_FINANCIAL",
+      "status": "CORE"
+    },
+    {
+      "series_id": "SOV_CGB_10Y",
+      "domain": "SOVEREIGN_DURATION",
+      "series_name": "CGB 10Y",
+      "role": "ROOT_OBSERVATION",
+      "frequency": "TRADING_DAY",
+      "unit": "percent",
+      "evidence_root_id": "SOV_CGB_CURVE",
+      "consumer_scope": "CHINA_FINANCIAL",
+      "status": "CORE"
+    },
+    {
+      "series_id": "CRD_MTN_AAA_3Y",
+      "domain": "CREDIT_MARKET",
+      "series_name": "MTN AAA 3Y",
+      "role": "ROOT_OBSERVATION",
+      "frequency": "TRADING_DAY",
+      "unit": "percent",
+      "evidence_root_id": "CREDIT_MTN_CURVE",
+      "consumer_scope": "CHINA_FINANCIAL",
+      "status": "CORE"
+    },
+    {
+      "series_id": "CRD_SPREAD_AAA_3Y",
+      "domain": "CREDIT_MARKET",
+      "series_name": "AAA 3Y信用利差代理",
+      "role": "DERIVED_TRANSFORM",
+      "frequency": "TRADING_DAY",
+      "unit": "bp",
+      "evidence_root_id": "CREDIT_SPREAD_PROXY",
+      "parent_series_ids": ["CRD_MTN_AAA_3Y", "SOV_CGB_3Y"],
+      "consumer_scope": "CHINA_FINANCIAL",
+      "status": "CORE",
+      "method_version": "CREDIT_SPREAD_PROXY_V1.1",
+      "semantic_guard": "Matched-tenor, provider-consistent parents only."
+    }
+  ],
+  "remaining_scope": "Policy, remaining Funding tenors, sovereign curve tenors, credit-rating layers, Fiscal, Credit Creation and their deterministic derived series must be migrated from REGISTRY_V1.3 before V1.9 can be production-released."
+}
