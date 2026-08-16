@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       market_date:
-        description: Optional exact market date YYYY-MM-DD; blank = auto-resolve latest eligible date
+        description: Optional exact market date YYYY-MM-DD; blank = latest persisted eligible market session <= as_of
         required: false
       as_of:
         description: Optional policy/fiscal context as-of date YYYY-MM-DD; blank = current Asia/Shanghai date
@@ -98,44 +98,48 @@ jobs:
           python3 tests/china_financial_measurement_readiness_v1.py --out /tmp/china-financial-readiness.json
           cat /tmp/china-financial-readiness.json
 
-      - name: Resolve and run live fast market family
+      - name: Resolve latest eligible market session
         shell: bash
         run: |
           set -euo pipefail
           if [ -n "${INPUT_MARKET_DATE}" ]; then
-            CANDIDATES="${INPUT_MARKET_DATE}"
+            MARKET_DATE="${INPUT_MARKET_DATE}"
+            SOURCE="EXPLICIT_INPUT"
           else
-            CANDIDATES="$(python3 - "${AS_OF}" <<'PY'
-          import sys
+            MARKET_DATE="$(python3 - "${AS_OF}" <<'PY'
+          import re,sys
           from datetime import date,timedelta
-          d=date.fromisoformat(sys.argv[1])
-          print(' '.join((d-timedelta(days=i)).isoformat() for i in range(8)))
+          from pathlib import Path
+          as_of=date.fromisoformat(sys.argv[1])
+          dates=[]
+          base=Path('data/china_financial/observations')
+          for p in base.rglob('*market-family-v4*.json') if base.exists() else []:
+              m=re.search(r'(20\d{2}-\d{2}-\d{2})',p.name)
+              if not m: continue
+              d=date.fromisoformat(m.group(1))
+              if d<=as_of: dates.append(d)
+          if dates:
+              print(max(dates).isoformat())
+          else:
+              d=as_of
+              while d.weekday()>=5:
+                  d-=timedelta(days=1)
+              print(d.isoformat())
           PY
           )"
+            SOURCE="PERSISTED_LATEST_OR_WEEKDAY_FALLBACK"
           fi
-
-          MARKET_DATE=""
-          for D in ${CANDIDATES}; do
-            rm -rf /tmp/market-v4
-            set +e
-            python3 collectors/china_financial/market_family_v4.py --date "${D}" --out /tmp/market-v4
-            RC=$?
-            set -e
-            if [ "${RC}" -eq 0 ]; then
-              MARKET_DATE="${D}"
-              break
-            fi
-            if [ -n "${INPUT_MARKET_DATE}" ]; then
-              exit "${RC}"
-            fi
-          done
-          if [ -z "${MARKET_DATE}" ]; then
-            echo 'No eligible market date passed within the 8-day auto-resolution window.' >&2
-            exit 2
-          fi
+          test -n "${MARKET_DATE}"
           echo "MARKET_DATE=${MARKET_DATE}" >> "$GITHUB_ENV"
+          echo "MARKET_DATE_RESOLUTION=${SOURCE}" >> "$GITHUB_ENV"
+          printf 'MARKET_DATE=%s source=%s\n' "$MARKET_DATE" "$SOURCE"
+
+      - name: Live fast market family
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/market-v4
+          python3 collectors/china_financial/market_family_v4.py --date "${MARKET_DATE}" --out /tmp/market-v4
           cat "/tmp/market-v4/${MARKET_DATE}/run.json"
-          printf 'Resolved MARKET_DATE=%s\n' "$MARKET_DATE"
 
       - name: Live monthly credit family
         run: |
@@ -171,9 +175,6 @@ jobs:
           rm -rf /tmp/rrr-inc /tmp/omo-inc
           PYTHONPATH=. python3 collectors/china_financial/rrr_event_family_v5_incremental.py \
             --date "${AS_OF}" --since-date "${SINCE_DATE}" --out /tmp/rrr-inc
-          # No hard-coded previous policy rate is supplied here. The incremental
-          # checker reports current recent-state metadata without inventing a
-          # Store state. A runtime Store writer may supply previous state later.
           PYTHONPATH=. python3 collectors/china_financial/policy_event_family_v6_incremental.py \
             --date "${MARKET_DATE}" --since-date "${SINCE_DATE}" --out /tmp/omo-inc
           cat /tmp/rrr-inc/run.json
@@ -197,6 +198,7 @@ jobs:
           summary={
             'as_of': os.environ['AS_OF'],
             'resolved_market_date': os.environ['MARKET_DATE'],
+            'market_date_resolution': os.environ['MARKET_DATE_RESOLUTION'],
             'measurement_readiness': r['status'],
             'production_status': r['production_status'],
             'cash_clock_status': cash['status'],
