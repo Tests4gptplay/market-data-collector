@@ -1,478 +1,574 @@
 [
   {
-    "series_id": "FISC_GENERAL_REVENUE_PERIOD_FLOW",
-    "reference_period": "2026-01_02_COMBINED",
+    "available_at": "2026-03-19",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
+    "parent_periods": [
+      "2026-01_02_COMBINED"
+    ],
+    "parent_series_ids": [
+      "FISC_GENERAL_EXPENDITURE"
+    ],
     "period_end_month": 2,
     "period_kind": "JAN_FEB_COMBINED_PERIOD_FLOW",
-    "value": 44154.0,
-    "unit": "CNY_100M",
     "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202603/t20260319_3985695.htm",
-    "source_sha256": "7f0fd00b88f2aeb828a849e266bb2db89440408cd38d2568a9ffc8ceb52a1496",
     "published_at": "2026-03-19",
-    "available_at": "2026-03-19",
+    "reference_period": "2026-01_02_COMBINED",
     "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
-    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GENERAL_REVENUE"
-    ],
-    "parent_periods": [
-      "2026-01_02_COMBINED"
-    ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
+    "series_id": "FISC_GENERAL_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "7f0fd00b88f2aeb828a849e266bb2db89440408cd38d2568a9ffc8ceb52a1496",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202603/t20260319_3985695.htm",
+    "unit": "CNY_100M",
+    "value": 46706.0
   },
   {
-    "series_id": "FISC_GENERAL_REVENUE_PERIOD_FLOW",
-    "reference_period": "2026-Q1",
-    "period_end_month": 3,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 17459.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202604/t20260424_3988324.htm",
-    "source_sha256": "0c4652ea0de48d8d45491192a1ebdc28e860868ee347dd15ba719492c0fbce7e",
-    "published_at": "2026-04-24",
-    "available_at": "2026-04-24",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
-    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GENERAL_REVENUE"
-    ],
-    "parent_periods": [
-      "2026-Q1",
-      "2026-01_02_COMBINED"
-    ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
-  },
-  {
-    "series_id": "FISC_GENERAL_REVENUE_PERIOD_FLOW",
-    "reference_period": "2026-01_04_YTD",
-    "period_end_month": 4,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 21791.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202605/t20260515_3989956.htm",
-    "source_sha256": "d6f57226dc9ab47927b54ee43354d2cdbae0526f5187ee10784a125fd2bfbfb3",
-    "published_at": "2026-05-20",
     "available_at": "2026-05-20",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
     "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GENERAL_REVENUE"
-    ],
     "parent_periods": [
       "2026-01_04_YTD",
       "2026-Q1"
     ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
+    "parent_series_ids": [
+      "FISC_GENERAL_EXPENDITURE"
+    ],
+    "period_end_month": 4,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-05-20",
+    "reference_period": "2026-01_04_YTD",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GENERAL_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "d6f57226dc9ab47927b54ee43354d2cdbae0526f5187ee10784a125fd2bfbfb3",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202605/t20260515_3989956.htm",
+    "unit": "CNY_100M",
+    "value": 20103.0
   },
   {
-    "series_id": "FISC_GENERAL_REVENUE_PERIOD_FLOW",
-    "reference_period": "2026-01_05_YTD",
+    "available_at": "2026-06-22",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
+    "parent_periods": [
+      "2026-01_05_YTD",
+      "2026-01_04_YTD"
+    ],
+    "parent_series_ids": [
+      "FISC_GENERAL_EXPENDITURE"
+    ],
     "period_end_month": 5,
     "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 17061.0,
-    "unit": "CNY_100M",
     "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202606/t20260622_3992033.htm",
-    "source_sha256": "728da7419df86e9b88957bc444fa6583d4705304737434772fee7690e309db7e",
     "published_at": "2026-06-22",
-    "available_at": "2026-06-22",
+    "reference_period": "2026-01_05_YTD",
     "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "series_id": "FISC_GENERAL_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "728da7419df86e9b88957bc444fa6583d4705304737434772fee7690e309db7e",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202606/t20260622_3992033.htm",
+    "unit": "CNY_100M",
+    "value": 19068.0
+  },
+  {
+    "available_at": "2026-08-21",
+    "collector_version": "V1.9-READY-MOF-FISCAL-YTD-INCREMENTAL-V3",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
+    "parent_periods": [
+      "2026-01_07_YTD",
+      "2026-H1"
+    ],
+    "parent_series_ids": [
+      "FISC_GENERAL_EXPENDITURE"
+    ],
+    "period_end_month": 7,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-08-21",
+    "reference_period": "2026-01_07_YTD",
+    "retrieved_at": "2026-08-22T11:46:20.658466Z",
+    "series_id": "FISC_GENERAL_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "bae0004667b3392febc60a83b241b9f07c813834c3ab0f6be150553a06976a9f",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202608/t20260814_3995497.htm",
+    "unit": "CNY_100M",
+    "value": 19560.0
+  },
+  {
+    "available_at": "2026-07-22",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
+    "parent_periods": [
+      "2026-H1",
+      "2026-01_05_YTD"
+    ],
+    "parent_series_ids": [
+      "FISC_GENERAL_EXPENDITURE"
+    ],
+    "period_end_month": 6,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-07-22",
+    "reference_period": "2026-H1",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GENERAL_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "f65e8101cac19b13c21d03d0f8150481531c32507361871461587bedc7a9c023",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202607/t20260722_3993943.htm",
+    "unit": "CNY_100M",
+    "value": 29452.0
+  },
+  {
+    "available_at": "2026-04-24",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
+    "parent_periods": [
+      "2026-Q1",
+      "2026-01_02_COMBINED"
+    ],
+    "parent_series_ids": [
+      "FISC_GENERAL_EXPENDITURE"
+    ],
+    "period_end_month": 3,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-04-24",
+    "reference_period": "2026-Q1",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GENERAL_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "0c4652ea0de48d8d45491192a1ebdc28e860868ee347dd15ba719492c0fbce7e",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202604/t20260424_3988324.htm",
+    "unit": "CNY_100M",
+    "value": 28000.0
+  },
+  {
+    "available_at": "2026-03-19",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
+    "parent_periods": [
+      "2026-01_02_COMBINED"
+    ],
     "parent_series_ids": [
       "FISC_GENERAL_REVENUE"
     ],
-    "parent_periods": [
-      "2026-01_05_YTD",
-      "2026-01_04_YTD"
-    ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
+    "period_end_month": 2,
+    "period_kind": "JAN_FEB_COMBINED_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-03-19",
+    "reference_period": "2026-01_02_COMBINED",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GENERAL_REVENUE_PERIOD_FLOW",
+    "source_sha256": "7f0fd00b88f2aeb828a849e266bb2db89440408cd38d2568a9ffc8ceb52a1496",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202603/t20260319_3985695.htm",
+    "unit": "CNY_100M",
+    "value": 44154.0
   },
   {
-    "series_id": "FISC_GENERAL_REVENUE_PERIOD_FLOW",
-    "reference_period": "2026-H1",
-    "period_end_month": 6,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 20582.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202607/t20260722_3993943.htm",
-    "source_sha256": "f65e8101cac19b13c21d03d0f8150481531c32507361871461587bedc7a9c023",
-    "published_at": "2026-07-22",
-    "available_at": "2026-07-22",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "available_at": "2026-05-20",
     "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
+    "parent_periods": [
+      "2026-01_04_YTD",
+      "2026-Q1"
+    ],
     "parent_series_ids": [
       "FISC_GENERAL_REVENUE"
     ],
-    "parent_periods": [
-      "2026-H1",
-      "2026-01_05_YTD"
-    ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
-  },
-  {
-    "series_id": "FISC_GENERAL_EXPENDITURE_PERIOD_FLOW",
-    "reference_period": "2026-01_02_COMBINED",
-    "period_end_month": 2,
-    "period_kind": "JAN_FEB_COMBINED_PERIOD_FLOW",
-    "value": 46706.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202603/t20260319_3985695.htm",
-    "source_sha256": "7f0fd00b88f2aeb828a849e266bb2db89440408cd38d2568a9ffc8ceb52a1496",
-    "published_at": "2026-03-19",
-    "available_at": "2026-03-19",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
-    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GENERAL_EXPENDITURE"
-    ],
-    "parent_periods": [
-      "2026-01_02_COMBINED"
-    ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
-  },
-  {
-    "series_id": "FISC_GENERAL_EXPENDITURE_PERIOD_FLOW",
-    "reference_period": "2026-Q1",
-    "period_end_month": 3,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 28000.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202604/t20260424_3988324.htm",
-    "source_sha256": "0c4652ea0de48d8d45491192a1ebdc28e860868ee347dd15ba719492c0fbce7e",
-    "published_at": "2026-04-24",
-    "available_at": "2026-04-24",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
-    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GENERAL_EXPENDITURE"
-    ],
-    "parent_periods": [
-      "2026-Q1",
-      "2026-01_02_COMBINED"
-    ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
-  },
-  {
-    "series_id": "FISC_GENERAL_EXPENDITURE_PERIOD_FLOW",
-    "reference_period": "2026-01_04_YTD",
     "period_end_month": 4,
     "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 20103.0,
-    "unit": "CNY_100M",
     "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202605/t20260515_3989956.htm",
-    "source_sha256": "d6f57226dc9ab47927b54ee43354d2cdbae0526f5187ee10784a125fd2bfbfb3",
     "published_at": "2026-05-20",
-    "available_at": "2026-05-20",
+    "reference_period": "2026-01_04_YTD",
     "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
-    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GENERAL_EXPENDITURE"
-    ],
-    "parent_periods": [
-      "2026-01_04_YTD",
-      "2026-Q1"
-    ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
+    "series_id": "FISC_GENERAL_REVENUE_PERIOD_FLOW",
+    "source_sha256": "d6f57226dc9ab47927b54ee43354d2cdbae0526f5187ee10784a125fd2bfbfb3",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202605/t20260515_3989956.htm",
+    "unit": "CNY_100M",
+    "value": 21791.0
   },
   {
-    "series_id": "FISC_GENERAL_EXPENDITURE_PERIOD_FLOW",
-    "reference_period": "2026-01_05_YTD",
-    "period_end_month": 5,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 19068.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202606/t20260622_3992033.htm",
-    "source_sha256": "728da7419df86e9b88957bc444fa6583d4705304737434772fee7690e309db7e",
-    "published_at": "2026-06-22",
     "available_at": "2026-06-22",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
     "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GENERAL_EXPENDITURE"
-    ],
     "parent_periods": [
       "2026-01_05_YTD",
       "2026-01_04_YTD"
     ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
+    "parent_series_ids": [
+      "FISC_GENERAL_REVENUE"
+    ],
+    "period_end_month": 5,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-06-22",
+    "reference_period": "2026-01_05_YTD",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GENERAL_REVENUE_PERIOD_FLOW",
+    "source_sha256": "728da7419df86e9b88957bc444fa6583d4705304737434772fee7690e309db7e",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202606/t20260622_3992033.htm",
+    "unit": "CNY_100M",
+    "value": 17061.0
   },
   {
-    "series_id": "FISC_GENERAL_EXPENDITURE_PERIOD_FLOW",
-    "reference_period": "2026-H1",
-    "period_end_month": 6,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 29452.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202607/t20260722_3993943.htm",
-    "source_sha256": "f65e8101cac19b13c21d03d0f8150481531c32507361871461587bedc7a9c023",
-    "published_at": "2026-07-22",
-    "available_at": "2026-07-22",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "available_at": "2026-08-21",
+    "collector_version": "V1.9-READY-MOF-FISCAL-YTD-INCREMENTAL-V3",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GENERAL_EXPENDITURE"
+    "parent_periods": [
+      "2026-01_07_YTD",
+      "2026-H1"
     ],
+    "parent_series_ids": [
+      "FISC_GENERAL_REVENUE"
+    ],
+    "period_end_month": 7,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-08-21",
+    "reference_period": "2026-01_07_YTD",
+    "retrieved_at": "2026-08-22T11:46:20.658466Z",
+    "series_id": "FISC_GENERAL_REVENUE_PERIOD_FLOW",
+    "source_sha256": "bae0004667b3392febc60a83b241b9f07c813834c3ab0f6be150553a06976a9f",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202608/t20260814_3995497.htm",
+    "unit": "CNY_100M",
+    "value": 22649.0
+  },
+  {
+    "available_at": "2026-07-22",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
     "parent_periods": [
       "2026-H1",
       "2026-01_05_YTD"
     ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
-  },
-  {
-    "series_id": "FISC_GOV_FUND_REVENUE_PERIOD_FLOW",
-    "reference_period": "2026-01_02_COMBINED",
-    "period_end_month": 2,
-    "period_kind": "JAN_FEB_COMBINED_PERIOD_FLOW",
-    "value": 5363.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202603/t20260319_3985695.htm",
-    "source_sha256": "7f0fd00b88f2aeb828a849e266bb2db89440408cd38d2568a9ffc8ceb52a1496",
-    "published_at": "2026-03-19",
-    "available_at": "2026-03-19",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
-    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
     "parent_series_ids": [
-      "FISC_GOV_FUND_REVENUE"
+      "FISC_GENERAL_REVENUE"
     ],
-    "parent_periods": [
-      "2026-01_02_COMBINED"
-    ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
-  },
-  {
-    "series_id": "FISC_GOV_FUND_REVENUE_PERIOD_FLOW",
-    "reference_period": "2026-Q1",
-    "period_end_month": 3,
+    "period_end_month": 6,
     "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 2388.0,
-    "unit": "CNY_100M",
     "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202604/t20260424_3988324.htm",
-    "source_sha256": "0c4652ea0de48d8d45491192a1ebdc28e860868ee347dd15ba719492c0fbce7e",
-    "published_at": "2026-04-24",
-    "available_at": "2026-04-24",
+    "published_at": "2026-07-22",
+    "reference_period": "2026-H1",
     "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GENERAL_REVENUE_PERIOD_FLOW",
+    "source_sha256": "f65e8101cac19b13c21d03d0f8150481531c32507361871461587bedc7a9c023",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202607/t20260722_3993943.htm",
+    "unit": "CNY_100M",
+    "value": 20582.0
+  },
+  {
+    "available_at": "2026-04-24",
     "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GOV_FUND_REVENUE"
-    ],
     "parent_periods": [
       "2026-Q1",
       "2026-01_02_COMBINED"
     ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
+    "parent_series_ids": [
+      "FISC_GENERAL_REVENUE"
+    ],
+    "period_end_month": 3,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-04-24",
+    "reference_period": "2026-Q1",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GENERAL_REVENUE_PERIOD_FLOW",
+    "source_sha256": "0c4652ea0de48d8d45491192a1ebdc28e860868ee347dd15ba719492c0fbce7e",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202604/t20260424_3988324.htm",
+    "unit": "CNY_100M",
+    "value": 17459.0
   },
   {
-    "series_id": "FISC_GOV_FUND_REVENUE_PERIOD_FLOW",
-    "reference_period": "2026-01_04_YTD",
-    "period_end_month": 4,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 2457.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202605/t20260515_3989956.htm",
-    "source_sha256": "d6f57226dc9ab47927b54ee43354d2cdbae0526f5187ee10784a125fd2bfbfb3",
-    "published_at": "2026-05-20",
-    "available_at": "2026-05-20",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "available_at": "2026-03-19",
     "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GOV_FUND_REVENUE"
+    "parent_periods": [
+      "2026-01_02_COMBINED"
     ],
+    "parent_series_ids": [
+      "FISC_GOV_FUND_EXPENDITURE"
+    ],
+    "period_end_month": 2,
+    "period_kind": "JAN_FEB_COMBINED_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-03-19",
+    "reference_period": "2026-01_02_COMBINED",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GOV_FUND_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "7f0fd00b88f2aeb828a849e266bb2db89440408cd38d2568a9ffc8ceb52a1496",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202603/t20260319_3985695.htm",
+    "unit": "CNY_100M",
+    "value": 13174.0
+  },
+  {
+    "available_at": "2026-05-20",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
     "parent_periods": [
       "2026-01_04_YTD",
       "2026-Q1"
     ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
+    "parent_series_ids": [
+      "FISC_GOV_FUND_EXPENDITURE"
+    ],
+    "period_end_month": 4,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-05-20",
+    "reference_period": "2026-01_04_YTD",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GOV_FUND_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "d6f57226dc9ab47927b54ee43354d2cdbae0526f5187ee10784a125fd2bfbfb3",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202605/t20260515_3989956.htm",
+    "unit": "CNY_100M",
+    "value": 5044.0
   },
   {
-    "series_id": "FISC_GOV_FUND_REVENUE_PERIOD_FLOW",
-    "reference_period": "2026-01_05_YTD",
-    "period_end_month": 5,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 2310.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202606/t20260622_3992033.htm",
-    "source_sha256": "728da7419df86e9b88957bc444fa6583d4705304737434772fee7690e309db7e",
-    "published_at": "2026-06-22",
     "available_at": "2026-06-22",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
     "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GOV_FUND_REVENUE"
-    ],
     "parent_periods": [
       "2026-01_05_YTD",
       "2026-01_04_YTD"
     ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
+    "parent_series_ids": [
+      "FISC_GOV_FUND_EXPENDITURE"
+    ],
+    "period_end_month": 5,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-06-22",
+    "reference_period": "2026-01_05_YTD",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GOV_FUND_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "728da7419df86e9b88957bc444fa6583d4705304737434772fee7690e309db7e",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202606/t20260622_3992033.htm",
+    "unit": "CNY_100M",
+    "value": 5303.0
   },
   {
-    "series_id": "FISC_GOV_FUND_REVENUE_PERIOD_FLOW",
-    "reference_period": "2026-H1",
-    "period_end_month": 6,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 2726.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202607/t20260722_3993943.htm",
-    "source_sha256": "f65e8101cac19b13c21d03d0f8150481531c32507361871461587bedc7a9c023",
-    "published_at": "2026-07-22",
-    "available_at": "2026-07-22",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "available_at": "2026-08-21",
+    "collector_version": "V1.9-READY-MOF-FISCAL-YTD-INCREMENTAL-V3",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GOV_FUND_REVENUE"
+    "parent_periods": [
+      "2026-01_07_YTD",
+      "2026-H1"
     ],
+    "parent_series_ids": [
+      "FISC_GOV_FUND_EXPENDITURE"
+    ],
+    "period_end_month": 7,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-08-21",
+    "reference_period": "2026-01_07_YTD",
+    "retrieved_at": "2026-08-22T11:46:20.658466Z",
+    "series_id": "FISC_GOV_FUND_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "bae0004667b3392febc60a83b241b9f07c813834c3ab0f6be150553a06976a9f",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202608/t20260814_3995497.htm",
+    "unit": "CNY_100M",
+    "value": 6705.0
+  },
+  {
+    "available_at": "2026-07-22",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
     "parent_periods": [
       "2026-H1",
       "2026-01_05_YTD"
     ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
-  },
-  {
-    "series_id": "FISC_GOV_FUND_EXPENDITURE_PERIOD_FLOW",
-    "reference_period": "2026-01_02_COMBINED",
-    "period_end_month": 2,
-    "period_kind": "JAN_FEB_COMBINED_PERIOD_FLOW",
-    "value": 13174.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202603/t20260319_3985695.htm",
-    "source_sha256": "7f0fd00b88f2aeb828a849e266bb2db89440408cd38d2568a9ffc8ceb52a1496",
-    "published_at": "2026-03-19",
-    "available_at": "2026-03-19",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
-    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
     "parent_series_ids": [
       "FISC_GOV_FUND_EXPENDITURE"
     ],
-    "parent_periods": [
-      "2026-01_02_COMBINED"
-    ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
-  },
-  {
-    "series_id": "FISC_GOV_FUND_EXPENDITURE_PERIOD_FLOW",
-    "reference_period": "2026-Q1",
-    "period_end_month": 3,
+    "period_end_month": 6,
     "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 7213.0,
-    "unit": "CNY_100M",
     "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202604/t20260424_3988324.htm",
-    "source_sha256": "0c4652ea0de48d8d45491192a1ebdc28e860868ee347dd15ba719492c0fbce7e",
-    "published_at": "2026-04-24",
-    "available_at": "2026-04-24",
+    "published_at": "2026-07-22",
+    "reference_period": "2026-H1",
     "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GOV_FUND_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "f65e8101cac19b13c21d03d0f8150481531c32507361871461587bedc7a9c023",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202607/t20260722_3993943.htm",
+    "unit": "CNY_100M",
+    "value": 7971.0
+  },
+  {
+    "available_at": "2026-04-24",
     "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GOV_FUND_EXPENDITURE"
-    ],
     "parent_periods": [
       "2026-Q1",
       "2026-01_02_COMBINED"
     ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
-  },
-  {
-    "series_id": "FISC_GOV_FUND_EXPENDITURE_PERIOD_FLOW",
-    "reference_period": "2026-01_04_YTD",
-    "period_end_month": 4,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 5044.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202605/t20260515_3989956.htm",
-    "source_sha256": "d6f57226dc9ab47927b54ee43354d2cdbae0526f5187ee10784a125fd2bfbfb3",
-    "published_at": "2026-05-20",
-    "available_at": "2026-05-20",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
-    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
     "parent_series_ids": [
       "FISC_GOV_FUND_EXPENDITURE"
     ],
+    "period_end_month": 3,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-04-24",
+    "reference_period": "2026-Q1",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GOV_FUND_EXPENDITURE_PERIOD_FLOW",
+    "source_sha256": "0c4652ea0de48d8d45491192a1ebdc28e860868ee347dd15ba719492c0fbce7e",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202604/t20260424_3988324.htm",
+    "unit": "CNY_100M",
+    "value": 7213.0
+  },
+  {
+    "available_at": "2026-03-19",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
+    "parent_periods": [
+      "2026-01_02_COMBINED"
+    ],
+    "parent_series_ids": [
+      "FISC_GOV_FUND_REVENUE"
+    ],
+    "period_end_month": 2,
+    "period_kind": "JAN_FEB_COMBINED_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-03-19",
+    "reference_period": "2026-01_02_COMBINED",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GOV_FUND_REVENUE_PERIOD_FLOW",
+    "source_sha256": "7f0fd00b88f2aeb828a849e266bb2db89440408cd38d2568a9ffc8ceb52a1496",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202603/t20260319_3985695.htm",
+    "unit": "CNY_100M",
+    "value": 5363.0
+  },
+  {
+    "available_at": "2026-05-20",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
     "parent_periods": [
       "2026-01_04_YTD",
       "2026-Q1"
     ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
+    "parent_series_ids": [
+      "FISC_GOV_FUND_REVENUE"
+    ],
+    "period_end_month": 4,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-05-20",
+    "reference_period": "2026-01_04_YTD",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GOV_FUND_REVENUE_PERIOD_FLOW",
+    "source_sha256": "d6f57226dc9ab47927b54ee43354d2cdbae0526f5187ee10784a125fd2bfbfb3",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202605/t20260515_3989956.htm",
+    "unit": "CNY_100M",
+    "value": 2457.0
   },
   {
-    "series_id": "FISC_GOV_FUND_EXPENDITURE_PERIOD_FLOW",
-    "reference_period": "2026-01_05_YTD",
-    "period_end_month": 5,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 5303.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202606/t20260622_3992033.htm",
-    "source_sha256": "728da7419df86e9b88957bc444fa6583d4705304737434772fee7690e309db7e",
-    "published_at": "2026-06-22",
     "available_at": "2026-06-22",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
     "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GOV_FUND_EXPENDITURE"
-    ],
     "parent_periods": [
       "2026-01_05_YTD",
       "2026-01_04_YTD"
     ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
+    "parent_series_ids": [
+      "FISC_GOV_FUND_REVENUE"
+    ],
+    "period_end_month": 5,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-06-22",
+    "reference_period": "2026-01_05_YTD",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GOV_FUND_REVENUE_PERIOD_FLOW",
+    "source_sha256": "728da7419df86e9b88957bc444fa6583d4705304737434772fee7690e309db7e",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202606/t20260622_3992033.htm",
+    "unit": "CNY_100M",
+    "value": 2310.0
   },
   {
-    "series_id": "FISC_GOV_FUND_EXPENDITURE_PERIOD_FLOW",
-    "reference_period": "2026-H1",
-    "period_end_month": 6,
-    "period_kind": "INCREMENTAL_PERIOD_FLOW",
-    "value": 7971.0,
-    "unit": "CNY_100M",
-    "provider": "Ministry of Finance of the People's Republic of China",
-    "source_url": "https://gks.mof.gov.cn/tongjishuju/202607/t20260722_3993943.htm",
-    "source_sha256": "f65e8101cac19b13c21d03d0f8150481531c32507361871461587bedc7a9c023",
-    "published_at": "2026-07-22",
-    "available_at": "2026-07-22",
-    "retrieved_at": "2026-08-16T05:31:18.561038Z",
-    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "available_at": "2026-08-21",
+    "collector_version": "V1.9-READY-MOF-FISCAL-YTD-INCREMENTAL-V3",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
     "method_version": "FISC_YTD_PERIOD_FLOW_V1",
-    "parent_series_ids": [
-      "FISC_GOV_FUND_EXPENDITURE"
+    "parent_periods": [
+      "2026-01_07_YTD",
+      "2026-H1"
     ],
+    "parent_series_ids": [
+      "FISC_GOV_FUND_REVENUE"
+    ],
+    "period_end_month": 7,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-08-21",
+    "reference_period": "2026-01_07_YTD",
+    "retrieved_at": "2026-08-22T11:46:20.658466Z",
+    "series_id": "FISC_GOV_FUND_REVENUE_PERIOD_FLOW",
+    "source_sha256": "bae0004667b3392febc60a83b241b9f07c813834c3ab0f6be150553a06976a9f",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202608/t20260814_3995497.htm",
+    "unit": "CNY_100M",
+    "value": 2975.0
+  },
+  {
+    "available_at": "2026-07-22",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
     "parent_periods": [
       "2026-H1",
       "2026-01_05_YTD"
     ],
-    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED"
+    "parent_series_ids": [
+      "FISC_GOV_FUND_REVENUE"
+    ],
+    "period_end_month": 6,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-07-22",
+    "reference_period": "2026-H1",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GOV_FUND_REVENUE_PERIOD_FLOW",
+    "source_sha256": "f65e8101cac19b13c21d03d0f8150481531c32507361871461587bedc7a9c023",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202607/t20260722_3993943.htm",
+    "unit": "CNY_100M",
+    "value": 2726.0
+  },
+  {
+    "available_at": "2026-04-24",
+    "collector_version": "V1.9-CANDIDATE-MOF-FISCAL-YTD-FAMILY-V2",
+    "lineage_rule": "CURRENT_ELIGIBLE_YTD_MINUS_PREVIOUS_ELIGIBLE_YTD; JAN_FEB_COMBINED_REMAINS_COMBINED",
+    "method_version": "FISC_YTD_PERIOD_FLOW_V1",
+    "parent_periods": [
+      "2026-Q1",
+      "2026-01_02_COMBINED"
+    ],
+    "parent_series_ids": [
+      "FISC_GOV_FUND_REVENUE"
+    ],
+    "period_end_month": 3,
+    "period_kind": "INCREMENTAL_PERIOD_FLOW",
+    "provider": "Ministry of Finance of the People's Republic of China",
+    "published_at": "2026-04-24",
+    "reference_period": "2026-Q1",
+    "retrieved_at": "2026-08-16T05:31:18.561038Z",
+    "series_id": "FISC_GOV_FUND_REVENUE_PERIOD_FLOW",
+    "source_sha256": "0c4652ea0de48d8d45491192a1ebdc28e860868ee347dd15ba719492c0fbce7e",
+    "source_url": "https://gks.mof.gov.cn/tongjishuju/202604/t20260424_3988324.htm",
+    "unit": "CNY_100M",
+    "value": 2388.0
   }
 ]

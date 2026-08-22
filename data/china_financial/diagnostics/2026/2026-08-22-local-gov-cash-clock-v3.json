@@ -1,0 +1,65 @@
+[
+  {
+    "error": "ValueError('CELMA totalPage not found')",
+    "family": "PREISSUE",
+    "reason": "LIST_DISCOVERY_FAILURE",
+    "source_url": "https://www.celma.org.cn/zqsclb.jhtml?ad_code=87&ad_name=%E5%85%A8%E5%9B%BD&channelId=193",
+    "target_date": "2026-08-20"
+  },
+  {
+    "error": "ValueError('CELMA totalPage not found')",
+    "family": "RESULT",
+    "reason": "LIST_DISCOVERY_FAILURE",
+    "source_url": "https://www.celma.org.cn/zqsclb.jhtml?ad_code=87&ad_name=%E5%85%A8%E5%9B%BD&channelId=194",
+    "target_date": "2026-08-20"
+  },
+  {
+    "error": "ValueError('CELMA totalPage not found')",
+    "family": "DEBT_SERVICE",
+    "reason": "LIST_DISCOVERY_FAILURE",
+    "source_url": "https://www.celma.org.cn/zqsclb.jhtml?ad_code=87&ad_name=%E5%85%A8%E5%9B%BD&channelId=196",
+    "target_date": "2026-08-20"
+  },
+  {
+    "error": "ValueError('CELMA totalPage not found')",
+    "family": "PREISSUE",
+    "reason": "LIST_DISCOVERY_FAILURE",
+    "source_url": "https://www.celma.org.cn/zqsclb.jhtml?ad_code=87&ad_name=%E5%85%A8%E5%9B%BD&channelId=193",
+    "target_date": "2026-08-21"
+  },
+  {
+    "error": "ValueError('CELMA totalPage not found')",
+    "family": "RESULT",
+    "reason": "LIST_DISCOVERY_FAILURE",
+    "source_url": "https://www.celma.org.cn/zqsclb.jhtml?ad_code=87&ad_name=%E5%85%A8%E5%9B%BD&channelId=194",
+    "target_date": "2026-08-21"
+  },
+  {
+    "error": "ValueError('CELMA totalPage not found')",
+    "family": "DEBT_SERVICE",
+    "reason": "LIST_DISCOVERY_FAILURE",
+    "source_url": "https://www.celma.org.cn/zqsclb.jhtml?ad_code=87&ad_name=%E5%85%A8%E5%9B%BD&channelId=196",
+    "target_date": "2026-08-21"
+  },
+  {
+    "error": "ValueError('CELMA totalPage not found')",
+    "family": "PREISSUE",
+    "reason": "LIST_DISCOVERY_FAILURE",
+    "source_url": "https://www.celma.org.cn/zqsclb.jhtml?ad_code=87&ad_name=%E5%85%A8%E5%9B%BD&channelId=193",
+    "target_date": "2026-08-22"
+  },
+  {
+    "error": "ValueError('CELMA totalPage not found')",
+    "family": "RESULT",
+    "reason": "LIST_DISCOVERY_FAILURE",
+    "source_url": "https://www.celma.org.cn/zqsclb.jhtml?ad_code=87&ad_name=%E5%85%A8%E5%9B%BD&channelId=194",
+    "target_date": "2026-08-22"
+  },
+  {
+    "error": "ValueError('CELMA totalPage not found')",
+    "family": "DEBT_SERVICE",
+    "reason": "LIST_DISCOVERY_FAILURE",
+    "source_url": "https://www.celma.org.cn/zqsclb.jhtml?ad_code=87&ad_name=%E5%85%A8%E5%9B%BD&channelId=196",
+    "target_date": "2026-08-22"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "as_of": "2026-08-22",
+  "blocking_gap_count": 0,
+  "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
+  "context_path": "data/china_financial/contexts/2026/2026-08-22-central-gov-cash-clock-v5.json",
+  "diagnostic_count_persisted": 0,
+  "diagnostics_are_blocking": false,
+  "diagnostics_path": "data/china_financial/diagnostics/2026/2026-08-22-central-gov-cash-clock-v5.json",
+  "mode": "DAILY_INCREMENTAL",
+  "module": "china_financial_central_gov_bond_cash_clock_v5_context",
+  "nonblocking_diagnostic_count": 0,
+  "observation_count": 4,
+  "persistence_pipeline_version": "CF_STORE_PERSISTENCE_V2",
+  "ready_status": "PASS_CONTEXT_AVAILABLE",
+  "source_context_available": true,
+  "status": "PASS",
+  "upstream_v4_context_status": "PASS_EVENTS_FOUND",
+  "upstream_v4_status": "PASS"
+}

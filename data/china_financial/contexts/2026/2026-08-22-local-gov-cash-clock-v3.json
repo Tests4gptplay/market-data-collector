@@ -1,0 +1,28 @@
+{
+  "as_of": "2026-08-22",
+  "central_government_bonds_included": false,
+  "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V3",
+  "event_count_by_series": {},
+  "event_dates_by_series": {},
+  "known_amount_cny_100m_by_series_and_stage": {},
+  "lookback_days": 2,
+  "module": "china_financial_local_gov_bond_cash_clock_context",
+  "publication_window_end": "2026-08-22",
+  "publication_window_start": "2026-08-20",
+  "scope": "LOCAL_GOVERNMENT_BONDS_ONLY",
+  "semantic_rules": {
+    "amount_semantic_preserved": true,
+    "event_stage_preserved": true,
+    "no_cross_government_level_substitution": true,
+    "no_security_master_required": true,
+    "planned_and_actual_not_reconciled_here": true
+  },
+  "status": "PASS_NO_EVENT_IN_PROVEN_WINDOW",
+  "window_proof": {
+    "all_publication_days_checked": true,
+    "failed_days": 0,
+    "no_event_claim_requires_complete_window": true,
+    "successful_days": 3,
+    "unknown_is_never_zero": true
+  }
+}
