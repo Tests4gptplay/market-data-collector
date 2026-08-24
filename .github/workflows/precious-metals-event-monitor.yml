@@ -43,7 +43,7 @@ jobs:
         env:
           RUNTIME: ${{ github.event.inputs.runtime_seconds || '300' }}
         run: |
-          python collectors/precious_metals_event_monitor.py             --runtime-seconds "$RUNTIME"             --market-interval 5             --news-interval 2 --aux-news-interval 20             --output-dir output/precious-metals-event
+          python collectors/precious_metals_event_monitor.py             --runtime-seconds "$RUNTIME"             --market-interval 5             --news-interval 1 --aux-news-interval 20             --output-dir output/precious-metals-event
 
       - name: Upload structured snapshots and events
         if: always() && steps.gate.outputs.run == 'true'
