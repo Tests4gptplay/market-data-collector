@@ -1,13 +1,13 @@
-# Precious-metals event monitor (one-time, 2026-08-24)
+# Precious-metals event monitor (one-time, 2026-08-28)
 
 The workflow `.github/workflows/precious-metals-event-monitor.yml` is scheduled for **2026-08-24 22:58 Asia/Tokyo** (13:58 UTC) and is also manually runnable. GitHub Actions schedules are not real-time and may queue.
 
 During an approximately five-minute run:
 
-- market quotes are requested every 5 seconds, subject to source limits;
-- official Federal Reserve, U.S. Treasury, and White House feeds are checked every 20 seconds;
+- the official Federal Reserve speeches feed is the primary source and is checked about every 2 seconds;\n- market quotes are auxiliary and requested every 5 seconds, subject to source limits;
+- other Federal Reserve, U.S. Treasury, and White House feeds are auxiliary and checked every 20 seconds;
 - the official FRED DFII10 10-year real-yield observation is refreshed once per minute (daily frequency);
-- every snapshot and newly seen official event is printed immediately as compact JSON;
+- every snapshot and the targeted speech event (emitted as `TARGET_EVENT`) is printed immediately as compact JSON;
 - `snapshots.jsonl`, `events.jsonl`, and `summary.json` are uploaded as a seven-day workflow artifact.
 
 ## Fast interpretation
