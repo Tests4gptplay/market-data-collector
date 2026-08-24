@@ -148,8 +148,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--runtime-seconds", type=int, default=300)
     ap.add_argument("--market-interval", type=float, default=5)
-    ap.add_argument("--news-interval", type=float, default=2,
-                    help="Priority Federal Reserve speech-feed interval")
+    ap.add_argument("--news-interval", type=float, default=1,
+                    help="Priority Federal Reserve speech-feed interval (1 second around release)")
     ap.add_argument("--aux-news-interval", type=float, default=20)
     ap.add_argument("--output-dir", default="output/precious-metals-event")
     args = ap.parse_args()
