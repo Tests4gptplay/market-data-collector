@@ -4,7 +4,7 @@ The workflow `.github/workflows/precious-metals-event-monitor.yml` is scheduled 
 
 During an approximately five-minute run:
 
-- the official Federal Reserve speeches feed is the primary source and is checked about every 2 seconds;\n- market quotes are auxiliary and requested every 5 seconds, subject to source limits;
+- the official Federal Reserve speeches feed is the primary source and is checked about every 1 second;\n- market quotes are auxiliary and requested every 5 seconds, subject to source limits;
 - other Federal Reserve, U.S. Treasury, and White House feeds are auxiliary and checked every 20 seconds;
 - the official FRED DFII10 10-year real-yield observation is refreshed once per minute (daily frequency);
 - every snapshot and the targeted speech event (emitted as `TARGET_EVENT`) is printed immediately as compact JSON;
