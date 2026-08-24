@@ -8,9 +8,9 @@ on:
         required: false
         default: "300"
   schedule:
-    # 2026-08-24 22:58 Asia/Tokyo = 2026-08-24 13:58 UTC.
+    # 2026-08-28 22:58 Asia/Tokyo = 2026-08-28 13:58 UTC.
     # GitHub schedules are minute-granularity and may start late.
-    - cron: "58 13 24 8 *"
+    - cron: "58 13 28 8 *"
 
 permissions:
   contents: read
@@ -26,7 +26,7 @@ jobs:
         id: gate
         shell: bash
         run: |
-          if [[ "${{ github.event_name }}" == "schedule" && "$(date -u +%F)" != "2026-08-24" ]]; then
+          if [[ "${{ github.event_name }}" == "schedule" && "$(date -u +%F)" != "2026-08-28" ]]; then
             echo "run=false" >> "$GITHUB_OUTPUT"
             echo "Scheduled date gate closed."
           else
@@ -43,7 +43,7 @@ jobs:
         env:
           RUNTIME: ${{ github.event.inputs.runtime_seconds || '300' }}
         run: |
-          python collectors/precious_metals_event_monitor.py             --runtime-seconds "$RUNTIME"             --market-interval 5             --news-interval 20             --output-dir output/precious-metals-event
+          python collectors/precious_metals_event_monitor.py             --runtime-seconds "$RUNTIME"             --market-interval 5             --news-interval 2 --aux-news-interval 20             --output-dir output/precious-metals-event
 
       - name: Upload structured snapshots and events
         if: always() && steps.gate.outputs.run == 'true'
