@@ -3,7 +3,7 @@
 
 Streams JSON Lines to stdout and writes snapshots/events/summary artifacts.
 Market quotes are best-effort Yahoo Finance spot symbols with futures fallbacks.
-Official feeds are polled less frequently and deduplicated.
+The targeted Jackson Hole speech feed is the primary signal; markets are auxiliary.
 """
 from __future__ import annotations
 import argparse, datetime as dt, email.utils, hashlib, json, os, pathlib, sys, time
@@ -17,15 +17,22 @@ MARKET = {
     "us10y_nominal": ["^TNX"],
     "us30y_nominal": ["^TYX"],
 }
-FEEDS = {
-    "federal_reserve": "https://www.federalreserve.gov/feeds/press_all.xml",
+PRIORITY_FEEDS = {
+    "federal_reserve_speeches": "https://www.federalreserve.gov/feeds/speeches.xml",
+}
+AUX_FEEDS = {
+    "federal_reserve_press": "https://www.federalreserve.gov/feeds/press_all.xml",
     "us_treasury": "https://home.treasury.gov/news/press-releases/feed",
     "white_house": "https://www.whitehouse.gov/briefing-room/feed/",
 }
+FEEDS = {**PRIORITY_FEEDS, **AUX_FEEDS}
+TARGET_TERMS = ("kevin warsh", "warsh", "jackson hole", "keynote remarks",
+                "financial innovation", "payments and policy")
 KEYWORDS = (
     "federal reserve", "monetary", "interest rate", "inflation", "treasury",
     "debt", "auction", "refunding", "fiscal", "deficit", "dollar",
     "currency", "sanction", "tariff", "credit", "funding", "liquidity",
+    *TARGET_TERMS,
 )
 UTC = dt.timezone.utc
 
@@ -100,7 +107,8 @@ def official_items(source, url):
         hay = (title + " " + desc).lower()
         if any(k in hay for k in KEYWORDS):
             ident = hashlib.sha256((source + "|" + link + "|" + title).encode()).hexdigest()[:20]
-            out.append({"event_id": ident, "source": source, "title": title, "url": link, "published_at": published})
+            out.append({"event_id": ident, "source": source, "title": title, "url": link, "published_at": published,
+                        "target_match": any(k in hay for k in TARGET_TERMS)})
     return out
 
 def pct(now, base):
@@ -140,15 +148,21 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--runtime-seconds", type=int, default=300)
     ap.add_argument("--market-interval", type=float, default=5)
-    ap.add_argument("--news-interval", type=float, default=20)
+    ap.add_argument("--news-interval", type=float, default=2,
+                    help="Priority Federal Reserve speech-feed interval")
+    ap.add_argument("--aux-news-interval", type=float, default=20)
     ap.add_argument("--output-dir", default="output/precious-metals-event")
     args = ap.parse_args()
     out = pathlib.Path(args.output_dir); out.mkdir(parents=True, exist_ok=True)
     snapshots, events = out / "snapshots.jsonl", out / "events.jsonl"
-    start, next_market, next_news, next_real = time.monotonic(), 0.0, 0.0, 0.0
+    start, next_market, next_news, next_aux_news, next_real = time.monotonic(), 0.0, 0.0, 0.0, 0.0
     baseline, latest, seen, errors = None, {}, set(), []
     emit("run_start", {"runtime_seconds": args.runtime_seconds, "market_interval_seconds": args.market_interval,
-                       "news_interval_seconds": args.news_interval, "sources": FEEDS, "market_series": MARKET})
+                       "priority_news_interval_seconds": args.news_interval,
+                       "aux_news_interval_seconds": args.aux_news_interval,
+                       "target": {"event": "2026 Jackson Hole keynote remarks", "speaker": "Chairman Kevin Warsh",
+                                  "scheduled_at": "2026-08-28T14:00:00Z"},
+                       "sources": FEEDS, "market_series": MARKET})
     while time.monotonic() - start < args.runtime_seconds:
         elapsed = time.monotonic() - start
         if elapsed >= next_market:
@@ -175,22 +189,40 @@ def main():
                 errors.append(err)
             next_market += args.market_interval
         if elapsed >= next_news:
-            for source, url in FEEDS.items():
+            # Primary path: the official Federal Reserve speech feed. A matching
+            # Jackson Hole/Warsh item is emitted immediately when first observed.
+            for source, url in PRIORITY_FEEDS.items():
                 try:
                     for item in official_items(source, url):
                         if item["event_id"] not in seen:
                             seen.add(item["event_id"])
-                            row = emit("official_event", item)
-                            append_jsonl(events, row)
+                            if item["target_match"]:
+                                row = emit("TARGET_EVENT", {**item, "priority": "critical"})
+                                append_jsonl(events, row)
                 except Exception as e:
                     err = emit("source_error", {"source": source, "error": str(e)})
                     errors.append(err)
             next_news += args.news_interval
+        if elapsed >= next_aux_news:
+            # Auxiliary context only; never delays the primary speech poll.
+            for source, url in AUX_FEEDS.items():
+                try:
+                    for item in official_items(source, url):
+                        if item["event_id"] not in seen:
+                            seen.add(item["event_id"])
+                            row = emit("official_context", {**item, "priority": "auxiliary"})
+                            append_jsonl(events, row)
+                except Exception as e:
+                    err = emit("source_error", {"source": source, "error": str(e)})
+                    errors.append(err)
+            next_aux_news += args.aux_news_interval
         time.sleep(min(.25, max(0, args.runtime_seconds - (time.monotonic() - start))))
     summary = {"schema_version": "1.0", "started_at": dt.datetime.fromtimestamp(time.time()-(time.monotonic()-start), UTC).isoformat(),
                "finished_at": now_iso(), "baseline": baseline, "latest": latest,
                "signal": classify(latest, baseline) if baseline else {"verdict": "暂不交易", "confidence": "low"},
-               "official_event_count": len(seen), "error_count": len(errors),
+               "observed_item_count": len(seen), "target_event_seen": any(
+                   '"type":"TARGET_EVENT"' in line for line in events.read_text(encoding="utf-8").splitlines()
+               ) if events.exists() else False, "error_count": len(errors),
                "limitations": ["Yahoo quotes may be delayed and can fall back to futures proxies.",
                   "DFII10 is an official daily series, not an intraday real-yield quote.",
                   "Feed appearance can lag publication; GitHub Actions scheduling can start late."]}
