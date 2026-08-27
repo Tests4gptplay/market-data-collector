@@ -1,0 +1,26 @@
+name: tmp-patchright-fetch
+on:
+  push:
+    branches: [tmp-zhihu-fetch-20260827]
+permissions:
+  contents: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Patchright Chromium
+        run: |
+          pip install patchright
+          patchright install --with-deps chromium
+      - name: Fetch Zhihu articles
+        run: python tmp_patchright_fetch.py | tee patchright_result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: patchright-result
+          path: patchright_result.json
+          retention-days: 1
