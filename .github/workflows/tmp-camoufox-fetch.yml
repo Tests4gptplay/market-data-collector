@@ -1,0 +1,26 @@
+name: tmp-camoufox-fetch
+on:
+  push:
+    branches: [tmp-zhihu-fetch-20260827]
+permissions:
+  contents: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Camoufox
+        run: |
+          pip install camoufox
+          python -m camoufox fetch
+      - name: Fetch Zhihu articles
+        run: python tmp_camoufox_fetch.py | tee camoufox_result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: camoufox-result
+          path: camoufox_result.json
+          retention-days: 1
