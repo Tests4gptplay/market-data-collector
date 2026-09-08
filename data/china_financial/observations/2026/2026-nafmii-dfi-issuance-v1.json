@@ -112,5 +112,24 @@
     "source_url": "https://www.nafmii.org.cn/sjtj/fx/202607/P020260730398665984862.pdf",
     "unit": "CNY_100M",
     "value": 8086.0
+  },
+  {
+    "collector_version": "V1.9-READY-NAFMII-DFI-ISSUANCE-INCREMENTAL-V2",
+    "dimensions": {
+      "headline_row": "7     595        980        8,800",
+      "issue_count": 980,
+      "issuer_count": 595,
+      "pdf_pages": 2,
+      "source_semantic": "NAFMII_MONTHLY_DFI_GROSS_ISSUANCE",
+      "title": "2026年7月债务融资工具发行统计"
+    },
+    "evidence_sha256": "a7957dc7675f8ff426018e65055d1e19ccb06420808fdf6dd6f4a69fda6aeac8",
+    "provider": "NAFMII",
+    "reference_period": "2026-07",
+    "retrieved_at": "2026-09-08T15:14:45.225180Z",
+    "series_id": "CRD_DFI_GROSS_ISSUANCE_MONTHLY",
+    "source_url": "https://www.nafmii.org.cn/sjtj/fx/202609/P020260901591031159438.pdf",
+    "unit": "CNY_100M",
+    "value": 8800.0
   }
 ]

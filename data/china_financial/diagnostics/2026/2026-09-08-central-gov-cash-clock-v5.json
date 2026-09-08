@@ -1,0 +1,14 @@
+[
+  {
+    "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+    "document_class": "CORE_PREISSUE_SCHEDULE",
+    "gap_class": "SOURCE_OR_PARSER_FAILURE",
+    "message": "<HTTPError 502: 'Bad Gateway'>",
+    "readiness_blocking": false,
+    "reference_date": "2026-09-08",
+    "series_id": "FISC_GOV_BOND_EVENT_WINDOW",
+    "source_url": "https://zwgls.mof.gov.cn/ywgg/202609/t20260908_3996950.htm",
+    "stage": "MOF_BUSINESS_ANNOUNCEMENT_DETAIL",
+    "v4_reason": "INDIVIDUAL_DETAIL_FAILURE_WITH_LIST_WINDOW_PROVEN_RETRY_NEXT_DAILY_RUN"
+  }
+]
