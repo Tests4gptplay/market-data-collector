@@ -1,0 +1,1032 @@
+{
+  "as_of": "2026-09-10",
+  "collection_checks": {
+    "central_gov_cash_clock": {
+      "as_of": "2026-09-10",
+      "blocking_gap_count": 0,
+      "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
+      "mode": "DAILY_INCREMENTAL",
+      "module": "china_financial_central_gov_bond_cash_clock_v5_context",
+      "nonblocking_diagnostic_count": 1,
+      "observation_count": 0,
+      "ready_status": "PASS_CONTEXT_UNKNOWN_SOURCE_HEALTH_WARNING",
+      "source_context_available": false,
+      "status": "PASS",
+      "upstream_v4_context_status": "UNKNOWN_WINDOW_NOT_PROVEN",
+      "upstream_v4_status": "INCOMPLETE"
+    },
+    "local_gov_cash_clock": {
+      "as_of": "2026-09-10",
+      "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V3",
+      "completed_at": "2026-09-10T15:08:50.334456Z",
+      "context_status": "PASS_NO_EVENT_IN_PROVEN_WINDOW",
+      "daily_runs": [
+        {
+          "gap_count": 3,
+          "observation_count": 0,
+          "publication_date": "2026-09-08",
+          "source_run": {
+            "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
+            "completed_at": "2026-09-10T15:08:54.931561Z",
+            "families": [],
+            "gap_count": 3,
+            "module": "china_financial_local_gov_bond_cash_clock",
+            "observation_count": 0,
+            "semantic_rules": {
+              "accrual_date_never_substituted_for_payment": true,
+              "no_document_day_is_no_event_not_gap": true,
+              "payment_date_must_be_explicit": true,
+              "planned_and_actual_amounts_kept_distinct": true,
+              "publication_date_must_not_exceed_target": true,
+              "unclassified_debt_service_split_is_gap": true
+            },
+            "status": "INCOMPLETE",
+            "target_date": "2026-09-08"
+          },
+          "status": "INCOMPLETE"
+        },
+        {
+          "gap_count": 3,
+          "observation_count": 0,
+          "publication_date": "2026-09-09",
+          "source_run": {
+            "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
+            "completed_at": "2026-09-10T15:08:57.750874Z",
+            "families": [],
+            "gap_count": 3,
+            "module": "china_financial_local_gov_bond_cash_clock",
+            "observation_count": 0,
+            "semantic_rules": {
+              "accrual_date_never_substituted_for_payment": true,
+              "no_document_day_is_no_event_not_gap": true,
+              "payment_date_must_be_explicit": true,
+              "planned_and_actual_amounts_kept_distinct": true,
+              "publication_date_must_not_exceed_target": true,
+              "unclassified_debt_service_split_is_gap": true
+            },
+            "status": "INCOMPLETE",
+            "target_date": "2026-09-09"
+          },
+          "status": "INCOMPLETE"
+        },
+        {
+          "gap_count": 3,
+          "observation_count": 0,
+          "publication_date": "2026-09-10",
+          "source_run": {
+            "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
+            "completed_at": "2026-09-10T15:09:00.767606Z",
+            "families": [],
+            "gap_count": 3,
+            "module": "china_financial_local_gov_bond_cash_clock",
+            "observation_count": 0,
+            "semantic_rules": {
+              "accrual_date_never_substituted_for_payment": true,
+              "no_document_day_is_no_event_not_gap": true,
+              "payment_date_must_be_explicit": true,
+              "planned_and_actual_amounts_kept_distinct": true,
+              "publication_date_must_not_exceed_target": true,
+              "unclassified_debt_service_split_is_gap": true
+            },
+            "status": "INCOMPLETE",
+            "target_date": "2026-09-10"
+          },
+          "status": "INCOMPLETE"
+        }
+      ],
+      "gap_count": 9,
+      "module": "china_financial_local_gov_bond_cash_clock_v3",
+      "observation_count": 0,
+      "scope": "LOCAL_GOVERNMENT_BONDS_ONLY",
+      "status": "PASS"
+    },
+    "mof_fiscal_ytd": {
+      "collector_version": "V1.9-READY-MOF-FISCAL-YTD-INCREMENTAL-V3",
+      "completed_at": "2026-09-10T15:06:03.768472Z",
+      "derived_observation_count": 0,
+      "gap_count": 0,
+      "list_evidence": {
+        "candidate_count": 6,
+        "list_fetch": {
+          "attempts_used": 3,
+          "http_status": 200,
+          "prior_errors": [
+            "<HTTPError 502: 'Bad Gateway'>",
+            "<HTTPError 502: 'Bad Gateway'>"
+          ]
+        },
+        "list_sha256": "bad3e51beffa09aeef8734a2d08d978cf11e8fd3d3af519bb448ae438e9bce30",
+        "list_url": "https://gks.mof.gov.cn/tongjishuju/"
+      },
+      "method_version": "FISC_YTD_PERIOD_FLOW_V1",
+      "mode": "NO_NEW_RELEASE_CARRY_STORE",
+      "module": "china_financial_mof_fiscal_ytd_incremental",
+      "official_latest_period_end_month": 7,
+      "release_count": 0,
+      "release_evidence": [],
+      "root_observation_count": 0,
+      "semantic_rules": {
+        "daily_list_check_only_when_unchanged": true,
+        "historical_release_recrawl_default": false,
+        "no_new_release_carries_store": true,
+        "only_new_release_details_fetched": true,
+        "previous_ytd_parent_read_from_store": true,
+        "unknown_is_never_zero": true
+      },
+      "status": "PASS",
+      "stored_latest_period_end_month": 7,
+      "year": 2026
+    },
+    "nafmii_dfi_issuance": {
+      "collector_version": "V1.9-READY-NAFMII-DFI-ISSUANCE-INCREMENTAL-V2",
+      "completed_at": "2026-09-10T15:06:21.795671Z",
+      "gap_count": 0,
+      "list_evidence": {
+        "attempts": 1,
+        "list_sha256": "7f469c730a79e7b8f90918218027044220d5186bd34261e0fbc68f8b49b435a8",
+        "list_url": "https://www.nafmii.org.cn/sjtj/fx/"
+      },
+      "mode": "NO_NEW_RELEASE_CARRY_STORE",
+      "module": "china_financial_nafmii_dfi_issuance_incremental",
+      "observation_count": 0,
+      "official_latest_month": 7,
+      "release_count": 0,
+      "release_evidence": [],
+      "semantic_rules": {
+        "daily_list_check_only_when_unchanged": true,
+        "historical_pdf_recrawl_default": false,
+        "no_new_release_carries_store": true,
+        "only_new_release_pdfs_fetched": true,
+        "own_release_month_only": true,
+        "unknown_is_never_zero": true
+      },
+      "status": "PASS",
+      "stored_latest_month": 7,
+      "year": 2026
+    },
+    "pbc_monthly_credit": {
+      "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+      "completed_at": "2026-09-10T15:05:51.925286Z",
+      "derived_observation_count": 0,
+      "diagnostics": [],
+      "evidence": {
+        "credit_section": {
+          "label": "金融机构人民币信贷收支表",
+          "section_sha256": "b88b78a9303be5a0ad037cf0006b5e4fae4980c1329edef3f82b7259b7e0cbf6",
+          "section_url": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2026ntjsj/jrjgxdsztj/index.html"
+        },
+        "credit_table": {
+          "row_count": 53,
+          "table_sha256": "a3c39fbbb1c9b207447ac5414add566387fb88e75a173f8442c49ce57b87ba8b",
+          "table_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/08/2026081417033645396.htm"
+        },
+        "current_sections": {
+          "credit": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2026ntjsj/jrjgxdsztj/index.html",
+          "tsf": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2026ntjsj/shrzgm/index.html"
+        },
+        "tsf_section": {
+          "label": "社会融资规模增量统计表",
+          "section_sha256": "bdc37fd7a3308ce86e06cf2caa92e8f0dd8cd511a59c469a39523a87dd66bf4a",
+          "section_url": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2026ntjsj/shrzgm/index.html"
+        },
+        "tsf_table": {
+          "row_count": 21,
+          "table_sha256": "d17359c92ce0f040c1b9c5355432a127d6cda34fab18285cb5f53d978d5c12a5",
+          "table_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/08/2026081417010772070.htm"
+        }
+      },
+      "gap_count": 0,
+      "mode": "NO_NEW_RELEASE_CARRY_STORE",
+      "module": "china_financial_pbc_monthly_credit_incremental",
+      "root_observation_count": 0,
+      "semantic_rules": {
+        "backtest_asof_filtering_is_downstream": true,
+        "historical_backfill_default": false,
+        "latest_available_official_data_first": true,
+        "no_new_release_carries_store": true,
+        "subfamilies_may_advance_asynchronously": true,
+        "unknown_is_never_zero": true
+      },
+      "status": "PASS",
+      "year": 2026
+    },
+    "pbc_monthly_policy_tools": {
+      "collector_version": "V1.9-READY-PBC-MONTHLY-POLICY-TOOLS-INCREMENTAL-V3",
+      "completed_at": "2026-09-10T15:06:20.628241Z",
+      "gap_count": 0,
+      "list_evidence": {
+        "list_fetch": {
+          "attempts_used": 1,
+          "http_status": 200,
+          "prior_errors": []
+        },
+        "list_sha256": "4a2f15c3692ee0fa695a0dcaac7975175eab659f3837676337ae8e0c17e14caf",
+        "list_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/index.html"
+      },
+      "mode": "NO_NEW_RELEASE_CARRY_STORE",
+      "module": "china_financial_pbc_monthly_policy_tools_incremental",
+      "observation_count": 0,
+      "official_latest_month": 8,
+      "release_count": 0,
+      "release_evidence": [],
+      "semantic_rules": {
+        "daily_list_check_only_when_unchanged": true,
+        "historical_release_recrawl_default": false,
+        "no_new_release_carries_store": true,
+        "only_new_release_details_fetched": true,
+        "policy_flow_not_realized_financial_condition": true,
+        "unknown_is_never_zero": true
+      },
+      "series_ids": [
+        "POL_MLF_NET_MONTHLY",
+        "POL_PBOC_CGB_NET_MONTHLY",
+        "POL_PSL_NET_MONTHLY",
+        "POL_SLF_NET_MONTHLY",
+        "POL_STRUCTURAL_TOOLS_NET_MONTHLY",
+        "POL_TREASURY_CASH_MGMT_NET"
+      ],
+      "status": "PASS",
+      "stored_latest_month": 8,
+      "year": 2026
+    },
+    "policy_event_incremental": {
+      "collector_version": "V1.9-CANDIDATE-POLICY-EVENT-FAMILY-V6-INCREMENTAL",
+      "completed_at": "2026-09-10T15:08:50.185388Z",
+      "families": [
+        {
+          "article_evidence": [
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026091008503564628/index.html",
+              "available_at": "2026-09-10 09:20:23",
+              "parsed_observation_count": 1,
+              "sha256": "8111776ac64ea8180d07238a4ede037fade07d3bb718682f726fddf1b734e67c",
+              "status": "PARSED"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026090909094893664/index.html",
+              "sha256": "365b69776c09b1e2bec206fc65c496ac644fffafcaa7d808260ca6d5d897e173",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026090808550785449/index.html",
+              "sha256": "7b7102ca2d7f3cdd3d246db976917d0a9c06ccb52da93d594587d8547f7501c1",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026090709060799588/index.html",
+              "sha256": "20dfe81a4ecbb9629c79d88ad88886edb4b61eb4df2612e197021d98bebce556",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026090408480534617/index.html",
+              "sha256": "0fdbc0584b80994971614f08cb60109f9d807b104a73cacac50162357a229c15",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026090308483817494/index.html",
+              "sha256": "a79159e3ee851de3789173876c2325805d9c3fda4beb0ce18044fe71c36e0de0",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026090208530223391/index.html",
+              "sha256": "84c71b83af0afc2d8d68c7eded2e1971966f7bf84ae7a967034ed785670eba07",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026090108544487779/index.html",
+              "sha256": "3e75fbbd6ab66bfd586e8cf62d1160ed98b7108c416ab16810958929adf5510e",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026083108481886588/index.html",
+              "sha256": "dc1b3d13f35638eaf900e5d4f8a47caaa005736c7ddca8c1b25f02715339127e",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026082808585347002/index.html",
+              "sha256": "ee19f9d0ca925b95875448bda4f354558ee7c6f06c36d9a3a62eafb9d59e4a1a",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026082709072028572/index.html",
+              "sha256": "9680947ce8393d8fc8e83c93d2d8b7c2b83cf0042a7aac6a0f8552b8189349d8",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026082609043256964/index.html",
+              "sha256": "7fd11fdeff88f58a25742bedcda37fe9fc179b54dac7f2ad68fda55a2967642f",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026082511570951777/index.html",
+              "sha256": "718fb706f0a1a7e8e5c0fd6136afedcbcbd0cfb814612928579f104634525dac",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026082509031244236/index.html",
+              "sha256": "1f418c4c24472c3738f8eb3204e4e437e378562a1984bc89bfc9ab67b51a33ef",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026082408541077708/index.html",
+              "sha256": "76e61b19e28a99a71f38e3fc5ce5948e5cf159627db43ad9a266c8ed827b297d",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026082108525095972/index.html",
+              "sha256": "d5673e8e4351bc2a1ff1afdcdd89da9ba2c3c7a8fe946c3cd463c164da0cd834",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026082008530953900/index.html",
+              "sha256": "4f8e70427c93229fac26cf614f4b8915f15120f7d44cb27f48d03c1c465c0b15",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026081908571038907/index.html",
+              "sha256": "5f115cef9aa4315719105d8c479891791cc6f13e3746d65cd504568a2beb1f6f",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026081808573129759/index.html",
+              "sha256": "deae3fae857f4dc388b22a28046c74d84914bfaa336b3885e860a6a6ae0df0ea",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026081709030220898/index.html",
+              "sha256": "4d78f34faceb34c7b5971d16dd9399f4b0b422de44769554059d8e33c78f610e",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            }
+          ],
+          "family": "OMO",
+          "inspected_articles": 20,
+          "list_evidence": {
+            "candidate_count": 20,
+            "list_sha256": "800d2dbee3eadcd44cc2f7609f5b16dc73b996e46c7f4cc82ddaa7cccf3993a6",
+            "list_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/index.html"
+          },
+          "observation_count": 1,
+          "status": "EVENTS_FOUND",
+          "target_date": "2026-09-10"
+        },
+        {
+          "article_evidence": [
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/index.html",
+              "sha256": "96cc11e5927b63d7e8a64a93cdd9f7b5d0b9473698d51853523dc99b3415b5fe",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026090415165634108/index.html",
+              "sha256": "ba45af995d816899956018b0f04ff1cb6fa64f63a45337df72cbfb0567369d4c",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026081316435645255/index.html",
+              "sha256": "882e74c0e6e75047c4bbc462f006673d4b9bd25e975332e4ad6830e72d888cd9",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026080416481662012/index.html",
+              "sha256": "c87b691d802e1c656f8d31540556324f7d24410dac542092dfbec5e4800c1baa",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026071416335097398/index.html",
+              "sha256": "7da316c67c9b3e42bcf35f49e5fab723140488b232a4e0878054440d03317182",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026070316443285965/index.html",
+              "sha256": "f2f8b50340b290197099cec2430ecd1a071581cf6162ce2bdb4b16ba69697ef9",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026061216495396401/index.html",
+              "sha256": "60b6e297d4dd255d96350800bebd9abef98ad952db0e999592f5d0d4e7e9e0f4",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026060416550459509/index.html",
+              "sha256": "0524a08bca4a9584d14caffd3c93781da7be15e7dfe31af9d3868ce949d8459e",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026051416495036239/index.html",
+              "sha256": "c2bb4fdacb74d9eb9e059e3c7a50d0584bacfe8a51bc96f1616cd7444b7150b5",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026043017030839697/index.html",
+              "sha256": "aa68fb80651b19eeb6dd56244ec68c96ec5056fd6c23e0b579b09d04248a5526",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026041416545098236/index.html",
+              "sha256": "a0140f7f037bf46d3231b916fb5d890a25770fe8c69ca3cf3401c5a5d4eb5133",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026040316553242917/index.html",
+              "sha256": "e644c1bc6b79dada0b10435bc2691712a83e564d06141d1a5b503570b1e37572",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026031316414087318/index.html",
+              "sha256": "c50f5632586ce595448d5dd9221c9cb6c806776bffa32861ce43101748c10d47",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026030516423444956/index.html",
+              "sha256": "01027ca7ccfff41ae1e8f55f124e22f7cf3643d43ce8b430f49add74dd06e1c3",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026021216461315705/index.html",
+              "sha256": "61e335ca7eb0c7810b4f8db55f60ae7999141d807b6cde1d3687b549b87454f6",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026020317050814427/index.html",
+              "sha256": "e99d186f18a27519baabc506da8faadec87eaf756b912153681aa971053364e1",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026011417040030647/index.html",
+              "sha256": "d3599fef064e64a0fd66ebe5d35134c1efa97ccde708205d4de5d29c3b21f7d9",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2026010716452669176/index.html",
+              "sha256": "f7c45fe772e80516737a8897bdc64639647a936f6d03e7ec02c4386a767a6dfd",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/2025121216292958171/index.html",
+              "sha256": "7f108a431bc00ff74593c1d807b609510c00bcd9c91acc95858a096efdd422f4",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/5922140/index.html",
+              "sha256": "6c0eb1a6911c721e531aac3e2ae456afdc6a8e376cf73de8181fd112f249c91e",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/5900993/index.html",
+              "sha256": "51c378ad3dc5e1152d7d06d603b68e1f48803aa3b660d9f4486944a523029f8a",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            }
+          ],
+          "family": "BUYOUT",
+          "inspected_articles": 21,
+          "list_evidence": {
+            "candidate_count": 21,
+            "list_sha256": "96cc11e5927b63d7e8a64a93cdd9f7b5d0b9473698d51853523dc99b3415b5fe",
+            "list_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/5492845/index.html"
+          },
+          "observation_count": 0,
+          "status": "NO_EVENT_CONFIRMED",
+          "target_date": "2026-09-10"
+        },
+        {
+          "article_evidence": [
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/2026082417362891341/index.html",
+              "sha256": "7ac24eb69aa59940bf459228b6914f0be23692eae748ba22adcbf882737781bd",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/2026072318022895816/index.html",
+              "sha256": "62a258d2df540a050ec9be9987c165491cd336e467a12a4b3d3f262ab066e1f9",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/2026062418444165617/index.html",
+              "sha256": "77418227089c7189a600dfce5a83169ab370815e11eae288590155d665d24d8d",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/2026052217453752767/index.html",
+              "sha256": "8f648a82e3bd2f57c4a6118ab8497a2a810d552a55eb1574213b99e7ab5937f1",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/2026042417584374637/index.html",
+              "sha256": "02bfc14898fe6c904c463ee822de0401b3c69503e40e75ea2aa0f4f020fee1fd",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/2026032415501270484/index.html",
+              "sha256": "867f4c824f16323090e0baf82b7d7a8325400aaf233922f875832578e5400f9e",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/2026022417231864457/index.html",
+              "sha256": "3d2c5e9da47c10217a1c76a068eb81fb8bca45fa09e3b3b2c3e8fa9a76c86560",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/2026012217202226569/index.html",
+              "sha256": "676f8c298f61109807defdb7f9f7cf5d392601a7cb8f19f9c0627c22d7a7de9f",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/2025122417193861417/index.html",
+              "sha256": "9e55081c7fe72cb1657227e798a5c8c7bbed7d98ec9dc3b34ec040f046c4da20",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/5909382/index.html",
+              "sha256": "f58e13414d999fcc7ff0436a8baa058e0e5fb16658c20f20614a2cbbcb20efff",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/2025111413250635153/index.html",
+              "sha256": "2d14d7d8eed0cfff1a0783291b5b6b33e59d0f924df277a6d75e0baefe3a20e3",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/2025100917195186442/index.html",
+              "sha256": "c92ac050728de695bcb14a00eb010a2969c5f45991a7a9c3d0aeee04d89c82c0",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/5816769/index.html",
+              "sha256": "f6db990d44c9433a7debe99d981daf7837c72b8b110d43bf1555320bfcde8ce0",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/5790566/index.html",
+              "sha256": "8cee181640efc41c9f7cbd193e608880ef065dbe1e67d09b0c186484bf06908a",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/5758740/index.html",
+              "sha256": "e7b723ce514a0e8bbb0273a2307a7fafacc38272c81ec0c9c623516f3ee3a815",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/5720297/index.html",
+              "sha256": "4f3e4741d26cedcbd720cf4ff41122ab1f69d8e3f0d838051544bb4890fec713",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/5682438/index.html",
+              "sha256": "e47a37e21597f237bbfc86e00cdccce206f9f6d1bffbbbcca265f0804f770498",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            },
+            {
+              "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/5632170/index.html",
+              "sha256": "f5d6ec922114f34659924565fba17f70189a32af973fbc9027bebef2039f77d2",
+              "status": "NOT_TARGET_OPERATION_DATE"
+            }
+          ],
+          "family": "MLF",
+          "inspected_articles": 18,
+          "list_evidence": {
+            "candidate_count": 18,
+            "list_sha256": "26e161c41b3044a3c27f0f3a0d76a5a96392d3d623393b8cd8332dad9be815e8",
+            "list_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125437/125446/125873/index.html"
+          },
+          "observation_count": 0,
+          "status": "NO_EVENT_CONFIRMED",
+          "target_date": "2026-09-10"
+        }
+      ],
+      "gap_count": 0,
+      "incremental_since_date": "2026-08-31",
+      "mode": "DAILY_INCREMENTAL",
+      "module": "china_financial_policy_event_family",
+      "observation_count": 1,
+      "omo7d_incremental_state_check": {
+        "articles_inspected": 20,
+        "diagnostics": [],
+        "latest_recent_quote_date": "2026-09-10",
+        "latest_recent_rate": 1.4,
+        "observation_emitted": false,
+        "page_evidence": [
+          {
+            "candidate_count": 20,
+            "page": 1,
+            "sha256": "800d2dbee3eadcd44cc2f7609f5b16dc73b996e46c7f4cc82ddaa7cccf3993a6",
+            "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/index.html"
+          }
+        ],
+        "pages_inspected": 1,
+        "previous_rate_supplied": true,
+        "since_date": "2026-08-31",
+        "state_change_detected": false,
+        "status": "PASS",
+        "target_date": "2026-09-10"
+      },
+      "semantic_rules": {
+        "daily_incremental_only": true,
+        "default_recent_lookback_days": 10,
+        "future_information_forbidden": true,
+        "no_2025_2024_backfill_in_daily_mode": true,
+        "no_recent_quote_is_not_gap": true,
+        "unchanged_policy_rate_emits_no_new_root_when_previous_state_supplied": true
+      },
+      "status": "PASS",
+      "target_date": "2026-09-10"
+    },
+    "rrr_event_incremental": {
+      "collector_version": "V1.9-CANDIDATE-RRR-EVENT-FAMILY-V5-INCREMENTAL",
+      "completed_at": "2026-09-10T15:06:39.666340Z",
+      "diagnostics": [],
+      "gap_count": 0,
+      "mode": "DAILY_INCREMENTAL",
+      "module": "china_financial_rrr_event_family",
+      "new_event_count": 0,
+      "observation_count": 0,
+      "oldest_seen_date": "2026-08-12",
+      "page_evidence": [
+        {
+          "max_date": "2026-09-10",
+          "min_date": "2026-08-19",
+          "page": 1,
+          "sha256": "72b376e3e6ce63178d3e0f836315f6600cf1e4651522d731ee2eca673e09d707",
+          "total_pages": 410,
+          "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/index.html"
+        },
+        {
+          "max_date": "2026-08-17",
+          "min_date": "2026-07-30",
+          "page": 2,
+          "sha256": "12c0e9233b49525205234de68b5ae96436a5b48ba4758b61eafee15311b24e63",
+          "total_pages": 410,
+          "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/11040-2.html"
+        }
+      ],
+      "pages_scanned": 2,
+      "semantic_rules": {
+        "daily_incremental_only": true,
+        "default_recent_lookback_days": 10,
+        "direct_policy_announcement_only_for_root": true,
+        "existing_state_carries_forward_outside_collector": true,
+        "future_information_forbidden": true,
+        "historical_review_is_qc_only": true,
+        "no_2025_2024_backfill_in_daily_mode": true,
+        "no_new_release_is_not_gap": true
+      },
+      "since_date": "2026-08-31",
+      "status": "PASS",
+      "target_date": "2026-09-10"
+    }
+  },
+  "generated_at": "2026-09-10T15:09:20.338857Z",
+  "manifest": "data/china_financial/manifests/2026/2026-09-10-daily-persist-v3.json",
+  "persistence": {
+    "central_gov_cash_clock": {
+      "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
+      "context": {
+        "as_of": "2026-09-10",
+        "blocking_gap_count": 0,
+        "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
+        "data_confidence_effect": "DOWNWEIGHT_FISCAL_CASH_CLOCK_CONTEXT",
+        "documents": [],
+        "list_evidence": [],
+        "mode": "DAILY_INCREMENTAL",
+        "module": "china_financial_central_gov_bond_cash_clock_context",
+        "nonblocking_diagnostic_count": 1,
+        "observation_count": 0,
+        "publication_window_end": "2026-09-10",
+        "publication_window_start": "2026-09-08",
+        "readiness_semantics": {
+          "all_core_details_unreadable_is_blocking": true,
+          "at_least_one_core_detail_required_when_core_docs_exist": true,
+          "every_individual_core_detail_required": false,
+          "fiscal_deposit_change_is_realized_net_anchor": true,
+          "government_bond_cash_clock_is_supporting_context": true,
+          "individual_detail_failure_is_retried_incrementally": true,
+          "publication_list_window_must_be_proven": true,
+          "unknown_is_not_zero": true
+        },
+        "ready_adapter_semantics": {
+          "government_bond_cash_clock_is_supporting_context": true,
+          "realized_fiscal_anchor_is_external_to_this_collector": "FISC_DEPOSIT_CHANGE",
+          "source_outage_becomes_unknown_not_zero": true,
+          "source_outage_does_not_relax_other_core_measurement_gates": true,
+          "source_outage_retried_next_daily_increment": true
+        },
+        "scope": "CENTRAL_GOVERNMENT_BOOK_ENTRY_TREASURY_CASH_CLOCK_CONTEXT",
+        "semantic_rules": {
+          "actual_result_detail_transient_failure_does_not_block_core_ready": true,
+          "actual_result_is_incremental_correction": true,
+          "daily_incremental_only": true,
+          "distribution_end_is_not_payment_fact": true,
+          "historical_backfill_not_default": true,
+          "no_security_master_required": true,
+          "preissue_schedule_is_core_cash_clock": true
+        },
+        "source_context_available": false,
+        "status": "UNKNOWN_SOURCE_HEALTH_WARNING",
+        "window_proof": {
+          "actual_correction_documents_discovered": 0,
+          "actual_correction_documents_successfully_read": 0,
+          "core_preissue_documents_discovered": 0,
+          "core_preissue_documents_successfully_read": 0,
+          "no_event_claim_requires_complete_list_window": true,
+          "publication_list_window_checked": false,
+          "unknown_is_never_zero": true
+        }
+      },
+      "context_path": "data/china_financial/contexts/2026/2026-09-10-central-gov-cash-clock-v5.json",
+      "diagnostic_count": 1,
+      "diagnostics_path": "data/china_financial/diagnostics/2026/2026-09-10-central-gov-cash-clock-v5.json",
+      "merge": {
+        "added": 0,
+        "existing": 186,
+        "final": 186,
+        "identical": 0,
+        "staged": 0
+      },
+      "new_store_rows": 0,
+      "observations_path": "data/china_financial/observations/2026/2026-central-gov-cash-clock-v5.json",
+      "run": {
+        "as_of": "2026-09-10",
+        "blocking_gap_count": 0,
+        "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
+        "mode": "DAILY_INCREMENTAL",
+        "module": "china_financial_central_gov_bond_cash_clock_v5_context",
+        "nonblocking_diagnostic_count": 1,
+        "observation_count": 0,
+        "ready_status": "PASS_CONTEXT_UNKNOWN_SOURCE_HEALTH_WARNING",
+        "source_context_available": false,
+        "status": "PASS",
+        "upstream_v4_context_status": "UNKNOWN_WINDOW_NOT_PROVEN",
+        "upstream_v4_status": "INCOMPLETE"
+      },
+      "run_path": "data/china_financial/runs/2026/2026-09-10-central-gov-cash-clock-v5.json",
+      "status": "PASS"
+    },
+    "fast_market": {
+      "coverage_count": 27,
+      "derived": {
+        "added": 4,
+        "existing": 0,
+        "final": 4,
+        "identical": 0,
+        "staged": 4
+      },
+      "expected_count": 27,
+      "market_date": "2026-09-10",
+      "missing_series": [],
+      "mode": "LIVE_NEW_SESSION_COLLECTION",
+      "new_store_rows": 27,
+      "observations": {
+        "added": 23,
+        "existing": 0,
+        "final": 23,
+        "identical": 0,
+        "staged": 23
+      },
+      "paths": {
+        "derived": "data/china_financial/derived/2026/2026-09-10-market-family-v4.json",
+        "gaps": "data/china_financial/gaps/2026/2026-09-10-market-family-v4.json",
+        "observations": "data/china_financial/observations/2026/2026-09-10-market-family-v4.json",
+        "run": "data/china_financial/runs/2026/2026-09-10-market-family-v4.json"
+      },
+      "persistence_action": "PERSIST_NEW_SESSION_IF_NEEDED",
+      "status": "PASS"
+    },
+    "local_gov_cash_clock": {
+      "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V3",
+      "context": {
+        "as_of": "2026-09-10",
+        "central_government_bonds_included": false,
+        "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V3",
+        "event_count_by_series": {},
+        "event_dates_by_series": {},
+        "known_amount_cny_100m_by_series_and_stage": {},
+        "lookback_days": 2,
+        "module": "china_financial_local_gov_bond_cash_clock_context",
+        "publication_window_end": "2026-09-10",
+        "publication_window_start": "2026-09-08",
+        "scope": "LOCAL_GOVERNMENT_BONDS_ONLY",
+        "semantic_rules": {
+          "amount_semantic_preserved": true,
+          "event_stage_preserved": true,
+          "no_cross_government_level_substitution": true,
+          "no_security_master_required": true,
+          "planned_and_actual_not_reconciled_here": true
+        },
+        "status": "PASS_NO_EVENT_IN_PROVEN_WINDOW",
+        "window_proof": {
+          "all_publication_days_checked": true,
+          "failed_days": 0,
+          "no_event_claim_requires_complete_window": true,
+          "successful_days": 3,
+          "unknown_is_never_zero": true
+        }
+      },
+      "context_path": "data/china_financial/contexts/2026/2026-09-10-local-gov-cash-clock-v3.json",
+      "diagnostic_count": 9,
+      "diagnostics_path": "data/china_financial/diagnostics/2026/2026-09-10-local-gov-cash-clock-v3.json",
+      "merge": {
+        "added": 0,
+        "existing": 0,
+        "final": 0,
+        "identical": 0,
+        "staged": 0
+      },
+      "new_store_rows": 0,
+      "observations_path": "data/china_financial/observations/2026/2026-local-gov-cash-clock-v3.json",
+      "run": {
+        "as_of": "2026-09-10",
+        "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V3",
+        "completed_at": "2026-09-10T15:08:50.334456Z",
+        "context_status": "PASS_NO_EVENT_IN_PROVEN_WINDOW",
+        "daily_runs": [
+          {
+            "gap_count": 3,
+            "observation_count": 0,
+            "publication_date": "2026-09-08",
+            "source_run": {
+              "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
+              "completed_at": "2026-09-10T15:08:54.931561Z",
+              "families": [],
+              "gap_count": 3,
+              "module": "china_financial_local_gov_bond_cash_clock",
+              "observation_count": 0,
+              "semantic_rules": {
+                "accrual_date_never_substituted_for_payment": true,
+                "no_document_day_is_no_event_not_gap": true,
+                "payment_date_must_be_explicit": true,
+                "planned_and_actual_amounts_kept_distinct": true,
+                "publication_date_must_not_exceed_target": true,
+                "unclassified_debt_service_split_is_gap": true
+              },
+              "status": "INCOMPLETE",
+              "target_date": "2026-09-08"
+            },
+            "status": "INCOMPLETE"
+          },
+          {
+            "gap_count": 3,
+            "observation_count": 0,
+            "publication_date": "2026-09-09",
+            "source_run": {
+              "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
+              "completed_at": "2026-09-10T15:08:57.750874Z",
+              "families": [],
+              "gap_count": 3,
+              "module": "china_financial_local_gov_bond_cash_clock",
+              "observation_count": 0,
+              "semantic_rules": {
+                "accrual_date_never_substituted_for_payment": true,
+                "no_document_day_is_no_event_not_gap": true,
+                "payment_date_must_be_explicit": true,
+                "planned_and_actual_amounts_kept_distinct": true,
+                "publication_date_must_not_exceed_target": true,
+                "unclassified_debt_service_split_is_gap": true
+              },
+              "status": "INCOMPLETE",
+              "target_date": "2026-09-09"
+            },
+            "status": "INCOMPLETE"
+          },
+          {
+            "gap_count": 3,
+            "observation_count": 0,
+            "publication_date": "2026-09-10",
+            "source_run": {
+              "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
+              "completed_at": "2026-09-10T15:09:00.767606Z",
+              "families": [],
+              "gap_count": 3,
+              "module": "china_financial_local_gov_bond_cash_clock",
+              "observation_count": 0,
+              "semantic_rules": {
+                "accrual_date_never_substituted_for_payment": true,
+                "no_document_day_is_no_event_not_gap": true,
+                "payment_date_must_be_explicit": true,
+                "planned_and_actual_amounts_kept_distinct": true,
+                "publication_date_must_not_exceed_target": true,
+                "unclassified_debt_service_split_is_gap": true
+              },
+              "status": "INCOMPLETE",
+              "target_date": "2026-09-10"
+            },
+            "status": "INCOMPLETE"
+          }
+        ],
+        "gap_count": 9,
+        "module": "china_financial_local_gov_bond_cash_clock_v3",
+        "observation_count": 0,
+        "scope": "LOCAL_GOVERNMENT_BONDS_ONLY",
+        "status": "PASS"
+      },
+      "run_path": "data/china_financial/runs/2026/2026-09-10-local-gov-cash-clock-v3.json",
+      "status": "PASS"
+    },
+    "mof_fiscal_ytd": {
+      "collector_version": "V1.9-READY-MOF-FISCAL-YTD-INCREMENTAL-V3",
+      "derived": {
+        "added": 0,
+        "existing": 24,
+        "final": 24,
+        "identical": 0,
+        "staged": 0
+      },
+      "derived_path": "data/china_financial/derived/2026/2026-mof-fiscal-ytd-v2.json",
+      "gaps_path": "data/china_financial/gaps/2026/2026-mof-fiscal-ytd-v2.json",
+      "new_store_rows": 0,
+      "observations": {
+        "added": 0,
+        "existing": 24,
+        "final": 24,
+        "identical": 0,
+        "staged": 0
+      },
+      "observations_path": "data/china_financial/observations/2026/2026-mof-fiscal-ytd-v2.json",
+      "run_path": "data/china_financial/runs/2026/2026-mof-fiscal-ytd-v2.json",
+      "status": "PASS"
+    },
+    "nafmii_dfi_issuance": {
+      "collector_version": "V1.9-READY-NAFMII-DFI-ISSUANCE-INCREMENTAL-V2",
+      "gaps_path": "data/china_financial/gaps/2026/2026-nafmii-dfi-issuance-v1.json",
+      "new_store_rows": 0,
+      "observations": {
+        "added": 0,
+        "existing": 7,
+        "final": 7,
+        "identical": 0,
+        "staged": 0
+      },
+      "observations_path": "data/china_financial/observations/2026/2026-nafmii-dfi-issuance-v1.json",
+      "run_path": "data/china_financial/runs/2026/2026-nafmii-dfi-issuance-v1.json",
+      "status": "PASS"
+    },
+    "pbc_monthly_credit": {
+      "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+      "derived": {
+        "added": 0,
+        "existing": 56,
+        "final": 56,
+        "identical": 0,
+        "staged": 0
+      },
+      "derived_path": "data/china_financial/derived/2026/2026-pbc-monthly-credit-v1.json",
+      "gaps_path": "data/china_financial/gaps/2026/2026-pbc-monthly-credit-v1.json",
+      "new_store_rows": 0,
+      "observations": {
+        "added": 0,
+        "existing": 98,
+        "final": 98,
+        "identical": 0,
+        "staged": 0
+      },
+      "observations_path": "data/china_financial/observations/2026/2026-pbc-monthly-credit-v1.json",
+      "run_path": "data/china_financial/runs/2026/2026-pbc-monthly-credit-v1.json",
+      "status": "PASS"
+    },
+    "pbc_monthly_policy_tools": {
+      "collector_version": "V1.9-READY-PBC-MONTHLY-POLICY-TOOLS-INCREMENTAL-V3",
+      "gaps_path": "data/china_financial/gaps/2026/2026-pbc-monthly-policy-tools-v2.json",
+      "new_store_rows": 0,
+      "observations": {
+        "added": 0,
+        "existing": 48,
+        "final": 48,
+        "identical": 0,
+        "staged": 0
+      },
+      "observations_path": "data/china_financial/observations/2026/2026-pbc-monthly-policy-tools-v2.json",
+      "run_path": "data/china_financial/runs/2026/2026-pbc-monthly-policy-tools-v2.json",
+      "status": "PASS"
+    },
+    "policy_event_incremental": {
+      "collector_version": "V1.9-CANDIDATE-POLICY-EVENT-FAMILY-V6-INCREMENTAL",
+      "merge": {
+        "added": 1,
+        "existing": 4,
+        "final": 5,
+        "identical": 0,
+        "staged": 1
+      },
+      "new_store_rows": 1,
+      "observation_count_this_run": 1,
+      "observations_path": "data/china_financial/observations/2026/2026-policy-event-v6-incremental.json",
+      "run_path": "data/china_financial/runs/2026/2026-policy-event-v6-incremental.json",
+      "status": "PASS"
+    },
+    "rrr_event_incremental": {
+      "collector_version": "V1.9-CANDIDATE-RRR-EVENT-FAMILY-V5-INCREMENTAL",
+      "merge": {
+        "added": 0,
+        "existing": 0,
+        "final": 0,
+        "identical": 0,
+        "staged": 0
+      },
+      "new_store_rows": 0,
+      "observation_count_this_run": 0,
+      "observations_path": "data/china_financial/observations/2026/2026-rrr-event-v5-incremental.json",
+      "run_path": "data/china_financial/runs/2026/2026-rrr-event-v5-incremental.json",
+      "status": "PASS"
+    }
+  },
+  "pipeline_version": "CF_STORE_PERSISTENCE_V3",
+  "schema_version": "CF_STORE_DAILY_RUN_V3"
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+    "gap_class": "SOURCE_FAILURE",
+    "message": "<HTTPError 502: 'Bad Gateway'>",
+    "readiness_blocking": false,
+    "reference_date": "2026-09-10",
+    "series_id": "FISC_GOV_BOND_EVENT_WINDOW",
+    "stage": "MOF_BUSINESS_ANNOUNCEMENT_LIST",
+    "v5_context_handling": "SUPPORTING_CONTEXT_UNKNOWN_RETRY_NEXT_INCREMENTAL_RUN"
+  }
+]
