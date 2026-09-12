@@ -1,0 +1,89 @@
+{
+  "as_of": "2026-09-12",
+  "blocking_gap_count": 0,
+  "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
+  "data_confidence_effect": "NONE",
+  "documents": [
+    {
+      "bond_name": "2026年记账式附息（十五期）国债",
+      "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+      "document_class": "ACTUAL_RESULT_CORRECTION",
+      "document_type": "RESULT",
+      "evidence_sha256": "6e4526159c0d62a275edab4805c3f268f135198e61bfde3e1cbb35ec3d723a1b",
+      "gap_count": 0,
+      "observation_count": 2,
+      "publication_date": "2026-09-11",
+      "status": "PASS",
+      "url": "https://zwgls.mof.gov.cn/ywgg/202609/t20260911_3997302.htm",
+      "v2_semantic_hardening": {
+        "coupon_schedule_anchored_to_interest_payment_clause": true,
+        "distribution_end_is_not_payment_fact": true,
+        "explicit_redemption_phrase_required_for_maturity": true,
+        "inferred_result_payment_rows_removed": 1,
+        "whitespace_insensitive_mof_parsing": true
+      }
+    },
+    {
+      "document_class": "ACTUAL_RESULT_CORRECTION",
+      "error": "<HTTPError 502: 'Bad Gateway'>",
+      "publication_date": "2026-09-11",
+      "status": "FAIL",
+      "title": "国债业务公告2026年第156号",
+      "url": "https://zwgls.mof.gov.cn/ywgg/202609/t20260911_3997303.htm"
+    }
+  ],
+  "list_evidence": [
+    {
+      "max_date": "2026-09-11",
+      "min_date": "2026-09-08",
+      "page": 0,
+      "row_count": 10,
+      "sha256": "bb3d2f0823da36a7c3e0040370970b8fbecaf64678713410cb599ac26414900d",
+      "url": "https://zwgls.mof.gov.cn/ywgg/"
+    }
+  ],
+  "mode": "DAILY_INCREMENTAL",
+  "module": "china_financial_central_gov_bond_cash_clock_context",
+  "nonblocking_diagnostic_count": 1,
+  "observation_count": 2,
+  "publication_window_end": "2026-09-12",
+  "publication_window_start": "2026-09-10",
+  "readiness_semantics": {
+    "all_core_details_unreadable_is_blocking": true,
+    "at_least_one_core_detail_required_when_core_docs_exist": true,
+    "every_individual_core_detail_required": false,
+    "fiscal_deposit_change_is_realized_net_anchor": true,
+    "government_bond_cash_clock_is_supporting_context": true,
+    "individual_detail_failure_is_retried_incrementally": true,
+    "publication_list_window_must_be_proven": true,
+    "unknown_is_not_zero": true
+  },
+  "ready_adapter_semantics": {
+    "government_bond_cash_clock_is_supporting_context": true,
+    "realized_fiscal_anchor_is_external_to_this_collector": "FISC_DEPOSIT_CHANGE",
+    "source_outage_becomes_unknown_not_zero": true,
+    "source_outage_does_not_relax_other_core_measurement_gates": true,
+    "source_outage_retried_next_daily_increment": true
+  },
+  "scope": "CENTRAL_GOVERNMENT_BOOK_ENTRY_TREASURY_CASH_CLOCK_CONTEXT",
+  "semantic_rules": {
+    "actual_result_detail_transient_failure_does_not_block_core_ready": true,
+    "actual_result_is_incremental_correction": true,
+    "daily_incremental_only": true,
+    "distribution_end_is_not_payment_fact": true,
+    "historical_backfill_not_default": true,
+    "no_security_master_required": true,
+    "preissue_schedule_is_core_cash_clock": true
+  },
+  "source_context_available": true,
+  "status": "PASS_EVENTS_FOUND_WITH_NONBLOCKING_DIAGNOSTICS",
+  "window_proof": {
+    "actual_correction_documents_discovered": 2,
+    "actual_correction_documents_successfully_read": 1,
+    "core_preissue_documents_discovered": 0,
+    "core_preissue_documents_successfully_read": 0,
+    "no_event_claim_requires_complete_list_window": true,
+    "publication_list_window_checked": true,
+    "unknown_is_never_zero": true
+  }
+}
