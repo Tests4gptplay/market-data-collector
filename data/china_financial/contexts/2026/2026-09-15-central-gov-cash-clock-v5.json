@@ -1,0 +1,192 @@
+{
+  "as_of": "2026-09-15",
+  "blocking_gap_count": 0,
+  "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
+  "data_confidence_effect": "NONE",
+  "documents": [
+    {
+      "bond_name": "2026年记账式附息（十八期）国债",
+      "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+      "document_class": "ACTUAL_RESULT_CORRECTION",
+      "document_type": "RESULT",
+      "evidence_sha256": "1e89ea56f7f48c4e8f99cfdb80c9a64c840bcc45e424e428746e389ddfac93b7",
+      "gap_count": 0,
+      "observation_count": 6,
+      "publication_date": "2026-09-14",
+      "status": "PASS",
+      "url": "https://zwgls.mof.gov.cn/ywgg/202609/t20260914_3997372.htm",
+      "v2_semantic_hardening": {
+        "coupon_schedule_anchored_to_interest_payment_clause": true,
+        "distribution_end_is_not_payment_fact": true,
+        "explicit_redemption_phrase_required_for_maturity": true,
+        "inferred_result_payment_rows_removed": 1,
+        "whitespace_insensitive_mof_parsing": true
+      }
+    },
+    {
+      "bond_name": "2026年记账式附息（十九期）国债",
+      "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+      "document_class": "ACTUAL_RESULT_CORRECTION",
+      "document_type": "RESULT",
+      "evidence_sha256": "59b4a5228199f5e5303747465cd274cfb2ebb9f4dbab7d973bece12a25a782a8",
+      "gap_count": 0,
+      "observation_count": 16,
+      "publication_date": "2026-09-14",
+      "status": "PASS",
+      "url": "https://zwgls.mof.gov.cn/ywgg/202609/t20260914_3997374.htm",
+      "v2_semantic_hardening": {
+        "coupon_schedule_anchored_to_interest_payment_clause": true,
+        "distribution_end_is_not_payment_fact": true,
+        "explicit_redemption_phrase_required_for_maturity": true,
+        "inferred_result_payment_rows_removed": 1,
+        "whitespace_insensitive_mof_parsing": true
+      }
+    },
+    {
+      "bond_name": "2026年记账式贴现（五十九期）国债",
+      "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+      "document_class": "CORE_PREISSUE_SCHEDULE",
+      "document_type": "PREISSUE",
+      "evidence_sha256": "69e5a09f59155ad52fc973b09831357272bdbfc0b03a32f32ba902a8a7a4e9f8",
+      "gap_count": 0,
+      "observation_count": 3,
+      "publication_date": "2026-09-15",
+      "status": "PASS",
+      "url": "https://zwgls.mof.gov.cn/ywgg/202609/t20260915_3997433.htm",
+      "v2_semantic_hardening": {
+        "coupon_schedule_anchored_to_interest_payment_clause": true,
+        "distribution_end_is_not_payment_fact": true,
+        "explicit_redemption_phrase_required_for_maturity": true,
+        "inferred_result_payment_rows_removed": 0,
+        "whitespace_insensitive_mof_parsing": true
+      }
+    },
+    {
+      "bond_name": "2026年记账式贴现（六十期）国债",
+      "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+      "document_class": "CORE_PREISSUE_SCHEDULE",
+      "document_type": "PREISSUE",
+      "evidence_sha256": "24862e17a3bd8e2182b4f6134057345ac3f8d43210b1929bc180d0a08397b36b",
+      "gap_count": 0,
+      "observation_count": 3,
+      "publication_date": "2026-09-15",
+      "status": "PASS",
+      "url": "https://zwgls.mof.gov.cn/ywgg/202609/t20260915_3997436.htm",
+      "v2_semantic_hardening": {
+        "coupon_schedule_anchored_to_interest_payment_clause": true,
+        "distribution_end_is_not_payment_fact": true,
+        "explicit_redemption_phrase_required_for_maturity": true,
+        "inferred_result_payment_rows_removed": 0,
+        "whitespace_insensitive_mof_parsing": true
+      }
+    },
+    {
+      "bond_name": "2026年记账式附息（十六期）国债",
+      "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+      "document_class": "CORE_PREISSUE_SCHEDULE",
+      "document_type": "PREISSUE",
+      "evidence_sha256": "1079c333362aebeab19083e6565159268607cf2fd1db6531cd81d9f6556fe0b9",
+      "gap_count": 0,
+      "observation_count": 3,
+      "publication_date": "2026-09-15",
+      "status": "PASS",
+      "url": "https://zwgls.mof.gov.cn/ywgg/202609/t20260915_3997437.htm",
+      "v2_semantic_hardening": {
+        "coupon_schedule_anchored_to_interest_payment_clause": true,
+        "distribution_end_is_not_payment_fact": true,
+        "explicit_redemption_phrase_required_for_maturity": true,
+        "inferred_result_payment_rows_removed": 0,
+        "whitespace_insensitive_mof_parsing": true
+      }
+    },
+    {
+      "bond_name": "2026年记账式附息（十七期）国债",
+      "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+      "document_class": "CORE_PREISSUE_SCHEDULE",
+      "document_type": "PREISSUE",
+      "evidence_sha256": "b945895b917eecb2b94b9ef25a9b5177ec633ad29d1722f7188661f3f89dfb54",
+      "gap_count": 0,
+      "observation_count": 3,
+      "publication_date": "2026-09-15",
+      "status": "PASS",
+      "url": "https://zwgls.mof.gov.cn/ywgg/202609/t20260915_3997439.htm",
+      "v2_semantic_hardening": {
+        "coupon_schedule_anchored_to_interest_payment_clause": true,
+        "distribution_end_is_not_payment_fact": true,
+        "explicit_redemption_phrase_required_for_maturity": true,
+        "inferred_result_payment_rows_removed": 0,
+        "whitespace_insensitive_mof_parsing": true
+      }
+    },
+    {
+      "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+      "document_class": "ACTUAL_RESULT_CORRECTION",
+      "observation_count": 0,
+      "publication_date": "2026-09-15",
+      "reason": "NOT_ISSUANCE_NOTICE_OR_RESULT",
+      "status": "OUT_OF_SCOPE",
+      "url": "https://zwgls.mof.gov.cn/ywgg/202609/t20260915_3997470.htm",
+      "v2_semantic_hardening": {
+        "coupon_schedule_anchored_to_interest_payment_clause": true,
+        "distribution_end_is_not_payment_fact": true,
+        "explicit_redemption_phrase_required_for_maturity": true,
+        "inferred_result_payment_rows_removed": 0,
+        "whitespace_insensitive_mof_parsing": true
+      }
+    }
+  ],
+  "list_evidence": [
+    {
+      "max_date": "2026-09-15",
+      "min_date": "2026-09-11",
+      "page": 0,
+      "row_count": 9,
+      "sha256": "4a18799f37047c07b417a60d11d260ead815c9159d80df7c1d25d68c1c6b36a8",
+      "url": "https://zwgls.mof.gov.cn/ywgg/"
+    }
+  ],
+  "mode": "DAILY_INCREMENTAL",
+  "module": "china_financial_central_gov_bond_cash_clock_context",
+  "nonblocking_diagnostic_count": 0,
+  "observation_count": 34,
+  "publication_window_end": "2026-09-15",
+  "publication_window_start": "2026-09-13",
+  "readiness_semantics": {
+    "all_core_details_unreadable_is_blocking": true,
+    "at_least_one_core_detail_required_when_core_docs_exist": true,
+    "every_individual_core_detail_required": false,
+    "fiscal_deposit_change_is_realized_net_anchor": true,
+    "government_bond_cash_clock_is_supporting_context": true,
+    "individual_detail_failure_is_retried_incrementally": true,
+    "publication_list_window_must_be_proven": true,
+    "unknown_is_not_zero": true
+  },
+  "ready_adapter_semantics": {
+    "government_bond_cash_clock_is_supporting_context": true,
+    "realized_fiscal_anchor_is_external_to_this_collector": "FISC_DEPOSIT_CHANGE",
+    "source_outage_becomes_unknown_not_zero": true,
+    "source_outage_does_not_relax_other_core_measurement_gates": true,
+    "source_outage_retried_next_daily_increment": true
+  },
+  "scope": "CENTRAL_GOVERNMENT_BOOK_ENTRY_TREASURY_CASH_CLOCK_CONTEXT",
+  "semantic_rules": {
+    "actual_result_detail_transient_failure_does_not_block_core_ready": true,
+    "actual_result_is_incremental_correction": true,
+    "daily_incremental_only": true,
+    "distribution_end_is_not_payment_fact": true,
+    "historical_backfill_not_default": true,
+    "no_security_master_required": true,
+    "preissue_schedule_is_core_cash_clock": true
+  },
+  "source_context_available": true,
+  "status": "PASS_EVENTS_FOUND",
+  "window_proof": {
+    "actual_correction_documents_discovered": 3,
+    "actual_correction_documents_successfully_read": 3,
+    "core_preissue_documents_discovered": 4,
+    "core_preissue_documents_successfully_read": 4,
+    "no_event_claim_requires_complete_list_window": true,
+    "publication_list_window_checked": true,
+    "unknown_is_never_zero": true
+  }
+}
