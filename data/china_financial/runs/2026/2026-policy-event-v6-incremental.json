@@ -1,15 +1,20 @@
 {
   "collector_version": "V1.9-CANDIDATE-POLICY-EVENT-FAMILY-V6-INCREMENTAL",
-  "completed_at": "2026-09-17T15:39:18.708662Z",
+  "completed_at": "2026-09-18T15:08:25.285336Z",
   "families": [
     {
       "article_evidence": [
         {
-          "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026091708554047079/index.html",
-          "available_at": "2026-09-17 09:20:48",
+          "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026091809070584602/index.html",
+          "available_at": "2026-09-18 09:21:55",
           "parsed_observation_count": 2,
-          "sha256": "f5d073e534b207127f493065d7bc6bcc637e98c19dd0bfcc8d4d963d09f0fe96",
+          "sha256": "39f8e6f3b2c537f7373626b7664ff3bbd61a4c4c60741f01f8b71e737cc19795",
           "status": "PARSED"
+        },
+        {
+          "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026091708554047079/index.html",
+          "sha256": "f5d073e534b207127f493065d7bc6bcc637e98c19dd0bfcc8d4d963d09f0fe96",
+          "status": "NOT_TARGET_OPERATION_DATE"
         },
         {
           "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026091609061192765/index.html",
@@ -100,23 +105,18 @@
           "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026082509031244236/index.html",
           "sha256": "1f418c4c24472c3738f8eb3204e4e437e378562a1984bc89bfc9ab67b51a33ef",
           "status": "NOT_TARGET_OPERATION_DATE"
-        },
-        {
-          "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026082408541077708/index.html",
-          "sha256": "76e61b19e28a99a71f38e3fc5ce5948e5cf159627db43ad9a266c8ed827b297d",
-          "status": "NOT_TARGET_OPERATION_DATE"
         }
       ],
       "family": "OMO",
       "inspected_articles": 20,
       "list_evidence": {
         "candidate_count": 20,
-        "list_sha256": "8232033b4f92d8441ed7531fdb06e1fd3a0ed0dfe8f3fdfb8d1510e9188139a9",
+        "list_sha256": "5f447e038e8380cad25c07064930024c1991c175d4a418b684ecf70b2003282c",
         "list_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/index.html"
       },
       "observation_count": 2,
       "status": "EVENTS_FOUND",
-      "target_date": "2026-09-17"
+      "target_date": "2026-09-18"
     },
     {
       "article_evidence": [
@@ -235,7 +235,7 @@
       },
       "observation_count": 0,
       "status": "NO_EVENT_CONFIRMED",
-      "target_date": "2026-09-17"
+      "target_date": "2026-09-18"
     },
     {
       "article_evidence": [
@@ -339,36 +339,36 @@
       },
       "observation_count": 0,
       "status": "NO_EVENT_CONFIRMED",
-      "target_date": "2026-09-17"
+      "target_date": "2026-09-18"
     }
   ],
   "gap_count": 0,
-  "github_run_id": "35241326140",
-  "github_source_commit": "1054257335eab862fc4edc1f0db1c586d8cc88c2",
-  "incremental_since_date": "2026-09-07",
+  "github_run_id": "35360233276",
+  "github_source_commit": "56668425de46f2414e9383df391aefcd62d25816",
+  "incremental_since_date": "2026-09-08",
   "mode": "DAILY_INCREMENTAL",
   "module": "china_financial_policy_event_family",
   "observation_count": 2,
   "omo7d_incremental_state_check": {
     "articles_inspected": 20,
     "diagnostics": [],
-    "latest_recent_quote_date": "2026-09-17",
+    "latest_recent_quote_date": "2026-09-18",
     "latest_recent_rate": 1.4,
     "observation_emitted": false,
     "page_evidence": [
       {
         "candidate_count": 20,
         "page": 1,
-        "sha256": "8232033b4f92d8441ed7531fdb06e1fd3a0ed0dfe8f3fdfb8d1510e9188139a9",
+        "sha256": "5f447e038e8380cad25c07064930024c1991c175d4a418b684ecf70b2003282c",
         "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/index.html"
       }
     ],
     "pages_inspected": 1,
     "previous_rate_supplied": true,
-    "since_date": "2026-09-07",
+    "since_date": "2026-09-08",
     "state_change_detected": false,
     "status": "PASS",
-    "target_date": "2026-09-17"
+    "target_date": "2026-09-18"
   },
   "persistence_pipeline_version": "CF_STORE_PERSISTENCE_V3",
   "semantic_rules": {
@@ -380,5 +380,5 @@
     "unchanged_policy_rate_emits_no_new_root_when_previous_state_supplied": true
   },
   "status": "PASS",
-  "target_date": "2026-09-17"
+  "target_date": "2026-09-18"
 }

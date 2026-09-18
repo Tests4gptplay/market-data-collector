@@ -137,6 +137,21 @@
     "value": 1620.0
   },
   {
+    "available_at": "2026-09-18 09:21:55",
+    "collector_version": "V1.9-CANDIDATE-POLICY-EVENT-FAMILY-V1",
+    "dimensions": {
+      "source_semantic": "PBOC_REVERSE_REPO_AWARDED_AMOUNT",
+      "tenor": "7天"
+    },
+    "evidence_sha256": "39f8e6f3b2c537f7373626b7664ff3bbd61a4c4c60741f01f8b71e737cc19795",
+    "provider": "People's Bank of China",
+    "reference_date": "2026-09-18",
+    "series_id": "POL_OMO_7D_AMOUNT",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026091809070584602/index.html",
+    "unit": "CNY_100M",
+    "value": 4633.0
+  },
+  {
     "available_at": "2026-08-14 09:20:39",
     "collector_version": "V1.9-CANDIDATE-POLICY-EVENT-FAMILY-V1",
     "dimensions": {
@@ -195,5 +210,20 @@
     "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026091708554047079/index.html",
     "unit": "CNY_100M",
     "value": 6000.0
+  },
+  {
+    "available_at": "2026-09-18 09:21:55",
+    "collector_version": "V1.9-CANDIDATE-POLICY-EVENT-FAMILY-V1",
+    "dimensions": {
+      "source_semantic": "PBOC_REVERSE_REPO_OPERATION_AMOUNT_PROSE",
+      "tenor": "14天"
+    },
+    "evidence_sha256": "39f8e6f3b2c537f7373626b7664ff3bbd61a4c4c60741f01f8b71e737cc19795",
+    "provider": "People's Bank of China",
+    "reference_date": "2026-09-18",
+    "series_id": "POL_OMO_OTHER_AMOUNT",
+    "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026091809070584602/index.html",
+    "unit": "CNY_100M",
+    "value": 1000.0
   }
 ]
