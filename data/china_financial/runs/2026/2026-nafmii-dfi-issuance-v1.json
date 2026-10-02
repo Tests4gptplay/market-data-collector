@@ -1,29 +1,29 @@
 {
   "collector_version": "V1.9-READY-NAFMII-DFI-ISSUANCE-INCREMENTAL-V2",
-  "completed_at": "2026-09-08T15:14:45.225180Z",
+  "completed_at": "2026-10-02T16:46:16.012368Z",
   "gap_count": 0,
-  "github_run_id": "34243413849",
-  "github_source_commit": "565077528a065ac96105a68b4d628a33f4681f5a",
+  "github_run_id": "37036112815",
+  "github_source_commit": "db824cf8af78b08bb804608426371f44a0b1413f",
   "list_evidence": {
     "attempts": 1,
-    "list_sha256": "7f469c730a79e7b8f90918218027044220d5186bd34261e0fbc68f8b49b435a8",
+    "list_sha256": "bf75b34d7b2011b1628ba96a8a5b40529d0c0f668f7c26f59875c05c73694e94",
     "list_url": "https://www.nafmii.org.cn/sjtj/fx/"
   },
   "mode": "NEW_RELEASE_INCREMENT",
   "module": "china_financial_nafmii_dfi_issuance_incremental",
   "observation_count": 1,
-  "official_latest_month": 7,
+  "official_latest_month": 8,
   "persistence_mode": "MERGE_DEDUP_NO_SILENT_REVISION",
   "persistence_pipeline_version": "CF_STORE_PERSISTENCE_V3",
   "release_count": 1,
   "release_evidence": [
     {
-      "amount": 8800.0,
+      "amount": 8466.0,
       "attempts": 1,
       "pages": 2,
-      "reference_period": "2026-07",
-      "sha256": "a7957dc7675f8ff426018e65055d1e19ccb06420808fdf6dd6f4a69fda6aeac8",
-      "url": "https://www.nafmii.org.cn/sjtj/fx/202609/P020260901591031159438.pdf"
+      "reference_period": "2026-08",
+      "sha256": "73ea04372f73d8eadb5e3b50f3e5ce7d3ac2319face30989072242af77f409f4",
+      "url": "https://www.nafmii.org.cn/sjtj/fx/202609/P020260928631598644761.pdf"
     }
   ],
   "semantic_rules": {
@@ -35,6 +35,6 @@
     "unknown_is_never_zero": true
   },
   "status": "PASS",
-  "stored_latest_month": 6,
+  "stored_latest_month": 7,
   "year": 2026
 }
