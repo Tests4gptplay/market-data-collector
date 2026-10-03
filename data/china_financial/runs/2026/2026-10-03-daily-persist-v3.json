@@ -18,7 +18,7 @@
     "local_gov_cash_clock": {
       "as_of": "2026-10-03",
       "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V3",
-      "completed_at": "2026-10-02T16:48:11.421691Z",
+      "completed_at": "2026-10-03T15:14:01.853673Z",
       "context_status": "PASS_NO_EVENT_IN_PROVEN_WINDOW",
       "daily_runs": [
         {
@@ -27,7 +27,7 @@
           "publication_date": "2026-10-01",
           "source_run": {
             "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
-            "completed_at": "2026-10-02T16:48:17.021993Z",
+            "completed_at": "2026-10-03T15:14:07.017384Z",
             "families": [],
             "gap_count": 3,
             "module": "china_financial_local_gov_bond_cash_clock",
@@ -51,7 +51,7 @@
           "publication_date": "2026-10-02",
           "source_run": {
             "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
-            "completed_at": "2026-10-02T16:48:20.994496Z",
+            "completed_at": "2026-10-03T15:14:11.563515Z",
             "families": [],
             "gap_count": 3,
             "module": "china_financial_local_gov_bond_cash_clock",
@@ -75,7 +75,7 @@
           "publication_date": "2026-10-03",
           "source_run": {
             "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
-            "completed_at": "2026-10-02T16:48:25.857903Z",
+            "completed_at": "2026-10-03T15:14:14.853640Z",
             "families": [],
             "gap_count": 3,
             "module": "china_financial_local_gov_bond_cash_clock",
@@ -102,18 +102,15 @@
     },
     "mof_fiscal_ytd": {
       "collector_version": "V1.9-READY-MOF-FISCAL-YTD-INCREMENTAL-V3",
-      "completed_at": "2026-10-02T16:45:57.498072Z",
+      "completed_at": "2026-10-03T15:11:52.006758Z",
       "derived_observation_count": 0,
       "gap_count": 0,
       "list_evidence": {
         "candidate_count": 7,
         "list_fetch": {
-          "attempts_used": 3,
+          "attempts_used": 1,
           "http_status": 200,
-          "prior_errors": [
-            "<HTTPError 502: 'Bad Gateway'>",
-            "<HTTPError 502: 'Bad Gateway'>"
-          ]
+          "prior_errors": []
         },
         "list_sha256": "6619d3bbeee8baff32f73f1705dc6aa320bb2fab3f484bb116715921d1b257f5",
         "list_url": "https://gks.mof.gov.cn/tongjishuju/"
@@ -139,28 +136,19 @@
     },
     "nafmii_dfi_issuance": {
       "collector_version": "V1.9-READY-NAFMII-DFI-ISSUANCE-INCREMENTAL-V2",
-      "completed_at": "2026-10-02T16:46:16.012368Z",
+      "completed_at": "2026-10-03T15:11:56.958151Z",
       "gap_count": 0,
       "list_evidence": {
         "attempts": 1,
         "list_sha256": "bf75b34d7b2011b1628ba96a8a5b40529d0c0f668f7c26f59875c05c73694e94",
         "list_url": "https://www.nafmii.org.cn/sjtj/fx/"
       },
-      "mode": "NEW_RELEASE_INCREMENT",
+      "mode": "NO_NEW_RELEASE_CARRY_STORE",
       "module": "china_financial_nafmii_dfi_issuance_incremental",
-      "observation_count": 1,
+      "observation_count": 0,
       "official_latest_month": 8,
-      "release_count": 1,
-      "release_evidence": [
-        {
-          "amount": 8466.0,
-          "attempts": 1,
-          "pages": 2,
-          "reference_period": "2026-08",
-          "sha256": "73ea04372f73d8eadb5e3b50f3e5ce7d3ac2319face30989072242af77f409f4",
-          "url": "https://www.nafmii.org.cn/sjtj/fx/202609/P020260928631598644761.pdf"
-        }
-      ],
+      "release_count": 0,
+      "release_evidence": [],
       "semantic_rules": {
         "daily_list_check_only_when_unchanged": true,
         "historical_pdf_recrawl_default": false,
@@ -170,12 +158,12 @@
         "unknown_is_never_zero": true
       },
       "status": "PASS",
-      "stored_latest_month": 7,
+      "stored_latest_month": 8,
       "year": 2026
     },
     "pbc_monthly_credit": {
       "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
-      "completed_at": "2026-10-02T16:45:50.211728Z",
+      "completed_at": "2026-10-03T15:11:44.153638Z",
       "derived_observation_count": 0,
       "diagnostics": [],
       "evidence": {
@@ -221,7 +209,7 @@
     },
     "pbc_monthly_policy_tools": {
       "collector_version": "V1.9-READY-PBC-MONTHLY-POLICY-TOOLS-INCREMENTAL-V3",
-      "completed_at": "2026-10-02T16:46:14.741692Z",
+      "completed_at": "2026-10-03T15:11:55.678179Z",
       "gap_count": 0,
       "list_evidence": {
         "list_fetch": {
@@ -260,7 +248,7 @@
     },
     "policy_event_incremental": {
       "collector_version": "V1.9-CANDIDATE-POLICY-EVENT-FAMILY-V6-INCREMENTAL",
-      "completed_at": "2026-10-02T16:48:11.273393Z",
+      "completed_at": "2026-10-03T15:14:01.745943Z",
       "families": [
         {
           "article_evidence": [
@@ -648,7 +636,7 @@
     },
     "rrr_event_incremental": {
       "collector_version": "V1.9-CANDIDATE-RRR-EVENT-FAMILY-V5-INCREMENTAL",
-      "completed_at": "2026-10-02T16:46:34.337769Z",
+      "completed_at": "2026-10-03T15:12:07.487784Z",
       "diagnostics": [],
       "gap_count": 0,
       "mode": "DAILY_INCREMENTAL",
@@ -698,7 +686,7 @@
       "target_date": "2026-10-03"
     }
   },
-  "generated_at": "2026-10-02T16:48:30.105507Z",
+  "generated_at": "2026-10-03T15:14:19.262972Z",
   "manifest": "data/china_financial/manifests/2026/2026-10-03-daily-persist-v3.json",
   "persistence": {
     "central_gov_cash_clock": {
@@ -848,7 +836,7 @@
       "run": {
         "as_of": "2026-10-03",
         "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V3",
-        "completed_at": "2026-10-02T16:48:11.421691Z",
+        "completed_at": "2026-10-03T15:14:01.853673Z",
         "context_status": "PASS_NO_EVENT_IN_PROVEN_WINDOW",
         "daily_runs": [
           {
@@ -857,7 +845,7 @@
             "publication_date": "2026-10-01",
             "source_run": {
               "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
-              "completed_at": "2026-10-02T16:48:17.021993Z",
+              "completed_at": "2026-10-03T15:14:07.017384Z",
               "families": [],
               "gap_count": 3,
               "module": "china_financial_local_gov_bond_cash_clock",
@@ -881,7 +869,7 @@
             "publication_date": "2026-10-02",
             "source_run": {
               "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
-              "completed_at": "2026-10-02T16:48:20.994496Z",
+              "completed_at": "2026-10-03T15:14:11.563515Z",
               "families": [],
               "gap_count": 3,
               "module": "china_financial_local_gov_bond_cash_clock",
@@ -905,7 +893,7 @@
             "publication_date": "2026-10-03",
             "source_run": {
               "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
-              "completed_at": "2026-10-02T16:48:25.857903Z",
+              "completed_at": "2026-10-03T15:14:14.853640Z",
               "families": [],
               "gap_count": 3,
               "module": "china_financial_local_gov_bond_cash_clock",
@@ -959,13 +947,13 @@
     "nafmii_dfi_issuance": {
       "collector_version": "V1.9-READY-NAFMII-DFI-ISSUANCE-INCREMENTAL-V2",
       "gaps_path": "data/china_financial/gaps/2026/2026-nafmii-dfi-issuance-v1.json",
-      "new_store_rows": 1,
+      "new_store_rows": 0,
       "observations": {
-        "added": 1,
-        "existing": 7,
+        "added": 0,
+        "existing": 8,
         "final": 8,
         "identical": 0,
-        "staged": 1
+        "staged": 0
       },
       "observations_path": "data/china_financial/observations/2026/2026-nafmii-dfi-issuance-v1.json",
       "run_path": "data/china_financial/runs/2026/2026-nafmii-dfi-issuance-v1.json",

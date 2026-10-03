@@ -81,9 +81,9 @@
       "status": "PASS"
     },
     "nafmii_dfi_issuance": {
-      "collection_mode": "NEW_RELEASE_INCREMENT",
+      "collection_mode": "NO_NEW_RELEASE_CARRY_STORE",
       "latest_reference": "2026-08",
-      "new_store_rows": 1,
+      "new_store_rows": 0,
       "status": "PASS"
     },
     "pbc_monthly_credit": {
@@ -203,10 +203,10 @@
       }
     }
   },
-  "generated_at": "2026-10-02T16:48:30.105507Z",
+  "generated_at": "2026-10-03T15:14:19.262972Z",
   "github_repository": "Tests4gptplay/market-data-collector",
-  "github_run_id": "37036112815",
-  "github_source_commit": "db824cf8af78b08bb804608426371f44a0b1413f",
+  "github_run_id": "37132365606",
+  "github_source_commit": "e29eed806d9fef206241ce9d4643f1e21f0b0277",
   "latest_valid_market_session": "2026-09-24",
   "pipeline_version": "CF_STORE_PERSISTENCE_V3",
   "policy_state": {

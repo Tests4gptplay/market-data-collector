@@ -1,7 +1,7 @@
 {
   "as_of": "2026-10-03",
   "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V3",
-  "completed_at": "2026-10-02T16:48:11.421691Z",
+  "completed_at": "2026-10-03T15:14:01.853673Z",
   "context_path": "data/china_financial/contexts/2026/2026-10-03-local-gov-cash-clock-v3.json",
   "context_status": "PASS_NO_EVENT_IN_PROVEN_WINDOW",
   "daily_runs": [
@@ -11,7 +11,7 @@
       "publication_date": "2026-10-01",
       "source_run": {
         "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
-        "completed_at": "2026-10-02T16:48:17.021993Z",
+        "completed_at": "2026-10-03T15:14:07.017384Z",
         "families": [],
         "gap_count": 3,
         "module": "china_financial_local_gov_bond_cash_clock",
@@ -35,7 +35,7 @@
       "publication_date": "2026-10-02",
       "source_run": {
         "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
-        "completed_at": "2026-10-02T16:48:20.994496Z",
+        "completed_at": "2026-10-03T15:14:11.563515Z",
         "families": [],
         "gap_count": 3,
         "module": "china_financial_local_gov_bond_cash_clock",
@@ -59,7 +59,7 @@
       "publication_date": "2026-10-03",
       "source_run": {
         "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V1",
-        "completed_at": "2026-10-02T16:48:25.857903Z",
+        "completed_at": "2026-10-03T15:14:14.853640Z",
         "families": [],
         "gap_count": 3,
         "module": "china_financial_local_gov_bond_cash_clock",
