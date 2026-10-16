@@ -129,6 +129,22 @@
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_RMB_CREDIT_TABLE_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_BILL_FINANCING_STOCK",
+    "source_sha256": "01917901e1fd8bf65bcafd12e143ff1d41c079b6b8dd3a6bc55ca0c445018b99",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417461893946.htm",
+    "unit": "CNY_100M",
+    "value": 176167.77
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
     "available_at": "2026-08-16T05:22:02.782383Z",
     "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
     "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-CREDIT-FAMILY-V1",
@@ -254,6 +270,22 @@
     "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/09/2026091417342577618.htm",
     "unit": "CNY_100M",
     "value": 1237114.16
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_RMB_CREDIT_TABLE_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_CORP_LT_LOAN_STOCK",
+    "source_sha256": "01917901e1fd8bf65bcafd12e143ff1d41c079b6b8dd3a6bc55ca0c445018b99",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417461893946.htm",
+    "unit": "CNY_100M",
+    "value": 1246014.12
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
@@ -385,6 +417,22 @@
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_RMB_CREDIT_TABLE_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_CORP_ST_LOAN_STOCK",
+    "source_sha256": "01917901e1fd8bf65bcafd12e143ff1d41c079b6b8dd3a6bc55ca0c445018b99",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417461893946.htm",
+    "unit": "CNY_100M",
+    "value": 518594.15
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
     "available_at": "2026-08-16T05:22:02.782383Z",
     "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
     "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-CREDIT-FAMILY-V1",
@@ -510,6 +558,22 @@
     "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/09/2026091417342577618.htm",
     "unit": "CNY_100M",
     "value": 628937.71
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_RMB_CREDIT_TABLE_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_HH_LT_LOAN_STOCK",
+    "source_sha256": "01917901e1fd8bf65bcafd12e143ff1d41c079b6b8dd3a6bc55ca0c445018b99",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417461893946.htm",
+    "unit": "CNY_100M",
+    "value": 629811.86
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
@@ -641,6 +705,22 @@
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_RMB_CREDIT_TABLE_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_HH_ST_LOAN_STOCK",
+    "source_sha256": "01917901e1fd8bf65bcafd12e143ff1d41c079b6b8dd3a6bc55ca0c445018b99",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417461893946.htm",
+    "unit": "CNY_100M",
+    "value": 192557.26
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
     "available_at": "2026-08-16T05:22:02.782383Z",
     "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
     "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-CREDIT-FAMILY-V1",
@@ -766,6 +846,22 @@
     "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/09/2026091417342577618.htm",
     "unit": "CNY_100M",
     "value": 2823513.09
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_RMB_CREDIT_TABLE_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_RMB_LOAN_STOCK",
+    "source_sha256": "01917901e1fd8bf65bcafd12e143ff1d41c079b6b8dd3a6bc55ca0c445018b99",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417461893946.htm",
+    "unit": "CNY_100M",
+    "value": 2834357.83
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
@@ -897,6 +993,22 @@
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_TSF_FLOW_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_TSF_CORP_BOND_NET",
+    "source_sha256": "6595e4c2c44fddf849e6bf00624f2666ea0b1c762eec9394e6ff54ba13092924",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417443343908.htm",
+    "unit": "CNY_100M",
+    "value": -393.0
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
     "available_at": "2026-08-16T05:22:02.782383Z",
     "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
     "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-CREDIT-FAMILY-V1",
@@ -1022,6 +1134,22 @@
     "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/09/2026091417323857622.htm",
     "unit": "CNY_100M",
     "value": 229.0
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_TSF_FLOW_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_TSF_ENTRUSTED_LOAN",
+    "source_sha256": "6595e4c2c44fddf849e6bf00624f2666ea0b1c762eec9394e6ff54ba13092924",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417443343908.htm",
+    "unit": "CNY_100M",
+    "value": 804.0
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
@@ -1169,6 +1297,24 @@
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {
+      "role": "RECONCILIATION_HEADLINE"
+    },
+    "evidence_root_id": "PBOC_TSF_FLOW_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_TSF_INCREMENT",
+    "source_sha256": "6595e4c2c44fddf849e6bf00624f2666ea0b1c762eec9394e6ff54ba13092924",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417443343908.htm",
+    "unit": "CNY_100M",
+    "value": 35476.0
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
     "available_at": "2026-08-16T05:22:02.782383Z",
     "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
     "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-CREDIT-FAMILY-V1",
@@ -1294,6 +1440,22 @@
     "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/09/2026091417323857622.htm",
     "unit": "CNY_100M",
     "value": 552.0
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_TSF_FLOW_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_TSF_RMB_LOANS",
+    "source_sha256": "6595e4c2c44fddf849e6bf00624f2666ea0b1c762eec9394e6ff54ba13092924",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417443343908.htm",
+    "unit": "CNY_100M",
+    "value": 12734.0
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
@@ -1425,6 +1587,22 @@
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_TSF_FLOW_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_TSF_TRUST_LOAN",
+    "source_sha256": "6595e4c2c44fddf849e6bf00624f2666ea0b1c762eec9394e6ff54ba13092924",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417443343908.htm",
+    "unit": "CNY_100M",
+    "value": -478.0
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
     "available_at": "2026-08-16T05:22:02.782383Z",
     "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
     "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-CREDIT-FAMILY-V1",
@@ -1553,6 +1731,22 @@
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_TSF_FLOW_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "CC_TSF_UNDISCOUNTED_BA",
+    "source_sha256": "6595e4c2c44fddf849e6bf00624f2666ea0b1c762eec9394e6ff54ba13092924",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417443343908.htm",
+    "unit": "CNY_100M",
+    "value": 2153.0
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
     "available_at": "2026-08-16T05:22:02.782383Z",
     "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
     "collector_version": "V1.9-CANDIDATE-PBC-MONTHLY-CREDIT-FAMILY-V1",
@@ -1678,6 +1872,22 @@
     "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/09/2026091417342577618.htm",
     "unit": "CNY_100M",
     "value": 83849.31
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {},
+    "evidence_root_id": "PBOC_RMB_CREDIT_TABLE_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "FISC_DEPOSIT_STOCK",
+    "source_sha256": "01917901e1fd8bf65bcafd12e143ff1d41c079b6b8dd3a6bc55ca0c445018b99",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417461893946.htm",
+    "unit": "CNY_100M",
+    "value": 79489.3
   },
   {
     "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
@@ -1822,5 +2032,23 @@
     "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/09/2026091417323857622.htm",
     "unit": "CNY_100M",
     "value": 10097.0
+  },
+  {
+    "availability_basis": "CONSERVATIVE_BACKFILL_RETRIEVAL_TIME",
+    "available_at": "2026-10-16T15:26:59.239303Z",
+    "backfill_status": "BACKFILL_FROM_OFFICIAL_ANNUAL_TABLE",
+    "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
+    "dimensions": {
+      "shared_component": "GOVERNMENT_BOND_NET_FINANCING"
+    },
+    "evidence_root_id": "PBOC_TSF_FLOW_2026-09",
+    "provider": "People's Bank of China",
+    "reference_period": "2026-09",
+    "retrieved_at": "2026-10-16T15:26:59.239303Z",
+    "series_id": "FISC_GOV_BOND_NET_FINANCING_TSF",
+    "source_sha256": "6595e4c2c44fddf849e6bf00624f2666ea0b1c762eec9394e6ff54ba13092924",
+    "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417443343908.htm",
+    "unit": "CNY_100M",
+    "value": 15362.0
   }
 ]

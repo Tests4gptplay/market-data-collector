@@ -1,22 +1,22 @@
 {
   "collector_version": "V1.9-READY-PBC-MONTHLY-POLICY-TOOLS-INCREMENTAL-V3",
-  "completed_at": "2026-09-08T15:14:41.798624Z",
+  "completed_at": "2026-10-16T15:27:10.172931Z",
   "gap_count": 0,
-  "github_run_id": "34243413849",
-  "github_source_commit": "565077528a065ac96105a68b4d628a33f4681f5a",
+  "github_run_id": "38923978406",
+  "github_source_commit": "dde4a19e80b056ab4af1e3982021e7559d1883d0",
   "list_evidence": {
     "list_fetch": {
       "attempts_used": 1,
       "http_status": 200,
       "prior_errors": []
     },
-    "list_sha256": "4a2f15c3692ee0fa695a0dcaac7975175eab659f3837676337ae8e0c17e14caf",
+    "list_sha256": "6422ed34ca50413ce860ba880326413ceec3dd644b62dfcb67fb027b72dbca38",
     "list_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/index.html"
   },
   "mode": "NEW_RELEASE_INCREMENT",
   "module": "china_financial_pbc_monthly_policy_tools_incremental",
   "observation_count": 6,
-  "official_latest_month": 8,
+  "official_latest_month": 9,
   "persistence_mode": "MERGE_DEDUP_NO_SILENT_REVISION",
   "persistence_pipeline_version": "CF_STORE_PERSISTENCE_V3",
   "release_count": 1,
@@ -27,11 +27,11 @@
         "http_status": 200,
         "prior_errors": []
       },
-      "published_at": "2026-09-02T17:00:00+08:00",
-      "reference_period": "2026-08",
-      "sha256": "4d104698df655c19c27e4a697ef4bd55cc1c0b30ad9aae265e7db3c955bc90c2",
-      "title": "2026年8月中央银行各项工具流动性投放情况",
-      "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026090214213398506/index.html"
+      "published_at": "2026-10-09T17:00:00+08:00",
+      "reference_period": "2026-09",
+      "sha256": "6927eafe85b87c9f849327eeacb65ea2c60683b6f0bde6f624c45c1b45403797",
+      "title": "2026年9月中央银行各项工具流动性投放情况",
+      "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/5727710/2026100917050827264/index.html"
     }
   ],
   "semantic_rules": {
@@ -51,6 +51,6 @@
     "POL_TREASURY_CASH_MGMT_NET"
   ],
   "status": "PASS",
-  "stored_latest_month": 7,
+  "stored_latest_month": 8,
   "year": 2026
 }

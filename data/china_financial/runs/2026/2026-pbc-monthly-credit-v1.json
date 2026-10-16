@@ -1,18 +1,18 @@
 {
   "collector_version": "V1.9-READY-PBC-MONTHLY-CREDIT-INCREMENTAL-V4",
-  "completed_at": "2026-09-15T15:38:55.699864Z",
+  "completed_at": "2026-10-16T15:26:59.239303Z",
   "derived_observation_count": 7,
   "diagnostics": [],
   "evidence": {
     "credit_section": {
       "label": "金融机构人民币信贷收支表",
-      "section_sha256": "ee0b8e43c55b2cc8250d0bf7b84142780d075b4afda0d511c322988c4d684f7d",
+      "section_sha256": "788dd937f2bcce04f2fe520e36040ca6ee925bc13941bcfe0a5b3cfdd71bfa3c",
       "section_url": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2026ntjsj/jrjgxdsztj/index.html"
     },
     "credit_table": {
       "row_count": 53,
-      "table_sha256": "c2baac868ce03e5593733570cfa775a18ae2b416d56495531df18eb1bb62e735",
-      "table_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/09/2026091417342577618.htm"
+      "table_sha256": "01917901e1fd8bf65bcafd12e143ff1d41c079b6b8dd3a6bc55ca0c445018b99",
+      "table_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417461893946.htm"
     },
     "current_sections": {
       "credit": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2026ntjsj/jrjgxdsztj/index.html",
@@ -20,18 +20,18 @@
     },
     "tsf_section": {
       "label": "社会融资规模增量统计表",
-      "section_sha256": "696aa970eccef3f8b7f52431ab8c3a28249bc4802f1b915d897902a1da8155c6",
+      "section_sha256": "52b5ddd976c2489f8caff9f4bcd734800c1e9e57f06672c0efc09c6d1202db8a",
       "section_url": "https://www.pbc.gov.cn/diaochatongjisi/116219/116319/2026ntjsj/shrzgm/index.html"
     },
     "tsf_table": {
       "row_count": 21,
-      "table_sha256": "6e8296589b76f292042044738c7857baad66ec66ea31b0bf46ea82bed355b971",
-      "table_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/09/2026091417323857622.htm"
+      "table_sha256": "6595e4c2c44fddf849e6bf00624f2666ea0b1c762eec9394e6ff54ba13092924",
+      "table_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2026/10/2026101417443343908.htm"
     }
   },
   "gap_count": 0,
-  "github_run_id": "34989811710",
-  "github_source_commit": "d05b9d42aea8e0a13ca376f767fd3f9eeaf0a602",
+  "github_run_id": "38923978406",
+  "github_source_commit": "dde4a19e80b056ab4af1e3982021e7559d1883d0",
   "mode": "NEW_LATEST_DATA",
   "module": "china_financial_pbc_monthly_credit_incremental",
   "persistence_mode": "MERGE_DEDUP_NO_SILENT_REVISION",
