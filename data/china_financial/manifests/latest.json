@@ -1,8 +1,8 @@
 {
   "active_data_paths": {
     "central_gov_cash_clock": {
-      "context": "data/china_financial/contexts/2026/2026-10-17-central-gov-cash-clock-v5.json",
-      "diagnostics": "data/china_financial/diagnostics/2026/2026-10-17-central-gov-cash-clock-v5.json",
+      "context": "data/china_financial/contexts/2026/2026-10-18-central-gov-cash-clock-v5.json",
+      "diagnostics": "data/china_financial/diagnostics/2026/2026-10-18-central-gov-cash-clock-v5.json",
       "observations": "data/china_financial/observations/2026/2026-central-gov-cash-clock-v5.json"
     },
     "fast_market": {
@@ -11,8 +11,8 @@
       "run": "data/china_financial/runs/2026/2026-10-16-market-family-v4.json"
     },
     "local_gov_cash_clock": {
-      "context": "data/china_financial/contexts/2026/2026-10-17-local-gov-cash-clock-v3.json",
-      "diagnostics": "data/china_financial/diagnostics/2026/2026-10-17-local-gov-cash-clock-v3.json",
+      "context": "data/china_financial/contexts/2026/2026-10-18-local-gov-cash-clock-v3.json",
+      "diagnostics": "data/china_financial/diagnostics/2026/2026-10-18-local-gov-cash-clock-v3.json",
       "observations": "data/china_financial/observations/2026/2026-local-gov-cash-clock-v3.json"
     },
     "mof_fiscal_ytd": {
@@ -41,7 +41,7 @@
       "observations": "data/china_financial/observations/2026/2026-rrr-event-v5-incremental.json"
     }
   },
-  "as_of": "2026-10-17",
+  "as_of": "2026-10-18",
   "consumer_contract": {
     "collector_schedule_is_independent_of_model_invocation": true,
     "consumer_prefers_manifest_selected_active_paths": true,
@@ -114,7 +114,7 @@
   "fast_market_coverage": "27/27",
   "fiscal_context": {
     "central_government_bond": {
-      "as_of": "2026-10-17",
+      "as_of": "2026-10-18",
       "blocking_gap_count": 0,
       "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
       "data_confidence_effect": "NONE",
@@ -191,8 +191,8 @@
       "module": "china_financial_central_gov_bond_cash_clock_context",
       "nonblocking_diagnostic_count": 0,
       "observation_count": 7,
-      "publication_window_end": "2026-10-17",
-      "publication_window_start": "2026-10-15",
+      "publication_window_end": "2026-10-18",
+      "publication_window_start": "2026-10-16",
       "readiness_semantics": {
         "all_core_details_unreadable_is_blocking": true,
         "at_least_one_core_detail_required_when_core_docs_exist": true,
@@ -233,7 +233,7 @@
       }
     },
     "local_government_bond": {
-      "as_of": "2026-10-17",
+      "as_of": "2026-10-18",
       "central_government_bonds_included": false,
       "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V3",
       "event_count_by_series": {},
@@ -241,8 +241,8 @@
       "known_amount_cny_100m_by_series_and_stage": {},
       "lookback_days": 2,
       "module": "china_financial_local_gov_bond_cash_clock_context",
-      "publication_window_end": "2026-10-17",
-      "publication_window_start": "2026-10-15",
+      "publication_window_end": "2026-10-18",
+      "publication_window_start": "2026-10-16",
       "scope": "LOCAL_GOVERNMENT_BONDS_ONLY",
       "semantic_rules": {
         "amount_semantic_preserved": true,
@@ -261,10 +261,10 @@
       }
     }
   },
-  "generated_at": "2026-10-17T14:22:11.413732Z",
+  "generated_at": "2026-10-18T14:48:07.598601Z",
   "github_repository": "Tests4gptplay/market-data-collector",
-  "github_run_id": "39040240841",
-  "github_source_commit": "badb1c0d9b8bac6d230d7952be08b0198ab7be40",
+  "github_run_id": "39137349609",
+  "github_source_commit": "298d97cd360374d7935b6f6998ab1ca60422fcbc",
   "latest_valid_market_session": "2026-10-16",
   "pipeline_version": "CF_STORE_PERSISTENCE_V3",
   "policy_state": {
