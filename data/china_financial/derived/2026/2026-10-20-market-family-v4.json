@@ -1,0 +1,78 @@
+[
+  {
+    "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+    "formula": "(CRD_MTN_AAA_1Y - SOV_CGB_1Y) * 100",
+    "interface_version": "CF_INTERFACE_V1",
+    "method_id": "CREDIT_SPREAD_PROXY_V1.1",
+    "parent_evidence": [
+      "4fd3dd884876fa3f4d7e7720c8b6f28e055a2f543078cf35d44eb36d5ef1642f",
+      "ab1465e50a53fecb46c50fa22a57e92ba0c8533ca188aee55befb6d77bd9737e"
+    ],
+    "parent_series": [
+      "CRD_MTN_AAA_1Y",
+      "SOV_CGB_1Y"
+    ],
+    "provider_consistency": "CFETS / ChinaMoney+CFETS / ChinaMoney",
+    "reference_date": "2026-10-20",
+    "series_id": "CRD_SPREAD_AAA_1Y",
+    "unit": "bp",
+    "value": 29.13
+  },
+  {
+    "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+    "formula": "(CRD_MTN_AAA_3Y - SOV_CGB_3Y) * 100",
+    "interface_version": "CF_INTERFACE_V1",
+    "method_id": "CREDIT_SPREAD_PROXY_V1.1",
+    "parent_evidence": [
+      "62651a79ac4b6ae0ad069439666d0d720e87e6679aab1a09c4005005dc5a4814",
+      "69d9d02a8038b8e91f4190c1a315417079d41cbe035c322cdcfc667f20a79ef7"
+    ],
+    "parent_series": [
+      "CRD_MTN_AAA_3Y",
+      "SOV_CGB_3Y"
+    ],
+    "provider_consistency": "CFETS / ChinaMoney+CFETS / ChinaMoney",
+    "reference_date": "2026-10-20",
+    "series_id": "CRD_SPREAD_AAA_3Y",
+    "unit": "bp",
+    "value": 31.78
+  },
+  {
+    "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+    "formula": "(CRD_MTN_AAP_3Y - SOV_CGB_3Y) * 100",
+    "interface_version": "CF_INTERFACE_V1",
+    "method_id": "CREDIT_SPREAD_PROXY_V1.1",
+    "parent_evidence": [
+      "ed33415b9d854d96c020d75e1058b4d599974f211684063652afe56178dcb867",
+      "69d9d02a8038b8e91f4190c1a315417079d41cbe035c322cdcfc667f20a79ef7"
+    ],
+    "parent_series": [
+      "CRD_MTN_AAP_3Y",
+      "SOV_CGB_3Y"
+    ],
+    "provider_consistency": "CFETS / ChinaMoney+CFETS / ChinaMoney",
+    "reference_date": "2026-10-20",
+    "series_id": "CRD_SPREAD_AAP_3Y",
+    "unit": "bp",
+    "value": 34.78
+  },
+  {
+    "collector_version": "V1.9-CANDIDATE-MARKET-FAMILY-V4",
+    "formula": "(CRD_MTN_AA_3Y - SOV_CGB_3Y) * 100",
+    "interface_version": "CF_INTERFACE_V1",
+    "method_id": "CREDIT_SPREAD_PROXY_V1.1",
+    "parent_evidence": [
+      "7776a690df4efabd7d7ee8d4334c20999b10d5537ff33f4738743d73521e08a1",
+      "69d9d02a8038b8e91f4190c1a315417079d41cbe035c322cdcfc667f20a79ef7"
+    ],
+    "parent_series": [
+      "CRD_MTN_AA_3Y",
+      "SOV_CGB_3Y"
+    ],
+    "provider_consistency": "CFETS / ChinaMoney+CFETS / ChinaMoney",
+    "reference_date": "2026-10-20",
+    "series_id": "CRD_SPREAD_AA_3Y",
+    "unit": "bp",
+    "value": 37.78
+  }
+]
