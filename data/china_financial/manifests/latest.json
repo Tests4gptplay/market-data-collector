@@ -1,18 +1,18 @@
 {
   "active_data_paths": {
     "central_gov_cash_clock": {
-      "context": "data/china_financial/contexts/2026/2026-10-20-central-gov-cash-clock-v5.json",
-      "diagnostics": "data/china_financial/diagnostics/2026/2026-10-20-central-gov-cash-clock-v5.json",
+      "context": "data/china_financial/contexts/2026/2026-10-22-central-gov-cash-clock-v5.json",
+      "diagnostics": "data/china_financial/diagnostics/2026/2026-10-22-central-gov-cash-clock-v5.json",
       "observations": "data/china_financial/observations/2026/2026-central-gov-cash-clock-v5.json"
     },
     "fast_market": {
-      "derived": "data/china_financial/derived/2026/2026-10-20-market-family-v4.json",
-      "observations": "data/china_financial/observations/2026/2026-10-20-market-family-v4.json",
-      "run": "data/china_financial/runs/2026/2026-10-20-market-family-v4.json"
+      "derived": "data/china_financial/derived/2026/2026-10-22-market-family-v4.json",
+      "observations": "data/china_financial/observations/2026/2026-10-22-market-family-v4.json",
+      "run": "data/china_financial/runs/2026/2026-10-22-market-family-v4.json"
     },
     "local_gov_cash_clock": {
-      "context": "data/china_financial/contexts/2026/2026-10-20-local-gov-cash-clock-v3.json",
-      "diagnostics": "data/china_financial/diagnostics/2026/2026-10-20-local-gov-cash-clock-v3.json",
+      "context": "data/china_financial/contexts/2026/2026-10-22-local-gov-cash-clock-v3.json",
+      "diagnostics": "data/china_financial/diagnostics/2026/2026-10-22-local-gov-cash-clock-v3.json",
       "observations": "data/china_financial/observations/2026/2026-local-gov-cash-clock-v3.json"
     },
     "mof_fiscal_ytd": {
@@ -41,7 +41,7 @@
       "observations": "data/china_financial/observations/2026/2026-rrr-event-v5-incremental.json"
     }
   },
-  "as_of": "2026-10-20",
+  "as_of": "2026-10-22",
   "consumer_contract": {
     "collector_schedule_is_independent_of_model_invocation": true,
     "consumer_prefers_manifest_selected_active_paths": true,
@@ -59,12 +59,12 @@
     "central_gov_cash_clock": {
       "collection_mode": "DAILY_INCREMENTAL",
       "latest_reference": "2076-05-07",
-      "new_store_rows": 15,
+      "new_store_rows": 4,
       "status": "PASS"
     },
     "fast_market": {
       "collection_mode": null,
-      "latest_reference": "2026-10-20",
+      "latest_reference": "2026-10-22",
       "new_store_rows": 27,
       "status": "PASS"
     },
@@ -100,8 +100,8 @@
     },
     "policy_event_incremental": {
       "collection_mode": "DAILY_INCREMENTAL",
-      "latest_reference": "2026-10-20",
-      "new_store_rows": 1,
+      "latest_reference": "2026-10-22",
+      "new_store_rows": 2,
       "status": "PASS"
     },
     "rrr_event_incremental": {
@@ -114,30 +114,11 @@
   "fast_market_coverage": "27/27",
   "fiscal_context": {
     "central_government_bond": {
-      "as_of": "2026-10-20",
+      "as_of": "2026-10-22",
       "blocking_gap_count": 0,
       "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
       "data_confidence_effect": "NONE",
       "documents": [
-        {
-          "bond_name": "2026年记账式贴现（六十六期）国债",
-          "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
-          "document_class": "CORE_PREISSUE_SCHEDULE",
-          "document_type": "PREISSUE",
-          "evidence_sha256": "93fc6595fc0aa920c944e330bca9c89f2e67d4bb4190a9119781905196dec3f4",
-          "gap_count": 0,
-          "observation_count": 3,
-          "publication_date": "2026-10-19",
-          "status": "PASS",
-          "url": "https://zwgls.mof.gov.cn/ywgg/202610/t20261019_4003003.htm",
-          "v2_semantic_hardening": {
-            "coupon_schedule_anchored_to_interest_payment_clause": true,
-            "distribution_end_is_not_payment_fact": true,
-            "explicit_redemption_phrase_required_for_maturity": true,
-            "inferred_result_payment_rows_removed": 0,
-            "whitespace_insensitive_mof_parsing": true
-          }
-        },
         {
           "bond_name": "2026年记账式贴现（六十七期）国债",
           "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
@@ -248,24 +229,62 @@
             "inferred_result_payment_rows_removed": 1,
             "whitespace_insensitive_mof_parsing": true
           }
+        },
+        {
+          "bond_name": "2026年记账式附息（十九期）国债",
+          "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+          "document_class": "ACTUAL_RESULT_CORRECTION",
+          "document_type": "RESULT",
+          "evidence_sha256": "f87dc521821dcb1d7395cd9ae0a820cf5b2c1f527b054fdbf9e283f20225e22e",
+          "gap_count": 0,
+          "observation_count": 2,
+          "publication_date": "2026-10-21",
+          "status": "PASS",
+          "url": "https://zwgls.mof.gov.cn/ywgg/202610/t20261021_4003201.htm",
+          "v2_semantic_hardening": {
+            "coupon_schedule_anchored_to_interest_payment_clause": true,
+            "distribution_end_is_not_payment_fact": true,
+            "explicit_redemption_phrase_required_for_maturity": true,
+            "inferred_result_payment_rows_removed": 1,
+            "whitespace_insensitive_mof_parsing": true
+          }
+        },
+        {
+          "bond_name": "2026年记账式贴现（六十七期）国债",
+          "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V3-INCREMENTAL",
+          "document_class": "ACTUAL_RESULT_CORRECTION",
+          "document_type": "RESULT",
+          "evidence_sha256": "70b94e64e1ca6c28197fee7a7ab8b5263472dd05194f992b55994e1eda0c4d1a",
+          "gap_count": 0,
+          "observation_count": 2,
+          "publication_date": "2026-10-21",
+          "status": "PASS",
+          "url": "https://zwgls.mof.gov.cn/ywgg/202610/t20261021_4003202.htm",
+          "v2_semantic_hardening": {
+            "coupon_schedule_anchored_to_interest_payment_clause": true,
+            "distribution_end_is_not_payment_fact": true,
+            "explicit_redemption_phrase_required_for_maturity": true,
+            "inferred_result_payment_rows_removed": 1,
+            "whitespace_insensitive_mof_parsing": true
+          }
         }
       ],
       "list_evidence": [
         {
-          "max_date": "2026-10-20",
-          "min_date": "2026-10-16",
+          "max_date": "2026-10-21",
+          "min_date": "2026-10-19",
           "page": 0,
           "row_count": 9,
-          "sha256": "f4cee295557c2d963b3bf29cfb8cb650c263dc29f09814bccbfd1f5f7f2e4550",
+          "sha256": "84ecdc968f27184057555cd59e58c3d75fb8e37e4a4f28dc7c5d52c452bfaa5f",
           "url": "https://zwgls.mof.gov.cn/ywgg/"
         }
       ],
       "mode": "DAILY_INCREMENTAL",
       "module": "china_financial_central_gov_bond_cash_clock_context",
       "nonblocking_diagnostic_count": 0,
-      "observation_count": 15,
-      "publication_window_end": "2026-10-20",
-      "publication_window_start": "2026-10-18",
+      "observation_count": 16,
+      "publication_window_end": "2026-10-22",
+      "publication_window_start": "2026-10-20",
       "readiness_semantics": {
         "all_core_details_unreadable_is_blocking": true,
         "at_least_one_core_detail_required_when_core_docs_exist": true,
@@ -296,17 +315,17 @@
       "source_context_available": true,
       "status": "PASS_EVENTS_FOUND",
       "window_proof": {
-        "actual_correction_documents_discovered": 4,
-        "actual_correction_documents_successfully_read": 4,
-        "core_preissue_documents_discovered": 3,
-        "core_preissue_documents_successfully_read": 3,
+        "actual_correction_documents_discovered": 6,
+        "actual_correction_documents_successfully_read": 6,
+        "core_preissue_documents_discovered": 2,
+        "core_preissue_documents_successfully_read": 2,
         "no_event_claim_requires_complete_list_window": true,
         "publication_list_window_checked": true,
         "unknown_is_never_zero": true
       }
     },
     "local_government_bond": {
-      "as_of": "2026-10-20",
+      "as_of": "2026-10-22",
       "central_government_bonds_included": false,
       "collector_version": "V1.9-CANDIDATE-LOCAL-GOV-BOND-CASH-CLOCK-V3",
       "event_count_by_series": {},
@@ -314,8 +333,8 @@
       "known_amount_cny_100m_by_series_and_stage": {},
       "lookback_days": 2,
       "module": "china_financial_local_gov_bond_cash_clock_context",
-      "publication_window_end": "2026-10-20",
-      "publication_window_start": "2026-10-18",
+      "publication_window_end": "2026-10-22",
+      "publication_window_start": "2026-10-20",
       "scope": "LOCAL_GOVERNMENT_BONDS_ONLY",
       "semantic_rules": {
         "amount_semantic_preserved": true,
@@ -334,11 +353,11 @@
       }
     }
   },
-  "generated_at": "2026-10-20T15:48:15.604134Z",
+  "generated_at": "2026-10-22T16:01:12.995135Z",
   "github_repository": "Tests4gptplay/market-data-collector",
-  "github_run_id": "39451283945",
-  "github_source_commit": "c15896a41a2e425ed2e985cc750dc90c9d04089a",
-  "latest_valid_market_session": "2026-10-20",
+  "github_run_id": "39809719906",
+  "github_source_commit": "951bab2cdb0cc8f7f3155ad6b631938c04b2e839",
+  "latest_valid_market_session": "2026-10-22",
   "pipeline_version": "CF_STORE_PERSISTENCE_V3",
   "policy_state": {
     "omo7d_rate": {

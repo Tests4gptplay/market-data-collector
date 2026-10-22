@@ -1,15 +1,25 @@
 {
   "collector_version": "V1.9-CANDIDATE-POLICY-EVENT-FAMILY-V6-INCREMENTAL",
-  "completed_at": "2026-10-20T15:47:15.193041Z",
+  "completed_at": "2026-10-22T16:00:19.657580Z",
   "families": [
     {
       "article_evidence": [
         {
-          "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102008563058059/index.html",
-          "available_at": "2026-10-20 09:20:16",
-          "parsed_observation_count": 1,
-          "sha256": "c18377cff3456d45173275900fe390621fb0d4f0bdf3547bf50830bc87ab31fa",
+          "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102208470683333/index.html",
+          "available_at": "2026-10-22 09:22:18",
+          "parsed_observation_count": 2,
+          "sha256": "f8ae2770729e46ba7ba4acf794e74c066dde64ddd5266ad6b397be05fe080e61",
           "status": "PARSED"
+        },
+        {
+          "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102108590198583/index.html",
+          "sha256": "90f02c75bc31d53ef6b122637ca5f0e2ba6d45908305f1f5ee9a004b261810e4",
+          "status": "NOT_TARGET_OPERATION_DATE"
+        },
+        {
+          "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026102008563058059/index.html",
+          "sha256": "c18377cff3456d45173275900fe390621fb0d4f0bdf3547bf50830bc87ab31fa",
+          "status": "NOT_TARGET_OPERATION_DATE"
         },
         {
           "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026101908495975924/index.html",
@@ -95,28 +105,18 @@
           "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026092108482838501/index.html",
           "sha256": "bcdb9b7ea85aa55b960f57ed1f91fdc29125686ea42d63da7f1901a49662e085",
           "status": "NOT_TARGET_OPERATION_DATE"
-        },
-        {
-          "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026092008452664293/index.html",
-          "sha256": "3cd876b08020d986338da63a6612173be1dee16240d38720017afb5142fa74c6",
-          "status": "NOT_TARGET_OPERATION_DATE"
-        },
-        {
-          "article_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/2026091809070584602/index.html",
-          "sha256": "39f8e6f3b2c537f7373626b7664ff3bbd61a4c4c60741f01f8b71e737cc19795",
-          "status": "NOT_TARGET_OPERATION_DATE"
         }
       ],
       "family": "OMO",
       "inspected_articles": 20,
       "list_evidence": {
         "candidate_count": 20,
-        "list_sha256": "29f0037aa0a2158ed389ee3ffb00721fe994e7f20cab74cd64e5f16d8b4ad452",
+        "list_sha256": "5633c03130c95314e420e8c7392aa94164722eea789316d7762472260d0db6dd",
         "list_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/index.html"
       },
-      "observation_count": 1,
+      "observation_count": 2,
       "status": "EVENTS_FOUND",
-      "target_date": "2026-10-20"
+      "target_date": "2026-10-22"
     },
     {
       "article_evidence": [
@@ -235,7 +235,7 @@
       },
       "observation_count": 0,
       "status": "NO_EVENT_CONFIRMED",
-      "target_date": "2026-10-20"
+      "target_date": "2026-10-22"
     },
     {
       "article_evidence": [
@@ -344,16 +344,16 @@
       },
       "observation_count": 0,
       "status": "NO_EVENT_CONFIRMED",
-      "target_date": "2026-10-20"
+      "target_date": "2026-10-22"
     }
   ],
   "gap_count": 0,
-  "github_run_id": "39451283945",
-  "github_source_commit": "c15896a41a2e425ed2e985cc750dc90c9d04089a",
-  "incremental_since_date": "2026-10-10",
+  "github_run_id": "39809719906",
+  "github_source_commit": "951bab2cdb0cc8f7f3155ad6b631938c04b2e839",
+  "incremental_since_date": "2026-10-12",
   "mode": "DAILY_INCREMENTAL",
   "module": "china_financial_policy_event_family",
-  "observation_count": 1,
+  "observation_count": 2,
   "omo7d_incremental_state_check": {
     "articles_inspected": 20,
     "diagnostics": [],
@@ -364,16 +364,16 @@
       {
         "candidate_count": 20,
         "page": 1,
-        "sha256": "29f0037aa0a2158ed389ee3ffb00721fe994e7f20cab74cd64e5f16d8b4ad452",
+        "sha256": "5633c03130c95314e420e8c7392aa94164722eea789316d7762472260d0db6dd",
         "url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125431/125475/index.html"
       }
     ],
     "pages_inspected": 1,
     "previous_rate_supplied": true,
-    "since_date": "2026-10-10",
+    "since_date": "2026-10-12",
     "state_change_detected": false,
     "status": "PASS",
-    "target_date": "2026-10-20"
+    "target_date": "2026-10-22"
   },
   "persistence_pipeline_version": "CF_STORE_PERSISTENCE_V3",
   "semantic_rules": {
@@ -385,5 +385,5 @@
     "unchanged_policy_rate_emits_no_new_root_when_previous_state_supplied": true
   },
   "status": "PASS",
-  "target_date": "2026-10-20"
+  "target_date": "2026-10-22"
 }

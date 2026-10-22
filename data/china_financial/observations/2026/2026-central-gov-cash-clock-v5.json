@@ -860,6 +860,52 @@
     "value": 200.0
   },
   {
+    "available_at": "2026-10-21",
+    "collected_at": "2026-10-22T16:01:08.059631Z",
+    "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
+    "dimensions": {
+      "amount_semantic": "ACTUAL_ISSUED_FACE_VALUE",
+      "auction_date_semantic": "RESULT_PUBLICATION_DATE",
+      "bond_name": "2026年记账式附息（十九期）国债",
+      "event_stage": "ACTUAL_RESULT",
+      "government_level": "CENTRAL",
+      "instrument_scope": "BOOK_ENTRY_TREASURY",
+      "point_in_time_safe": true,
+      "publication_date": "2026-10-21"
+    },
+    "evidence_sha256": "f87dc521821dcb1d7395cd9ae0a820cf5b2c1f527b054fdbf9e283f20225e22e",
+    "provider": "Ministry of Finance of the People's Republic of China / Debt Management Department",
+    "reference_date": "2026-10-21",
+    "series_id": "FISC_GOV_BOND_AUCTION_EVENT",
+    "source_semantic": "MOF_CENTRAL_GOV_BOND_ACTUAL_AUCTION_RESULT_FACE_VALUE",
+    "source_url": "https://zwgls.mof.gov.cn/ywgg/202610/t20261021_4003201.htm",
+    "unit": "CNY 100m",
+    "value": 1210.1
+  },
+  {
+    "available_at": "2026-10-21",
+    "collected_at": "2026-10-22T16:01:12.911005Z",
+    "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
+    "dimensions": {
+      "amount_semantic": "ACTUAL_ISSUED_FACE_VALUE",
+      "auction_date_semantic": "RESULT_PUBLICATION_DATE",
+      "bond_name": "2026年记账式贴现（六十七期）国债",
+      "event_stage": "ACTUAL_RESULT",
+      "government_level": "CENTRAL",
+      "instrument_scope": "BOOK_ENTRY_TREASURY",
+      "point_in_time_safe": true,
+      "publication_date": "2026-10-21"
+    },
+    "evidence_sha256": "70b94e64e1ca6c28197fee7a7ab8b5263472dd05194f992b55994e1eda0c4d1a",
+    "provider": "Ministry of Finance of the People's Republic of China / Debt Management Department",
+    "reference_date": "2026-10-21",
+    "series_id": "FISC_GOV_BOND_AUCTION_EVENT",
+    "source_semantic": "MOF_CENTRAL_GOV_BOND_ACTUAL_AUCTION_RESULT_FACE_VALUE",
+    "source_url": "https://zwgls.mof.gov.cn/ywgg/202610/t20261021_4003202.htm",
+    "unit": "CNY 100m",
+    "value": 600.0
+  },
+  {
     "available_at": "2026-10-14",
     "collected_at": "2026-10-16T15:29:32.197952Z",
     "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
@@ -5417,6 +5463,28 @@
     "value": 600.0
   },
   {
+    "available_at": "2026-10-21",
+    "collected_at": "2026-10-22T16:01:12.911038Z",
+    "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
+    "dimensions": {
+      "amount_semantic": "ACTUAL_ISSUED_FACE_VALUE",
+      "bond_name": "2026年记账式贴现（六十七期）国债",
+      "event_stage": "ACTUAL_TRANCHE",
+      "government_level": "CENTRAL",
+      "instrument_scope": "BOOK_ENTRY_TREASURY",
+      "point_in_time_safe": true,
+      "publication_date": "2026-10-21"
+    },
+    "evidence_sha256": "70b94e64e1ca6c28197fee7a7ab8b5263472dd05194f992b55994e1eda0c4d1a",
+    "provider": "Ministry of Finance of the People's Republic of China / Debt Management Department",
+    "reference_date": "2027-01-21",
+    "series_id": "FISC_GOV_BOND_MATURITY_EVENT",
+    "source_semantic": "MOF_CENTRAL_GOV_BOND_ACTUAL_TRANCHE_PRINCIPAL_MATURITY",
+    "source_url": "https://zwgls.mof.gov.cn/ywgg/202610/t20261021_4003202.htm",
+    "unit": "CNY 100m",
+    "value": 600.0
+  },
+  {
     "available_at": "2026-10-20",
     "collected_at": "2026-10-20T15:47:52.299952Z",
     "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
@@ -5767,6 +5835,28 @@
     "source_url": "https://zwgls.mof.gov.cn/ywgg/202609/t20260914_3997374.htm",
     "unit": "CNY 100m",
     "value": 1002.0
+  },
+  {
+    "available_at": "2026-10-21",
+    "collected_at": "2026-10-22T16:01:08.059668Z",
+    "collector_version": "V1.9-READY-CENTRAL-GOV-BOND-CASH-CLOCK-V5-CONTEXT",
+    "dimensions": {
+      "amount_semantic": "ACTUAL_ISSUED_FACE_VALUE",
+      "bond_name": "2026年记账式附息（十九期）国债",
+      "event_stage": "ACTUAL_TRANCHE",
+      "government_level": "CENTRAL",
+      "instrument_scope": "BOOK_ENTRY_TREASURY",
+      "point_in_time_safe": true,
+      "publication_date": "2026-10-21"
+    },
+    "evidence_sha256": "f87dc521821dcb1d7395cd9ae0a820cf5b2c1f527b054fdbf9e283f20225e22e",
+    "provider": "Ministry of Finance of the People's Republic of China / Debt Management Department",
+    "reference_date": "2033-09-15",
+    "series_id": "FISC_GOV_BOND_MATURITY_EVENT",
+    "source_semantic": "MOF_CENTRAL_GOV_BOND_ACTUAL_TRANCHE_PRINCIPAL_MATURITY",
+    "source_url": "https://zwgls.mof.gov.cn/ywgg/202610/t20261021_4003201.htm",
+    "unit": "CNY 100m",
+    "value": 1210.1
   },
   {
     "available_at": "2026-09-07",
