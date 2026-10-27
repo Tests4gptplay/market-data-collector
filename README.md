@@ -4,6 +4,8 @@ A versioned market-data collection and validation project for public-source fina
 
 中文：这是一个面向公开金融数据源的版本化采集与验证项目。目标不是简单“抓到一个数字”，而是尽可能明确保存该数字的来源、日期、字段语义、派生关系和质量状态，使数据能够被研究、模型与自动化流程复用。
 
+**Support / 赞助：** [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](SPONSOR.md)
+
 > **Important status note / 重要状态说明**
 >
 > The China Financial module's **data collection and measurement layer is READY against the current internal China Financial Draft measurement scope**. READY is deliberately narrower than a repository-wide PRODUCTION declaration.
