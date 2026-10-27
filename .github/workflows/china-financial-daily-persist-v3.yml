@@ -4,8 +4,9 @@ name: China Financial Daily Persist V3
 # 11:30 UTC = 19:30 Asia/Shanghai.
 # GitHub cron becomes active only when this workflow exists on the default branch.
 on:
-  schedule:
-    - cron: '30 11 * * *'
+  # Automatic collection paused on 2026-10-28 (Asia/Tokyo).
+  # schedule:
+  #   - cron: '30 11 * * *'
   workflow_dispatch:
     inputs:
       as_of:
