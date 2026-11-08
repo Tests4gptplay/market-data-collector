@@ -1,0 +1,55 @@
+name: Weekly official npm download statistics
+
+on:
+  schedule:
+    # Sunday 18:15 UTC = Monday 03:15 JST; ahead of Monday 08:00 JST report.
+    - cron: '15 18 * * 0'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/npm-downloads-weekly.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: npm-downloads-weekly
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout public market-data-collector
+        uses: actions/checkout@v4
+      - name: Test collector parsing and publication checks
+        run: python3 -m unittest discover -s tests/npm_downloads -v
+      - name: Collect official npm downloads for six DSH plugin projects
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 collectors/npm_downloads/collect_npm.py
+      - name: Persist npm statistics in this public repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/npm_downloads/latest.json data/npm_downloads/history/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: record official npm download snapshot'
+            git push
+          fi
+      - name: Verify at least one genuine official npm response
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          snapshot=json.loads(Path('data/npm_downloads/latest.json').read_text(encoding='utf-8'))
+          valid=[name for name,p in snapshot['packages'].items()
+                 if p.get('last_week',{}).get('status')=='ok']
+          print('Confirmed official npm weekly counts:', len(valid), '/', len(snapshot['packages']))
+          if not valid:
+              raise SystemExit('No valid npm weekly download response; inspect the persisted failure statuses')
+          PY
