@@ -1,20 +1,20 @@
-name: Weekly official npm download statistics
+name: Hourly official npm download statistics
 
 on:
   schedule:
-    # Sunday 18:15 UTC = Monday 03:15 JST; ahead of Monday 08:00 JST report.
-    - cron: '15 18 * * 0'
+    # Every hour at :12 UTC / JST; before the separate hourly GitHub monitor at :32.
+    - cron: '12 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/npm-downloads-weekly.yml'
+      - '.github/workflows/npm-downloads-hourly.yml'
 
 permissions:
   contents: write
 
 concurrency:
-  group: npm-downloads-weekly
+  group: npm-downloads-hourly
   cancel-in-progress: false
 
 jobs:
