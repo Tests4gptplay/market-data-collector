@@ -323,162 +323,10 @@
       "status": "ok"
     },
     "dsh-dots": {
-      "daily_30": {
-        "days": [
-          {
-            "day": "2026-10-10",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-11",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-12",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-13",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-14",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-15",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-16",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-17",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-18",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-19",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-20",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-21",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-22",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-23",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-24",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-25",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-26",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-27",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-28",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-29",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-30",
-            "downloads": 0
-          },
-          {
-            "day": "2026-10-31",
-            "downloads": 0
-          },
-          {
-            "day": "2026-11-01",
-            "downloads": 0
-          },
-          {
-            "day": "2026-11-02",
-            "downloads": 0
-          },
-          {
-            "day": "2026-11-03",
-            "downloads": 0
-          },
-          {
-            "day": "2026-11-04",
-            "downloads": 0
-          },
-          {
-            "day": "2026-11-05",
-            "downloads": 0
-          },
-          {
-            "day": "2026-11-06",
-            "downloads": 0
-          },
-          {
-            "day": "2026-11-07",
-            "downloads": 212
-          },
-          {
-            "day": "2026-11-08",
-            "downloads": 35
-          }
-        ],
-        "end_utc": "2026-11-08",
-        "start_utc": "2026-10-10",
-        "status": "ok"
-      },
-      "declared_npm_name": "@tests4gptplay/dsh-dots",
-      "last_day": {
-        "downloads": 35,
-        "end_utc": "2026-11-08",
-        "start_utc": "2026-11-08",
-        "status": "ok"
-      },
-      "last_month": {
-        "downloads": 247,
-        "end_utc": "2026-11-08",
-        "start_utc": "2026-10-10",
-        "status": "ok"
-      },
-      "last_week": {
-        "downloads": 247,
-        "end_utc": "2026-11-08",
-        "start_utc": "2026-11-02",
-        "status": "ok"
-      },
-      "latest_published_version": "1.0.11",
-      "name": "@tests4gptplay/dsh-dots",
+      "declared_npm_name": "dsh-dots",
+      "reason": "unscoped package ownership not verified by repository URL",
       "repository": "Tests4gptplay/dsh-dots",
-      "sources": {
-        "daily_30": "https://api.npmjs.org/downloads/range/last-month/@tests4gptplay/dsh-dots",
-        "last_day": "https://api.npmjs.org/downloads/point/last-day/@tests4gptplay/dsh-dots",
-        "last_month": "https://api.npmjs.org/downloads/point/last-month/@tests4gptplay/dsh-dots",
-        "last_week": "https://api.npmjs.org/downloads/point/last-week/@tests4gptplay/dsh-dots"
-      },
-      "status": "ok"
+      "status": "not_verified_published"
     },
     "dsh-kujira-persona": {
       "daily_30": {
@@ -805,7 +653,7 @@
     "Tests4gptplay/dsh-video-vision",
     "Tests4gptplay/dsh-dots"
   ],
-  "sampled_at_utc": "2026-11-09T09:39:36+00:00",
+  "sampled_at_utc": "2026-11-09T20:39:46+00:00",
   "schema_version": 1,
   "source": "npm official registry and downloads API; GitHub public package.json"
 }
