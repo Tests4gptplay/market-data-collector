@@ -785,7 +785,7 @@
         "start_utc": "2026-11-03",
         "status": "ok"
       },
-      "latest_published_version": "0.10.1",
+      "latest_published_version": "0.10.2",
       "name": "@tests4gptplay/dsh-video-vision",
       "repository": "Tests4gptplay/dsh-video-vision",
       "sources": {
@@ -805,7 +805,7 @@
     "Tests4gptplay/dsh-video-vision",
     "Tests4gptplay/dsh-dots"
   ],
-  "sampled_at_utc": "2026-11-10T11:22:39+00:00",
+  "sampled_at_utc": "2026-11-10T19:49:39+00:00",
   "schema_version": 1,
   "source": "npm official registry and downloads API; GitHub public package.json"
 }
