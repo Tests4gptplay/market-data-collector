@@ -9,6 +9,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/npm-downloads-hourly.yml'
+      - 'collectors/npm_downloads/collect_npm.py'
+      - 'tests/npm_downloads/test_collector.py'
 
 permissions:
   contents: write
