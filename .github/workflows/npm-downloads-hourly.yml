@@ -3,7 +3,8 @@ name: Hourly official npm download statistics
 on:
   schedule:
     # Every hour at :17 UTC / JST; before the separate hourly GitHub monitor at :32.
-    - cron: '17 * * * *'
+    # Explicit hours re-register the existing schedule without adding any extra runs.
+    - cron: '17 0-23 * * *'
   workflow_dispatch:
   push:
     branches: [main]
