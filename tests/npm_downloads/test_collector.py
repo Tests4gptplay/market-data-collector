@@ -52,5 +52,30 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(v["status"], "partial")
         self.assertEqual(v["last_week"]["downloads"], 3)
 
+    def test_dots_scoped_npm_mapping_keeps_source_identity(self):
+        published = "@tests4gptplay/dsh-dots"
+        seen = []
+
+        def fake(url, github=False):
+            seen.append(url)
+            if url.startswith(c.REGISTRY + "/"):
+                return {"name": published, "versions": {"1.0.12": {}}, "dist-tags": {"latest": "1.0.12"}}
+            if "/downloads/range/" in url:
+                return {"package": published, "start": "2026-11-02", "end": "2026-11-08", "downloads": [{"day": "2026-11-08", "downloads": 35}]}
+            if "/downloads/point/" in url:
+                return {"package": published, "start": "2026-11-02", "end": "2026-11-08", "downloads": 35}
+            raise AssertionError(f"Unexpected request: {url}")
+
+        with patch.object(c, "declared_package_name", return_value="dsh-dots"), patch.object(c, "fetch_json", side_effect=fake):
+            v = c.collect_one("dsh-dots")
+        self.assertEqual(v["status"], "ok")
+        self.assertEqual(v["declared_npm_name"], "dsh-dots")
+        self.assertEqual(v["name"], published)
+        self.assertEqual(v["latest_published_version"], "1.0.12")
+        self.assertEqual(v["last_week"]["downloads"], 35)
+        self.assertEqual(v["daily_30"]["days"][0]["downloads"], 35)
+        self.assertIn(f"{c.REGISTRY}/%40tests4gptplay%2Fdsh-dots", seen)
+        self.assertTrue(all(url.endswith("/@tests4gptplay/dsh-dots") for url in v["sources"].values()))
+
 if __name__ == "__main__":
     unittest.main()

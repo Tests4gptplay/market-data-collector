@@ -21,6 +21,8 @@ GITHUB_API = "https://api.github.com"
 REGISTRY = "https://registry.npmjs.org"
 DOWNLOADS = "https://api.npmjs.org"
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+# DOTS keeps the unscoped GitHub/DSH identity but publishes a scoped npm package.
+NPM_NAME_OVERRIDES = {"dsh-dots": "@tests4gptplay/dsh-dots"}
 
 class FetchError(Exception):
     pass
@@ -117,16 +119,17 @@ def collect_one(repo: str) -> dict:
     try:
         name = declared_package_name(repo)
         item["declared_npm_name"] = name
+        npm_name = NPM_NAME_OVERRIDES.get(repo, name)
     except FetchError as exc:
         item.update(status="source_unavailable", reason=str(exc))
         return item
     try:
-        item.update(verified_registry_package(repo, name))
+        item.update(verified_registry_package(repo, npm_name))
     except FetchError as exc:
         item.update(status="not_verified_published", reason=str(exc))
         return item
 
-    package_path = quote(name, safe="@/")
+    package_path = quote(npm_name, safe="@/")
     endpoints = {
         "last_day": f"{DOWNLOADS}/downloads/point/last-day/{package_path}",
         "last_week": f"{DOWNLOADS}/downloads/point/last-week/{package_path}",
@@ -138,7 +141,7 @@ def collect_one(repo: str) -> dict:
     for key, url in endpoints.items():
         try:
             raw = fetch_json(url)
-            parsed = validate_range(raw, name) if key == "daily_30" else validate_point(raw, name)
+            parsed = validate_range(raw, npm_name) if key == "daily_30" else validate_point(raw, npm_name)
             item[key] = {"status": "ok", **parsed}
             success += 1
         except FetchError as exc:
@@ -166,7 +169,7 @@ def main() -> None:
         week = package.get("last_week", {})
         if week.get("status") == "ok":
             valid += 1
-            print(f"{name}: {package['declared_npm_name']} {week['start_utc']}..{week['end_utc']} {week['downloads']} weekly downloads")
+            print(f"{name}: {package['name']} {week['start_utc']}..{week['end_utc']} {week['downloads']} weekly downloads")
         else:
             print(f"{name}: {package['status']} {package.get('reason', week.get('reason', 'not retrieved'))}")
     print(f"Official npm weekly responses: {valid}/{len(REPOSITORIES)}; snapshot={base/'latest.json'}")
