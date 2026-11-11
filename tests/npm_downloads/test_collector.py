@@ -77,5 +77,55 @@ class CollectorTests(unittest.TestCase):
         self.assertIn(f"{c.REGISTRY}/%40tests4gptplay%2Fdsh-dots", seen)
         self.assertTrue(all(url.endswith("/@tests4gptplay/dsh-dots") for url in v["sources"].values()))
 
+    def test_latest_day_stale_but_valid(self):
+        data = {
+            "sampled_at_utc": "2026-11-11T10:00:00+00:00",
+            "packages": {"dots": {
+                "status": "ok",
+                "last_day": {"status": "ok", "end_utc": "2026-11-09", "downloads": 222},
+                "last_week": {"status": "ok", "end_utc": "2026-11-09", "downloads": 469},
+                "daily_30": {"status": "ok", "days": [{"day": "2026-11-09", "downloads": 222}]},
+            }},
+        }
+        c.annotate_latest_day(data)
+        p = data["packages"]["dots"]
+        self.assertEqual(p["status"], "ok")
+        self.assertEqual(p["last_day"]["downloads"], 222)
+        self.assertEqual(p["timeliness"], {
+            "expected_complete_utc_day": "2026-11-10",
+            "returned_utc_day": "2026-11-09",
+            "lag_complete_days": 1,
+            "last_day_matches_daily_30": True,
+            "last_week_end_matches": True,
+        })
+
+    def test_latest_day_detects_inconsistent_data(self):
+        data = {
+            "sampled_at_utc": "2026-11-11T10:00:00+00:00",
+            "packages": {"test": {
+                "status": "ok",
+                "last_day": {"status": "ok", "end_utc": "2026-11-10", "downloads": 15},
+                "last_week": {"status": "ok", "end_utc": "2026-11-09", "downloads": 30},
+                "daily_30": {"status": "ok", "days": [{"day": "2026-11-10", "downloads": 12}]},
+            }},
+        }
+        c.annotate_latest_day(data)
+        t = data["packages"]["test"]["timeliness"]
+        self.assertEqual(t["lag_complete_days"], 0)
+        self.assertFalse(t["last_day_matches_daily_30"])
+        self.assertFalse(t["last_week_end_matches"])
+
+    def test_latest_day_unavailable_not_zero(self):
+        data = {
+            "sampled_at_utc": "2026-11-11T10:00:00+00:00",
+            "packages": {
+                "unpublished": {"status": "not_verified_published", "reason": "HTTP 404"},
+                "partial": {"status": "partial", "last_day": {"status": "not_retrieved"}},
+            },
+        }
+        c.annotate_latest_day(data)
+        self.assertNotIn("timeliness", data["packages"]["unpublished"])
+        self.assertNotIn("timeliness", data["packages"]["partial"])
+
 if __name__ == "__main__":
     unittest.main()
