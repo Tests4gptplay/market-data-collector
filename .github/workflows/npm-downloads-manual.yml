@@ -1,0 +1,67 @@
+name: Manual npm download snapshot
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Serialize writes with the hourly npm collector.
+concurrency:
+  group: npm-downloads-hourly
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Test npm collector
+        run: python3 -m unittest discover -s tests/npm_downloads -v
+
+      - name: Collect official npm download statistics
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 collectors/npm_downloads/collect_npm.py
+
+      - name: Show daily statistics and validate collection
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          snapshot = json.loads(Path('data/npm_downloads/latest.json').read_text(encoding='utf-8'))
+          print('Sampled at UTC:', snapshot['sampled_at_utc'])
+          valid = 0
+          for repo, package in snapshot['packages'].items():
+              day = package.get('last_day', {})
+              week = package.get('last_week', {})
+              if week.get('status') == 'ok':
+                  valid += 1
+              if day.get('status') == 'ok':
+                  print(f"{repo}: {day['end_utc']} UTC; daily={day['downloads']}; "
+                        f"7-day={week.get('downloads', 'n/a')}")
+              else:
+                  print(f"{repo}: {package.get('status', 'unknown')}; daily unavailable")
+          print(f'Valid official npm weekly responses: {valid}/{len(snapshot["packages"])}')
+          if valid == 0:
+              raise SystemExit('No valid official npm weekly response')
+          PY
+
+      - name: Persist npm snapshot and history
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/npm_downloads/latest.json data/npm_downloads/history/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: record manual npm download snapshot'
+            git push origin HEAD:main
+          fi
