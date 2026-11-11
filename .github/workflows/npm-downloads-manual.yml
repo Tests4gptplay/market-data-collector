@@ -10,6 +10,7 @@ permissions:
 concurrency:
   group: npm-downloads-hourly
   cancel-in-progress: false
+  queue: max
 
 jobs:
   collect:
