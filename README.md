@@ -149,7 +149,7 @@ It supports fiscal **Drain / Release / Duration Supply Context**. It must not be
 
 ## China Financial READY gate
 
-`.github/workflows/china-financial-daily-ready-v4.yml` is the active **China Financial Daily Data-Layer READY Gate**.
+`.github/workflows/china-financial-daily-ready-v5.yml` is the active **China Financial Daily Data-Layer READY Gate**.
 
 The gate exercises the principal Draft measurement paths together:
 
@@ -168,6 +168,14 @@ A successful run supports the statement:
 > **China Financial data collection and measurement layer is READY for the current internal Draft measurement scope.**
 
 It does **not** support the broader statement that the downstream trading/Permission system or every deployment runtime is production-stable.
+
+## Current GitHub Actions workflows
+
+- `.github/workflows/china-financial-daily-ready-v5.yml` — integrated China Financial data-layer READY gate (V5).
+- `.github/workflows/china-financial-daily-persist-v3.yml` — China Financial Store persistence; its scheduled trigger remains paused.
+- `.github/workflows/china-financial-regression.yml` — manual specialist regression checks (market session reuse, cash clocks, OMO/RRR).
+- `.github/workflows/npm-downloads-hourly.yml` — scheduled npm download snapshots.
+- `.github/workflows/npm-downloads-manual.yml` — on-demand npm download snapshots.
 
 ## Repository layout
 

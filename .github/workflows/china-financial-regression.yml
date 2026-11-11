@@ -1,0 +1,239 @@
+name: China Financial Integrated Regression
+
+# Consolidates the retained specialist checks. Trigger manually from Actions.
+# Daily collection and Store persistence remain separate.
+on:
+  workflow_dispatch:
+    inputs:
+      as_of:
+        description: Optional central/local cash-clock as-of date (YYYY-MM-DD)
+        required: false
+      lookback_days:
+        description: Local cash-clock publication lookback (default 1)
+        required: false
+        default: '1'
+
+permissions:
+  contents: read
+
+jobs:
+  central-gov-cash-clock:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile V1-V5
+        run: |
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v1.py
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v2.py
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v3_incremental.py
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v4_incremental.py
+          python3 -m py_compile collectors/china_financial/central_gov_bond_cash_clock_v5_context.py
+      - name: Validate READY context degradation semantics
+        shell: bash
+        run: |
+          set -euo pipefail
+          AS_OF='${{ github.event.inputs.as_of }}'
+          if [ -z "${AS_OF}" ]; then AS_OF="$(TZ=Asia/Shanghai date +%F)"; fi
+          rm -rf /tmp/cgb-v5
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/central_gov_bond_cash_clock_v5_context.py \
+            --as-of "${AS_OF}" --lookback-days 7 --out /tmp/cgb-v5
+          python3 - <<'PY'
+          import json
+          run=json.load(open('/tmp/cgb-v5/run.json'))
+          ctx=json.load(open('/tmp/cgb-v5/context.json'))
+          assert run['status']=='PASS',run
+          assert ctx['blocking_gap_count']==0,ctx
+          assert ctx['ready_adapter_semantics']['source_outage_becomes_unknown_not_zero'] is True
+          assert ctx['ready_adapter_semantics']['source_outage_does_not_relax_other_core_measurement_gates'] is True
+          assert ctx['data_confidence_effect'] in {'NONE','DOWNWEIGHT_FISCAL_CASH_CLOCK_CONTEXT'}
+          print(json.dumps({'run':run,'context_status':ctx['status'],'data_confidence_effect':ctx['data_confidence_effect'],'diagnostics':ctx['nonblocking_diagnostic_count']},ensure_ascii=False,indent=2))
+          PY
+
+  fast-market-session-reuse:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile V1/V2
+        run: |
+          python3 -m py_compile collectors/china_financial/fast_market_ready_incremental_v1.py
+          python3 -m py_compile collectors/china_financial/fast_market_ready_incremental_v2.py
+      - name: Weekend reuses validated 2026-08-14 PASS
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/fast-ready
+          PYTHONPATH=collectors/china_financial python3 collectors/china_financial/fast_market_ready_incremental_v2.py \
+            --as-of 2026-08-16 --out /tmp/fast-ready
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/fast-ready/run.json'))
+          assert r['status']=='PASS',r
+          assert r['collector_version']=='V1.9-READY-FAST-MARKET-INCREMENTAL-V2',r
+          assert r['mode']=='PERSISTED_VALIDATED_SESSION_REUSE',r
+          assert r['market_date']=='2026-08-14',r
+          assert r['coverage_count']==27 and r['expected_count']==27,r
+          assert r['missing_series']==[],r
+          assert r['rules']['weekend_carry_forward_is_not_stale'] is True,r
+          assert 'observations' in r['copied_payloads'],r
+          print(json.dumps(r,ensure_ascii=False,indent=2))
+          PY
+
+  local-gov-cash-clock:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      AS_OF: ${{ github.event.inputs.as_of || '2026-08-12' }}
+      LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '1' }}
+    steps:
+      - name: Checkout
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "${GITHUB_SHA}"
+          git checkout --detach FETCH_HEAD
+
+      - name: Install PDF parser
+        run: python3 -m pip install --disable-pip-version-check 'pypdf==5.9.0'
+
+      - name: Compile V1 and V3
+        run: |
+          python3 -m py_compile collectors/china_financial/local_gov_bond_cash_clock_v1.py
+          python3 -m py_compile collectors/china_financial/local_gov_bond_cash_clock_v3.py
+
+      - name: Run simplified rolling cash clock
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/cash_clock_v3
+          PYTHONPATH=. python3 collectors/china_financial/local_gov_bond_cash_clock_v3.py \
+            --as-of "${AS_OF}" \
+            --lookback-days "${LOOKBACK_DAYS}" \
+            --out /tmp/cash_clock_v3
+
+      - name: Enforce semantic gates
+        run: |
+          python3 - <<'PY'
+          import json
+          obs=json.load(open('/tmp/cash_clock_v3/observations.json'))
+          ctx=json.load(open('/tmp/cash_clock_v3/context.json'))
+          run=json.load(open('/tmp/cash_clock_v3/run.json'))
+          assert run['status']=='PASS',run
+          assert ctx['scope']=='LOCAL_GOVERNMENT_BONDS_ONLY',ctx
+          assert ctx['central_government_bonds_included'] is False,ctx
+          assert ctx['window_proof']['all_publication_days_checked'] is True,ctx
+          assert ctx['window_proof']['unknown_is_never_zero'] is True,ctx
+          required={'series_id','reference_date','value','unit','provider','source_semantic','collected_at','collector_version','source_url','evidence_sha256'}
+          for row in obs:
+              missing=required-set(row)
+              assert not missing,(row,missing)
+          # A fully checked quiet window is a valid no-event result. Event-level
+          # parser regressions are already covered by the preserved V1/V2 tests;
+          # V3 tests rolling-window proof and interface normalization.
+          if not obs:
+              assert ctx['status']=='PASS_NO_EVENT_IN_PROVEN_WINDOW',ctx
+          print(json.dumps({'run':run,'context':ctx,'sample_count':len(obs)},ensure_ascii=False,indent=2))
+          PY
+
+  omo-as-of:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Current weekend and historical point-in-time tests
+        run: |
+          set -e
+          for d in 2026-08-16 2026-08-14 2025-05-07 2025-05-08 2025-05-10; do
+            echo "===== $d ====="
+            rm -rf "/tmp/omo-$d"
+            PYTHONPATH=. python3 collectors/china_financial/policy_event_family_v5.py --date "$d" --out "/tmp/omo-$d"
+            python3 - "$d" "/tmp/omo-$d" <<'PY'
+          import json,sys
+          d,p=sys.argv[1:]
+          obs=json.load(open(p+'/observations.json'))
+          run=json.load(open(p+'/run.json'))
+          rows=[x for x in obs if x.get('series_id')=='POL_OMO7D_RATE']
+          assert len(rows)==1,(d,rows,run)
+          r=rows[0]
+          assert r['reference_date']<=d,(d,r)
+          assert r['dimensions']['as_of_target_date']==d,(d,r)
+          if d=='2026-08-16': assert r['dimensions']['state_carried_forward'] is True,(d,r)
+          if d=='2025-05-07': assert abs(float(r['value'])-1.5)<1e-9,(d,r)
+          if d in ('2025-05-08','2025-05-10'): assert abs(float(r['value'])-1.4)<1e-9,(d,r)
+          print(json.dumps({'date':d,'rate':r['value'],'reference_date':r['reference_date'],'carried':r['dimensions']['state_carried_forward'],'pages':run['omo7d_rate_state'].get('pages_inspected'),'articles':run['omo7d_rate_state'].get('articles_inspected')},ensure_ascii=False))
+          PY
+          done
+
+  rrr-as-of:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate direct-event root and carry-forward
+        run: |
+          set -e
+          for d in 2025-05-07 2026-08-16; do
+            rm -rf "/tmp/rrr4-$d"
+            PYTHONPATH=. python3 collectors/china_financial/rrr_event_family_v4.py --date "$d" --out "/tmp/rrr4-$d"
+            python3 - "$d" "/tmp/rrr4-$d" <<'PY'
+          import json,sys
+          d,p=sys.argv[1:]
+          obs=json.load(open(p+'/observations.json')); run=json.load(open(p+'/run.json'))
+          rows=[x for x in obs if x.get('series_id')=='POL_RRR_CHANGE_BPS']
+          assert len(rows)==1,(d,rows,run)
+          r=rows[0]
+          assert r['reference_date']=='2025-05-07',(d,r)
+          assert abs(float(r['value'])+50.0)<1e-9,(d,r)
+          assert r['dimensions']['historical_review_articles_excluded_from_root'] is True
+          assert r['dimensions']['as_of_target_date']==d
+          assert '货币政策大事记' not in r.get('dimensions',{}).get('matched_text','')
+          print(json.dumps({'date':d,'reference_date':r['reference_date'],'bps':r['value'],'effective_date':r['dimensions'].get('effective_date'),'pages':run['pages_scanned_after_localization']},ensure_ascii=False))
+          PY
+          done
+
+  policy-incremental:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: RRR recent-window no-event must pass without historical crawl
+        run: |
+          set -e
+          PYTHONPATH=. python3 collectors/china_financial/rrr_event_family_v5_incremental.py \
+            --date 2026-08-16 --since-date 2026-08-07 --out /tmp/rrr-inc
+          python3 - <<'PY'
+          import json
+          run=json.load(open('/tmp/rrr-inc/run.json'))
+          gaps=json.load(open('/tmp/rrr-inc/gaps.json'))
+          obs=json.load(open('/tmp/rrr-inc/observations.json'))
+          assert run['status']=='PASS', run
+          assert gaps==[], gaps
+          assert obs==[], obs
+          assert run['semantic_rules']['no_2025_2024_backfill_in_daily_mode'] is True
+          assert run['pages_scanned'] <= 8, run
+          print('RRR_INCREMENTAL_PASS', run['pages_scanned'], run['oldest_seen_date'])
+          PY
+
+      - name: OMO7D recent-window unchanged state must emit no new rate root
+        run: |
+          set -e
+          PYTHONPATH=. python3 collectors/china_financial/policy_event_family_v6_incremental.py \
+            --date 2026-08-14 --since-date 2026-08-07 --previous-rate 1.40 --out /tmp/omo-inc
+          python3 - <<'PY'
+          import json
+          run=json.load(open('/tmp/omo-inc/run.json'))
+          gaps=json.load(open('/tmp/omo-inc/gaps.json'))
+          obs=json.load(open('/tmp/omo-inc/observations.json'))
+          rate=[x for x in obs if x.get('series_id')=='POL_OMO7D_RATE']
+          state=run['omo7d_incremental_state_check']
+          assert run['status']=='PASS', (run,gaps)
+          assert gaps==[], gaps
+          assert state['latest_recent_rate']==1.4, state
+          assert state['state_change_detected'] is False, state
+          assert rate==[], rate
+          assert run['semantic_rules']['no_2025_2024_backfill_in_daily_mode'] is True
+          assert state['pages_inspected'] <= 4, state
+          print('OMO7D_INCREMENTAL_PASS', state['latest_recent_quote_date'], state['latest_recent_rate'], state['pages_inspected'])
+          PY

@@ -34,8 +34,8 @@ def main() -> int:
 
     required = [
         "collectors/china_financial/fast_market_ready_incremental_v2.py",
-        ".github/workflows/china-financial-fast-market-incremental-v2-ready-test.yml",
-        ".github/workflows/china-financial-daily-ready-v4.yml",
+        ".github/workflows/china-financial-regression.yml",
+        ".github/workflows/china-financial-daily-ready-v5.yml",
     ]
     missing = [p for p in required if not (ROOT / p).exists()]
     active_path_ok = proc.returncode == 0 and not missing
@@ -46,14 +46,14 @@ def main() -> int:
     report["active_fast_market_path"] = {
         "collector": "collectors/china_financial/fast_market_ready_incremental_v2.py",
         "underlying_live_collector": "collectors/china_financial/market_family_v4.py",
-        "session_reuse_test": ".github/workflows/china-financial-fast-market-incremental-v2-ready-test.yml",
+        "session_reuse_test": ".github/workflows/china-financial-regression.yml",
         "status": "PASS" if not missing[:2] else "FAIL",
     }
     report["active_unified_ready_gate"] = {
-        "workflow": ".github/workflows/china-financial-daily-ready-v4.yml",
-        "status": "PASS" if (ROOT / ".github/workflows/china-financial-daily-ready-v4.yml").exists() else "FAIL",
+        "workflow": ".github/workflows/china-financial-daily-ready-v5.yml",
+        "status": "PASS" if (ROOT / ".github/workflows/china-financial-daily-ready-v5.yml").exists() else "FAIL",
     }
-    report["v4_versioning_note"] = "V1/V2/V3 readiness audits and Fast V1 remain preserved for rollback; V4 only advances the active READY path."
+    report["v4_versioning_note"] = "Previous audit scripts remain available; active workflow entry is READY V5."
     report["active_path_missing"] = missing
 
     text = json.dumps(report, ensure_ascii=False, indent=2) + "\n"

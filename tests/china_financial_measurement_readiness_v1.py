@@ -154,39 +154,31 @@ def main() -> int:
     execution_capabilities = {
         "fast_market": file_gate([
             "collectors/china_financial/market_family_v4.py",
-            ".github/workflows/china-financial-market-family-v4-candidate.yml",
         ]),
         "pbc_monthly_credit": file_gate([
             "collectors/china_financial/pbc_monthly_credit_family_v1.py",
-            ".github/workflows/china-financial-pbc-monthly-credit-v1-candidate.yml",
         ]),
         "mof_fiscal": file_gate([
             "collectors/china_financial/mof_fiscal_ytd_family_v2.py",
-            ".github/workflows/china-financial-mof-fiscal-ytd-v2-candidate.yml",
         ]),
         "monthly_policy_tools": file_gate([
             "collectors/china_financial/pbc_monthly_policy_tools_v2.py",
-            ".github/workflows/china-financial-pbc-monthly-policy-tools-v2-candidate.yml",
         ]),
         "policy_incremental": file_gate([
             "collectors/china_financial/policy_event_family_v6_incremental.py",
             "collectors/china_financial/rrr_event_family_v5_incremental.py",
-            ".github/workflows/china-financial-policy-incremental-smoke-v1.yml",
         ]),
         "nafmii_primary_market_activity": file_gate([
             "collectors/china_financial/nafmii_dfi_issuance_family_v1.py",
-            ".github/workflows/china-financial-nafmii-dfi-v1-data-test.yml",
         ]),
         "local_government_cash_clock_context": file_gate([
             "collectors/china_financial/local_gov_bond_cash_clock_v3.py",
-            ".github/workflows/china-financial-local-gov-cash-clock-v3-data-test.yml",
         ]),
         "central_government_cash_clock_context": file_gate([
             "collectors/china_financial/central_gov_bond_cash_clock_v4_incremental.py",
-            ".github/workflows/china-financial-central-gov-cash-clock-v4-ready-test.yml",
         ]),
         "unified_ready_gate": file_gate([
-            ".github/workflows/china-financial-daily.yml",
+            ".github/workflows/china-financial-daily-ready-v5.yml",
         ]),
     }
     capabilities_pass = all(x["status"] == "PASS" for x in execution_capabilities.values())

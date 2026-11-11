@@ -29,7 +29,7 @@ def main()->int:
         'historical_recrawl_every_day':False,
         'reason':'Low-frequency supporting context checks only for newly published facts; previously collected state is retained.'
     }
-    r['v5_versioning_note']='V1-V4 audits and prior daily READY workflows remain preserved for rollback.'
+    r['v5_versioning_note']='V1-V4 audit code is retained; the consolidated active READY workflow is V5.'
     text=json.dumps(r,ensure_ascii=False,indent=2)+'\n'
     if args.out:
         q=Path(args.out);q.parent.mkdir(parents=True,exist_ok=True);q.write_text(text,encoding='utf-8')

@@ -113,7 +113,6 @@ def main() -> int:
     capabilities = {
         "fast_market_incremental": file_gate([
             "collectors/china_financial/fast_market_ready_incremental_v1.py",
-            ".github/workflows/china-financial-fast-market-incremental-v1-ready-test.yml",
         ]),
         "fast_market_underlying": file_gate(["collectors/china_financial/market_family_v4.py"]),
         "monthly_credit": file_gate(["collectors/china_financial/pbc_monthly_credit_family_v1.py"]),
@@ -122,8 +121,8 @@ def main() -> int:
         "policy_incremental": file_gate(["collectors/china_financial/policy_event_family_v6_incremental.py", "collectors/china_financial/rrr_event_family_v5_incremental.py"]),
         "nafmii_primary_market_activity": file_gate(["collectors/china_financial/nafmii_dfi_issuance_family_v1.py"]),
         "local_gov_cash_clock_context": file_gate(["collectors/china_financial/local_gov_bond_cash_clock_v3.py"]),
-        "central_gov_cash_clock_ready_context": file_gate(["collectors/china_financial/central_gov_bond_cash_clock_v5_context.py", ".github/workflows/china-financial-central-gov-cash-clock-v5-ready-test.yml"]),
-        "unified_ready_gate": file_gate([".github/workflows/china-financial-daily-ready-v3.yml"]),
+        "central_gov_cash_clock_ready_context": file_gate(["collectors/china_financial/central_gov_bond_cash_clock_v5_context.py"]),
+        "unified_ready_gate": file_gate([".github/workflows/china-financial-daily-ready-v5.yml"]),
     }
     capabilities_pass = all(x["status"] == "PASS" for x in capabilities.values())
 
