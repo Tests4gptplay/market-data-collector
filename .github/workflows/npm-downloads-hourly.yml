@@ -27,6 +27,8 @@ jobs:
     steps:
       - name: Checkout public market-data-collector
         uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Test collector parsing and publication checks
         run: python3 -m unittest discover -s tests/npm_downloads -v
       - name: Collect official npm downloads for six DSH plugin projects
