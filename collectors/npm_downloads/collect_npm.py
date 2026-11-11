@@ -2,7 +2,7 @@
 """Weekly, read-only npm statistics collection for six specified public projects."""
 from __future__ import annotations
 import base64
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 import json
 import os
 from pathlib import Path
@@ -10,7 +10,6 @@ import re
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
-from zoneinfo import ZoneInfo
 
 OWNER = "Tests4gptplay"
 REPOSITORIES = (
@@ -149,6 +148,35 @@ def collect_one(repo: str) -> dict:
     item["status"] = "ok" if success == len(endpoints) else ("partial" if success else "stats_unavailable")
     return item
 
+def annotate_latest_day(snapshot: dict) -> None:
+    """Annotate the npm-confirmed date without changing download status or counts."""
+    sampled = datetime.fromisoformat(snapshot["sampled_at_utc"]).astimezone(timezone.utc)
+    latest_complete = sampled.date() - timedelta(days=1)
+    for package in snapshot["packages"].values():
+        last_day = package.get("last_day", {})
+        if last_day.get("status") != "ok":
+            continue
+        returned = date.fromisoformat(last_day["end_utc"])
+        daily = package.get("daily_30", {})
+        count = next(
+            (x["downloads"] for x in daily.get("days", [])
+             if x.get("day") == last_day["end_utc"]),
+            None,
+        ) if daily.get("status") == "ok" else None
+        week = package.get("last_week", {})
+        package["timeliness"] = {
+            "expected_complete_utc_day": latest_complete.isoformat(),
+            "returned_utc_day": returned.isoformat(),
+            "lag_complete_days": (latest_complete - returned).days,
+            "last_day_matches_daily_30": (
+                count == last_day["downloads"] if count is not None else None
+            ),
+            "last_week_end_matches": (
+                week.get("end_utc") == last_day["end_utc"]
+                if week.get("status") == "ok" else None
+            ),
+        }
+
 def main() -> None:
     snapshot = {
         "schema_version": 1,
@@ -157,10 +185,10 @@ def main() -> None:
         "repos_scope": [f"{OWNER}/{r}" for r in REPOSITORIES],
         "packages": {r: collect_one(r) for r in REPOSITORIES},
     }
+    annotate_latest_day(snapshot)
     base = Path(__file__).resolve().parents[2] / "data/npm_downloads"
     history = base / "history"
     history.mkdir(parents=True, exist_ok=True)
-    day_jst = datetime.now(ZoneInfo("Asia/Tokyo")).date().isoformat()
     payload = json.dumps(snapshot, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
     (base / "latest.json").write_text(payload, encoding="utf-8")
     (history / f"{datetime.now(timezone.utc).strftime('%Y-%m-%dT%H%M%SZ')}.json").write_text(payload, encoding="utf-8")
