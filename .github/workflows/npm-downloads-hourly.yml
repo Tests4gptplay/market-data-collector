@@ -15,10 +15,10 @@ on:
 permissions:
   contents: write
 
+# Keep one writer and at most one pending snapshot; avoid the max-queue scheduling stall.
 concurrency:
-  group: npm-downloads-hourly
+  group: npm-downloads-serial
   cancel-in-progress: false
-  queue: max
 
 jobs:
   collect:
