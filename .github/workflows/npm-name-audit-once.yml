@@ -1,0 +1,48 @@
+name: One-time npm name ownership audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/npm-name-audit-once.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Query official npm registry names, read-only
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import concurrent.futures
+          import json
+          from urllib.parse import quote
+          from urllib.request import Request, urlopen
+          from urllib.error import HTTPError, URLError
+          names = ["deepseek-servant","deepseekservant","deepseek_servant","deepseek-servant-dsh","dsh-deepseek-servant","dsh-servant","deepseek-servant-plugin","deepseek-servant-agent","deepseek-agent-servant","ds-servant","deepseek-servant-ai","dsh-video-vision","dsh-video-vision-plugin","video-vision-dsh","dsh-kujira-persona","kujira-persona","dsh-codex-native","codex-native-dsh","dsh-compaction-selector","compaction-selector-dsh","dsh-dots","dots-dsh","chat-agent-harness","cah-sentinel","ai-gijinka-art-world","deepseek-video-vision"]
+          def lookup(name):
+              url = "https://registry.npmjs.org/" + quote(name, safe="")
+              request = Request(url, headers={
+                  "Accept": "application/vnd.npm.install-v1+json",
+                  "User-Agent": "tests4gptplay-namespace-audit/1.0"
+              })
+              try:
+                  with urlopen(request, timeout=18) as response:
+                      p = json.load(response)
+                  latest = p.get("dist-tags", {}).get("latest")
+                  vers = p.get("versions", {})
+                  r = vers.get(latest, {}) if isinstance(vers, dict) else {}
+                  owner = [m.get("name", "") for m in p.get("maintainers", []) if isinstance(m, dict)]
+                  return {"name":name,"status":"EXISTS","latest":latest,"maintainers":owner,"repository":r.get("repository") or p.get("repository")}
+              except HTTPError as exc:
+                  return {"name":name,"status":"NOT_FOUND" if exc.code == 404 else "ERROR","http":exc.code}
+              except Exception as exc:
+                  return {"name":name,"status":"ERROR","reason":type(exc).__name__}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
+              results = list(executor.map(lookup,names))
+          print("NPM_NAME_AUDIT_JSON_START")
+          print(json.dumps(results,ensure_ascii=False,sort_keys=True))
+          print("NPM_NAME_AUDIT_JSON_END")
+          PY
