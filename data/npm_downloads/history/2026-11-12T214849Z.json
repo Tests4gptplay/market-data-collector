@@ -1,0 +1,846 @@
+{
+  "packages": {
+    "deepseek-servant": {
+      "declared_npm_name": "deepseek-servant",
+      "reason": "HTTP 404",
+      "repository": "Tests4gptplay/deepseek-servant",
+      "status": "not_verified_published"
+    },
+    "dsh-codex-native": {
+      "daily_30": {
+        "days": [
+          {
+            "day": "2026-10-13",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-14",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-15",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-16",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-17",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-18",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-19",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-20",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-21",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-22",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-23",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-24",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-25",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-26",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-27",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-28",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-29",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-30",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-31",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-01",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-02",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-03",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-04",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-05",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-06",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-07",
+            "downloads": 205
+          },
+          {
+            "day": "2026-11-08",
+            "downloads": 38
+          },
+          {
+            "day": "2026-11-09",
+            "downloads": 26
+          },
+          {
+            "day": "2026-11-10",
+            "downloads": 38
+          },
+          {
+            "day": "2026-11-11",
+            "downloads": 31
+          }
+        ],
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-10-13",
+        "status": "ok"
+      },
+      "declared_npm_name": "@tests4gptplay/dsh-codex-native",
+      "last_day": {
+        "downloads": 31,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-11-11",
+        "status": "ok"
+      },
+      "last_month": {
+        "downloads": 338,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-10-13",
+        "status": "ok"
+      },
+      "last_week": {
+        "downloads": 338,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-11-05",
+        "status": "ok"
+      },
+      "latest_published_version": "0.2.3",
+      "name": "@tests4gptplay/dsh-codex-native",
+      "repository": "Tests4gptplay/dsh-codex-native",
+      "sources": {
+        "daily_30": "https://api.npmjs.org/downloads/range/last-month/@tests4gptplay/dsh-codex-native",
+        "last_day": "https://api.npmjs.org/downloads/point/last-day/@tests4gptplay/dsh-codex-native",
+        "last_month": "https://api.npmjs.org/downloads/point/last-month/@tests4gptplay/dsh-codex-native",
+        "last_week": "https://api.npmjs.org/downloads/point/last-week/@tests4gptplay/dsh-codex-native"
+      },
+      "status": "ok",
+      "timeliness": {
+        "expected_complete_utc_day": "2026-11-11",
+        "lag_complete_days": 0,
+        "last_day_matches_daily_30": true,
+        "last_week_end_matches": true,
+        "returned_utc_day": "2026-11-11"
+      }
+    },
+    "dsh-compaction-selector": {
+      "daily_30": {
+        "days": [
+          {
+            "day": "2026-10-13",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-14",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-15",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-16",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-17",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-18",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-19",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-20",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-21",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-22",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-23",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-24",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-25",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-26",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-27",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-28",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-29",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-30",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-31",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-01",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-02",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-03",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-04",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-05",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-06",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-07",
+            "downloads": 214
+          },
+          {
+            "day": "2026-11-08",
+            "downloads": 28
+          },
+          {
+            "day": "2026-11-09",
+            "downloads": 25
+          },
+          {
+            "day": "2026-11-10",
+            "downloads": 28
+          },
+          {
+            "day": "2026-11-11",
+            "downloads": 28
+          }
+        ],
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-10-13",
+        "status": "ok"
+      },
+      "declared_npm_name": "@tests4gptplay/dsh-compaction-selector",
+      "last_day": {
+        "downloads": 28,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-11-11",
+        "status": "ok"
+      },
+      "last_month": {
+        "downloads": 323,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-10-13",
+        "status": "ok"
+      },
+      "last_week": {
+        "downloads": 323,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-11-05",
+        "status": "ok"
+      },
+      "latest_published_version": "1.0.7",
+      "name": "@tests4gptplay/dsh-compaction-selector",
+      "repository": "Tests4gptplay/dsh-compaction-selector",
+      "sources": {
+        "daily_30": "https://api.npmjs.org/downloads/range/last-month/@tests4gptplay/dsh-compaction-selector",
+        "last_day": "https://api.npmjs.org/downloads/point/last-day/@tests4gptplay/dsh-compaction-selector",
+        "last_month": "https://api.npmjs.org/downloads/point/last-month/@tests4gptplay/dsh-compaction-selector",
+        "last_week": "https://api.npmjs.org/downloads/point/last-week/@tests4gptplay/dsh-compaction-selector"
+      },
+      "status": "ok",
+      "timeliness": {
+        "expected_complete_utc_day": "2026-11-11",
+        "lag_complete_days": 0,
+        "last_day_matches_daily_30": true,
+        "last_week_end_matches": true,
+        "returned_utc_day": "2026-11-11"
+      }
+    },
+    "dsh-dots": {
+      "daily_30": {
+        "days": [
+          {
+            "day": "2026-10-13",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-14",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-15",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-16",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-17",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-18",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-19",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-20",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-21",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-22",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-23",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-24",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-25",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-26",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-27",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-28",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-29",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-30",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-31",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-01",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-02",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-03",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-04",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-05",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-06",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-07",
+            "downloads": 212
+          },
+          {
+            "day": "2026-11-08",
+            "downloads": 35
+          },
+          {
+            "day": "2026-11-09",
+            "downloads": 222
+          },
+          {
+            "day": "2026-11-10",
+            "downloads": 21
+          },
+          {
+            "day": "2026-11-11",
+            "downloads": 12
+          }
+        ],
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-10-13",
+        "status": "ok"
+      },
+      "declared_npm_name": "dsh-dots",
+      "last_day": {
+        "downloads": 12,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-11-11",
+        "status": "ok"
+      },
+      "last_month": {
+        "downloads": 502,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-10-13",
+        "status": "ok"
+      },
+      "last_week": {
+        "downloads": 502,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-11-05",
+        "status": "ok"
+      },
+      "latest_published_version": "1.0.12",
+      "name": "@tests4gptplay/dsh-dots",
+      "repository": "Tests4gptplay/dsh-dots",
+      "sources": {
+        "daily_30": "https://api.npmjs.org/downloads/range/last-month/@tests4gptplay/dsh-dots",
+        "last_day": "https://api.npmjs.org/downloads/point/last-day/@tests4gptplay/dsh-dots",
+        "last_month": "https://api.npmjs.org/downloads/point/last-month/@tests4gptplay/dsh-dots",
+        "last_week": "https://api.npmjs.org/downloads/point/last-week/@tests4gptplay/dsh-dots"
+      },
+      "status": "ok",
+      "timeliness": {
+        "expected_complete_utc_day": "2026-11-11",
+        "lag_complete_days": 0,
+        "last_day_matches_daily_30": true,
+        "last_week_end_matches": true,
+        "returned_utc_day": "2026-11-11"
+      }
+    },
+    "dsh-kujira-persona": {
+      "daily_30": {
+        "days": [
+          {
+            "day": "2026-10-13",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-14",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-15",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-16",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-17",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-18",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-19",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-20",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-21",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-22",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-23",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-24",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-25",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-26",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-27",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-28",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-29",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-30",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-31",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-01",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-02",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-03",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-04",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-05",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-06",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-07",
+            "downloads": 329
+          },
+          {
+            "day": "2026-11-08",
+            "downloads": 68
+          },
+          {
+            "day": "2026-11-09",
+            "downloads": 58
+          },
+          {
+            "day": "2026-11-10",
+            "downloads": 38
+          },
+          {
+            "day": "2026-11-11",
+            "downloads": 29
+          }
+        ],
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-10-13",
+        "status": "ok"
+      },
+      "declared_npm_name": "@tests4gptplay/dsh-kujira-persona",
+      "last_day": {
+        "downloads": 29,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-11-11",
+        "status": "ok"
+      },
+      "last_month": {
+        "downloads": 522,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-10-13",
+        "status": "ok"
+      },
+      "last_week": {
+        "downloads": 522,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-11-05",
+        "status": "ok"
+      },
+      "latest_published_version": "2.4.2",
+      "name": "@tests4gptplay/dsh-kujira-persona",
+      "repository": "Tests4gptplay/dsh-kujira-persona",
+      "sources": {
+        "daily_30": "https://api.npmjs.org/downloads/range/last-month/@tests4gptplay/dsh-kujira-persona",
+        "last_day": "https://api.npmjs.org/downloads/point/last-day/@tests4gptplay/dsh-kujira-persona",
+        "last_month": "https://api.npmjs.org/downloads/point/last-month/@tests4gptplay/dsh-kujira-persona",
+        "last_week": "https://api.npmjs.org/downloads/point/last-week/@tests4gptplay/dsh-kujira-persona"
+      },
+      "status": "ok",
+      "timeliness": {
+        "expected_complete_utc_day": "2026-11-11",
+        "lag_complete_days": 0,
+        "last_day_matches_daily_30": true,
+        "last_week_end_matches": true,
+        "returned_utc_day": "2026-11-11"
+      }
+    },
+    "dsh-video-vision": {
+      "daily_30": {
+        "days": [
+          {
+            "day": "2026-10-13",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-14",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-15",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-16",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-17",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-18",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-19",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-20",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-21",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-22",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-23",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-24",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-25",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-26",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-27",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-28",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-29",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-30",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-31",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-01",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-02",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-03",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-04",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-05",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-06",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-07",
+            "downloads": 340
+          },
+          {
+            "day": "2026-11-08",
+            "downloads": 55
+          },
+          {
+            "day": "2026-11-09",
+            "downloads": 47
+          },
+          {
+            "day": "2026-11-10",
+            "downloads": 207
+          },
+          {
+            "day": "2026-11-11",
+            "downloads": 92
+          }
+        ],
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-10-13",
+        "status": "ok"
+      },
+      "declared_npm_name": "@tests4gptplay/dsh-video-vision",
+      "last_day": {
+        "downloads": 92,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-11-11",
+        "status": "ok"
+      },
+      "last_month": {
+        "downloads": 741,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-10-13",
+        "status": "ok"
+      },
+      "last_week": {
+        "downloads": 741,
+        "end_utc": "2026-11-11",
+        "start_utc": "2026-11-05",
+        "status": "ok"
+      },
+      "latest_published_version": "0.10.2",
+      "name": "@tests4gptplay/dsh-video-vision",
+      "repository": "Tests4gptplay/dsh-video-vision",
+      "sources": {
+        "daily_30": "https://api.npmjs.org/downloads/range/last-month/@tests4gptplay/dsh-video-vision",
+        "last_day": "https://api.npmjs.org/downloads/point/last-day/@tests4gptplay/dsh-video-vision",
+        "last_month": "https://api.npmjs.org/downloads/point/last-month/@tests4gptplay/dsh-video-vision",
+        "last_week": "https://api.npmjs.org/downloads/point/last-week/@tests4gptplay/dsh-video-vision"
+      },
+      "status": "ok",
+      "timeliness": {
+        "expected_complete_utc_day": "2026-11-11",
+        "lag_complete_days": 0,
+        "last_day_matches_daily_30": true,
+        "last_week_end_matches": true,
+        "returned_utc_day": "2026-11-11"
+      }
+    }
+  },
+  "repos_scope": [
+    "Tests4gptplay/dsh-compaction-selector",
+    "Tests4gptplay/deepseek-servant",
+    "Tests4gptplay/dsh-codex-native",
+    "Tests4gptplay/dsh-kujira-persona",
+    "Tests4gptplay/dsh-video-vision",
+    "Tests4gptplay/dsh-dots"
+  ],
+  "sampled_at_utc": "2026-11-12T21:48:41+00:00",
+  "schema_version": 1,
+  "source": "npm official registry and downloads API; GitHub public package.json"
+}
