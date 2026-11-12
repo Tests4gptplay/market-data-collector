@@ -164,8 +164,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-10",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-11",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-10"
@@ -329,8 +329,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-10",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-11",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-10"
@@ -494,8 +494,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-10",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-11",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-10"
@@ -659,8 +659,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-10",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-11",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-10"
@@ -824,8 +824,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-10",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-11",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-10"
@@ -840,7 +840,7 @@
     "Tests4gptplay/dsh-video-vision",
     "Tests4gptplay/dsh-dots"
   ],
-  "sampled_at_utc": "2026-11-11T22:49:30+00:00",
+  "sampled_at_utc": "2026-11-12T02:14:28+00:00",
   "schema_version": 1,
   "source": "npm official registry and downloads API; GitHub public package.json"
 }
