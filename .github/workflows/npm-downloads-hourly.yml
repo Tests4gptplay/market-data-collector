@@ -2,8 +2,12 @@ name: Hourly official npm download statistics
 
 on:
   schedule:
-    # Five opportunities per hour; later runs skip if this UTC hour already has a usable snapshot.
-    - cron: '7,12,17,22,27 * * * *'
+    # Five individually registered opportunities; skip duplicates after a valid hourly snapshot.
+    - cron: '7 * * * *'
+    - cron: '12 * * * *'
+    - cron: '17 * * * *'
+    - cron: '22 * * * *'
+    - cron: '27 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
