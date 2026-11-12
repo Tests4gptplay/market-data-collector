@@ -46,3 +46,30 @@ jobs:
           print(json.dumps(results,ensure_ascii=False,sort_keys=True))
           print("NPM_NAME_AUDIT_JSON_END")
           PY
+      - name: Resolve unscoped package registration ownership
+        run: |
+          python3 - <<'PY'
+          import json
+          from urllib.request import Request, urlopen
+          for name in ("dsh-video-vision", "dsh-dots"):
+              request = Request("https://registry.npmjs.org/" + name,
+                                headers={"Accept":"application/json", "User-Agent":"tests4gptplay-namespace-audit/1.0"})
+              try:
+                  with urlopen(request, timeout=20) as response:
+                      data = json.load(response)
+                  latest = data.get("dist-tags",{}).get("latest")
+                  entry = data.get("versions",{}).get(latest,{})
+                  result = {
+                      "name":name,"latest":latest,
+                      "first_publish_utc":data.get("time",{}).get("created"),
+                      "latest_publish_utc":data.get("time",{}).get(latest),
+                      "maintainers":data.get("maintainers"),
+                      "author":entry.get("author"),
+                      "repository":entry.get("repository"),
+                      "description":entry.get("description"),
+                      "available_versions":len(data.get("versions",{}))
+                  }
+                  print("NPM_OWNERSHIP_DETAIL",json.dumps(result,ensure_ascii=False,sort_keys=True))
+              except Exception as exc:
+                  print("NPM_OWNERSHIP_ERROR",name,type(exc).__name__)
+          PY
