@@ -814,7 +814,7 @@
         "start_utc": "2026-11-08",
         "status": "ok"
       },
-      "latest_published_version": "2.4.2",
+      "latest_published_version": "2.4.3",
       "name": "@tests4gptplay/dsh-kujira-persona",
       "repository": "Tests4gptplay/dsh-kujira-persona",
       "sources": {
@@ -831,6 +831,36 @@
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-14"
       }
+    },
+    "dsh-kujira-persona-unscoped": {
+      "daily_30": {
+        "reason": "HTTP 404",
+        "status": "not_retrieved"
+      },
+      "declared_npm_name": "dsh-kujira-persona",
+      "last_day": {
+        "reason": "HTTP 404",
+        "status": "not_retrieved"
+      },
+      "last_month": {
+        "reason": "HTTP 404",
+        "status": "not_retrieved"
+      },
+      "last_week": {
+        "reason": "HTTP 404",
+        "status": "not_retrieved"
+      },
+      "latest_published_version": "2.4.3",
+      "manifest_path": "package.json",
+      "name": "dsh-kujira-persona",
+      "repository": "Tests4gptplay/dsh-kujira-persona",
+      "sources": {
+        "daily_30": "https://api.npmjs.org/downloads/range/last-month/dsh-kujira-persona",
+        "last_day": "https://api.npmjs.org/downloads/point/last-day/dsh-kujira-persona",
+        "last_month": "https://api.npmjs.org/downloads/point/last-month/dsh-kujira-persona",
+        "last_week": "https://api.npmjs.org/downloads/point/last-week/dsh-kujira-persona"
+      },
+      "status": "stats_unavailable"
     },
     "dsh-video-vision": {
       "daily_30": {
@@ -1006,7 +1036,7 @@
     "Tests4gptplay/dsh-video-vision",
     "Tests4gptplay/dsh-dots"
   ],
-  "sampled_at_utc": "2026-11-15T14:40:27+00:00",
+  "sampled_at_utc": "2026-11-15T15:32:47+00:00",
   "schema_version": 1,
   "source": "npm official registry and downloads API; GitHub public package.json"
 }
