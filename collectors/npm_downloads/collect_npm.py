@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Weekly, read-only npm statistics collection for six specified public projects."""
+"""Read-only npm statistics for seven packages in six specified public repositories."""
 from __future__ import annotations
 import base64
 from datetime import date, datetime, timedelta, timezone
@@ -20,8 +20,10 @@ GITHUB_API = "https://api.github.com"
 REGISTRY = "https://registry.npmjs.org"
 DOWNLOADS = "https://api.npmjs.org"
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-# DOTS keeps the unscoped GitHub/DSH identity but publishes a scoped npm package.
+# Dots classic and Dot MCP are separate npm packages in one GitHub repository.
 NPM_NAME_OVERRIDES = {"dsh-dots": "@tests4gptplay/dsh-dots"}
+SOURCE_REFS = {"dsh-dots": "v1.0.12"}  # Classic package manifest, not the MCP main branch.
+EXTRA_PACKAGES = {"dsh-dot-mcp": ("dsh-dots", "packages/dsh-dot-mcp/package.json")}
 
 class FetchError(Exception):
     pass
@@ -44,8 +46,11 @@ def fetch_json(url: str, github: bool = False) -> dict:
     except (URLError, TimeoutError, ValueError, OSError) as exc:
         raise FetchError(f"network or JSON error: {type(exc).__name__}") from exc
 
-def declared_package_name(repo: str) -> str:
-    data = fetch_json(f"{GITHUB_API}/repos/{OWNER}/{repo}/contents/package.json", github=True)
+def declared_package_name(repo: str, manifest_path: str = "package.json", ref: str | None = None) -> str:
+    url = f"{GITHUB_API}/repos/{OWNER}/{repo}/contents/{manifest_path}"
+    if ref:
+        url += f"?ref={quote(ref, safe='')}"
+    data = fetch_json(url, github=True)
     if data.get("encoding") != "base64" or not isinstance(data.get("content"), str):
         raise FetchError("GitHub file encoding is not base64")
     try:
@@ -113,12 +118,15 @@ def validate_range(data: dict, package: str) -> dict:
         raise FetchError("invalid npm daily date interval")
     return {"start_utc": data["start"], "end_utc": data["end"], "days": rows}
 
-def collect_one(repo: str) -> dict:
+def collect_one(repo: str, manifest_path: str = "package.json") -> dict:
     item = {"repository": f"{OWNER}/{repo}", "status": "not_retrieved"}
+    if manifest_path != "package.json":
+        item["manifest_path"] = manifest_path
     try:
-        name = declared_package_name(repo)
+        source_ref = SOURCE_REFS.get(repo) if manifest_path == "package.json" else None
+        name = declared_package_name(repo, manifest_path, ref=source_ref)
         item["declared_npm_name"] = name
-        npm_name = NPM_NAME_OVERRIDES.get(repo, name)
+        npm_name = NPM_NAME_OVERRIDES.get(repo, name) if manifest_path == "package.json" else name
     except FetchError as exc:
         item.update(status="source_unavailable", reason=str(exc))
         return item
@@ -147,6 +155,12 @@ def collect_one(repo: str) -> dict:
             item[key] = {"status": "not_retrieved", "reason": str(exc)}
     item["status"] = "ok" if success == len(endpoints) else ("partial" if success else "stats_unavailable")
     return item
+
+def collect_packages() -> dict:
+    packages = {repo: collect_one(repo) for repo in REPOSITORIES}
+    for package, (repo, manifest_path) in EXTRA_PACKAGES.items():
+        packages[package] = collect_one(repo, manifest_path)
+    return packages
 
 def annotate_latest_day(snapshot: dict) -> None:
     """Annotate the npm-confirmed date without changing download status or counts."""
@@ -183,7 +197,7 @@ def main() -> None:
         "sampled_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "source": "npm official registry and downloads API; GitHub public package.json",
         "repos_scope": [f"{OWNER}/{r}" for r in REPOSITORIES],
-        "packages": {r: collect_one(r) for r in REPOSITORIES},
+        "packages": collect_packages(),
     }
     annotate_latest_day(snapshot)
     base = Path(__file__).resolve().parents[2] / "data/npm_downloads"
@@ -200,7 +214,7 @@ def main() -> None:
             print(f"{name}: {package['name']} {week['start_utc']}..{week['end_utc']} {week['downloads']} weekly downloads")
         else:
             print(f"{name}: {package['status']} {package.get('reason', week.get('reason', 'not retrieved'))}")
-    print(f"Official npm weekly responses: {valid}/{len(REPOSITORIES)}; snapshot={base/'latest.json'}")
+    print(f"Official npm weekly responses: {valid}/{len(snapshot['packages'])}; snapshot={base/'latest.json'}")
 
 if __name__ == "__main__":
     main()

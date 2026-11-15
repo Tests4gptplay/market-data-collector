@@ -77,6 +77,62 @@ class CollectorTests(unittest.TestCase):
         self.assertIn(f"{c.REGISTRY}/%40tests4gptplay%2Fdsh-dots", seen)
         self.assertTrue(all(url.endswith("/@tests4gptplay/dsh-dots") for url in v["sources"].values()))
 
+    def test_dots_classic_manifest_matches_its_release(self):
+        seen = []
+        manifest = {"encoding": "base64", "content": base64.b64encode(json.dumps({"name": "dsh-dots"}).encode()).decode()}
+        def fake(url, github=False):
+            seen.append((url, github))
+            return manifest
+        with patch.object(c, "fetch_json", side_effect=fake):
+            name = c.declared_package_name("dsh-dots", "package.json", ref=c.SOURCE_REFS["dsh-dots"])
+        self.assertEqual(name, "dsh-dots")
+        self.assertEqual(seen, [(f"{c.GITHUB_API}/repos/{c.OWNER}/dsh-dots/contents/package.json?ref=v1.0.12", True)])
+
+    def test_dot_mcp_separately_reads_its_own_manifest_and_npm_name(self):
+        published = "dsh-dot-mcp"
+        seen = []
+        manifest = {"encoding": "base64", "content": base64.b64encode(json.dumps({"name": published}).encode()).decode()}
+        def fake(url, github=False):
+            seen.append((url, github))
+            if "/contents/" in url:
+                return manifest
+            if url.startswith(c.REGISTRY + "/"):
+                return {
+                    "name": published,
+                    "versions": {"1.0.1": {"repository": {"url": "git+https://github.com/Tests4gptplay/dsh-dots.git"}}},
+                    "dist-tags": {"latest": "1.0.1"},
+                }
+            if "/downloads/range/" in url:
+                return {"package": published, "start": "2026-11-08", "end": "2026-11-14",
+                        "downloads": [{"day": "2026-11-14", "downloads": 7}]}
+            if "/downloads/point/" in url:
+                return {"package": published, "start": "2026-11-08", "end": "2026-11-14", "downloads": 7}
+            raise AssertionError(f"Unexpected URL: {url}")
+        with patch.object(c, "fetch_json", side_effect=fake):
+            item = c.collect_one("dsh-dots", "packages/dsh-dot-mcp/package.json")
+        self.assertEqual(item["status"], "ok")
+        self.assertEqual(item["repository"], "Tests4gptplay/dsh-dots")
+        self.assertEqual(item["manifest_path"], "packages/dsh-dot-mcp/package.json")
+        self.assertEqual(item["declared_npm_name"], published)
+        self.assertEqual(item["name"], published)
+        self.assertEqual(item["last_day"]["downloads"], 7)
+        self.assertEqual(item["last_week"]["downloads"], 7)
+        self.assertIn((f"{c.GITHUB_API}/repos/{c.OWNER}/dsh-dots/contents/packages/dsh-dot-mcp/package.json", True), seen)
+        self.assertIn((f"{c.REGISTRY}/dsh-dot-mcp", False), seen)
+        self.assertTrue(all(url.endswith("/dsh-dot-mcp") for url in item["sources"].values()))
+
+    def test_six_repositories_generate_seven_independent_package_records(self):
+        def fake(repo, manifest_path="package.json"):
+            return {"name": "dsh-dot-mcp" if manifest_path != "package.json" else repo}
+        with patch.object(c, "collect_one", side_effect=fake) as collect:
+            packages = c.collect_packages()
+        self.assertEqual(len(packages), 7)
+        self.assertEqual(set(packages), set(c.REPOSITORIES) | {"dsh-dot-mcp"})
+        self.assertEqual(packages["dsh-dots"]["name"], "dsh-dots")
+        self.assertEqual(packages["dsh-dot-mcp"]["name"], "dsh-dot-mcp")
+        collect.assert_any_call("dsh-dots")
+        collect.assert_any_call("dsh-dots", "packages/dsh-dot-mcp/package.json")
+
     def test_latest_day_stale_but_valid(self):
         data = {
             "sampled_at_utc": "2026-11-11T10:00:00+00:00",
