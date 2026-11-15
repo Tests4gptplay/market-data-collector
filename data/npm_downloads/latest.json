@@ -153,7 +153,7 @@
         "start_utc": "2026-11-08",
         "status": "ok"
       },
-      "latest_published_version": "0.2.3",
+      "latest_published_version": "0.2.4",
       "name": "@tests4gptplay/dsh-codex-native",
       "repository": "Tests4gptplay/dsh-codex-native",
       "sources": {
@@ -1036,7 +1036,7 @@
     "Tests4gptplay/dsh-video-vision",
     "Tests4gptplay/dsh-dots"
   ],
-  "sampled_at_utc": "2026-11-15T15:32:47+00:00",
+  "sampled_at_utc": "2026-11-15T17:45:35+00:00",
   "schema_version": 1,
   "source": "npm official registry and downloads API; GitHub public package.json"
 }
