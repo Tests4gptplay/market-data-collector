@@ -109,7 +109,7 @@ class CollectorTests(unittest.TestCase):
                 return {"package": published, "start": "2026-11-08", "end": "2026-11-14", "downloads": 7}
             raise AssertionError(f"Unexpected URL: {url}")
         with patch.object(c, "fetch_json", side_effect=fake):
-            item = c.collect_one("dsh-dots", "packages/dsh-dot-mcp/package.json")
+            item = c.collect_one("dsh-dots", "packages/dsh-dot-mcp/package.json", independent=True)
         self.assertEqual(item["status"], "ok")
         self.assertEqual(item["repository"], "Tests4gptplay/dsh-dots")
         self.assertEqual(item["manifest_path"], "packages/dsh-dot-mcp/package.json")
@@ -121,17 +121,80 @@ class CollectorTests(unittest.TestCase):
         self.assertIn((f"{c.REGISTRY}/dsh-dot-mcp", False), seen)
         self.assertTrue(all(url.endswith("/dsh-dot-mcp") for url in item["sources"].values()))
 
-    def test_six_repositories_generate_seven_independent_package_records(self):
-        def fake(repo, manifest_path="package.json"):
-            return {"name": "dsh-dot-mcp" if manifest_path != "package.json" else repo}
+    def test_six_repositories_generate_eight_independent_package_records(self):
+        def fake(repo, manifest_path="package.json", independent=False):
+            if independent and repo == "dsh-dots":
+                return {"name": "dsh-dot-mcp"}
+            if independent and repo == "dsh-kujira-persona":
+                return {"name": "dsh-kujira-persona"}
+            return {"name": repo}
         with patch.object(c, "collect_one", side_effect=fake) as collect:
             packages = c.collect_packages()
-        self.assertEqual(len(packages), 7)
-        self.assertEqual(set(packages), set(c.REPOSITORIES) | {"dsh-dot-mcp"})
+        self.assertEqual(len(packages), 8)
+        self.assertEqual(set(packages), set(c.REPOSITORIES) | {"dsh-dot-mcp", "dsh-kujira-persona-unscoped"})
         self.assertEqual(packages["dsh-dots"]["name"], "dsh-dots")
         self.assertEqual(packages["dsh-dot-mcp"]["name"], "dsh-dot-mcp")
+        self.assertEqual(packages["dsh-kujira-persona-unscoped"]["name"], "dsh-kujira-persona")
         collect.assert_any_call("dsh-dots")
-        collect.assert_any_call("dsh-dots", "packages/dsh-dot-mcp/package.json")
+        collect.assert_any_call("dsh-dots", "packages/dsh-dot-mcp/package.json", independent=True)
+        collect.assert_any_call("dsh-kujira-persona")
+        collect.assert_any_call("dsh-kujira-persona", "package.json", independent=True)
+
+    def test_kujira_scoped_manifest_source_is_preserved(self):
+        scoped = "@tests4gptplay/dsh-kujira-persona"
+        manifest = {"encoding": "base64", "content": base64.b64encode(json.dumps({"name": scoped}).encode()).decode()}
+        calls = []
+        def fake(url, github=False):
+            calls.append(url)
+            if "/contents/" in url:
+                return manifest
+            if url.startswith(c.REGISTRY + "/"):
+                return {"name": scoped, "versions": {"2.4.3": {}}, "dist-tags": {"latest": "2.4.3"}}
+            if "/downloads/range/" in url:
+                return {"package": scoped, "start": "2026-11-09", "end": "2026-11-15",
+                        "downloads": [{"day": "2026-11-15", "downloads": 11}]}
+            if "/downloads/point/" in url:
+                return {"package": scoped, "start": "2026-11-09", "end": "2026-11-15", "downloads": 11}
+            raise AssertionError(url)
+        with patch.object(c, "fetch_json", side_effect=fake):
+            item = c.collect_one("dsh-kujira-persona")
+        self.assertEqual(item["status"], "ok")
+        self.assertEqual(item["name"], scoped)
+        self.assertEqual(item["declared_npm_name"], scoped)
+        self.assertEqual(item["last_week"]["downloads"], 11)
+        self.assertIn(f"{c.GITHUB_API}/repos/{c.OWNER}/dsh-kujira-persona/contents/package.json?ref={c.SOURCE_REFS['dsh-kujira-persona']}", calls)
+        self.assertIn(f"{c.REGISTRY}/%40tests4gptplay%2Fdsh-kujira-persona", calls)
+
+    def test_kujira_unscoped_package_uses_current_manifest_and_separate_stats(self):
+        published = "dsh-kujira-persona"
+        manifest = {"encoding": "base64", "content": base64.b64encode(json.dumps({"name": published}).encode()).decode()}
+        calls = []
+        def fake(url, github=False):
+            calls.append(url)
+            if "/contents/" in url:
+                return manifest
+            if url.startswith(c.REGISTRY + "/"):
+                return {"name": published,
+                        "versions": {"2.4.3": {"repository": {"url": "git+https://github.com/Tests4gptplay/dsh-kujira-persona.git"}}},
+                        "dist-tags": {"latest": "2.4.3"}}
+            if "/downloads/range/" in url:
+                return {"package": published, "start": "2026-11-09", "end": "2026-11-15",
+                        "downloads": [{"day": "2026-11-15", "downloads": 9}]}
+            if "/downloads/point/" in url:
+                return {"package": published, "start": "2026-11-09", "end": "2026-11-15", "downloads": 9}
+            raise AssertionError(url)
+        with patch.object(c, "fetch_json", side_effect=fake):
+            item = c.collect_one("dsh-kujira-persona", "package.json", independent=True)
+        self.assertEqual(item["status"], "ok")
+        self.assertEqual(item["repository"], "Tests4gptplay/dsh-kujira-persona")
+        self.assertEqual(item["manifest_path"], "package.json")
+        self.assertEqual(item["declared_npm_name"], published)
+        self.assertEqual(item["name"], published)
+        self.assertEqual(item["last_week"]["downloads"], 9)
+        self.assertIn(f"{c.GITHUB_API}/repos/{c.OWNER}/dsh-kujira-persona/contents/package.json", calls)
+        self.assertNotIn(f"{c.GITHUB_API}/repos/{c.OWNER}/dsh-kujira-persona/contents/package.json?ref={c.SOURCE_REFS['dsh-kujira-persona']}", calls)
+        self.assertIn(f"{c.REGISTRY}/dsh-kujira-persona", calls)
+        self.assertTrue(all(url.endswith("/dsh-kujira-persona") for url in item["sources"].values()))
 
     def test_latest_day_stale_but_valid(self):
         data = {

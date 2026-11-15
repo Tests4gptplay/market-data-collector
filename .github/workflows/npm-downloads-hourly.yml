@@ -70,7 +70,7 @@ jobs:
       - name: Test collector parsing and publication checks
         if: steps.sampling.outputs.collect == 'true'
         run: python3 -m unittest discover -s tests/npm_downloads -v
-      - name: Collect official npm downloads for six DSH repositories (seven packages)
+      - name: Collect official npm downloads for six DSH repositories (eight packages)
         if: steps.sampling.outputs.collect == 'true'
         env:
           GITHUB_TOKEN: ${{ github.token }}

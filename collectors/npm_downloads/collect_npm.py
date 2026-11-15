@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only npm statistics for seven packages in six specified public repositories."""
+"""Read-only npm statistics for eight packages in six specified public repositories."""
 from __future__ import annotations
 import base64
 from datetime import date, datetime, timedelta, timezone
@@ -20,10 +20,19 @@ GITHUB_API = "https://api.github.com"
 REGISTRY = "https://registry.npmjs.org"
 DOWNLOADS = "https://api.npmjs.org"
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-# Dots classic and Dot MCP are separate npm packages in one GitHub repository.
-NPM_NAME_OVERRIDES = {"dsh-dots": "@tests4gptplay/dsh-dots"}
-SOURCE_REFS = {"dsh-dots": "v1.0.12"}  # Classic package manifest, not the MCP main branch.
-EXTRA_PACKAGES = {"dsh-dot-mcp": ("dsh-dots", "packages/dsh-dot-mcp/package.json")}
+# Preserve original npm identities when a repository's main manifest changes.
+NPM_NAME_OVERRIDES = {
+    "dsh-dots": "@tests4gptplay/dsh-dots",
+    "dsh-kujira-persona": "@tests4gptplay/dsh-kujira-persona",
+}
+SOURCE_REFS = {
+    "dsh-dots": "v1.0.12",
+    "dsh-kujira-persona": "2baff1b209772a399bee0cfe399f991336dc32cd",
+}
+EXTRA_PACKAGES = {
+    "dsh-dot-mcp": ("dsh-dots", "packages/dsh-dot-mcp/package.json"),
+    "dsh-kujira-persona-unscoped": ("dsh-kujira-persona", "package.json"),
+}
 
 class FetchError(Exception):
     pass
@@ -118,15 +127,15 @@ def validate_range(data: dict, package: str) -> dict:
         raise FetchError("invalid npm daily date interval")
     return {"start_utc": data["start"], "end_utc": data["end"], "days": rows}
 
-def collect_one(repo: str, manifest_path: str = "package.json") -> dict:
+def collect_one(repo: str, manifest_path: str = "package.json", independent: bool = False) -> dict:
     item = {"repository": f"{OWNER}/{repo}", "status": "not_retrieved"}
-    if manifest_path != "package.json":
+    if manifest_path != "package.json" or independent:
         item["manifest_path"] = manifest_path
     try:
-        source_ref = SOURCE_REFS.get(repo) if manifest_path == "package.json" else None
+        source_ref = None if independent else SOURCE_REFS.get(repo)
         name = declared_package_name(repo, manifest_path, ref=source_ref)
         item["declared_npm_name"] = name
-        npm_name = NPM_NAME_OVERRIDES.get(repo, name) if manifest_path == "package.json" else name
+        npm_name = name if independent else NPM_NAME_OVERRIDES.get(repo, name)
     except FetchError as exc:
         item.update(status="source_unavailable", reason=str(exc))
         return item
@@ -159,7 +168,7 @@ def collect_one(repo: str, manifest_path: str = "package.json") -> dict:
 def collect_packages() -> dict:
     packages = {repo: collect_one(repo) for repo in REPOSITORIES}
     for package, (repo, manifest_path) in EXTRA_PACKAGES.items():
-        packages[package] = collect_one(repo, manifest_path)
+        packages[package] = collect_one(repo, manifest_path, independent=True)
     return packages
 
 def annotate_latest_day(snapshot: dict) -> None:
