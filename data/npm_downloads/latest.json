@@ -336,6 +336,172 @@
         "returned_utc_day": "2026-11-14"
       }
     },
+    "dsh-dot-mcp": {
+      "daily_30": {
+        "days": [
+          {
+            "day": "2026-10-16",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-17",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-18",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-19",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-20",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-21",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-22",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-23",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-24",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-25",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-26",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-27",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-28",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-29",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-30",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-31",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-01",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-02",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-03",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-04",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-05",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-06",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-07",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-08",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-09",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-10",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-11",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-12",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-13",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-14",
+            "downloads": 305
+          }
+        ],
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
+        "status": "ok"
+      },
+      "declared_npm_name": "dsh-dot-mcp",
+      "last_day": {
+        "downloads": 305,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-14",
+        "status": "ok"
+      },
+      "last_month": {
+        "downloads": 305,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
+        "status": "ok"
+      },
+      "last_week": {
+        "downloads": 305,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-08",
+        "status": "ok"
+      },
+      "latest_published_version": "1.0.1",
+      "manifest_path": "packages/dsh-dot-mcp/package.json",
+      "name": "dsh-dot-mcp",
+      "repository": "Tests4gptplay/dsh-dots",
+      "sources": {
+        "daily_30": "https://api.npmjs.org/downloads/range/last-month/dsh-dot-mcp",
+        "last_day": "https://api.npmjs.org/downloads/point/last-day/dsh-dot-mcp",
+        "last_month": "https://api.npmjs.org/downloads/point/last-month/dsh-dot-mcp",
+        "last_week": "https://api.npmjs.org/downloads/point/last-week/dsh-dot-mcp"
+      },
+      "status": "ok",
+      "timeliness": {
+        "expected_complete_utc_day": "2026-11-14",
+        "lag_complete_days": 0,
+        "last_day_matches_daily_30": true,
+        "last_week_end_matches": true,
+        "returned_utc_day": "2026-11-14"
+      }
+    },
     "dsh-dots": {
       "daily_30": {
         "days": [
@@ -464,7 +630,7 @@
         "start_utc": "2026-10-16",
         "status": "ok"
       },
-      "declared_npm_name": "dsh-dot-mcp",
+      "declared_npm_name": "dsh-dots",
       "last_day": {
         "downloads": 223,
         "end_utc": "2026-11-14",
@@ -840,7 +1006,7 @@
     "Tests4gptplay/dsh-video-vision",
     "Tests4gptplay/dsh-dots"
   ],
-  "sampled_at_utc": "2026-11-15T11:19:53+00:00",
+  "sampled_at_utc": "2026-11-15T11:25:55+00:00",
   "schema_version": 1,
   "source": "npm official registry and downloads API; GitHub public package.json"
 }
