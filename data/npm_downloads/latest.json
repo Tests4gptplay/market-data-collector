@@ -10,10 +10,6 @@
       "daily_30": {
         "days": [
           {
-            "day": "2026-10-15",
-            "downloads": 0
-          },
-          {
             "day": "2026-10-16",
             "downloads": 0
           },
@@ -128,29 +124,33 @@
           {
             "day": "2026-11-13",
             "downloads": 27
+          },
+          {
+            "day": "2026-11-14",
+            "downloads": 31
           }
         ],
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-10-15",
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
         "status": "ok"
       },
       "declared_npm_name": "@tests4gptplay/dsh-codex-native",
       "last_day": {
-        "downloads": 27,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-11-13",
+        "downloads": 31,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-14",
         "status": "ok"
       },
       "last_month": {
-        "downloads": 390,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-10-15",
+        "downloads": 421,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
         "status": "ok"
       },
       "last_week": {
-        "downloads": 390,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-11-07",
+        "downloads": 216,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-08",
         "status": "ok"
       },
       "latest_published_version": "0.2.3",
@@ -165,19 +165,15 @@
       "status": "ok",
       "timeliness": {
         "expected_complete_utc_day": "2026-11-14",
-        "lag_complete_days": 1,
+        "lag_complete_days": 0,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
-        "returned_utc_day": "2026-11-13"
+        "returned_utc_day": "2026-11-14"
       }
     },
     "dsh-compaction-selector": {
       "daily_30": {
         "days": [
-          {
-            "day": "2026-10-15",
-            "downloads": 0
-          },
           {
             "day": "2026-10-16",
             "downloads": 0
@@ -293,29 +289,33 @@
           {
             "day": "2026-11-13",
             "downloads": 23
+          },
+          {
+            "day": "2026-11-14",
+            "downloads": 24
           }
         ],
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-10-15",
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
         "status": "ok"
       },
       "declared_npm_name": "@tests4gptplay/dsh-compaction-selector",
       "last_day": {
-        "downloads": 23,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-11-13",
+        "downloads": 24,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-14",
         "status": "ok"
       },
       "last_month": {
-        "downloads": 366,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-10-15",
+        "downloads": 390,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
         "status": "ok"
       },
       "last_week": {
-        "downloads": 366,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-11-07",
+        "downloads": 176,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-08",
         "status": "ok"
       },
       "latest_published_version": "1.0.7",
@@ -330,19 +330,15 @@
       "status": "ok",
       "timeliness": {
         "expected_complete_utc_day": "2026-11-14",
-        "lag_complete_days": 1,
+        "lag_complete_days": 0,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
-        "returned_utc_day": "2026-11-13"
+        "returned_utc_day": "2026-11-14"
       }
     },
     "dsh-dots": {
       "daily_30": {
         "days": [
-          {
-            "day": "2026-10-15",
-            "downloads": 0
-          },
           {
             "day": "2026-10-16",
             "downloads": 0
@@ -458,29 +454,33 @@
           {
             "day": "2026-11-13",
             "downloads": 11
+          },
+          {
+            "day": "2026-11-14",
+            "downloads": 223
           }
         ],
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-10-15",
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
         "status": "ok"
       },
       "declared_npm_name": "dsh-dot-mcp",
       "last_day": {
-        "downloads": 11,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-11-13",
+        "downloads": 223,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-14",
         "status": "ok"
       },
       "last_month": {
-        "downloads": 528,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-10-15",
+        "downloads": 751,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
         "status": "ok"
       },
       "last_week": {
-        "downloads": 528,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-11-07",
+        "downloads": 539,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-08",
         "status": "ok"
       },
       "latest_published_version": "1.0.12",
@@ -495,19 +495,15 @@
       "status": "ok",
       "timeliness": {
         "expected_complete_utc_day": "2026-11-14",
-        "lag_complete_days": 1,
+        "lag_complete_days": 0,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
-        "returned_utc_day": "2026-11-13"
+        "returned_utc_day": "2026-11-14"
       }
     },
     "dsh-kujira-persona": {
       "daily_30": {
         "days": [
-          {
-            "day": "2026-10-15",
-            "downloads": 0
-          },
           {
             "day": "2026-10-16",
             "downloads": 0
@@ -623,29 +619,33 @@
           {
             "day": "2026-11-13",
             "downloads": 26
+          },
+          {
+            "day": "2026-11-14",
+            "downloads": 36
           }
         ],
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-10-15",
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
         "status": "ok"
       },
       "declared_npm_name": "@tests4gptplay/dsh-kujira-persona",
       "last_day": {
-        "downloads": 26,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-11-13",
+        "downloads": 36,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-14",
         "status": "ok"
       },
       "last_month": {
-        "downloads": 582,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-10-15",
+        "downloads": 618,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
         "status": "ok"
       },
       "last_week": {
-        "downloads": 582,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-11-07",
+        "downloads": 289,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-08",
         "status": "ok"
       },
       "latest_published_version": "2.4.2",
@@ -660,19 +660,15 @@
       "status": "ok",
       "timeliness": {
         "expected_complete_utc_day": "2026-11-14",
-        "lag_complete_days": 1,
+        "lag_complete_days": 0,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
-        "returned_utc_day": "2026-11-13"
+        "returned_utc_day": "2026-11-14"
       }
     },
     "dsh-video-vision": {
       "daily_30": {
         "days": [
-          {
-            "day": "2026-10-15",
-            "downloads": 0
-          },
           {
             "day": "2026-10-16",
             "downloads": 0
@@ -788,29 +784,33 @@
           {
             "day": "2026-11-13",
             "downloads": 44
+          },
+          {
+            "day": "2026-11-14",
+            "downloads": 50
           }
         ],
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-10-15",
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
         "status": "ok"
       },
       "declared_npm_name": "@tests4gptplay/dsh-video-vision",
       "last_day": {
-        "downloads": 44,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-11-13",
+        "downloads": 50,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-14",
         "status": "ok"
       },
       "last_month": {
-        "downloads": 841,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-10-15",
+        "downloads": 891,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-10-16",
         "status": "ok"
       },
       "last_week": {
-        "downloads": 841,
-        "end_utc": "2026-11-13",
-        "start_utc": "2026-11-07",
+        "downloads": 551,
+        "end_utc": "2026-11-14",
+        "start_utc": "2026-11-08",
         "status": "ok"
       },
       "latest_published_version": "0.10.2",
@@ -825,10 +825,10 @@
       "status": "ok",
       "timeliness": {
         "expected_complete_utc_day": "2026-11-14",
-        "lag_complete_days": 1,
+        "lag_complete_days": 0,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
-        "returned_utc_day": "2026-11-13"
+        "returned_utc_day": "2026-11-14"
       }
     }
   },
@@ -840,7 +840,7 @@
     "Tests4gptplay/dsh-video-vision",
     "Tests4gptplay/dsh-dots"
   ],
-  "sampled_at_utc": "2026-11-15T02:43:03+00:00",
+  "sampled_at_utc": "2026-11-15T06:12:32+00:00",
   "schema_version": 1,
   "source": "npm official registry and downloads API; GitHub public package.json"
 }
