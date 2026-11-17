@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only npm statistics for nine packages in six specified public repositories."""
+"""Read-only npm statistics for ten packages in six specified public repositories."""
 from __future__ import annotations
 import base64
 from datetime import date, datetime, timedelta, timezone
@@ -22,7 +22,6 @@ DOWNLOADS = "https://api.npmjs.org"
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # Preserve original npm identities when a repository's main manifest changes.
 NPM_NAME_OVERRIDES = {
-    "deepseek-servant": "@tests4gptplay/deepseek-servant",
     "dsh-dots": "@tests4gptplay/dsh-dots",
     "dsh-kujira-persona": "@tests4gptplay/dsh-kujira-persona",
 }
@@ -32,13 +31,15 @@ SOURCE_REFS = {
     "dsh-kujira-persona": "2baff1b209772a399bee0cfe399f991336dc32cd",
 }
 EXTRA_PACKAGES = {
+    "deepseek-servant-scoped": ("deepseek-servant", "package.json"),
     "dsh-dot-mcp": ("dsh-dots", "packages/dsh-dot-mcp/package.json"),
     "dsh-kujira-persona-unscoped": ("dsh-kujira-persona", "package.json"),
     "dsh-codex-native-unscoped": ("dsh-codex-native", "package.json"),
 }
-# Codex publishes a second, unscoped variant of the same source package.
-# The root manifest remains scoped, so identify the variant explicitly.
+# Preserve separate npm package identities when variants share one source repository.
+# DSS and Codex each have distinct scoped and unscoped distributions.
 EXTRA_NPM_NAMES = {
+    "deepseek-servant-scoped": "@tests4gptplay/deepseek-servant",
     "dsh-codex-native-unscoped": "dsh-codex-native",
 }
 

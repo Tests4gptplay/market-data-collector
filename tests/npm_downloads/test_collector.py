@@ -58,18 +58,54 @@ class CollectorTests(unittest.TestCase):
                         "end": "2026-11-15", "downloads": 17}
             raise AssertionError(url)
 
-        self.assertEqual(c.NPM_NAME_OVERRIDES["deepseek-servant"], published)
-        self.assertEqual(c.SOURCE_REFS["deepseek-servant"], "v0.5.0")
+        self.assertNotIn("deepseek-servant", c.NPM_NAME_OVERRIDES)
+        self.assertEqual(c.EXTRA_NPM_NAMES["deepseek-servant-scoped"], published)
         with patch.object(c, "fetch_json", side_effect=fake):
-            item = c.collect_one("deepseek-servant")
+            item = c.collect_one("deepseek-servant", "package.json", independent=True,
+                                 npm_name_override=published)
         self.assertEqual(item["status"], "ok")
         self.assertEqual(item["declared_npm_name"], declared)
         self.assertEqual(item["name"], published)
         self.assertEqual(item["latest_published_version"], "0.5.0")
         self.assertEqual(item["last_day"]["downloads"], 17)
-        self.assertIn(f"{c.GITHUB_API}/repos/{c.OWNER}/deepseek-servant/contents/package.json?ref=v0.5.0", seen)
+        self.assertIn(f"{c.GITHUB_API}/repos/{c.OWNER}/deepseek-servant/contents/package.json", seen)
         self.assertIn(f"{c.REGISTRY}/%40tests4gptplay%2Fdeepseek-servant", seen)
         self.assertTrue(all(url.endswith("/@tests4gptplay/deepseek-servant")
+                            for url in item["sources"].values()))
+
+    def test_dss_unscoped_package_retained_separately(self):
+        name = "deepseek-servant"
+        manifest = {"encoding": "base64", "content": base64.b64encode(
+            json.dumps({"name": name}).encode()).decode()}
+        seen = []
+
+        def fake(url, github=False):
+            seen.append(url)
+            if "/contents/" in url:
+                return manifest
+            if url.startswith(c.REGISTRY + "/"):
+                return {"name": name,
+                        "versions": {"0.5.0": {"repository": {"url":
+                            "git+https://github.com/Tests4gptplay/deepseek-servant.git"}}},
+                        "dist-tags": {"latest": "0.5.0"}}
+            if "/downloads/range/" in url:
+                return {"package": name, "start": "2026-11-09",
+                        "end": "2026-11-15",
+                        "downloads": [{"day": "2026-11-15", "downloads": 4}]}
+            if "/downloads/point/" in url:
+                return {"package": name, "start": "2026-11-09",
+                        "end": "2026-11-15", "downloads": 4}
+            raise AssertionError(url)
+
+        self.assertEqual(c.SOURCE_REFS["deepseek-servant"], "v0.5.0")
+        with patch.object(c, "fetch_json", side_effect=fake):
+            item = c.collect_one("deepseek-servant")
+        self.assertEqual(item["status"], "ok")
+        self.assertEqual(item["name"], name)
+        self.assertEqual(item["last_day"]["downloads"], 4)
+        self.assertIn(f"{c.GITHUB_API}/repos/{c.OWNER}/deepseek-servant/contents/package.json?ref=v0.5.0", seen)
+        self.assertIn(f"{c.REGISTRY}/deepseek-servant", seen)
+        self.assertTrue(all(url.endswith("/deepseek-servant")
                             for url in item["sources"].values()))
 
     def test_unpublished_is_not_zero(self):
@@ -158,7 +194,7 @@ class CollectorTests(unittest.TestCase):
         self.assertIn((f"{c.REGISTRY}/dsh-dot-mcp", False), seen)
         self.assertTrue(all(url.endswith("/dsh-dot-mcp") for url in item["sources"].values()))
 
-    def test_six_repositories_generate_nine_independent_package_records(self):
+    def test_six_repositories_generate_ten_independent_package_records(self):
         def fake(repo, manifest_path="package.json", independent=False, npm_name_override=None):
             if npm_name_override:
                 return {"name": npm_name_override}
@@ -169,12 +205,16 @@ class CollectorTests(unittest.TestCase):
             return {"name": repo}
         with patch.object(c, "collect_one", side_effect=fake) as collect:
             packages = c.collect_packages()
-        self.assertEqual(len(packages), 9)
-        self.assertEqual(set(packages), set(c.REPOSITORIES) | {"dsh-dot-mcp", "dsh-kujira-persona-unscoped", "dsh-codex-native-unscoped"})
+        self.assertEqual(len(packages), 10)
+        self.assertEqual(set(packages), set(c.REPOSITORIES) | {"deepseek-servant-scoped", "dsh-dot-mcp", "dsh-kujira-persona-unscoped", "dsh-codex-native-unscoped"})
         self.assertEqual(packages["dsh-dots"]["name"], "dsh-dots")
+        self.assertEqual(packages["deepseek-servant-scoped"]["name"], "@tests4gptplay/deepseek-servant")
         self.assertEqual(packages["dsh-dot-mcp"]["name"], "dsh-dot-mcp")
         self.assertEqual(packages["dsh-kujira-persona-unscoped"]["name"], "dsh-kujira-persona")
         self.assertEqual(packages["dsh-codex-native-unscoped"]["name"], "dsh-codex-native")
+        collect.assert_any_call("deepseek-servant")
+        collect.assert_any_call("deepseek-servant", "package.json", independent=True,
+                                npm_name_override="@tests4gptplay/deepseek-servant")
         collect.assert_any_call("dsh-dots")
         collect.assert_any_call("dsh-dots", "packages/dsh-dot-mcp/package.json", independent=True)
         collect.assert_any_call("dsh-kujira-persona")
