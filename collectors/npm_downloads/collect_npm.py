@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only npm statistics for eight packages in six specified public repositories."""
+"""Read-only npm statistics for nine packages in six specified public repositories."""
 from __future__ import annotations
 import base64
 from datetime import date, datetime, timedelta, timezone
@@ -32,6 +32,12 @@ SOURCE_REFS = {
 EXTRA_PACKAGES = {
     "dsh-dot-mcp": ("dsh-dots", "packages/dsh-dot-mcp/package.json"),
     "dsh-kujira-persona-unscoped": ("dsh-kujira-persona", "package.json"),
+    "dsh-codex-native-unscoped": ("dsh-codex-native", "package.json"),
+}
+# Codex publishes a second, unscoped variant of the same source package.
+# The root manifest remains scoped, so identify the variant explicitly.
+EXTRA_NPM_NAMES = {
+    "dsh-codex-native-unscoped": "dsh-codex-native",
 }
 
 class FetchError(Exception):
@@ -127,7 +133,8 @@ def validate_range(data: dict, package: str) -> dict:
         raise FetchError("invalid npm daily date interval")
     return {"start_utc": data["start"], "end_utc": data["end"], "days": rows}
 
-def collect_one(repo: str, manifest_path: str = "package.json", independent: bool = False) -> dict:
+def collect_one(repo: str, manifest_path: str = "package.json", independent: bool = False,
+                npm_name_override: str | None = None) -> dict:
     item = {"repository": f"{OWNER}/{repo}", "status": "not_retrieved"}
     if manifest_path != "package.json" or independent:
         item["manifest_path"] = manifest_path
@@ -135,7 +142,7 @@ def collect_one(repo: str, manifest_path: str = "package.json", independent: boo
         source_ref = None if independent else SOURCE_REFS.get(repo)
         name = declared_package_name(repo, manifest_path, ref=source_ref)
         item["declared_npm_name"] = name
-        npm_name = name if independent else NPM_NAME_OVERRIDES.get(repo, name)
+        npm_name = npm_name_override or (name if independent else NPM_NAME_OVERRIDES.get(repo, name))
     except FetchError as exc:
         item.update(status="source_unavailable", reason=str(exc))
         return item
@@ -168,7 +175,11 @@ def collect_one(repo: str, manifest_path: str = "package.json", independent: boo
 def collect_packages() -> dict:
     packages = {repo: collect_one(repo) for repo in REPOSITORIES}
     for package, (repo, manifest_path) in EXTRA_PACKAGES.items():
-        packages[package] = collect_one(repo, manifest_path, independent=True)
+        if package in EXTRA_NPM_NAMES:
+            packages[package] = collect_one(repo, manifest_path, independent=True,
+                                            npm_name_override=EXTRA_NPM_NAMES[package])
+        else:
+            packages[package] = collect_one(repo, manifest_path, independent=True)
     return packages
 
 def annotate_latest_day(snapshot: dict) -> None:
