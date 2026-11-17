@@ -35,6 +35,43 @@ class CollectorTests(unittest.TestCase):
         with self.assertRaises(c.FetchError):
             c.validate_point({"downloads": 0, "start": "2026-11-01", "end": "2026-11-07", "package": "other"}, "@tests4gptplay/dsh-dots")
 
+    def test_dss_scoped_published_package_is_tracked(self):
+        declared = "deepseek-servant"
+        published = "@tests4gptplay/deepseek-servant"
+        manifest = {"encoding": "base64", "content": base64.b64encode(
+            json.dumps({"name": declared}).encode()).decode()}
+        seen = []
+
+        def fake(url, github=False):
+            seen.append(url)
+            if "/contents/" in url:
+                return manifest
+            if url.startswith(c.REGISTRY + "/"):
+                return {"name": published, "versions": {"0.5.0": {}},
+                        "dist-tags": {"latest": "0.5.0"}}
+            if "/downloads/range/" in url:
+                return {"package": published, "start": "2026-11-09",
+                        "end": "2026-11-15",
+                        "downloads": [{"day": "2026-11-15", "downloads": 17}]}
+            if "/downloads/point/" in url:
+                return {"package": published, "start": "2026-11-09",
+                        "end": "2026-11-15", "downloads": 17}
+            raise AssertionError(url)
+
+        self.assertEqual(c.NPM_NAME_OVERRIDES["deepseek-servant"], published)
+        self.assertEqual(c.SOURCE_REFS["deepseek-servant"], "v0.5.0")
+        with patch.object(c, "fetch_json", side_effect=fake):
+            item = c.collect_one("deepseek-servant")
+        self.assertEqual(item["status"], "ok")
+        self.assertEqual(item["declared_npm_name"], declared)
+        self.assertEqual(item["name"], published)
+        self.assertEqual(item["latest_published_version"], "0.5.0")
+        self.assertEqual(item["last_day"]["downloads"], 17)
+        self.assertIn(f"{c.GITHUB_API}/repos/{c.OWNER}/deepseek-servant/contents/package.json?ref=v0.5.0", seen)
+        self.assertIn(f"{c.REGISTRY}/%40tests4gptplay%2Fdeepseek-servant", seen)
+        self.assertTrue(all(url.endswith("/@tests4gptplay/deepseek-servant")
+                            for url in item["sources"].values()))
+
     def test_unpublished_is_not_zero(self):
         with patch.object(c, "declared_package_name", return_value="@tests4gptplay/dsh-video-vision"), patch.object(c, "verified_registry_package", side_effect=c.FetchError("HTTP 404")):
             v = c.collect_one("dsh-video-vision")

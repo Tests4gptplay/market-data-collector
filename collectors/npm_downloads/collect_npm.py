@@ -22,10 +22,12 @@ DOWNLOADS = "https://api.npmjs.org"
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # Preserve original npm identities when a repository's main manifest changes.
 NPM_NAME_OVERRIDES = {
+    "deepseek-servant": "@tests4gptplay/deepseek-servant",
     "dsh-dots": "@tests4gptplay/dsh-dots",
     "dsh-kujira-persona": "@tests4gptplay/dsh-kujira-persona",
 }
 SOURCE_REFS = {
+    "deepseek-servant": "v0.5.0",
     "dsh-dots": "v1.0.12",
     "dsh-kujira-persona": "2baff1b209772a399bee0cfe399f991336dc32cd",
 }
