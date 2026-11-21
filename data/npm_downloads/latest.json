@@ -974,7 +974,7 @@
         "start_utc": "2026-11-14",
         "status": "ok"
       },
-      "latest_published_version": "1.0.3",
+      "latest_published_version": "1.0.4",
       "manifest_path": "packages/dsh-dot-mcp/package.json",
       "name": "dsh-dot-mcp",
       "repository": "Tests4gptplay/dsh-dots",
@@ -1663,7 +1663,7 @@
     "Tests4gptplay/dsh-video-vision",
     "Tests4gptplay/dsh-dots"
   ],
-  "sampled_at_utc": "2026-11-21T13:33:04+00:00",
+  "sampled_at_utc": "2026-11-21T18:07:39+00:00",
   "schema_version": 1,
   "source": "npm official registry and downloads API; GitHub public package.json"
 }
