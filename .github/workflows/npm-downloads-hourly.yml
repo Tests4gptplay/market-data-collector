@@ -1,20 +1,10 @@
-name: Hourly official npm download statistics
+name: Daily official npm download statistics
 
 on:
   schedule:
-    # Five individually registered opportunities; skip duplicates after a valid hourly snapshot.
-    - cron: '7 * * * *'
-    - cron: '12 * * * *'
-    - cron: '17 * * * *'
-    - cron: '22 * * * *'
-    - cron: '27 * * * *'
+    # Three daily slots: 19:27, 20:27, 21:27 JST = 10:27, 11:27, 12:27 UTC.
+    - cron: '27 10,11,12 * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/npm-downloads-hourly.yml'
-      - 'collectors/npm_downloads/collect_npm.py'
-      - 'tests/npm_downloads/test_collector.py'
 
 permissions:
   contents: write
