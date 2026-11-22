@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 
-# Serialize writes with the scheduled npm collector.
+# Serialize writes with the hourly npm collector.
 # Keep one writer and at most one pending snapshot; avoid the max-queue scheduling stall.
 concurrency:
   group: npm-downloads-serial
