@@ -158,8 +158,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-21",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-22",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-21"
@@ -324,8 +324,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-21",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-22",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-21"
@@ -489,8 +489,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-21",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-22",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-21"
@@ -655,8 +655,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-21",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-22",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-21"
@@ -820,8 +820,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-21",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-22",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-21"
@@ -986,8 +986,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-21",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-22",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-21"
@@ -1151,8 +1151,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-21",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-22",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-21"
@@ -1316,8 +1316,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-21",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-22",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-21"
@@ -1482,8 +1482,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-21",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-22",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-21"
@@ -1647,8 +1647,8 @@
       },
       "status": "ok",
       "timeliness": {
-        "expected_complete_utc_day": "2026-11-21",
-        "lag_complete_days": 0,
+        "expected_complete_utc_day": "2026-11-22",
+        "lag_complete_days": 1,
         "last_day_matches_daily_30": true,
         "last_week_end_matches": true,
         "returned_utc_day": "2026-11-21"
@@ -1663,7 +1663,7 @@
     "Tests4gptplay/dsh-video-vision",
     "Tests4gptplay/dsh-dots"
   ],
-  "sampled_at_utc": "2026-11-22T21:02:16+00:00",
+  "sampled_at_utc": "2026-11-23T01:40:34+00:00",
   "schema_version": 1,
   "source": "npm official registry and downloads API; GitHub public package.json"
 }
