@@ -498,8 +498,131 @@
     },
     "dsh-codex-native-unscoped": {
       "daily_30": {
-        "reason": "HTTP 429",
-        "status": "not_retrieved"
+        "days": [
+          {
+            "day": "2026-10-24",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-25",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-26",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-27",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-28",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-29",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-30",
+            "downloads": 0
+          },
+          {
+            "day": "2026-10-31",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-01",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-02",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-03",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-04",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-05",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-06",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-07",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-08",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-09",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-10",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-11",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-12",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-13",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-14",
+            "downloads": 0
+          },
+          {
+            "day": "2026-11-15",
+            "downloads": 297
+          },
+          {
+            "day": "2026-11-16",
+            "downloads": 26
+          },
+          {
+            "day": "2026-11-17",
+            "downloads": 195
+          },
+          {
+            "day": "2026-11-18",
+            "downloads": 21
+          },
+          {
+            "day": "2026-11-19",
+            "downloads": 16
+          },
+          {
+            "day": "2026-11-20",
+            "downloads": 11
+          },
+          {
+            "day": "2026-11-21",
+            "downloads": 5
+          },
+          {
+            "day": "2026-11-22",
+            "downloads": 8
+          }
+        ],
+        "end_utc": "2026-11-22",
+        "start_utc": "2026-10-24",
+        "status": "ok"
       },
       "declared_npm_name": "@tests4gptplay/dsh-codex-native",
       "last_day": {
@@ -509,12 +632,16 @@
         "status": "ok"
       },
       "last_month": {
-        "reason": "HTTP 429",
-        "status": "not_retrieved"
+        "downloads": 579,
+        "end_utc": "2026-11-22",
+        "start_utc": "2026-10-24",
+        "status": "ok"
       },
       "last_week": {
-        "reason": "HTTP 429",
-        "status": "not_retrieved"
+        "downloads": 282,
+        "end_utc": "2026-11-22",
+        "start_utc": "2026-11-16",
+        "status": "ok"
       },
       "latest_published_version": "0.2.5",
       "manifest_path": "package.json",
@@ -526,12 +653,12 @@
         "last_month": "https://api.npmjs.org/downloads/point/last-month/dsh-codex-native",
         "last_week": "https://api.npmjs.org/downloads/point/last-week/dsh-codex-native"
       },
-      "status": "partial",
+      "status": "ok",
       "timeliness": {
         "expected_complete_utc_day": "2026-11-22",
         "lag_complete_days": 0,
-        "last_day_matches_daily_30": null,
-        "last_week_end_matches": null,
+        "last_day_matches_daily_30": true,
+        "last_week_end_matches": true,
         "returned_utc_day": "2026-11-22"
       }
     },
@@ -1536,7 +1663,7 @@
     "Tests4gptplay/dsh-video-vision",
     "Tests4gptplay/dsh-dots"
   ],
-  "sampled_at_utc": "2026-11-23T22:37:22+00:00",
+  "sampled_at_utc": "2026-11-23T23:47:39+00:00",
   "schema_version": 1,
   "source": "npm official registry and downloads API; GitHub public package.json"
 }
